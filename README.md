@@ -2,9 +2,9 @@
 There are some of my labs and standarts from different subjects while I study at ITMO university.
 I am a student of CSaR[^csar] department — «Moving control system and navigation» direction.
 
-## 1st year
-### 1st semester
-#### Python programming
+# 1st year
+## 1st semester
+### Python programming
 <table>
     <tbody>
         <tr>
@@ -20,7 +20,7 @@ I am a student of CSaR[^csar] department — «Moving control system and navigat
     </tbody>
 </table>
 
-#### Discrete math
+### Discrete math
 <table>
     <tbody>
         <tr>
@@ -31,5 +31,8 @@ I am a student of CSaR[^csar] department — «Moving control system and navigat
         </tr>
     </tbody>
 </table>
+
+### Linear algebra
+- [Lectures](https://github.com/PaveTranquil/ITMO_works/raw/main/Линал%201%20сем.zip)
 
 [^csar]: [Control Systems and Robotics](https://abit.itmo.ru/program/bachelor/robotics_ai)
