@@ -1,38 +1,43 @@
 # ITMO_works
-There are some of my labs and standarts from different subjects while I study at ITMO university.
-I am a student of CSaR[^csar] department — «Moving control system and navigation» direction.
+Здесь мои лабораторные работы и типовые расчёты с разных дисциплин за время моего обучения в Университете ИТМО.  
+Сейчас являюсь студентом первого курса:  
+ㅤ– мегафакультет КТУ[^ctam]  
+ㅤ– факультет СУиР[^csar]  
+ㅤ– направление «24.03.02 Системы управления движением и навигация»  
+ㅤ– образовательная программа «Робототехника и искусственный интеллект».
 
-# 1st year
-## 1st semester
-### Python programming
+# 1-й курс
+## 1-й семестр
+### Программирование на Python
 <table>
     <tbody>
         <tr>
-            <td><a href="https://github.com/PaveTranquil/ITMOPython-2022_Lab-1">1st Lab (CSV)</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMOPython-2022_Lab-2">2nd Lab (console drawing)</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMOPython-2022_Lab-3">3rd Lab (Knapsack problem)</a></td>
+            <td><a href="https://github.com/PaveTranquil/ITMOPython-2022_Lab-1">1-я лаба (CSV)</a></td>
+            <td><a href="https://github.com/PaveTranquil/ITMOPython-2022_Lab-2">2-я лаба (рисование в консоли)</a></td>
+            <td><a href="https://github.com/PaveTranquil/ITMOPython-2022_Lab-3">3-я лаба (Задача о рюкзаке)</a></td>
         </tr>
         <tr>
-            <td><a href="https://github.com/PaveTranquil/ITMOPython-2022_Lab-4">4th Lab (Tkinter)</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMOPython-2022_Lab-5">5th Lab (API)</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMOPython-2022_Lab-6">6th Lab (OOP)</a></td>
+            <td><a href="https://github.com/PaveTranquil/ITMOPython-2022_Lab-4">4-я лаба (Tkinter)</a></td>
+            <td><a href="https://github.com/PaveTranquil/ITMOPython-2022_Lab-5">5-я лаба (API)</a></td>
+            <td><a href="https://github.com/PaveTranquil/ITMOPython-2022_Lab-6">6-я лаба (ООП)</a></td>
         </tr>
     </tbody>
 </table>
 
-### Discrete math
+### Дискретная математика
 <table>
     <tbody>
         <tr>
-            <td><a href="https://gist.github.com/PaveTranquil/e4fa5b8b0af8590f5859f59ef4a64ea8">1st Standart (Zhegalkin polynomial from a func)</a></td>
+            <td><a href="https://gist.github.com/PaveTranquil/e4fa5b8b0af8590f5859f59ef4a64ea8">1-й типовик (Полином Жегалкина из функции)</a></td>
         </tr>
         <tr>
-            <td><a href="https://gist.github.com/PaveTranquil/5884c49ad97161ecd8dc2b42b63f8405">2nd Standart (Binary relations definition in a graph)</a></td>
+            <td><a href="https://gist.github.com/PaveTranquil/5884c49ad97161ecd8dc2b42b63f8405">2nd Standart (Определение бинарных отношений в графе)</a></td>
         </tr>
     </tbody>
 </table>
 
-### Linear algebra
-- [Lectures](https://github.com/PaveTranquil/ITMO_works/raw/main/Линал%201%20сем.zip)
+### Линейная алгебра
+- [Лекции](https://github.com/PaveTranquil/ITMO_works/raw/main/Линал%201%20сем.zip)
 
-[^csar]: [Control Systems and Robotics](https://abit.itmo.ru/program/bachelor/robotics_ai)
+[^ctam]: [Компьютерные технологии и управление](https://itmo.ru/ru/viewfaculty/1/megafakultet_kompyuternyh_tehnologiy_i_upravleniya.htm)
+[^csar]: [Системы управления и робототехника](https://abit.itmo.ru/program/bachelor/robotics_ai)
