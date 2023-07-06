@@ -83,7 +83,26 @@
 
 ### Механика `мех` `физика` `physics` `mechanics`
 - [Лекции](https://github.com/PaveTranquil/ITMO_works/tree/main/2%20семестр/Механика/Лекции)
+- [Справочник Трофимовой](https://github.com/PaveTranquil/ITMO_works/raw/main/2%20семестр/Механика/Справочник%20Трофимовой.pdf) (кратко по формулам)
 - [Лабораторные работы](https://github.com/PaveTranquil/ITMO_works/tree/main/2%20семестр/Механика/Лабораторные%20работы)
+  - [Решатели](https://github.com/PaveTranquil/ITMO_works/tree/main/2%20семестр/Механика/Лабораторные%20работы/Решатели)
+  - [Шаблон отчёта](https://github.com/PaveTranquil/ITMO_works/raw/main/2%20семестр/Механика/Лабораторные%20работы/Шаблон%20отчёта.docx)
+
+Домашние задания:
+<table>
+    <tbody>
+        <tr>
+            <td><b><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Механика/LaTeX/Модуль%20№1/_задачи.jpg">Модуль №1</a>:</b></td>
+            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Механика/LaTeX/Модуль%20№1/1.pdf">Задача №1</a></td>
+            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Механика/LaTeX/Модуль%20№1/3.pdf">Задача №3</a></td>
+        </tr>
+        <tr>
+            <td><b><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Механика/LaTeX/Модуль%20№2/_задачи.png">Модуль №2</a>:</b></td>
+            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Механика/LaTeX/Модуль%20№2/1.pdf">Задача №1</a></td>
+            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Механика/LaTeX/Модуль%20№2/3.pdf">Задача №3</a></td>
+        </tr>
+    </tbody>
+</table>
 
 ### Россия в истории современных международных отношений `история` `ирс`
 - Спорные моменты ленд-лиза: [доклад](https://github.com/PaveTranquil/ITMO_works/raw/main/2%20семестр/История/Спорные%20моменты%20ленд-лиза.pdf) и [презентация](https://github.com/PaveTranquil/ITMO_works/raw/main/2%20семестр/История/Спорные%20моменты%20ленд-лиза%20(Овчинников%20Павел).pptx)
