@@ -1,0 +1,138 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=28cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\pagenumbering{gobble}
+\newcommand{\e}{\text{e}}
+
+\begin{document}
+\begin{center}
+Найдём собственные значения оператора:
+\end{center}
+$$\left|\begin{matrix}
+-17-\lambda & 24 & 12 & 12 \\
+-48 & 55-\lambda & 24 & 24 \\
+12 & -12 & 1-\lambda & -6 \\
+48 & -48 & -24 & -17-\lambda
+\end{matrix}\right| = 0$$
+$$\lambda^4-22\lambda^3+168\lambda^2-490\lambda+343 = 0$$
+$$(\lambda-1)(\lambda-7)^3=0$$
+$$\Downarrow$$
+$$\sigma_A = \{1^{(1)},7^{(3)}\}$$ \\
+\begin{center}
+Найдём собственные вектора:
+\end{center}
+$$\lambda = 1$$
+$$\begin{pmatrix}
+-18 & 24 & 12 & 12 \\
+-48 & 54 & 24 & 24 \\
+12 & -12 & 0 & -6 \\
+48 & -48 & -24 & -18
+\end{pmatrix} \sim \begin{pmatrix}
+3 & -4 & -2 & -2 \\
+0 & 5 & 4 & 4 \\
+0 & 0 & 4 & -1 \\
+0 & 0 & 0 & 0
+\end{pmatrix} \Rightarrow \begin{cases}
+x_1 = \frac{4x_2}{3} + \frac{2x_3}{3} + \frac{2x_4}{3} \\
+x_2 = -\frac{4x_3}{5} - \frac{4x_4}{5} \\
+x_3 = \frac{x_4}{4} \\
+x_4 \in \mathbb{R}
+\end{cases} \Leftrightarrow \begin{cases}
+x_1 =- \frac{x_4}{2} \\
+x_2 = -x_4\\
+x_3 = \frac{x_4}{4} \\
+x_4 \in \mathbb{R}
+\end{cases} \Rightarrow v_1 = \begin{pmatrix}
+-2 \\ -4 \\ 1 \\ 4
+\end{pmatrix}$$\\
+$$\lambda = 7$$
+$$\begin{pmatrix}
+-24 & 24 & 12 & 12 \\
+-48 & 48 & 24 & 24 \\
+12 & -12 & -6 & -6 \\
+48 & -48 & -24 & -24
+\end{pmatrix} \sim \begin{pmatrix}
+-2 & 2 & 1 & 1 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix} \Rightarrow \begin{cases}
+x_1 = x_2 + \frac{x_3}{2} + \frac{x_4}{2} \\
+x_2 \in \mathbb{R} \\
+x_3 \in \mathbb{R} \\
+x_4 \in \mathbb{R} \\
+\end{cases} \Rightarrow v_2 = \begin{pmatrix}
+1 \\ 1 \\ 0 \\ 0
+\end{pmatrix} \quad v_3 = \begin{pmatrix}
+1 \\ 0 \\ 2 \\ 0
+\end{pmatrix} \quad v_4 = \begin{pmatrix}
+1 \\ 0 \\ 0 \\ 2
+\end{pmatrix}$$ \\
+
+\begin{center}
+Оператор проектирования $P_{\lambda=7} = P_{v_2} + P_{v_3} + P_{v_4}$, где каждый из $P_{v_n} = u^n(e_1|e_2|e_3|e_4)v_n$, в котором $u^n$ --- n-ая строка сопряжённого к базису $\{v_1, v_2, v_3, v_4\}$.
+\end{center}
+$$u = \begin{pmatrix}
+-2 & 2 & 1 & 1 \\
+-8 & 9 & 4 & 4 \\
+1 & -1 & 0 & -0.5 \\
+4 & -4 & -2 & -1.5
+\end{pmatrix}$$
+$$\Downarrow$$
+$$P_{v_2} = \begin{pmatrix}
+| & | & | & |\\
+u^2e_1v_2 & u^2e_2v_2 & u^2e_3v_2 & u^2e_4v_2 \\
+| & | & | & |
+\end{pmatrix} = \begin{pmatrix}
+-8 & 9 & 4 & 4 \\
+-8 & 9 & 4 & 4 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix}$$ \\
+$$P_{v_3} = \begin{pmatrix}
+| & | & | & |\\
+u^3e_1v_3 & u^3e_2v_3 & u^3e_3v_3 & u^3e_4v_3 \\
+| & | & | & |
+\end{pmatrix} = \begin{pmatrix}
+1 & -1 & 0 & -0.5 \\
+0 & 0 & 0 & 0 \\
+2 & -2 & 0 & -1 \\
+0 & 0 & 0 & 0
+\end{pmatrix} \qquad\quad P_{v_4} = \begin{pmatrix}
+| & | & | & |\\
+u^4e_1v_4 & u^4e_2v_4 & u^4e_3v_4 & u^4e_4v_4 \\
+| & | & | & |
+\end{pmatrix} = \begin{pmatrix}
+4 & -4 & -2 & -1.5 \\
+0 & 0 &0 & 0 \\
+0 & 0 &0 & 0 \\
+8 & -8 & -4 & -3
+\end{pmatrix}$$\\
+$$P_{\lambda=7} = P_{v_2} + P_{v_3} + P_{v_4} = \begin{pmatrix}
+-8 & 9 & 4 & 4 \\
+-8 & 9 & 4 & 4 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix} +  \begin{pmatrix}
+1 & -1 & 0 & -0.5 \\
+0 & 0 & 0 & 0 \\
+2 & -2 & 0 & -1 \\
+0 & 0 & 0 & 0
+\end{pmatrix} + \begin{pmatrix}
+4 & -4 & -2 & -1.5 \\
+0 & 0 &0 & 0 \\
+0 & 0 &0 & 0 \\
+8 & -8 & -4 & -3
+\end{pmatrix} = \begin{pmatrix}
+-3 & 4 & 2 & 2\\
+-8 & 9 & 4 &  4 \\
+2 & -2 & 0 & -1 \\
+8 & -8 & -4 & -3
+\end{pmatrix}$$
+\end{document}

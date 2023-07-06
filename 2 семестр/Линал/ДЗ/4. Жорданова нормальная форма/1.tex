@@ -1,0 +1,143 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=23cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\pagenumbering{gobble}
+
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{%
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}\;}
+\newcommand{\e}{\text{e}}
+\newcommand{\la}{\lambda}
+\newcommand{\shiftleft}[3]{\makebox[#1][r]{\makebox[#2][l]{#3}}}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+
+\begin{document}
+\begin{center}
+Найдём характеристический полином и, как следствие, спектр оператора:
+\end{center}
+$$\left|\begin{matrix}
+11-\la & 4 & 2 & 1 \\
+-11 & -2-\la & -3 & -2 \\
+1 & 0 & 4-\la & 1 \\
+-7 & -4 & -2 & 3-\la
+\end{matrix}\right| = \la^4-16\la^3+96\la^2-256\la+256 = (\la - 4)^4 \Rightarrow \sigma_\varphi = \left\{4^{(4)}\right\}$$ \\
+
+\begin{center}
+Найдём к собственному значению оператора собственные вектора:
+\end{center}
+$$\left(\begin{array}{cccc|c}
+7 & 4 & 2 & 1 & 0\\
+-11 & -6 & -3 & -2 & 0 \\
+1 & 0 & 0 & 1 & 0\\
+-7 & -4 & -2 & -1 & 0
+\end{array}\right) \sim \left(\begin{array}{cccc|c}
+1 & 0 & 0 & 1 & 0\\
+0 & 4 & 2 & -6 & 0\\
+-4 & -2 & -1 & -1 & 0 \\
+0 & 0 & 0 & 0 & 0
+\end{array}\right) \sim \left(\begin{array}{cccc|c}
+1 & 0 & 0 & 1 & 0\\
+0 & 2 & 1 & -3 & 0\\
+0 & -2 & -1 & 3 & 0 \\
+0 & 0 & 0 & 0 & 0
+\end{array}\right) \Rightarrow \begin{cases}
+\xi_1 = -\xi_4 \\
+\xi_2 = -\nicefrac{\xi_3}{2} +\nicefrac{3\xi_4}{2} \\
+\xi_3, \xi_4 \in \mathbb{R}
+\end{cases} \Rightarrow v_1 = \begin{pmatrix}
+0 \\ -1 \\ 2 \\ 0
+\end{pmatrix}\quad v_2 = \begin{pmatrix}
+-2 \\ 3 \\ 0 \\ 2
+\end{pmatrix}$$ \\ 
+\begin{center}
+Собственных векторов недостаточно для базиса. Перед нами оператор нескалярного типа. \\
+Найдём ещё два присоединённых вектора, чтобы дополнить собственные до базиса.
+\end{center}
+$$\left(\begin{array}{cccc|c}
+7 & 4 & 2 & 1 & 0\\
+-11 & -6 & -3 & -2 & -1 \\
+1 & 0 & 0 & 1 & 2\\
+-7 & -4 & -2 & -1 & 0
+\end{array}\right) \sim \left(\begin{array}{cccc|c}
+1 & 0 & 0 & 1 & 2\\
+0 & 4 & 2 & -6 & -14\\
+-4 & -2 & -1 & -1 & -1 \\
+0 & 0 & 0 & 0 & 0
+\end{array}\right) \sim \left(\begin{array}{cccc|c}
+1 & 0 & 0 & 1 & 2\\
+0 & 2 & 1 & -3 & -7\\
+0 & -2 & -1 & 3 & 7 \\
+0 & 0 & 0 & 0 & 0
+\end{array}\right) \Rightarrow \begin{cases}
+\xi_1 = -\xi_4 + 2 \\
+\xi_2 = -\nicefrac{\xi_3}{2} +\nicefrac{3\xi_4}{2} - 3.5 \\
+\xi_3, \xi_4 \in \mathbb{R}
+\end{cases} \Rightarrow u_1 = \begin{pmatrix}
+2 \\ -4 \\ 1 \\ 0
+\end{pmatrix}\quad u_2 = \begin{pmatrix}
+1 \\ -2 \\ 0 \\ 1
+\end{pmatrix}$$
+\begin{center}
+Набор векторов $\left\{v_1, u_1, u_2, v_2\right\}$ линейно зависим, потому не образовывает базис. Найдём ещё два присоединённых вектора на основе этих присоединённых.
+\end{center}
+$$\left(\begin{array}{cccc|c}
+7 & 4 & 2 & 1 & -2\\
+-11 & -6 & -3 & -2 & 3 \\
+1 & 0 & 0 & 1 & 0\\
+-7 & -4 & -2 & -1 & 2
+\end{array}\right) \sim \left(\begin{array}{cccc|c}
+0 & 4 & 2 & -6 & -2\\
+-4 & -2 & -1 & -1 & 1 \\
+1 & 0 & 0 & 1 & 0\\
+0 & 0 & 0 & 0 & 0
+\end{array}\right) \sim \left(\begin{array}{cccc|c}
+0 & 2 & 1 & -3 & -1\\
+0 & -2 & -1 & 3 & 1 \\
+1 & 0 & 0 & 1 & 0\\
+0 & 0 & 0 & 0 & 0
+\end{array}\right) \Rightarrow \begin{cases}
+\xi_1 = -\xi_4 \\
+\xi_2 \in \mathbb{R} \\
+\xi_3 = 3\xi_4 - 2\xi_2 - 1 \\
+\xi_4 \in \mathbb{R}
+\end{cases} \Rightarrow u_3 = \begin{pmatrix}
+0 \\1  \\ -3 \\ 0
+\end{pmatrix}\quad u_4 = \begin{pmatrix}
+-1 \\ 0 \\ 2 \\ 1
+\end{pmatrix}$$
+\begin{center}В базисе $T=\left\{v_1, v_2, u_3, u_4\right\}$ построим жорданову форму:
+\end{center}
+$$\mathcal{J} = \begin{pmatrix}
+4 & 0 & 0 & 0 \\
+0 & 4 & 1 & 0 \\
+0 & 0 & 4 & 1 \\
+0 & 0 & 0 & 4 \\
+\end{pmatrix}$$
+\begin{center}
+... и теперь мы можем вычислить значение функции от оператора.
+\end{center}
+$$\e^{0.5\varphi} = T\e^{0.5\mathcal{J}}T^{-1} = \begin{pmatrix}
+0 & -2 & 0 & -1 \\
+-1 & 3 & 1 & 0 \\
+2 & 0 & -3 & 2 \\
+0 & 2 & 0 & 1 
+\end{pmatrix}\begin{pmatrix}
+\e^{2} & \nicefrac{\e^{2}}{2} & \nicefrac{\e^{2}}{8} & \nicefrac{\e^{2}}{48} \\
+0 & \e^{2} & \nicefrac{\e^{2}}{2} & \nicefrac{\e^{2}}{8} \\
+0 & 0 & \e^{2} & \nicefrac{\e^{2}}{2} \\
+0 & 0 & 0 & \e^{2} \\
+\end{pmatrix} \text{ничего не получается...} =$$
+
+\end{document}

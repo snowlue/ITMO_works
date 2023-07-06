@@ -1,0 +1,80 @@
+\documentclass{article}
+\usepackage{cmap}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=14cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\pagenumbering{gobble}
+
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{%
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}\;}
+\newcommand{\e}{\text{e}}
+\newcommand{\la}{\lambda}
+\newcommand{\shiftleft}[3]{\makebox[#1][r]{\makebox[#2][l]{#3}}}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand{\at}{\biggr\rvert}
+
+\begin{document}
+\begin{center}
+    Обозначим $x_1$ и $x_2$ векторы внутри линейной оболочки и найдём $z \subset L$
+    $$\begin{cases}
+            (x_1, v) = \alpha_1 (x_1, x_1) + \alpha_2 (x_1, x_2) \\
+            (x_2, v) = \alpha_1 (x_2, x_1) + \alpha_2 (x_2, x_2)
+        \end{cases} \Leftrightarrow \left( \begin{array}{cc|c}
+                (x_1, x_1) & (x_1, x_2) & (x_1, v) \\
+                (x_2, x_1) & (x_2, x_2) & (x_2, v)
+            \end{array} \right) \Leftrightarrow \left( \begin{array}{cc|c}
+                9+36+81    & -18-90-189 & -9-54-135  \\
+                -18-90-189 & 36+225+441 & 18+135+315
+            \end{array} \right) \Leftrightarrow \left( \begin{array}{cc|c}
+                126  & -297 & -198 \\
+                -297 & 702  & 468
+            \end{array} \right) \sim$$
+    $$\sim \left( \begin{array}{cc|c}
+                14  & -33 & -22 \\
+                -11 & 78  & 52
+            \end{array} \right) \sim \left( \begin{array}{cc|c}
+                14 & -33 & -22 \\
+                3  & 45  & 30
+            \end{array} \right) \sim \left( \begin{array}{cc|c}
+                14 & -33 & -22 \\
+                1  & 15  & 10
+            \end{array} \right) \sim \left( \begin{array}{cc|c}
+                14 & -33 & -22 \\
+                14 & 210 & 140
+            \end{array} \right) \sim \left( \begin{array}{cc|c}
+                14 & -33 & -22 \\
+                0  & 243 & 162
+            \end{array} \right) \sim \left( \begin{array}{cc|c}
+                14 & -33 & -22 \\
+                0  & 3   & 2
+            \end{array} \right) \sim \left( \begin{array}{cc|c}
+                14 & 0 & 0 \\
+                0  & 3 & 2
+            \end{array} \right) \Rightarrow$$
+    $$\Rightarrow \begin{cases}
+            \alpha_1 = 0 \\
+            \alpha_2 = \frac{2}{3}
+        \end{cases} \Rightarrow z = \frac{2}{3}x_2 = \begin{pmatrix}
+            4 \\ -10 \\ -14
+        \end{pmatrix}$$
+    Задача сводится к нахождению угла между $v$ и $z$:
+    $$\cos\varphi = \frac{|z^2|}{|v^2|} = \frac{\sqrt{16+100+196}}{\sqrt{9+81+225}} = \frac{2\sqrt{78}}{3\sqrt{35}} \Rightarrow \varphi = \arccos\frac{2\sqrt{78}}{3\sqrt{35}} \approx 0.1$$
+\end{center}
+\end{document}

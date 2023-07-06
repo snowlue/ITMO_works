@@ -1,0 +1,247 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=35cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\pagenumbering{gobble}
+
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{%
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}\;}
+\newcommand{\e}{\text{e}}
+\newcommand{\la}{\lambda}
+\newcommand{\shiftleft}[3]{\makebox[#1][r]{\makebox[#2][l]{#3}}}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+
+\begin{document}
+\begin{center}
+Найдём характеристический полином и, как следствие, спектр оператора:
+\end{center}
+$$\left|\begin{matrix}
+19-\la & 8 & 4 & 2 & 1 \\
+-1 & 3-\la & 0 & 0 & 0 \\
+-27 & -14 & -4-\la & -3 & -2 \\
+-31 & -16 & -8 & -2-\la & -1 \\
+-47 & -24 & -12 & -6 & -1-\la
+\end{matrix}\right| = -\la^5+15\la^4-88\la^3+252\la^2-352\la+192 = -(\la-4)^{2}(\la-3)(\la-2)^{2} \Rightarrow \sigma_\varphi = \left\{2^{(2)}, 4^{(2)}, 3^{(1)}\right\}$$ \\
+\begin{center}
+Найдём к собственным значениям оператора собственные вектора:
+\end{center}
+$$\la = 2$$
+$$\left(\begin{matrix}
+17 & 8 & 4 & 2 & 1 \\
+-1 & 1 & 0 & 0 & 0 \\
+-27 & -14 & -6 & -3 & -2 \\
+-31 & -16 & -8 & -4 & -1 \\
+-47 & -24 & -12 & -6 & -3
+\end{matrix}\right) \sim \left(\begin{matrix}
+17 & 8 & 4 & 2 & 1 \\
+-1 & 1 & 0 & 0 & 0 \\
+10 & 6 & 2 & 1 & 1 \\
+3 & 0 & 0 & 0 & 1 \\
+4 & 0 & 0 & 0 & 0
+\end{matrix}\right) \sim \left(\begin{matrix}
+1 & 0 & 0 & 0 & 0 \\
+0 & 8 & 4 & 2 & 1 \\
+0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 2 & 1 & 1 \\
+0 & 0 & 0 & 0 & 1 \\
+\end{matrix}\right) \sim \left(\begin{matrix}
+1 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 2 & 1 & 1 \\
+0 & 0 & 0 & 0 & -1 \\
+0 & 0 & 0 & 0 & 1 \\
+\end{matrix}\right) \Rightarrow \begin{cases}
+\xi_1 = 0 \\ \xi_2 = 0 \\ \xi_3 = -\nicefrac{\xi_4}{2} \\ \xi_4 \in \mathbb{R} \\ \xi_5 = 0
+\end{cases} \Rightarrow v_1 = \begin{pmatrix}
+0 \\ 0 \\ -1 \\ 2 \\ 0
+\end{pmatrix}$$
+$$\la = 4$$
+$$\left(\begin{matrix}
+15 & 8 & 4 & 2 & 1 \\
+-1 & -1 & 0 & 0 & 0 \\
+-27 & -14 & -8 & -3 & -2 \\
+-31 & -16 & -8 & -6 & -1 \\
+-47 & -24 & -12 & -6 & -5 \\
+\end{matrix}\right) \sim \left(\begin{matrix}
+15 & 8 & 4 & 2 & 1 \\
+-1 & -1 & 0 & 0 & 0 \\
+3 & 2 & 0 & 1 & 0 \\
+-1 & 0 & 0 & -2 & 1 \\
+-2 & 0 & 0 & 0 & -2 \\
+\end{matrix}\right) \sim \left(\begin{matrix}
+0 & 0 & 4 & -5 & 1 \\
+1 & 1 & 0 & 0 & 0 \\
+1 & 0 & 0 & 1 & 0 \\
+-2 & 0 & 0 & -2 & 0 \\
+1 & 0 & 0 & 0 & 1 \\
+\end{matrix}\right) \sim \left(\begin{matrix}
+1 & 1 & 0 & 0 & 0 \\
+0 & 1 & 0 & -1 & 0 \\
+0 & 0 & 4 & -5 & 1 \\
+0 & 0 & 0 & -1 & 1 \\
+0 & 0 & 0 & 0 & 0 \\
+\end{matrix}\right) \Rightarrow \begin{cases}
+\xi_1 = -\xi_5 \\
+\xi_2 = \xi_5 \\
+\xi_3 = \xi_5 \\
+\xi_4 = \xi_5 \\
+\xi_5 \in \mathbb{R}
+\end{cases} \Rightarrow v_2 = \begin{pmatrix}
+-1 \\ 1 \\ 1 \\ 1 \\ 1
+\end{pmatrix}$$
+
+$$\la = 3$$
+$$\left(\begin{matrix}
+16 & 8 & 4 & 2 & 1 \\
+-1 & 0 & 0 & 0 & 0 \\
+-27 & -14 & -7 & -3 & -2 \\
+-31 & -16 & -8 & -5 & -1 \\
+-47 & -24 & -12 & -6 & -4 \\
+\end{matrix}\right) \sim \left(\begin{matrix}
+1 & 0 & 0 & 0 & 0 \\
+16 & 8 & 4 & 2 & 1 \\
+5 & 2 & 1 & 1 & 0 \\
+1 & 0 & 0 & -1 & 1 \\
+1 & 0 & 0 & 0 & -1 \\
+\end{matrix}\right) \sim \left(\begin{matrix}
+1 & 0 & 0 & 0 & 0 \\
+0 & 2 & 1 & -1 & 1 \\
+0 & 2 & 1 & 1 & 0 \\
+0 & 0 & 0 & -1 & 1 \\
+0 & 0 & 0 & 0 & -1 \\
+\end{matrix}\right) \sim \left(\begin{matrix}
+1 & 0 & 0 & 0 & 0 \\
+0 & 2 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 1 \\
+\end{matrix}\right) \Rightarrow \begin{cases}
+\xi_1 = 0 \\ \xi_2 = -\frac{\xi_3}{2} \\ \xi_3 \in \mathbb{R} \\ \xi_4 = 0 \\ \xi_5 = 0
+\end{cases} \Rightarrow v_3 = \begin{pmatrix}
+0 \\ -1 \\ 2 \\ 0 \\ 0
+\end{pmatrix}$$ \\
+\begin{center}
+Собственных векторов недостаточно для базиса. Перед нами оператор нескалярного типа. \\
+Найдём к $v_1$ и $v_2$ ещё два присоединённых вектора, чтобы дополнить собственные до базиса.
+\end{center}
+$$\left(\begin{array}{ccccc|c}
+17 & 8 & 4 & 2 & 1 & 0\\
+-1 & 1 & 0 & 0 & 0 & 0\\
+-27 & -14 & -6 & -3 & -2 & -1 \\
+-31 & -16 & -8 & -4 & -1 & 2\\
+-47 & -24 & -12 & -6 & -3 & 0
+\end{array}\right) \sim \left(\begin{array}{ccccc|c}
+17 & 8 & 4 & 2 & 1 & 0\\
+-1 & 1 & 0 & 0 & 0 & 0\\
+10 & 6 & 2 & 1 & 1 & 1 \\
+3 & 0 & 0 & 0 & 1 & 2\\
+4 & 0 & 0 & 0 & 0 & 0
+\end{array}\right) \sim \left(\begin{array}{ccccc|c}
+1 & 0 & 0 & 0 & 0 & 0\\
+0 & 1 & 0 & 0 & 0 & 0\\
+0 & 0 & 2 & 1 & 0 & -1\\
+0 & 0 & 0 & 0 & 1 & 2 \\
+0 & 0 & 0 & 0 & 1 & 2\\
+\end{array}\right) \Rightarrow \begin{cases}
+\xi_1 = 0 \\ \xi_2 = 0 \\ \xi_3 = -\nicefrac{\xi_4}{2} - 0.5 \\ \xi_4 \in \mathbb{R} \\ \xi_5 = 2
+\end{cases} \Rightarrow u_1 = \begin{pmatrix}
+0 \\ 0 \\ -1 \\ 1 \\ 2
+\end{pmatrix}$$
+$$\left(\begin{array}{ccccc|c}
+15 & 8 & 4 & 2 & 1 & -1\\
+-1 & -1 & 0 & 0 & 0 & 1\\
+-27 & -14 & -8 & -3 & -2 & 1 \\
+-31 & -16 & -8 & -6 & -1 & 1\\
+-47 & -24 & -12 & -6 & -5 & 1\\
+\end{array}\right) \sim \left(\begin{array}{ccccc|c}
+15 & 8 & 4 & 2 & 1 & -1\\
+1 & 1 & 0 & 0 & 0 & -1\\
+3 & 2 & 0 & 1 & 0 & -1 \\
+-1 & 0 & 0 & -2 & 1 & -1\\
+-2 & 0 & 0 & 0 & -2 & -2\\
+\end{array}\right) \sim \left(\begin{array}{ccccc|c}
+1 & 0 & 0 & 0 & 1 & 1 \\
+0 & 1 & 0 & 0 & -1 & -2\\
+0 & 0 & 4 & 0 & -4 & 0\\
+0 & 0 & 0 & -1 & 1 & 0\\
+0 & 0 & 0 & 2 & -2 & 0\\
+\end{array}\right) \Rightarrow \begin{cases}
+\xi_1 = -\xi_5 + 1 \\
+\xi_2 = \xi_5 - 2 \\
+\xi_3 = \xi_5 \\
+\xi_4 = \xi_5 \\
+\xi_5 \in \mathbb{R}
+\end{cases} \Rightarrow u_2 = \begin{pmatrix}
+0 \\ -1 \\ 1 \\ 1 \\ 1
+\end{pmatrix}$$ \\
+\begin{center}
+В базисе $T=\left\{v_1, u_1, v_2, u_2, v_3\right\}$ жорданова форма оператора будет выглядеть так:
+\end{center}
+$$\mathcal{J}_\varphi = \begin{pmatrix}
+2 & 1 & 0 & 0 & 0 \\
+0 & 2 & 0 & 0 & 0 \\
+0 & 0 & 4 & 1 & 0 \\
+0 & 0 & 0 & 4 & 0 \\
+0 & 0 & 0 & 0 & 3 \\
+\end{pmatrix}$$
+\begin{center}
+Тогда значение функции от оператора $f(\varphi) = \e^{0.5\varphi}$ вычисляется следующим образом:
+\end{center}
+$$f(\varphi) = Tf(\mathcal{J_\varphi})T^{-1} = \begin{pmatrix}
+0 & 0 & -1 & 0 & 0 \\
+0 & 0 & 1 & -1 & -1 \\
+-1 & -1 & 1 & 1 & 2 \\
+2 & 1 & 1 & 1 & 0 \\
+0 & 2 & 1 & 1 & 0 \\
+\end{pmatrix}\times\begin{pmatrix}
+\e & 0.5\e & 0 & 0 & 0 \\
+0 & \e & 0 & 0 & 0 \\
+0 & 0 & \e^2 & 0.5\e^2 & 0 \\
+0 & 0 & 0 & \e^2 & 0 \\
+0 & 0 & 0 & 0 & \e^{1.5} \\
+\end{pmatrix}\times\begin{pmatrix}
+4 & 2 & 1 & 1 & 0 \\
+8 & 4 & 2 & 1 & 1 \\
+-1 & 0 & 0 & 0 & 0 \\
+-15 & -8 & -4 & -2 & -1 \\
+14 & 7 & 4 & 2 & 1
+\end{pmatrix} = \begin{pmatrix}
+0 & 0 & -\e^2 & -0.5\e^2 & 0 \\
+0 & 0 & \e^2 & -0.5\e^2 & -\e^{1.5} \\
+-\e & -1.5\e & \e^2 & 1.5\e^2 & 2\e^{1.5} \\
+2\e & 2\e & \e^2 & 1.5\e^2 & 0 \\
+0 & 2\e & \e^2 & 1.5\e^2 & 0
+\end{pmatrix}\times$$
+$$\times \begin{pmatrix}
+4 & 2 & 1 & 1 & 0 \\
+8 & 4 & 2 & 1 & 1 \\
+-1 & 0 & 0 & 0 & 0 \\
+-15 & -8 & -4 & -2 & -1 \\
+14 & 7 & 4 & 2 & 1
+\end{pmatrix} = \left(\begin{matrix}
+8.5\e^2 & 4\e^2 & 2\e^2 & \e^2 & 0.5\e^2 \\
+6.5\e^2-14\e^{1.5} & 4\e^2-7\e^{1.5} & 2(\e^2-2\e^{1.5}) & \e^2-2\e^{1.5} & 0.5\e^2-\e^{1.5} \\
+28\e^{1.5}-23.5\e^2-16\e & 2(7\e^{1.5}-6\e^2-4\e) & 2(4\e^{1.5}-3\e^2-2\e) & 4\e^{1.5}-3\e^2-2.5\e & 2\e^{1.5}-1.5\e^2-1.5\e \\
+24\e-23.5\e^2 & 12(\e-\e^2) & 6(\e-\e^2) & 4\e-3\e^2 & 2\e-1.5\e^2 \\
+16\e-23.5\e^2 & 4(2\e-3\e^2) & 2(2\e-3\e^2) & 2\e-3\e^2 & 2\e-1.5\e^2
+\end{matrix}\right) \approx$$
+$$\approx \begin{pmatrix}
+62.81 & 29.56 & 14.78 & 7.39 & 3.69 \\
+-14.71 & -1.82 & -3.15 & -1.57 & -0.79 \\
+-91.65 & -47.67 & -19.35 & -11.04 & -6.20 \\
+-108.40 & -56.05 & -28.02 & -11.29 & -5.65 \\
+-130.15 & -66.92 & -33.46 & -16.73 & -5.65
+\end{pmatrix}$$
+\end{document}

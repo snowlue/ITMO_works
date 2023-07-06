@@ -1,0 +1,84 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=14cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\pagenumbering{gobble}
+
+\begin{document}
+\begin{align*}
+\zeta = 3\varphi^4\psi^{-1} + 2\varphi^{-1} + 2\psi\varphi &= 3\cdot\begin{pmatrix}
+1 & -2 & -1 \\
+-2 & 5 & 3 \\
+1 & -3 & -1
+\end{pmatrix}^4\times\begin{pmatrix}
+1 & -1 & -1 \\
+-1 & 2 & 0 \\
+3 & -5 & 0
+\end{pmatrix}^{-1} + 2\cdot\begin{pmatrix}
+1 & -2 & -1 \\
+-2 & 5 & 3 \\
+1 & -3 & -1
+\end{pmatrix}^{-1} + 2 \cdot \begin{pmatrix}
+1 & -1 & -1 \\
+-1 & 2 & 0 \\
+3 & -5 & 0
+\end{pmatrix} \times \begin{pmatrix}
+1 & -2 & -1 \\
+-2 & 5 & 3 \\
+1 & -3 & -1
+\end{pmatrix} = \\
+&= 3\cdot\begin{pmatrix}
+61 & -132 & -96 \\
+-132 & 285 & 208 \\
+96 & -208 & -151
+\end{pmatrix}\times\begin{pmatrix}
+0 & 5 & 2 \\
+0 & 3 & 1 \\
+-1 & -2 & 1
+\end{pmatrix} + 2 \cdot \begin{pmatrix}
+4 & 1 & -1 \\
+1 & 0 & -1 \\
+1 & 1 & 1
+\end{pmatrix} + \begin{pmatrix}
+2 & -2 & -2 \\
+-2 & 4 & 0 \\
+6 & -10 & 0
+\end{pmatrix} \times \begin{pmatrix}
+1 & -2 & -1 \\
+-2 & 5 & 3 \\
+1 & -3 & -1
+\end{pmatrix} =\\
+&= \begin{pmatrix}
+183 & -396 & -288 \\ -396 & 855 & 624 \\ 288 & -624 & -453 
+\end{pmatrix}\times\begin{pmatrix}
+0 & 5 & 2 \\
+0 & 3 & 1 \\
+-1 & -2 & 1
+\end{pmatrix} + \begin{pmatrix}
+8 & 2 & -2 \\
+2 & 0 & -2 \\
+2 & 2 & 2
+\end{pmatrix} + \begin{pmatrix}
+4 & -8 & -6 \\
+-10 & 24 & 14 \\
+26 & -62 & -36
+\end{pmatrix} = \\
+&= \begin{pmatrix}
+288 & -849 & -318 \\ -624 & 1833 & 687 \\ 453 & -1338 & 501
+\end{pmatrix} + \begin{pmatrix}
+12 & -6 & -8 \\ -8 & 24 & 12 \\ 28 & -60 & -34
+\end{pmatrix} =\\
+&= \begin{tabular}{|c|}
+\hline \\ [-1ex]
+\begin{pmatrix}
+300 & -855 & -326 \\ -632 & 1857 & 699 \\ 481 & -1398 & -535
+\end{pmatrix} \\[4.5ex]
+\hline
+\end{tabular}
+\end{align*}
+\end{document}

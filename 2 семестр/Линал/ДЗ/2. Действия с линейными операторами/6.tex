@@ -1,0 +1,50 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=14cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\pagenumbering{gobble}
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{%
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}\;}
+
+\begin{document}
+\begin{center}
+Получим решение воздействием оператора на вектора линейной оболочки и нахождением базиса из получившихся векторов.
+$$\begin{pmatrix}
+-6 & 15 & 6 & 18 & -9 \\ 12 & -30 & -12 & -36 & 18 \\ 3 & -6 & -3 & -9 & 3
+\end{pmatrix}\times \begin{pmatrix}
+-3 \\ 7 \\ -8 \\ -15 \\ -13
+\end{pmatrix} = \begin{pmatrix}
+-78 & 156 & 69
+\end{pmatrix}^{T}$$
+$$\begin{pmatrix}
+-6 & 15 & 6 & 18 & -9 \\ 12 & -30 & -12 & -36 & 18 \\ 3 & -6 & -3 & -9 & 3
+\end{pmatrix}\times \begin{pmatrix}
+-1 \\ 2 \\ -2 \\ -4 \\ -3
+\end{pmatrix} = \begin{pmatrix}
+-21 & 42 & 18
+\end{pmatrix}^{T}$$
+$$\begin{pmatrix}
+-6 & 15 & 6 & 18 & -9 \\ 12 & -30 & -12 & -36 & 18 \\ 3 & -6 & -3 & -9 & 3
+\end{pmatrix}\times \begin{pmatrix}
+2 \\ -5 \\ 5 \\ 10 \\ 9
+\end{pmatrix} = \begin{pmatrix}
+42 & -84 & -42
+\end{pmatrix}^{T}$$ \\
+$$\begin{pmatrix}
+-78 & 156 & 69 \\ -21 & 42 & 18 \\ 42 & -84 & -42
+\end{pmatrix} \sim \begin{pmatrix}
+-26 & 52 & 23 \\ -7 & 14 & 6 \\ 1 & -2 & -1
+\end{pmatrix} \sim \begin{pmatrix}
+26 & 52 & -23 \\ 0 & 0 & 1 \\ 0 & 0 & 0
+\end{pmatrix}$$
+\end{center}
+\end{document}

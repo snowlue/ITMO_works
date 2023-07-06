@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=25cm, paperheight=14cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\pagenumbering{gobble}
+
+\begin{document}
+\noindent$$\left(\begin{array}{llll|llll}
+1 & 1^{-1} & 1^{-1} & 0^{+1} & 1 & 0 & 0^{-1} & 0 \\
+0 & 1 & 0 & 1 & 0 & 1 & 0 & 0 \\
+0 & 1 & 1 & -1 & 0 & 0 & 1 & 0 \\
+-2^{+2} & -1^{+2} & -1^{+2} & 0 & 0^{+2} & 0 & 0 & 1 \\
+\end{array}\right) \sim
+\left(\begin{array}{llll|llll}
+1 & 0 & 0 & 1 & 1 & 0 & -1 & 0 \\
+0 & 1 & 0 & 1 & 0 & 1 & 0 & 0 \\
+0 & 1 & 1 & -1 & 0 & 0 & 1 & 0 \\
+0 & 1^{-1} & 1^{-1} & 0^{+1} & 2 & 0 & 0^{-1} & 1 \\
+\end{array}\right) \sim
+\left(\begin{array}{llll|llll}
+1 & 0 & 0 & 1^{-1} & 1^{-2} & 0 & -1^{+1} & 0^{-1} \\
+0 & 1 & 0 & 1^{-1} & 0^{-2} & 1 & 0^{+1} & 0^{-1} \\
+0 & 1 & 1 & -1^{+1} & 0^{+2} & 0 & 1^{-1} & 0^{+1} \\
+0 & 0 & 0 & 1 & 2 & 0 & -1 & 1 \\
+\end{array}\right) \sim$$ \\
+$$\sim \left(\begin{array}{llll|llll}
+1 & 0 & 0 & 0 & -1 & 0 & 0 & -1 \\
+0 & 1 & 0 & 0 & -2 & 1 & 1 & -1 \\
+0 & 1^{-1} & 1 & 0 & 2^{+2} & 0^{-1} & 0^{-1} & 1^{+1} \\
+0 & 0 & 0 & 1 & 2 & 0 & -1 & 1 \\
+\end{array}\right) \sim
+\left(\begin{array}{rrrr|rrrr}
+1 & 0 & 0 & 0 & -1 & 0 & 0 & -1 \\
+0 & 1 & 0 & 0 & -2 & 1 & 1 & -1 \\
+0 & 0 & 1 & 0 & 4 & -1 & -1 & 2 \\
+0 & 0 & 0 & 1 & 2 & 0 & -1 & 1 \\
+\end{array}\right)$$
+\begin{flushright}
+Ответ: $e_1 = \left[\begin{array}{r}-1\\-2\\4\\2\\\end{array}\right],
+e_2 = \left[\begin{array}{r}0\\1\\-1\\0\\\end{array}\right],
+e_3 = \left[\begin{array}{r}0\\1\\-1\\-1\\\end{array}\right],
+e_4 = \left[\begin{array}{r}-1\\-1\\2\\1\\\end{array}\right]$
+\end{flushright}
+\end{document}

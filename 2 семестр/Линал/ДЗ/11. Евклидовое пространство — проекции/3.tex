@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{cmap}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=14cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\pagenumbering{gobble}
+
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{%
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}\;}
+\newcommand{\e}{\text{e}}
+\newcommand{\la}{\lambda}
+\newcommand{\shiftleft}[3]{\makebox[#1][r]{\makebox[#2][l]{#3}}}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand{\at}{\biggr\rvert}
+
+\begin{document}
+\begin{center}
+    В рамках линейной оболочки понадобится ортогонализировать второй вектор, чтобы векторы были перпендикулярны в одной плоскости:
+    $$e_1 = l_1 = \begin{pmatrix}
+        -2 \\ 5 \\ -7
+    \end{pmatrix}\qquad
+    e_2 = l_2 - \frac{e_1^{T}Gl_2}{e_1^TGe_1}e_1 = \begin{pmatrix}
+        -1 \\ 2 \\ -2
+    \end{pmatrix} - \frac{146}{630}\begin{pmatrix}
+        -2 \\ 5 \\ -7
+    \end{pmatrix} = \begin{pmatrix}
+        \nicefrac{-169}{315} \\ \nicefrac{53}{63} \\ \nicefrac{-17}{45}
+    \end{pmatrix}$$
+    Найдём ортогональную проекцию:
+    $$
+        y_L = \frac{e_1^{T}Gy}{e_1^TGe_1}e_1 +  \frac{e_2^{T}Gy}{e_2^TGe_2}e_2 = \frac{-478}{630}\begin{pmatrix}
+            -2 \\ 5 \\ -7
+        \end{pmatrix} + \frac{\nicefrac{-71}{315}}{\nicefrac{52}{315}}\begin{pmatrix}
+            \nicefrac{-169}{315} \\ \nicefrac{53}{63} \\ \nicefrac{-17}{45}
+        \end{pmatrix} = \begin{pmatrix}
+            \nicefrac{9}{4} \\ \nicefrac{-257}{52} \\ \nicefrac{303}{52}
+        \end{pmatrix}
+    $$
+\end{center}
+\end{document}

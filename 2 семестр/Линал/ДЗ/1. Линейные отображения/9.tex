@@ -1,0 +1,20 @@
+\documentclass{article}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=21cm, paperheight=14cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\pagenumbering{gobble}
+
+\begin{document}
+\begin{center}
+Базис ядра оператора с заданной матрицей определяется как ФСР однородной системы в матрице оператора:
+\end{center}
+\noindent$$\left(\begin{array}{llll}1 & 1 & 0 & -2 \\ -1 & 0 & 0 & 1 \\ 1 & 1 & 0 & -2 \\ 2^{-1} & 1 & 0 & -3^{+1}\end{array}\right) \sim \left(\begin{array}{rrrr}1 & 1 & 0 & -2 \\ -1 & 0 & 0 & 1 \\ 1 & 1 & 0 & -2 \\ 1 & 1 & 0 & -2\end{array}\right) \sim \left(\begin{array}{lrrl}-1 & 0 & 0 & 1 \\ 1^{-1} & 1 & 0 & -2^{+1} \\0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0\end{array}\right) \Leftrightarrow \begin{cases}
+\xi^1= \xi^4 \\
+\xi^2 =  \xi^4 \\
+\xi^3, \xi^4 \in \mathbb{R}
+\end{cases} \Rightarrow v_1 = \begin{pmatrix}1 \\ 1 \\ 0 \\ 1\end{pmatrix};\; v_2 = \begin{pmatrix}0 \\ 0 \\ 1 \\ 0\end{pmatrix}$$
+\end{document}

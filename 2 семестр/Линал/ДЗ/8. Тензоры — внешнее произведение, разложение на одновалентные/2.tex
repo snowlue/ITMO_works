@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=31cm, paperheight=14cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\pagenumbering{gobble}
+
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{%
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}\;}
+\newcommand{\e}{\text{e}}
+\newcommand{\la}{\lambda}
+\newcommand{\shiftleft}[3]{\makebox[#1][r]{\makebox[#2][l]{#3}}}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand{\at}{\biggr\rvert}
+\newcommand{\ot}{\otimes}
+
+\begin{document}
+\begin{center}
+$a^{11}_{11} + a^{21}_{11} + a^{12}_{11} + a^{22}_{11} + a^{11}_{21} + a^{21}_{21} + a^{12}_{21} + a^{22}_{21} = -24e_1\ot e_1 \ot f^1 \ot f^1 -12e_2\ot e_1 \ot f^1 \ot f^1 +48e_1\ot e_2 \ot f^1 \ot f^1 + 24e_2\ot e_2 \ot f^1 \ot f^1 + 8e_1\ot e_1 \ot f^2 \ot f^1 + 4e_2\ot e_1 \ot f^2 \ot f^1 - 16e_1\ot e_2 \ot f^2 \ot f^1 - 8e_2\ot e_2 \ot f^2 \ot f^1=$ \\
+$= 4\left(-6e_1\ot e_1 \ot f^1 -3e_2\ot e_1 \ot f^1 +12e_1\ot e_2 \ot f^1 + 6e_2\ot e_2 \ot f^1 + 2e_1\ot e_1 \ot f^2 + e_2\ot e_1 \ot f^2 - 4e_1\ot e_2 \ot f^2 - 2e_2\ot e_2 \ot f^2\right)\ot f^1 = $\\
+$= 4\left(3\left(-2e_1\ot e_1 -e_2\ot e_1 +4e_1\ot e_2 + 2e_2\ot e_2\right)\ot f^1 - \left(-2e_1\ot e_1 - e_2\ot e_1 + 4e_1\ot e_2 + 2e_2\ot e_2\right)\ot f^2\right)\ot f^1 = 4\left(-2e_1\ot e_1 -e_2\ot e_1 +4e_1\ot e_2 + 2e_2\ot e_2\right)\left(3f^1 - f^2\right)\ot f^1 = $\\
+$= 4\left(-\left(2e_1 +e_2\right)\ot e_1 +2\left(2e_1 + e_2\right)\ot e_2\right)\left(3f^1 - f^2\right)\ot f^1 = 4\left(2e_1 +e_2\right)\left(-e_1 +2e_2\right)\left(3f^1 - f^2\right)\ot f^1$\\ \, \\
+
+$a^{11}_{12} + a^{21}_{12} + a^{12}_{12} + a^{22}_{12} + a^{11}_{22} + a^{21}_{22} + a^{12}_{22} + a^{22}_{22} = -12e_1\ot e_1 \ot f^1 \ot f^2 -6e_2\ot e_1 \ot f^1 \ot f^2 +24e_1\ot e_2 \ot f^1 \ot f^2 + 12e_2\ot e_2 \ot f^1 \ot f^2 + 4e_1\ot e_1 \ot f^2 \ot f^2 + 2e_2\ot e_1 \ot f^2 \ot f^2 - 8e_1\ot e_2 \ot f^2 \ot f^2 - 4e_2\ot e_2 \ot f^2 \ot f^2= $ \\
+$= 2\left(-6e_1\ot e_1 \ot f^1 -3e_2\ot e_1 \ot f^1 +12e_1\ot e_2 \ot f^1 + 6e_2\ot e_2 \ot f^1 + 2e_1\ot e_1 \ot f^2 + e_2\ot e_1 \ot f^2 - 4e_1\ot e_2 \ot f^2 - 2e_2\ot e_2 \ot f^2\right)\ot f^2 = $\\
+$= 2\left(-3\left(2e_1\ot e_1 + e_2\ot e_1 -4e_1\ot e_2 - 2e_2\ot e_2\right)\ot f^1 + \left(2e_1\ot e_1 + e_2\ot e_1 - 4e_1\ot e_2 - 2e_2\ot e_2\right)\ot f^2\right)\ot f^2 = -2\left(2e_1\ot e_1 + e_2\ot e_1 -4e_1\ot e_2 - 2e_2\ot e_2\right)\left(-3f^1 + f^2\right)\ot f^2 = $\\
+$= -2\left(-\left(2e_1 +e_2\right)\ot e_1 +2\left(2e_1 + e_2\right)\ot e_2\right)\left(-3f^1 + f^2\right)\ot f^2 = 2\left(2e_1 +e_2\right)\left(-e_1 +2e_2\right)\left(3f^1 - f^2\right)\ot f^2$ \\ \, \\
+
+Результирующее разложение тензора: \\
+$a = 4\left(2e_1 +e_2\right)\left(-e_1 +2e_2\right)\left(3f^1 - f^2\right)\ot f^1 + 2\left(2e_1 +e_2\right)\left(-e_1 +2e_2\right)\left(3f^1 - f^2\right)\ot f^2 = \left(2e_1 +e_2\right)\left(-e_1 +2e_2\right)\left(3f^1 - f^2\right)\left(4f^1 +  2f^2\right)$
+\end{center}
+\end{document}

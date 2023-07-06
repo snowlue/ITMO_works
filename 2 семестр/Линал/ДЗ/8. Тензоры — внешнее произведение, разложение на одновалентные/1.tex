@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=30cm, paperheight=14cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\pagenumbering{gobble}
+
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{%
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}\;}
+\newcommand{\e}{\text{e}}
+\newcommand{\la}{\lambda}
+\newcommand{\shiftleft}[3]{\makebox[#1][r]{\makebox[#2][l]{#3}}}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand{\at}{\biggr\rvert}
+\newcommand{\ot}{\otimes}
+
+\begin{document}
+\begin{center}
+$a^{1}_{11} + a^{2}_{11} + a^{3}_{11} + a^{1}_{21} + a^{2}_{21} + a^{3}_{21} + a^{1}_{31} + a^{2}_{31} + a^{3}_{31} = -8e_1\ot f^1 \ot f^1 - 8e_2\ot f^1 \ot f^1 + 2e_3\ot f^1 \ot f^1 - 24e_1\ot f^2 \ot f^1 - 24e_2\ot f^2 \ot f^1 + 6e_3\ot f^2 \ot f^1 + 24e_1\ot f^3 \ot f^1 + 24e_2\ot f^3 \ot f^1 - 6e_3\ot f^3 \ot f^1 =$ \\
+$= 2\left(-\left(4e_1 + 4e_2 - e_3\right)\ot f^1 - 3\left(4e_1 - 4e_2 + e_3\right)\ot f^2 + 3\left(4e_1 + 4e_2 - e_3\right)\ot f^3 \right)\ot f^1 = 2\left(4e_1 + 4e_2 - e_3\right)\left(-f^1 - 3f^2 + 3f^3 \right)\ot f^1$ \\ \, \\
+Второй слой идентичен первому, поэтому...\\
+$a^{1}_{12} + a^{2}_{12} + a^{3}_{12} + a^{1}_{22} + a^{2}_{22} + a^{3}_{22} + a^{1}_{32} + a^{2}_{32} + a^{3}_{32} = -8e_1\ot f^1 \ot f^2 - 8e_2\ot f^1 \ot f^2 + 2e_3\ot f^1 \ot f^2 - 24e_1\ot f^2 \ot f^2 - 24e_2\ot f^2 \ot f^2 + 6e_3\ot f^2 \ot f^2 + 24e_1\ot f^3 \ot f^2 + 24e_2\ot f^3 \ot f^2 - 6e_3\ot f^3 \ot f^2 =$ \\
+$= 2\left(-\left(4e_1 + 4e_2 - e_3\right)\ot f^1 - 3\left(4e_1 - 4e_2 + e_3\right)\ot f^2 + 3\left(4e_1 + 4e_2 - e_3\right)\ot f^3 \right)\ot f^2 = 2\left(4e_1 + 4e_2 - e_3\right)\left(-f^1 - 3f^2 + 3f^3 \right)\ot f^2$ \\ \, \\
+$a^{1}_{13} + a^{2}_{13} + a^{3}_{13} + a^{1}_{23} + a^{2}_{23} + a^{3}_{23} + a^{1}_{33} + a^{2}_{33} + a^{3}_{33} = 12e_1\ot f^1 \ot f^3 + 12e_2\ot f^1 \ot f^3 - 3e_3\ot f^1 \ot f^3 + 36e_1\ot f^2 \ot f^3 + 36e_2\ot f^2 \ot f^3 - 9e_3\ot f^2 \ot f^3 - 36e_1\ot f^3 \ot f^3 - 36e_2\ot f^3 \ot f^3 + 9e_3\ot f^3 \ot f^3 =$ \\
+$= 3\left(\left(4e_1 + 4e_2 - e_3\right)\ot f^1 + 3\left(4e_1 + 4e_2 - e_3\right)\ot f^2 -3\left(4e_1 + 4e_2 -e_3\right)\ot f^3\right) \ot f^3 = -3\left(4e_1 + 4e_2 - e_3\right)\left(-f^1 - 3f^2 + 3f^3\right) \ot f^3$ \\ \, \\
+Тогда результирующее разложение: \\
+$a = 2\left(4e_1 + 4e_2 - e_3\right)\left(-f^1 - 3f^2 + 3f^3 \right)\ot f^1 + 2\left(4e_1 + 4e_2 - e_3\right)\left(-f^1 - 3f^2 + 3f^3 \right)\ot f^2 -3\left(4e_1 + 4e_2 - e_3\right)\left(-f^1 - 3f^2 + 3f^3\right) \ot f^3 = \squared{$\left(4e_1 + 4e_2 - e_3\right)\left(-f^1 - 3f^2 + 3f^3 \right)\left(2f^1 + 2f^2 -3f^3\right)$}$
+\end{center}
+\end{document}

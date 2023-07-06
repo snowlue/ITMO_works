@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=28cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\pagenumbering{gobble}
+\newcommand{\e}{\text{e}}
+
+\begin{document}
+\begin{center}
+Найдём собственные значения оператора:
+\end{center}
+$$\left|\begin{matrix}
+69-\lambda & 84 & -30 & 6 \\
+-73 & -95-\lambda & 36 & -4 \\
+-90.5 & -88 & 15-\lambda & -11 \\
+8.5 & -34 & 45 & 7-\lambda
+\end{matrix}\right| = 0$$
+$$\lambda^4+4\lambda^3-129\lambda^2-756\lambda = 0$$
+$$\lambda(\lambda+9)(\lambda+7)(\lambda-12)=0$$
+$$\Downarrow$$
+$$\sigma_A = \{0^{(1)},-9^{(1)}, -7^{(1)}, 12^{(1)}\}$$
+\end{document}

@@ -1,0 +1,76 @@
+\documentclass{article}
+\usepackage{cmap}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=14cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\pagenumbering{gobble}
+
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{%
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}\;}
+\newcommand{\e}{\text{e}}
+\newcommand{\la}{\lambda}
+\newcommand{\shiftleft}[3]{\makebox[#1][r]{\makebox[#2][l]{#3}}}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand{\at}{\biggr\rvert}
+
+\begin{document}
+\begin{center}
+    В рамках линейной оболочки понадобится ортогонализировать два вектора:
+    $$e_1 = l_1 = \begin{pmatrix}
+            -3 \\ 3 \\ -6 \\ 15
+        \end{pmatrix}\qquad
+        e_2 = l_2 - \frac{e_1^{T}Gl_2}{e_1^TGe_1}e_1 = \begin{pmatrix}
+            -3 \\ 3 \\ -3 \\ 9
+        \end{pmatrix} - \frac{1998}{3717}\begin{pmatrix}
+            -3 \\ 3 \\ -6 \\ 15
+        \end{pmatrix} = \begin{pmatrix}
+            \nicefrac{-573}{413} \\ \nicefrac{573}{413} \\ \nicefrac{93}{413} \\ \nicefrac{387}{413}
+        \end{pmatrix}$$
+    $$e_3 = l_3 - \frac{e_2^{T}Gl_3}{e_2^TGe_2}e_2 - \frac{e_1^{T}Gl_3}{e_1^TGe_1}e_1 = \begin{pmatrix}
+            0 \\ 6 \\ -6 \\ 15
+        \end{pmatrix} + \frac{1358}{551}\begin{pmatrix}
+            \nicefrac{-573}{413} \\ \nicefrac{573}{413} \\ \nicefrac{93}{413} \\ \nicefrac{387}{413}
+        \end{pmatrix} - \frac{4095}{3717}\begin{pmatrix}
+            -3 \\ 3 \\ -6 \\ 15
+        \end{pmatrix} = \begin{pmatrix}
+            \nicefrac{-63}{551} \\ \nicefrac{3369}{551} \\ \nicefrac{642}{551} \\ \nicefrac{432}{551}
+        \end{pmatrix}$$
+    Найдём ортогональную проекцию:
+    $$
+        y_L = \frac{e_1^{T}Gy}{e_1^TGe_1}e_1 + \frac{e_2^{T}Gy}{e_2^TGe_2}e_2 + \frac{e_3^{T}Gy}{e_3^TGe_3}e_3 = \frac{-7992}{3717}\begin{pmatrix}
+            -3 \\ 3 \\ -6 \\ 15
+        \end{pmatrix} - \frac{\nicefrac{2502}{413}}{551}\begin{pmatrix}
+            \nicefrac{-573}{413} \\ \nicefrac{573}{413} \\ \nicefrac{93}{413} \\ \nicefrac{387}{413}
+        \end{pmatrix} - \frac{\nicefrac{6714}{551}}{\nicefrac{17460}{551}}\begin{pmatrix}
+            \nicefrac{-63}{551} \\ \nicefrac{3369}{551} \\ \nicefrac{642}{551} \\ \nicefrac{432}{551}
+        \end{pmatrix} =
+    $$
+    $$
+        = \begin{pmatrix}
+            \nicefrac{593439834591}{91164013430} \\ \nicefrac{-803774950113}{91164013430} \\ \nicefrac{567505406253}{45582006715} \\ \nicefrac{-1484314508682}{45582006715}
+        \end{pmatrix} = \begin{pmatrix}
+            \text{ребят}      \\
+            \text{ну это уже} \\
+            \text{совсем}     \\
+            \text{перебор...}
+        \end{pmatrix}
+    $$
+\end{center}
+\end{document}

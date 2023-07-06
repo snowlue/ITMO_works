@@ -1,0 +1,63 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=14cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\pagenumbering{gobble}
+
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{%
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}\;}
+\newcommand{\e}{\text{e}}
+\newcommand{\la}{\lambda}
+\newcommand{\shiftleft}[3]{\makebox[#1][r]{\makebox[#2][l]{#3}}}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand{\at}{\biggr\rvert}
+
+\begin{document}
+\begin{center}
+Определим свёртку по $i$ как $b^{pk}_p = a^{1pk}_{1p} + a^{2pk}_{2p}$. \\
+Тогда свёртка по $p$ будет выглядеть как $c^k = b^{1k}_1 + b^{2k}_2 = \left (a^{11k}_{11} + a^{21k}_{21}\right ) + \left (a^{12k}_{12} + a^{22k}_{22}\right )$. \\
+Отобразим свёртку в тензорном виде:
+$$c^k = \begin{Vmatrix}
+a^{111}_{11} \\ \, \\ a^{112}_{11}
+\end{Vmatrix} + \begin{Vmatrix}
+a^{211}_{21} \\ \, \\ a^{212}_{21}
+\end{Vmatrix} + \begin{Vmatrix}
+a^{121}_{12} \\ \, \\ a^{122}_{12}
+\end{Vmatrix} + \begin{Vmatrix}
+a^{221}_{22} \\ \, \\ a^{222}_{22}
+\end{Vmatrix}$$
+Сопоставим каждому из компонентов соответствующее соотношение $4j + k - 4i - 4p$ и получим:
+$$c^k = \begin{Vmatrix}
+-3 \\ -2
+\end{Vmatrix} + \begin{Vmatrix}
+-3 \\ -2
+\end{Vmatrix} + \begin{Vmatrix}
+-7 \\ -6
+\end{Vmatrix} + \begin{Vmatrix}
+-7 \\ -6
+\end{Vmatrix} = \begin{Vmatrix}
+-6 \\ -4
+\end{Vmatrix} + \begin{Vmatrix}
+-14 \\ -12
+\end{Vmatrix} = \begin{Vmatrix}
+-20 \\ -16
+\end{Vmatrix}$$ 
+\end{center}
+\end{document}

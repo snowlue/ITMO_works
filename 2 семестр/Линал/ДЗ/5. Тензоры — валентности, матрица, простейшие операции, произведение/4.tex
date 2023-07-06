@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=14cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\pagenumbering{gobble}
+
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{%
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}\;}
+\newcommand{\e}{\text{e}}
+\newcommand{\la}{\lambda}
+\newcommand{\shiftleft}[3]{\makebox[#1][r]{\makebox[#2][l]{#3}}}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand{\at}{\biggr\rvert}
+
+\begin{document}
+\begin{center}
+Так как соотношение задано только с участием $t$, $j$ и $k$, то продуктивнее будет вычислить компоненты тензора, перебирая только эти индексы:
+$$a^{jr}_{111} = -1\qquad a^{jr}_{112} = -2\qquad a^{jr}_{121} = -3\qquad a^{jr}_{122} = -4$$
+$$a^{jr}_{211} = 1\qquad a^{jr}_{212} = 0\qquad a^{jr}_{221} = -1\qquad a^{jr}_{222} = -2$$
+В конкретном слое строки и столбцы будут содержать идентичные значения, т.к. соотношение не зависит от индексов $i$ и $j$.
+$$a^{jr}_{tki} = \begin{array}{||cc|cc||cc|cc||}
+-1 & -1 & 1 & 1 & -2 & -2 & 0 & 0 \\
+-1 & -1 & 1 & 1 & -2 & -2 & 0 & 0 \\
+\hline
+-3 & -3 & -1 & -1 & -4 & -4 & -2 & -2 \\
+-3 & -3 & -1 & -1 & -4 & -4 & -2 & -2 \\
+\end{array}$$
+\end{center}
+\end{document}

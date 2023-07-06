@@ -1,0 +1,39 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=14cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\pagenumbering{gobble}
+
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{%
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}\;}
+\newcommand{\e}{\text{e}}
+\newcommand{\la}{\lambda}
+\newcommand{\shiftleft}[3]{\makebox[#1][r]{\makebox[#2][l]{#3}}}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand{\at}{\biggr\rvert}
+
+\begin{document}
+\begin{center}
+Определим свёртку по $n$ как $b^t_t = a^{1t}_{t1} + a^{2t}_{t2} + a^{3t}_{t3}$. \\
+Тогда свёртка по $t$ будет выглядеть как $c = b^1_1 + b^2_2 + b^3_3 = \left (a^{11}_{11} + a^{21}_{12} + a^{31}_{13}\right ) + \left (a^{12}_{21} + a^{22}_{22} + a^{32}_{23}\right ) + \left (a^{13}_{31} + a^{23}_{32} + a^{33}_{33}\right )$. \\
+Сопоставим каждому из компонентов соответствующее значение исходного тензора и получим:
+$$c = (1 + 0 + 0) + (-4 - 2 + 1) + (2 + 2 - 1) = 1 - 5 + 3 = \Vert-1\Vert$$ 
+\end{center}
+\end{document}

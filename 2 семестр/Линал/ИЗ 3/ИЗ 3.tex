@@ -1,0 +1,419 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a4paper, top=2cm, bottom=2cm, left=0.9cm, right=0.9cm, marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{tikz}
+
+\pagestyle{fancy}
+\fancyhead[L]{Линейная алгебра (весна'23)}
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);
+}}}\;}
+\newcommand{\e}{\text{e}}
+\newcommand{\at}{\biggr\rvert}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand{\shiftleft}[3]{\makebox[#1][r]{\makebox[#2][l]{#3}}}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+
+\begin{document}
+\section*{Индивидуальное задание \#3}
+\begin{multicols}{2}
+    \noindent\begin{large}ФИО: Овчинников Павел Алексеевич\end{large} \\
+    \begin{large}Номер ИСУ: 368606\end{large} \\
+    \begin{large}Группа: R3141\end{large} \\
+    \begin{large}Поток: ЛИН АЛГ СУИР БИТ Б 1.5\end{large}
+\end{multicols}
+
+\subsection*{Задание 1}
+\paragraph*{Шаг 1. Скалярное произведение} \, \\
+Найдём $A^*$ и $B^*$ (пригодится на след.шаге):
+$$
+    A^* = \begin{pmatrix}
+        4 - 5i  & 2 + 4i  \\
+        2 - 3i  & -4 + 3i \\
+        -3 - 4i & -4 + i
+    \end{pmatrix}\qquad
+    B^* = \begin{pmatrix}
+        5 + 4i & -4 +3i \\
+        5+2i   & -4+i   \\
+        -4     & 5-i
+    \end{pmatrix}
+$$
+Теперь вычислим $A^*B$:
+$$
+    A^*B = \begin{pmatrix}
+        4 - 5i  & 2 + 4i  \\
+        2 - 3i  & -4 + 3i \\
+        -3 - 4i & -4 + i
+    \end{pmatrix}\begin{pmatrix}
+        5-4i  & 5-2i & -4  \\
+        -4-3i & -4-i & 5+i
+    \end{pmatrix} = \begin{pmatrix}
+        4-63i  & 6-51i  & -10+42i \\
+        23-23i & 23-27i & -31+23i \\
+        -12    & -6-14i & -9+17i
+    \end{pmatrix}
+$$
+И тогда $\text{tr}(A^*B) = 4-63i + 23-27i -9+17i = \squared{$18-73i$}$
+
+\paragraph*{Шаг 2. Нормы, порождённые скалярным произведением} \, \\
+Норма, порождённая вышеопределённым скалярным произведением, вычисляется как $\left\lVert X\right\rVert = \sqrt{\text{tr}(X^*X)}$. Вычислим такие нормы для матриц из предыдущего шага:
+$$
+    \left\lVert A\right\rVert^2 = \text{tr}\left(\begin{pmatrix}
+            4 - 5i  & 2 + 4i  \\
+            2 - 3i  & -4 + 3i \\
+            -3 - 4i & -4 + i
+        \end{pmatrix}\begin{pmatrix}
+            4+5i & 2+3i  & -3+4i \\
+            2-4i & -4-3i & -4-i
+        \end{pmatrix}\right) = \text{tr}\left(\begin{pmatrix}
+            61     & 27-20i & 4+13i \\
+            27+20i & 38     & 25+9i \\
+            4-13i  & 25-9i  & 42
+        \end{pmatrix}\right) = 61+38+42 = 141
+$$
+$$
+    \left\lVert B\right\rVert^2 = \text{tr}\left(\begin{pmatrix}
+            5 + 4i & -4 +3i \\
+            5+2i   & -4+i   \\
+            -4     & 5-i
+        \end{pmatrix}\begin{pmatrix}
+            5-4i  & 5-2i & -4  \\
+            -4-3i & -4-i & 5+i
+        \end{pmatrix}\right) = \text{tr}\left(\begin{pmatrix}
+            66     & 52+2i  & -43-5i \\
+            52-2i  & 46     & -41-7i \\
+            -43+5i & -41+7i & 42
+        \end{pmatrix}\right) = 66+46+42 = 134
+$$
+Тогда нормы матрицы $\left\lVert A\right\rVert $ и $\left\lVert B\right\rVert $ равны \squared{$\sqrt{141}$ и $\sqrt{134}$.}
+
+\paragraph*{Шаг 3. Нормы матриц, определённые как максимумы сумм модулей элементов строк} \, \\
+Найдём $\left\lVert X\right\rVert _1$ для матриц с первого шага:
+$$
+    \left\lVert A\right\rVert _1 = \max_{1\le j \le n}\sum\limits_{i=1}^{m}|a_{ij}| = \max\{|4+5i|+|2+3i|+|-3+4i|, |2-4i|+|-4-3i|+|-4-i|\} =
+$$
+$$
+    = \max\{\sqrt{41}+\sqrt{13}+5, 2\sqrt{5}+5+\sqrt{17}\} = \sqrt{41}+\sqrt{13}+5
+$$
+$$
+    \left\lVert B\right\rVert _1 = \max_{1\le j \le n}\sum\limits_{i=1}^{m}|b_{ij}| = \max\{|5-4i|+|5-2i|+|-4|, |-4-3i|+|-4-i|+|5+i|\} =
+$$
+$$
+    = \max\{\sqrt{41}+\sqrt{29}+4, 5+\sqrt{17}+\sqrt{26}\} = \sqrt{41}+\sqrt{29}+4
+$$
+
+\paragraph*{Шаг 4. Нормы матриц, определённые как максимумы сумм модулей элементов столбцов} \, \\
+Найдём $\left\lVert X\right\rVert _\infty$ для матриц с первого шага:
+$$
+    \left\lVert A\right\rVert _\infty = \max_{1\le i \le m}\sum\limits_{j=1}^{n}|a_{ij}| = \max\{|4+5i|+|2-4i|, |2+3i|+|-4-3i|, |-3+4i|+|-4-i|\} =
+$$
+$$
+    = \max\{\sqrt{41}+2\sqrt{5}, \sqrt{13}+5, 5+\sqrt{17}\} = \sqrt{41}+2\sqrt{5}
+$$
+$$
+    \left\lVert B\right\rVert _\infty = \max_{1\le i \le m}\sum\limits_{j=1}^{n}|b_{ij}| = \max\{|5-4i|+|-4-3i|, |5-2i|+|-4+i|, |-4|+|5+i|\} =
+$$
+$$
+    = \max\{\sqrt{41}+5, \sqrt{29}+\sqrt{17}, 4+\sqrt{26}\} = \sqrt{41}+5
+$$
+
+\paragraph*{Шаг 5. Нормы матриц, определённые как максимумы среди всех элементов} \, \\
+Найдём $\left\lVert X\right\rVert _{max}$ для матриц с первого шага:
+$$
+    \left\lVert A\right\rVert _{max} = \max|a_{ij}| = \max\{|4+5i|, |2-4i|, |2+3i|, |-4-3i|, |-3+4i|, |-4-i|\} =
+$$
+$$
+    = \max\{\sqrt{41}, \sqrt{20}, \sqrt{13}, 5, 5, \sqrt{17}\} = \sqrt{41}
+$$
+$$
+    \left\lVert B\right\rVert _{max} = \max|b_{ij}| = \max\{|5-4i|, |-4-3i|, |5-2i|, |-4+i|, |-4|, |5+i|\} =
+$$
+$$
+    = \max\{\sqrt{41}, 5, \sqrt{29}, \sqrt{17}, 4, \sqrt{26}\} = \sqrt{41}
+$$
+
+\paragraph*{Шаг 6. Сравнение полученных норм} \, \\
+$$\left\lVert A\right\rVert _{max} < \left\lVert A\right\rVert _\infty < \left\lVert A\right\rVert _1\text{, т.к. } \sqrt{41} < \sqrt{41}+2\sqrt{5} < \sqrt{41}+\sqrt{13}+5$$
+$$\left\lVert B\right\rVert _{max} < \left\lVert B\right\rVert _\infty < \left\lVert B\right\rVert _1\text{, т.к. } \sqrt{41} < \sqrt{41}+5 < \sqrt{41}+\sqrt{29}+4$$
+
+\subsection*{Задание 2}
+\paragraph*{Шаг 1. Матрица Грама базиса} \, \\
+Матрица Грама любого базисного набора векторов (в котором вектора попарно ортогональны) вычисляется следующим образом:
+$$
+    G = \begin{pmatrix}
+        \left\langle e_1, e_1\right\rangle & \left\langle e_1, e_2\right\rangle & \left\langle e_1, e_3\right\rangle \\
+        \left\langle e_2, e_1\right\rangle & \left\langle e_2, e_2\right\rangle & \left\langle e_2, e_3\right\rangle \\
+        \left\langle e_3, e_1\right\rangle & \left\langle e_3, e_2\right\rangle & \left\langle e_3, e_3\right\rangle
+    \end{pmatrix} = \begin{pmatrix}
+        \int_0^1 e_1(t)e_1(t)dt & \int_0^1 e_1(t)e_2(t)dt & \int_0^1 e_1(t)e_3(t)dt \\
+        \int_0^1 e_2(t)e_1(t)dt & \int_0^1 e_2(t)e_2(t)dt & \int_0^1 e_2(t)e_3(t)dt \\
+        \int_0^1 e_3(t)e_1(t)dt & \int_0^1 e_3(t)e_2(t)dt & \int_0^1 e_3(t)e_3(t)dt
+    \end{pmatrix} = \begin{pmatrix}
+        9 & 3               & 2               \\
+        3 & \nicefrac{4}{3} & 1               \\
+        2 & 1               & \nicefrac{4}{5}
+    \end{pmatrix}
+$$
+
+\paragraph*{Шаг 2. Разложение полиномов по базису} \, \\
+Уточним, что $e = \left\{-3, -2t, -2t^2\right\} $ и представим каждый из полиномов в виде суммы векторов этого базиса:
+$$\begin{cases}
+        p_1 = -2e_1 = 6           \\
+        p_2 = -2e_2 + e_1 = 4t -3 \\
+        p_3 = -2e_2 = 4t          \\
+        p_4 = 3e_2 = -6t
+    \end{cases}$$
+
+\paragraph*{Шаг 3. Ортогонализация Грама-Шмидта} \, \\
+Ортогонализируем полиномы с помощью метода ортогонализации Грама-Шмидта, в котором формально из каждого вектора последовательно вычитаются проекции предыдущего (скалярное произведение при этом задано как $\left\langle a, b\right\rangle =$\\$= a^TGb$, где $G$ --- матрица Грама, найденная на шаге 1):
+
+    $$q_1 = p_1 = \begin{pmatrix}
+            -2 \\ 0 \\ 0
+        \end{pmatrix}\quad q_2 = p_2 - \frac{\left\langle p_2, q_1\right\rangle }{\left\langle q_1, q_1\right\rangle}q_1 = \begin{pmatrix}
+            1 \\ -2 \\ 0
+        \end{pmatrix} + \frac{1}{6}\begin{pmatrix}
+            -2 \\ 0 \\ 0
+        \end{pmatrix} = \begin{pmatrix}
+            \nicefrac{2}{3} \\ -2 \\ 0
+        \end{pmatrix}$$
+    $$q_3 = p_3 - \frac{\left\langle p_3, q_2\right\rangle }{\left\langle q_2, q_2\right\rangle}q_2- \frac{\left\langle p_3, q_1\right\rangle }{\left\langle q_1, q_1\right\rangle}q_1 = \begin{pmatrix}
+            0 \\ -2 \\ 0
+        \end{pmatrix} - \begin{pmatrix}
+            \nicefrac{2}{3} \\ -2 \\ 0
+        \end{pmatrix} - \frac{1}{3}\begin{pmatrix}
+            -2 \\ 0 \\ 0
+        \end{pmatrix} = \begin{pmatrix}
+            0 \\ 0 \\ 0
+        \end{pmatrix}$$
+    $$q_4 = p_4 -\frac{\left\langle p_4, q_2\right\rangle }{\left\langle q_2, q_2\right\rangle}q_2- \frac{\left\langle p_4, q_1\right\rangle }{\left\langle q_1, q_1\right\rangle}q_1 = \begin{pmatrix}
+            0 \\ 3 \\ 0
+        \end{pmatrix} + \frac{3}{2}\begin{pmatrix}
+            \nicefrac{2}{3} \\ -2 \\ 0
+        \end{pmatrix} + \frac{1}{2}\begin{pmatrix}
+            -2 \\ 0 \\ 0
+        \end{pmatrix} = \begin{pmatrix}
+            0 \\ 0 \\ 0
+        \end{pmatrix}$$
+    Теперь ортонормируем вектора (норма задана как $\left\lVert a\right\rVert = \left\langle a, a\right\rangle = a^TGa$):
+    $$\tilde{q}_1 = \frac{q_1}{\left\lVert q_1\right\rVert} = \frac{1}{2}\begin{pmatrix}
+            -2 \\ 0 \\ 0
+        \end{pmatrix} = \begin{pmatrix}
+            -1 \\ 0 \\ 0
+        \end{pmatrix}\qquad \tilde{q}_2 = \frac{q_2}{\left\lVert q_2\right\rVert} = \frac{3}{2\sqrt{10}}\begin{pmatrix}
+            \nicefrac{2}{3} \\ -2 \\ 0
+        \end{pmatrix} = \begin{pmatrix}
+            \nicefrac{1}{\sqrt{10}} \\ \nicefrac{-3}{\sqrt{10}} \\ 0
+        \end{pmatrix}$$
+    Для векторов $q_3$ и $q_4$ норма будет равна нулю, соответственно ортонормированный вектор невозможно вычислить, т.к. происходит деление на ноль.
+
+    \paragraph*{Шаг 4. Вывод} \, \\
+    Векторы, которые в дальнейшем будут ортогонализироваться, должны образовывать базис, т.е. набор должен быть линейно незаивисим. Когда наблюдаются линейно зависимые вектора, приём ортогонализации обращает часть векторов в нуль-векторы, оставляя только те, которые образуют с первым выбранным вектором $q_1$ ортогональное подпространство. А проводить ортонормирование с нуль-векторами в принципе невозможно, т.к. их норма равна нулю. Эти факты подтверждаются на предыдущих шагах, из чего следует вывод, что система векторов выше линейно зависимая.
+
+    \subsection*{Задание 3}
+    \paragraph*{Шаг 1. Матрицы Грама систем векторов $x$ и $y$} \, \\
+    Для начала дополним каждую из линейных оболочек ещё одним вектором, который будет ортогонален трём уже заданным. Для этого решим следующие системы:
+    $$\circled{1}\begin{cases}
+            \alpha_1 - \alpha_2+2\alpha_3-\alpha_4 = 0 \\
+            \alpha_1+\alpha_3-2\alpha_4 = 0            \\
+            -2\alpha_1-2\alpha_2 = 0
+        \end{cases}\qquad \circled{2}\begin{cases}
+            \beta_1-\beta_3+2\beta_4=0           \\
+            \beta_1-\beta_2-2\beta_3-\beta_4 = 0 \\
+            \beta_1-\beta_2-2\beta_3+2\beta_4 = 0
+        \end{cases}$$
+    $$\circled{1}: \left(\begin{array}{cccc|c}
+                1  & -1 & 2  & -1 & 0 \\
+                1  & 0  & 1  & -2 & 0 \\
+                -2 & 0  & -2 & 0  & 0
+            \end{array}\right) \sim \left(\begin{array}{cccc|c}
+                1 & 0 & 1  & 0 & 0 \\
+                0 & 1 & -1 & 0 & 0 \\
+                0 & 0 & 0  & 1 & 0
+            \end{array}\right) \Rightarrow x_4=\begin{pmatrix}
+            -\alpha_3 \\ \alpha_3 \\ \alpha_3 \\ 0
+        \end{pmatrix} \Rightarrow x_4 = \begin{pmatrix}
+            -1 \\ 1 \\ 1 \\ 0
+        \end{pmatrix}$$
+    $$\circled{2}: \left(\begin{array}{cccc|c}
+                1 & 0  & -1 & 2  & 0 \\
+                1 & -1 & -2 & -1 & 0 \\
+                1 & -1 & -2 & 2  & 0
+            \end{array}\right) \sim \left(\begin{array}{cccc|c}
+                1 & -1 & 0 & 0 & 0 \\
+                0 & 1  & 1 & 0 & 0 \\
+                0 & 0  & 0 & 1 & 0
+            \end{array}\right) \Rightarrow y_4=\begin{pmatrix}
+            \beta_3 \\ -\beta_3 \\ \beta_3 \\ 0
+        \end{pmatrix} \Rightarrow y_4 = \begin{pmatrix}
+            1 \\ -1 \\ 1 \\ 0
+        \end{pmatrix}$$
+    Матрицы Грама подпространств вычисляются так же, как и матрицы Грама полиномов --- принцип один:
+    $$
+        G_x = \begin{pmatrix}
+            \left\langle x_1, x_1\right\rangle & \left\langle x_1, x_2\right\rangle & \left\langle x_1, x_3\right\rangle & \left\langle x_1, x_4\right\rangle \\
+            \left\langle x_2, x_1\right\rangle & \left\langle x_2, x_2\right\rangle & \left\langle x_2, x_3\right\rangle & \left\langle x_2, x_4\right\rangle \\
+            \left\langle x_3, x_1\right\rangle & \left\langle x_3, x_2\right\rangle & \left\langle x_3, x_3\right\rangle & \left\langle x_3, x_4\right\rangle \\
+            \left\langle x_4, x_1\right\rangle & \left\langle x_4, x_2\right\rangle & \left\langle x_4, x_3\right\rangle & \left\langle x_4, x_4\right\rangle
+        \end{pmatrix} = \begin{pmatrix}
+            7  & 5  & -6 & 0 \\
+            5  & 6  & -4 & 0 \\
+            -6 & -4 & 8  & 0 \\
+            0  & 0  & 0  & 3
+        \end{pmatrix}
+    $$$$
+        G_y = \begin{pmatrix}
+            \left\langle y_1, y_1\right\rangle & \left\langle y_1, y_2\right\rangle & \left\langle y_1, y_3\right\rangle & \left\langle y_1, y_4\right\rangle \\
+            \left\langle y_2, y_1\right\rangle & \left\langle y_2, y_2\right\rangle & \left\langle y_2, y_3\right\rangle & \left\langle y_2, y_4\right\rangle \\
+            \left\langle y_3, y_1\right\rangle & \left\langle y_3, y_2\right\rangle & \left\langle y_3, y_3\right\rangle & \left\langle y_3, y_4\right\rangle \\
+            \left\langle y_4, y_1\right\rangle & \left\langle y_4, y_2\right\rangle & \left\langle y_4, y_3\right\rangle & \left\langle y_4, y_4\right\rangle
+        \end{pmatrix} = \begin{pmatrix}
+            6 & 1 & 7  & 0 \\
+            1 & 7 & 4  & 0 \\
+            7 & 4 & 10 & 0 \\
+            0 & 0 & 0  & 3
+        \end{pmatrix}
+    $$
+    \paragraph*{Шаг 2. Определители матриц Грама} \, \\
+    Найдём $\left\lvert G_x\right\rvert$ и $\left\lvert G_y\right\rvert $:
+    $$
+        \begin{vmatrix}
+            7  & 5  & -6 & 0 \\
+            5  & 6  & -4 & 0 \\
+            -6 & -4 & 8  & 0 \\
+            0  & 0  & 0  & 3
+        \end{vmatrix} = 144 \qquad
+        \begin{vmatrix}
+            6 & 1 & 7  & 0 \\
+            1 & 7 & 4  & 0 \\
+            7 & 4 & 10 & 0 \\
+            0 & 0 & 0  & 3
+        \end{vmatrix} = 81
+    $$
+    Обращение в ноль грамиана системы векторов --- это критерий их линейной зависимости. Здесь же мы наблюдаем, что все определители не равны нулю $\Rightarrow$ системы векторов подпространств $L_x$ и $L_y$ линейно независимы.
+
+    \paragraph*{Шаг 3. Ортогональные проекции вектора $z$} \, \\
+    Для нахождения проекции вектора $z$ на подпространства $L_x$ и $L_y$ понадобится ортогонализировать вектора внутри линейных оболочек.
+
+$$x \in L_x\quad x = z'_{L_x}$$
+$$
+    \overline{x}_1 = x_1 = \begin{pmatrix}
+        1 \\ -1 \\ 2 \\ -1
+    \end{pmatrix}\qquad \overline{x}_2 = x_2 - \frac{\overline{x}_1^TG_xx_2}{\overline{x}_1^TG_x\overline{x}_1}\overline{x}_1 = \begin{pmatrix}
+        1 \\ 0 \\ 1 \\ -2
+    \end{pmatrix} - \frac{10}{30}\begin{pmatrix}
+        1 \\ -1 \\ 2 \\ -1
+    \end{pmatrix} = \begin{pmatrix}
+        \nicefrac{2}{3} \\ \nicefrac{1}{3} \\ \nicefrac{1}{3} \\ \nicefrac{-5}{3}
+    \end{pmatrix}
+$$
+$$
+    \overline{x}_3 = x_3 - \frac{\overline{x}_2^TG_xx_3}{\overline{x}_2^TG_x\overline{x}_2}\overline{x}_2 - \frac{\overline{x}_1^TG_xx_3}{\overline{x}_1^TG_x\overline{x}_1}\overline{x}_1 = \begin{pmatrix}
+        -2 \\ 0 \\ -2 \\ 0
+    \end{pmatrix} + \frac{10}{35}\begin{pmatrix}
+        \nicefrac{2}{3} \\ \nicefrac{1}{3} \\ \nicefrac{1}{3} \\ \nicefrac{-5}{3}
+    \end{pmatrix} + \frac{8}{30}\begin{pmatrix}
+        1 \\ -1 \\ 2 \\ -1
+    \end{pmatrix} = \begin{pmatrix}
+        \nicefrac{-54}{35} \\ \nicefrac{-6}{35} \\ \nicefrac{-48}{35} \\ \nicefrac{-26}{35}
+    \end{pmatrix}
+$$
+$$
+    \overline{x}_4 = x_4 - \frac{\overline{x}_3^TG_xx_4}{\overline{x}_3^TG_x\overline{x}_3}\overline{x}_3 - \frac{\overline{x}_2^TG_xx_4}{\overline{x}_2^TG_x\overline{x}_2}\overline{x}_2 - \frac{\overline{x}_1^TG_xx_4}{\overline{x}_1^TG_x\overline{x}_1}\overline{x}_1 = \begin{pmatrix}
+        -1 \\ 1 \\ 1 \\ 0
+    \end{pmatrix} + \frac{5}{52}\begin{pmatrix}
+        \nicefrac{-54}{35} \\ \nicefrac{-6}{35} \\ \nicefrac{-48}{35} \\ \nicefrac{-26}{35}
+    \end{pmatrix} + \frac{3}{35}\begin{pmatrix}
+        \nicefrac{2}{3} \\ \nicefrac{1}{3} \\ \nicefrac{1}{3} \\ \nicefrac{-5}{3}
+    \end{pmatrix} - \frac{15}{30}\begin{pmatrix}
+        1 \\ -1 \\ 2 \\ -1
+    \end{pmatrix} = \begin{pmatrix}
+        \nicefrac{-724}{455} \\ \nicefrac{688}{455} \\ \nicefrac{-47}{455} \\ \nicefrac{2}{7}
+    \end{pmatrix}
+$$
+$$x = \frac{\overline{x}_1^TG_xz}{\overline{x}_1^TG_x\overline{x}_1}\overline{x}_1 + \frac{\overline{x}_2^TG_xz}{\overline{x}_2^TG_x\overline{x}_2}\overline{x}_2 + \frac{\overline{x}_3^TG_xz}{\overline{x}_3^TG_x\overline{x}_3}\overline{x}_3 + \frac{\overline{x}_4^TG_xz}{\overline{x}_4^TG_x\overline{x}_4}\overline{x}_4 = $$
+$$= \frac{-15}{30}\begin{pmatrix}
+        1 \\ -1 \\ 2 \\ -1
+    \end{pmatrix} + \frac{13}{35}\begin{pmatrix}
+        \nicefrac{2}{3} \\ \nicefrac{1}{3} \\ \nicefrac{1}{3} \\ \nicefrac{-5}{3}
+    \end{pmatrix} - \frac{15}{182}\begin{pmatrix}
+        \nicefrac{-54}{35} \\ \nicefrac{-6}{35} \\ \nicefrac{-48}{35} \\ \nicefrac{-26}{35}
+    \end{pmatrix} + \frac{167}{530}\begin{pmatrix}
+        \nicefrac{-724}{455} \\ \nicefrac{688}{455} \\ \nicefrac{-47}{455} \\ \nicefrac{2}{7}
+    \end{pmatrix} = \begin{pmatrix}
+        \nicefrac{-3173213}{5064150} \\ \nicefrac{5643431}{5064150} \\ \nicefrac{-4029589}{5064150} \\ \nicefrac{2509}{77910}
+    \end{pmatrix}$$ \, \\ \, \\
+$$y \in L_x\quad y = z'_{L_y}$$
+$$
+    \overline{y}_1 = y_1 = \begin{pmatrix}
+        1 \\ 0 \\ -1 \\ 2
+    \end{pmatrix}\qquad \overline{y}_2 = y_2 - \frac{\overline{y}_1^TG_yy_2}{\overline{y}_1^TG_y\overline{y}_1}\overline{y}_1 = \begin{pmatrix}
+        1 \\ -1 \\ -2 \\ -1
+    \end{pmatrix} - \frac{2}{14}\begin{pmatrix}
+        1 \\ 0 \\ -1 \\ 2
+    \end{pmatrix} = \begin{pmatrix}
+        \nicefrac{6}{7} \\ -1 \\ \nicefrac{-13}{7} \\ \nicefrac{-9}{7}
+    \end{pmatrix}
+$$
+$$
+    \overline{y}_3 = y_3 - \frac{\overline{y}_2^TG_yy_3}{\overline{y}_2^TG_y\overline{y}_2}\overline{y}_2 - \frac{\overline{y}_1^TG_yy_3}{\overline{y}_1^TG_y\overline{y}_1}\overline{y}_1 = \begin{pmatrix}
+        1 \\ -1 \\ -2 \\ 2
+    \end{pmatrix} - \frac{211}{292}\begin{pmatrix}
+        \nicefrac{6}{7} \\ -1 \\ \nicefrac{-13}{7} \\ \nicefrac{-9}{7}
+    \end{pmatrix} - \frac{20}{14}\begin{pmatrix}
+        1 \\ 0 \\ -1 \\ 2
+    \end{pmatrix} = \begin{pmatrix}
+        \nicefrac{-153}{146} \\ \nicefrac{-81}{292} \\ \nicefrac{225}{292} \\ \nicefrac{21}{292}
+    \end{pmatrix}
+$$
+$$
+    \overline{y}_4 = y_4 - \frac{\overline{y}_3^TG_yy_4}{\overline{y}_3^TG_y\overline{y}_3}\overline{y}_3 - \frac{\overline{y}_2^TG_yy_4}{\overline{y}_2^TG_y\overline{y}_2}\overline{y}_2 - \frac{\overline{y}_1^TG_yy_4}{\overline{y}_1^TG_y\overline{y}_1}\overline{y}_1 = \begin{pmatrix}
+        1 \\ -1 \\ 1 \\ 0
+    \end{pmatrix} + \frac{585}{189}\begin{pmatrix}
+        \nicefrac{-153}{146} \\ \nicefrac{-81}{292} \\ \nicefrac{225}{292} \\ \nicefrac{21}{292}
+    \end{pmatrix} + \frac{83}{2044}\begin{pmatrix}
+        \nicefrac{6}{7} \\ -1 \\ \nicefrac{-13}{7} \\ \nicefrac{-9}{7}
+    \end{pmatrix} + \frac{1}{14}\begin{pmatrix}
+        1 \\ 0 \\ -1 \\ 2
+    \end{pmatrix} = \begin{pmatrix}
+        \nicefrac{-15291}{7154} \\ \nicefrac{-1941}{1022}  \\ \nicefrac{11583}{3577}  \\ \nicefrac{2241}{7154}
+    \end{pmatrix}
+$$
+$$y = \frac{\overline{y}_1^TG_yz}{\overline{y}_1^TG_y\overline{y}_1}\overline{y}_1 + \frac{\overline{y}_2^TG_yz}{\overline{y}_2^TG_y\overline{y}_2}\overline{y}_2 + \frac{\overline{y}_3^TG_yz}{\overline{y}_3^TG_y\overline{y}_3}\overline{y}_3 + \frac{\overline{y}_4^TG_yz}{\overline{y}_4^TG_y\overline{y}_4}\overline{y}_4 = $$
+$$= \frac{-12}{14}\begin{pmatrix}
+        1 \\ 0 \\ -1 \\ 2
+    \end{pmatrix} - \frac{163}{2044}\begin{pmatrix}
+        \nicefrac{6}{7} \\ -1 \\ \nicefrac{-13}{7} \\ \nicefrac{-9}{7}
+    \end{pmatrix} - \frac{1}{6132}\begin{pmatrix}
+        \nicefrac{-153}{146} \\ \nicefrac{-81}{292} \\ \nicefrac{225}{292} \\ \nicefrac{21}{292}
+    \end{pmatrix} - \frac{41908622535}{358258012}\begin{pmatrix}
+        \nicefrac{-15291}{7154} \\ \nicefrac{-1941}{1022}  \\ \nicefrac{11583}{3577}  \\ \nicefrac{2241}{7154}
+    \end{pmatrix} = \begin{pmatrix}
+        \nicefrac{159613289723115}{640744454462} \\
+        \nicefrac{162747701863423}{732279376528} \\
+        \nicefrac{-1936558118433299}{5125955635696} \\
+        \nicefrac{-196096294335241}{5125955635696}
+    \end{pmatrix}$$
+
+\paragraph*{Шаг 4. Коcинус угла между ортогональными проекциями} \, \\
+Найдём косинус угла между ортогональными проекциями $x$ и $y$, которые проецируют $\vec{z}$ на $L_x$ и $L_y$. Скалярное произведение задано стандартно, что упрощает вычисления:
+
+$$\cos\varphi = \frac{\left\langle x, y\right\rangle }{\left\lVert x\right\rVert \left\lVert y\right\rVert} = \frac{\nicefrac{191487644933664351469}{489785060990752800}}{\nicefrac{\sqrt{14545444605319}}{2532075}\cdot\nicefrac{\sqrt{6717054755750431183032504527403}}{5125955635696}} =$$
+$$= \frac{10148845181484210627857}{2\sqrt{97702547860662442444748298065139409955056557}}$$
+\paragraph*{Шаг 5. Приближённое значение угла между проекциями} \, \\
+$$\varphi = \arccos\frac{10148845181484210627857}{2\sqrt{97702547860662442444748298065139409955056557}} \approx \arccos 0.51337 \approx 1.03168 \text{ в радианах или } 59.11118^{\circ}$$
+\end{document}

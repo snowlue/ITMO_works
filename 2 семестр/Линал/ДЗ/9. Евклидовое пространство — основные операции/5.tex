@@ -1,0 +1,74 @@
+\documentclass{article}
+\usepackage{cmap}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=14cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\pagenumbering{gobble}
+
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{%
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}\;}
+\newcommand{\e}{\text{e}}
+\newcommand{\la}{\lambda}
+\newcommand{\shiftleft}[3]{\makebox[#1][r]{\makebox[#2][l]{#3}}}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand{\at}{\biggr\rvert}
+
+\begin{document}
+\begin{center}
+    Для того, чтобы найти угол между векторами, для начала нужно найти косинус этого угла, который вычисляется по следующей формуле:
+    $$\cos\varphi = \frac{x^{T}Gy}{\sqrt{x^{T}Gx}\sqrt{y^{T}Gy}}$$
+    Разделим на компоненты и посчитаем каждый отдельно:
+    $$x^{T}Gy = \begin{pmatrix}
+            -3 & 6
+        \end{pmatrix}\times\begin{pmatrix}
+            3 & 4 \\ 4 & 6
+        \end{pmatrix}\times\begin{pmatrix}
+            3 \\ -3
+        \end{pmatrix} = \begin{pmatrix}
+            15 & 24
+        \end{pmatrix} \times \begin{pmatrix}
+            3 \\ -3
+        \end{pmatrix} = -27$$
+    $$x^{T}Gx = \begin{pmatrix}
+            -3 & 6
+        \end{pmatrix}\times\begin{pmatrix}
+            3 & 4 \\ 4 & 6
+        \end{pmatrix}\times\begin{pmatrix}
+            -3 \\ 6
+        \end{pmatrix} = \begin{pmatrix}
+            15 & 24
+        \end{pmatrix} \times \begin{pmatrix}
+            -3 \\ 6
+        \end{pmatrix} = 99$$
+    $$y^{T}Gy = \begin{pmatrix}
+            3 & -3
+        \end{pmatrix}\times\begin{pmatrix}
+            3 & 4 \\ 4 & 6
+        \end{pmatrix}\times\begin{pmatrix}
+            3 \\ -3
+        \end{pmatrix} = \begin{pmatrix}
+            -3 & -6
+        \end{pmatrix} \times \begin{pmatrix}
+            3 \\ -3
+        \end{pmatrix} = 9$$
+    Посчитаем косинус, подставив найденные выше значения:
+    $$\cos\varphi = \frac{-27}{\sqrt{99}\sqrt{9}} = -\frac{3\sqrt{11}}{11} \Rightarrow \varphi = \pi - \arccos\frac{3\sqrt{11}}{11} \approx 2.70$$
+\end{center}
+\end{document}

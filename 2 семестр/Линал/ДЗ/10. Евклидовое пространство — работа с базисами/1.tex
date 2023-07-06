@@ -1,0 +1,72 @@
+
+\documentclass{article}
+\usepackage{cmap}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=14cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\pagenumbering{gobble}
+
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{%
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}\;}
+\newcommand{\e}{\text{e}}
+\newcommand{\la}{\lambda}
+\newcommand{\shiftleft}[3]{\makebox[#1][r]{\makebox[#2][l]{#3}}}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand{\at}{\biggr\rvert}
+
+\begin{document}
+\begin{center}
+    Найдём базис подпространства $L$:
+    $$\begin{cases}
+            -2x_1 -3x_2 -2x_3 +2x_4 = 0   \\
+            5x_1 + 7x_2 + 5x_3 - 5x_4 = 0 \\
+            -6x_1 -7x_2 -5x_3 +8x_4 = 0
+        \end{cases} \Leftrightarrow x = \begin{pmatrix}
+            3 \\ 0 \\ -2 \\ 1
+        \end{pmatrix}$$
+    Предположим, что имеется некий вектор $a = \begin{pmatrix}
+            a_1, a_2, a_3, a_4
+        \end{pmatrix}^T$ и выше упомянутый базис $\left\{x\right\}$ подпространства $L$. \\
+    Они удовлетворяют следующему уравнению для поиска ортогонального дополнения:
+    $$\left\langle a, x\right\rangle = 0 \Leftrightarrow a^TGx = 0  \Leftrightarrow
+        \begin{pmatrix}
+            a_1 & a_2 & a_3 & a_4
+        \end{pmatrix}\begin{pmatrix}
+            10 & 17 & 13 & -5 \\
+            17 & 30 & 23 & -7 \\
+            13 & 23 & 18 & -5 \\
+            -5 & -7 & -5 & 5
+        \end{pmatrix}\begin{pmatrix}
+            3 \\ 0 \\ -2 \\ 1
+        \end{pmatrix} = 0
+        \Leftrightarrow
+        -a_1-2a_2-2a_3+0a_4 = 0$$
+    Решим получившееся уравнения:
+    $$\begin{pmatrix}
+        -2a_2-2a_3 \\ a_2 \\ a_3 \\ a_4
+    \end{pmatrix} \Leftrightarrow \left\{\begin{pmatrix}
+        -2 \\ 1 \\ 0 \\ 0
+    \end{pmatrix}, \begin{pmatrix}
+        -2 \\ 0 \\ 1 \\ 0
+    \end{pmatrix}, \begin{pmatrix}
+        0 \\ 0 \\ 0 \\ 1
+    \end{pmatrix}\right\} $$
+\end{center}
+\end{document}

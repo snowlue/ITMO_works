@@ -1,0 +1,46 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=14cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\pagenumbering{gobble}
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{%
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}\;}
+
+\begin{document}
+\begin{center}
+Решением будет являться $y = Ax$, но такой, что его решение будет состоять из ФСРОС и ЧРНС, т.к. мы ищем $\varphi^{-1}(x)$:
+$$\left(\begin{array}{rrr|r}
+3 & 3 & 0 & 9 \\ -3 & -3 & 0 & -9
+\end{array}\right) \sim \left(\begin{array}{rrr|r}
+1 & 1 & 0 & 3 \\ 0 & 0 & 0 & 0
+\end{array}\right) \Leftrightarrow \begin{cases}
+x_1 + x_2 = 3 \\
+x_2, x_3 \in \mathbb{R}
+\end{cases}$$
+\begin{alignat*}{2}
+&НС: \begin{cases}
+x_1 = 3 - x_2 \\
+x_2, x_3 \in \mathbb{R}
+\end{cases}& ОС: \begin{cases}
+x_1 = - x_2 \\
+x_2, x_3 \in \mathbb{R}
+\end{cases} \\ \, \\
+&ЧРНС: \left\{\begin{pmatrix}
+3 \\ 0 \\ 0
+\end{pmatrix}\right\}\qquad\qquad &ФСРОС: \left\{\begin{pmatrix}
+-1 \\ 1 \\ 0
+\end{pmatrix}, \begin{pmatrix}
+0 \\ 0 \\ 1
+\end{pmatrix}\right\}
+\end{alignat*} \\
+\end{center}
+\end{document}

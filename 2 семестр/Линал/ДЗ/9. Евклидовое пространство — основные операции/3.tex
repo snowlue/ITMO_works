@@ -1,0 +1,107 @@
+\documentclass{article}
+\usepackage{cmap}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=14cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\pagenumbering{gobble}
+
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{%
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}\;}
+\newcommand{\e}{\text{e}}
+\newcommand{\la}{\lambda}
+\newcommand{\shiftleft}[3]{\makebox[#1][r]{\makebox[#2][l]{#3}}}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand{\at}{\biggr\rvert}
+
+\begin{document}
+\begin{center}
+    Обозначим $x_1$ и $x_2$ векторы внутри линейной оболочки и найдём $z \subset L$
+    $$\begin{cases}
+            (x_1, v) = \alpha_1 (x_1, x_1) + \alpha_2 (x_1, x_2) \\
+            (x_2, v) = \alpha_1 (x_2, x_1) + \alpha_2 (x_2, x_2)
+        \end{cases} \Leftrightarrow \left( \begin{array}{cc|c}
+                (x_1, x_1) & (x_1, x_2) & (x_1, v) \\
+                (x_2, x_1) & (x_2, x_2) & (x_2, v)
+            \end{array} \right) \Leftrightarrow \left( \begin{array}{cc|c}
+                16+64  & -16-64   & -32-96   \\
+                -16-64 & 16+16+64 & 32+16+96
+            \end{array} \right) \Leftrightarrow \left( \begin{array}{cc|c}
+                80  & -80 & -128 \\
+                -80 & 96  & 144
+            \end{array} \right) \sim$$
+    $$\sim \left( \begin{array}{cc|c}
+                5  & -5 & -8 \\
+                -5 & 6  & 9
+            \end{array} \right) \sim \left( \begin{array}{cc|c}
+                5 & -5 & -8 \\
+                0 & 1  & 1
+            \end{array} \right) \sim \left( \begin{array}{cc|c}
+                5 & 0 & -3 \\
+                0 & 1 & 1
+            \end{array} \right) \Rightarrow \begin{cases}
+            \alpha_1 = \frac{-3}{5} \\
+            \alpha_2 = 1
+        \end{cases} \Rightarrow z = \frac{-3}{5}x_1+x_2 = \begin{pmatrix}
+            \nicefrac{32}{5} \\ 4 \\ \nicefrac{-64}{5}
+        \end{pmatrix}$$
+    Задача сводится к нахождению угла между $v$ и $z$ с использованием матрицы Грама $G$ заданной в условии:
+    $$\cos\varphi = \frac{v^{T}Gz}{\sqrt{v^{T}Gv}\sqrt{z^{T}Gz}}$$
+    $$v^TGz = \begin{pmatrix}
+            8 & 4 & -12
+        \end{pmatrix}\times\begin{pmatrix}
+            12 & 6  & 22 \\
+            6  & 4  & 10 \\
+            22 & 10 & 42
+        \end{pmatrix}\times\begin{pmatrix}
+            \nicefrac{32}{5} \\ 4 \\ \nicefrac{-64}{5}
+        \end{pmatrix} = \begin{pmatrix}
+            -144 & -56 & -288
+        \end{pmatrix}\times\begin{pmatrix}
+            \nicefrac{32}{5} \\ 4 \\ \nicefrac{-64}{5}
+        \end{pmatrix} = \frac{12704}{5} = 2540.8$$
+    $$v^TGv = \begin{pmatrix}
+            8 & 4 & -12
+        \end{pmatrix}\times\begin{pmatrix}
+            12 & 6  & 22 \\
+            6  & 4  & 10 \\
+            22 & 10 & 42
+        \end{pmatrix}\times\begin{pmatrix}
+            8 \\ 4 \\ -12
+        \end{pmatrix} = \begin{pmatrix}
+            -144 & -56 & -288
+        \end{pmatrix}\times\begin{pmatrix}
+            8 \\ 4 \\ -12
+        \end{pmatrix} = 2080$$
+    $$z^TGz = \begin{pmatrix}
+            \nicefrac{32}{5} & 4 & \nicefrac{-64}{5}
+        \end{pmatrix}\times\begin{pmatrix}
+            12 & 6  & 22 \\
+            6  & 4  & 10 \\
+            22 & 10 & 42
+        \end{pmatrix}\times\begin{pmatrix}
+            \nicefrac{32}{5} \\ 4 \\ \nicefrac{-64}{5}
+        \end{pmatrix} = \begin{pmatrix}
+            \frac{-904}{5} & \frac{-368}{5} & \frac{-1784}{5}
+        \end{pmatrix}\times\begin{pmatrix}
+            \nicefrac{32}{5} \\ 4 \\ \nicefrac{-64}{5}
+        \end{pmatrix} = \frac{77888}{25} = 3115.52$$
+    $$\cos\varphi = \frac{2540.8}{\sqrt{2080}\sqrt{3115.52}} = \frac{397\sqrt{5}}{5\sqrt{31642}} \Rightarrow \varphi = \arccos\frac{397\sqrt{5}}{5\sqrt{31642}} \approx 0.06$$
+\end{center}
+\end{document}

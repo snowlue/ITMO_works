@@ -1,0 +1,1162 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a4paper, top=2cm, bottom=2cm, left=0.9cm, right=0.9cm, marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+
+\pagestyle{fancy}
+\fancyhead[L]{Линейная алгебра (весна'23)}
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{%
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}\;}
+\newcommand{\e}{\text{e}}
+\newcommand{\at}{\biggr\rvert}
+\newcommand{\la}{\lambda}
+\newcommand{\shiftleft}[3]{\makebox[#1][r]{\makebox[#2][l]{#3}}}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+
+\begin{document}
+
+\section*{Индивидуальное задание \#1}
+\begin{multicols}{2}
+\noindent\begin{large}ФИО: Овчинников Павел Алексеевич\end{large} \\
+\begin{large}Номер ИСУ: 368606\end{large} \\
+\begin{large}Группа: R3141\end{large} \\
+\begin{large}Поток: ЛИН АЛГ СУИР БИТ Б 1.5\end{large}
+\end{multicols}
+
+\subsection*{Задание 1}
+Запишем канонический базис как $\left(1, t, t^2, t^3\right)$ и будем так же подставлять его в выражение линейной формы $\phi(p)$ вместо $p$, чтобы найти коэффициенты этой формы в этом базисе, т.е. в сущности искать $\phi\left((1, t, t^2, t^3)\right)$. \\
+$$\phi\left((1, t, t^2, t^3)\right) = \left(1, t, t^2, t^3\right)(0) - 3\frac{d\left(1, t, t^2, t^3\right)}{dt}\at_{t=0} = (1, 0, 0, 0) - 3\left(0, 1, 2t, 3t^2\right)|_{t=0} = (1, 0, 0, 0) - 3(0, 1, 0, 0) = (1, -3, 0, 0)$$
+\begin{flushright}Ответ: $(1, -3, 0, 0)$\end{flushright}
+
+\subsection*{Задание 2}
+\paragraph*{Шаг 1. Матрица перехода в базис} \, \\
+Для её построения необходимо выразить каждое из значений базиса $b=\left(\frac{3}{2}, 4-2t, (t-2)^{2}, -2(t-2)^{3}\right)$ относительно канонического и затем построить матрицу на основе коэффициентов перед каждым из мономов.
+$$\begin{array}{r|}
+\dfrac{3}{2} = \dfrac{3}{2}\cdot1 + 0t + 0t^2 + 0t^3 \\
+4 - 2t = 4\cdot1 - 2t + 0t^2 + 0t^3 \\
+t^2 - 4t + 4 = 4\cdot1-4t+1t^2+0t^3 \\
+-2t^3+12t^2-24t+16 = 16\cdot1-24t+12t^2-2t^3
+\end{array} \Rightarrow T = \begin{pmatrix}
+\frac{3}{2} & 4 & 4 & 16 \\
+0 & -2 & -4 & -24 \\
+0 & 0 & 1 & 12 \\
+0 & 0 & 0 & -2 \\
+\end{pmatrix}$$
+\paragraph*{Шаг 2. Коэффициенты линейной формы в новом базисе} \, \\
+Поступим так же, как и в первом задании и подставим в форму новый базис.
+$$\phi\left(\left(\frac{3}{2}, 4-2t, (t-2)^{2}, -2(t-2)^{3}\right)\right) = \left(\frac{3}{2}, 4-2t, (t-2)^{2}, -2(t-2)^{3}\right)(0) - 3\frac{d\left(\frac{3}{2}, 4-2t, (t-2)^{2}, -2(t-2)^{3}\right)}{dt}\at_{t=0} = $$
+$$= \left(\frac{3}{2}, 4, 4, 16\right) - \left(0, -6, 6(t-2), -18(t-2)^2\right)|_{t=0} = \left(\frac{3}{2}, 4, 4, 16\right) + (0, 6, 12, 72) = \left(\frac{3}{2}, 10, 16, 88\right)$$
+\paragraph*{Шаг 3. Координаты произвольного полинома в обоих базисах} \, \\
+Зададим полином $p=2t^3 + 4t^2 + 6t + 8$. Найдём его координаты в обоих базисах --- для этого выразим полином в виде линейной комбинации базисных полиномов.
+\begin{center}
+Нетрудно догадаться, что для базиса $e = \left(1, t, t^2, t^3\right)$ координаты полинома будут $p_{\{e\}} = (8, 6, 4, 2)^{T}$.
+\end{center}
+Для базиса $b = \left(\frac{3}{2}, 4-2t, (t-2)^{2}, -2(t-2)^{3}\right)$ необходимо воспользоваться матрицей перехода, которая выводит координаты полинома из базиса $\left(1, t, t^2, t^3\right)$ в указанный выше. Мы её нашли на шаге 1, и тогда $p_{\{b\}}=T^{-1}\cdot p_{\{e\}}$.
+$$\begin{pmatrix}
+\frac{3}{2} & 4 & 4 & 16 \\
+0 & -2 & -4 & -24 \\
+0 & 0 & 1 & 12 \\
+0 & 0 & 0 & -2 \\
+\end{pmatrix}^{-1}\times\begin{pmatrix}
+8 \\ 6 \\ 4 \\ 2
+\end{pmatrix} = \left[\left(\begin{array}{cccc|cccc}
+\frac{3}{2} & 4 & 4 & 0 & 1 & 0 & 0 & 8 \\
+0 & -2 & -4 & 0 & 0 & 1 & 0 & -12 \\
+0 & 0 & 1 & 0 & 0 & 0 & 1 & 6 \\
+0 & 0 & 0 & -2 & 0 & 0 & 0 & 1 \\
+\end{array}\right) \sim \left(\begin{array}{cccc|cccc}
+\frac{3}{2} & 2 & 0 & 0 & 1 & 1 & 0 & -4 \\
+0 & -2 & 0 & 0 & 0 & 1 & 4 & 12 \\
+0 & 0 & 1 & 0 & 0 & 0 & 1 & 6 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & -\frac{1}{2} \\
+\end{array}\right) \sim\right.$$
+$$\left.\sim \left(\begin{array}{cccc|cccc}
+\nicefrac{3}{2} & 0 & 0 & 0 & 1 & 2 & 4 & 8 \\
+0 & 1 & 0 & 0 & 0 & -\nicefrac{1}{2} & -2 & -6 \\
+0 & 0 & 1 & 0 & 0 & 0 & 1 & 6 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & -\nicefrac{1}{2} \\
+\end{array}\right)\sim \left(\begin{array}{cccc|cccc}
+1 & 0 & 0 & 0 & \nicefrac{2}{3} & \nicefrac{4}{3} & \nicefrac{8}{3} & \nicefrac{16}{3} \\
+0 & 1 & 0 & 0 & 0 & -\nicefrac{1}{2} & -2 & -6 \\
+0 & 0 & 1 & 0 & 0 & 0 & 1 & 6 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & -\nicefrac{1}{2} \\
+\end{array}\right) = \begin{pmatrix}
+\nicefrac{2}{3} & \nicefrac{4}{3} & \nicefrac{8}{3} & \nicefrac{16}{3} \\
+0 & -\nicefrac{1}{2} & -2 & -6 \\
+0 & 0 & 1 & 6 \\
+ 0 & 0 & 0 & -\nicefrac{1}{2}
+\end{pmatrix}\right] \times$$
+$$\times \begin{pmatrix}
+8 \\ 6 \\ 4 \\ 2
+\end{pmatrix} = \begin{pmatrix}
+\frac{104}{3} \\-23 \\16 \\-1
+\end{pmatrix}$$
+\paragraph*{Шаг 4. Результат применения линейной формы в новом базисе через коэффициенты} \, \\
+Полученные на шаге 2 коэффициенты сейчас используем для того, чтобы посчитать результат применения формы $\phi(p)=\sum\limits_{i=1}^np^i\phi_i$, где $\phi$ --- коэффициенты линейной формы.
+$$\phi(p)=\frac{3}{2}\cdot\frac{104}{3}-10\cdot23+16^2-88 = 52-230+256-88 = -178+168 = -10$$
+\paragraph*{Шаг 5. Результат применения линейной формы не зависит от базиса} \, \\
+Попробуем применить линейную форму с коэффициентами и координатами полинома в каноническом базисе:
+$$\phi(p)=1\cdot8-3\cdot6+0\cdot4+0\cdot2 = 8 - 18 = -10$$
+Как видим, результат применения линейной формы совпадает с результатам н шаге 4 $\Rightarrow$ результат применения линейной формы не зависит от базиса.
+
+\section*{Задание 3}
+\paragraph*{Шаг 1. Базис ядра и базис образа оператора} \, \\
+Для начала приведём матрицу оператора к треугольному виду, и базисом ядра станет фундаментальная система решений определённой системы уравнений, полученной из матрицы.
+$$\begin{pmatrix}
+6 & -4 & 10 & 4 \\
+5 & -3 & 10 & 4 \\
+-5 & 2 & -9 & -2 \\
+5 & -2 & 10 & 3
+\end{pmatrix} \sim \begin{pmatrix}
+1 & -1 & 0 & 0 \\
+0 & -1 & 0 & 1 \\
+0 & 0 & 1 & 1 \\
+5 & -2 & 10 & 3
+\end{pmatrix} \sim \begin{pmatrix}
+1 & -1 & 0 & 0 \\
+0 & -1 & 0 & 1 \\
+0 & 0 & 1 & 1 \\
+0 & 3 & 10 & 3
+\end{pmatrix} \sim \begin{pmatrix}
+1 & -1 & 0 & 0 \\
+0 & -1 & 0 & 1 \\
+0 & 0 & 1 & 1 \\
+0 & 0 & 10 & 6
+\end{pmatrix} \sim \begin{pmatrix}
+1 & -1 & 0 & 0 \\
+0 & -1 & 0 & 1 \\
+0 & 0 & 1 & 1 \\
+0 & 0 & 0 & -4
+\end{pmatrix} \Rightarrow $$
+$$\Rightarrow \begin{cases}
+\xi_1=\xi_2 \\
+\xi_2=\xi_4 \\
+\xi_3=-\xi_4 \\
+\xi_4 = 0
+\end{cases} \Rightarrow \text{ ядро состоит из } \left\{\begin{pmatrix}
+0 \\ 0 \\ 0 \\ 0
+\end{pmatrix}\right\} \Rightarrow \text{ базис ядра пуст и, как следствие, базис образа --- вся матрица.}$$
+\paragraph*{Шаг 2. Характеристический полином и спектр} \, \\
+Найдём характеристический полином и затем приравняем его к нулю, чтобы выделить спектр оператора.
+$$\chi(\la) = \begin{vmatrix}
+6 - \la & -4 & 10 & 4 \\
+5 & -3 - \la & 10 & 4 \\
+-5 & 2 & -9 - \la & -2 \\
+5 & -2 & 10 & 3 - \la
+\end{vmatrix} = (6-\la)\begin{vmatrix}
+-3-\la & 10 & 4 \\
+2 & -9-\la & -2 \\
+-2 & 10 & 3-\la
+\end{vmatrix} +4\begin{vmatrix}
+5 & 10 & 4 \\
+-5 & -9-\la & -2 \\
+5 & 10 & 3-\la
+\end{vmatrix} + $$
+$$+ 10\begin{vmatrix}
+5 & -3-\la & 4 \\
+-5 & 2 & -2 \\
+5 & -2 & 3-\la
+\end{vmatrix} -4\begin{vmatrix}
+5 & -3-\la & 10 \\
+-5 & 2 & -9-\la \\
+5 & -2 & 10
+\end{vmatrix} = (6-\la)((-3-\la)(-9-\la)(3-\la) + 120 +8(-9-\la)+20(-3-\la)-20(3-\la)) +$$
+$$+4(5(-9-\la)(3-\la)-300-20(-9-\la)+100+50(3-\la)) + 10(10(3-\la)-10(-3-\la)+5(3-\la)(-3-\la)-20) -$$
+$$- 4(100+5(-3-\la)(-9-\la)+10(-9-\la)+50(-3-\la)) = (6-\la)(-\la^3-9\la^2+\la+9)+4(5\la^2-5)+10(5\la^2-5)-4(5\la^2-5)=$$
+$$= (\la-6)(\la+9)(\la^2-1)+50(\la^2-1)= (\la^2-1)(\la^2+3\la-4)=(\la - 1)^2(\la+1)(\la+4)$$
+$$(\la - 1)^2(\la+1)(\la+4) = 0 \Rightarrow \sigma_A = \left\{1^{(2)}, -4^{(1)}, -1^{(1)}\right\}$$
+\paragraph*{Шаг 3. Собственные векторы} \, \\
+Найдём собственные векторы оператора, подставив найденные собственные значения вместо $\la$ и решив однородную систему для полученной матрицы.
+$$\la = 1$$
+$$\begin{pmatrix}
+5 & -4 & 10 & 4 \\
+5 & -4 & 10 & 4 \\
+-5 & 2 & -10 & -2 \\
+5 & -2 & 10 & 2
+\end{pmatrix} \sim \begin{pmatrix}
+0 & -2 & 0 & 2 \\
+0 & 0 & 0 & 0 \\
+-5 & 2 & -10 & -2 \\
+0 & 0 & 0 & 0
+\end{pmatrix} \Rightarrow \begin{cases}
+5x_1 - 2x_2 + 10x_3 + 2x_4 = 0 \\
+x_2 = x_4 \\
+x_3 \in \mathbb{R} \\
+x_4 \in \mathbb{R}
+\end{cases} \Leftrightarrow $$
+$$\Leftrightarrow \begin{cases}
+x_1 = -2x_3 \\
+x_2 = x_4 \\
+x_3 \in \mathbb{R} \\
+x_4 \in \mathbb{R}
+\end{cases} \Rightarrow v_1=\begin{pmatrix}-2 \\ 0 \\ 1 \\ 0\end{pmatrix} \quad v_2=\begin{pmatrix}0 \\ 1 \\ 0 \\ 1\end{pmatrix}$$ \\
+$$\la = -4$$
+$$\begin{pmatrix}
+10 & -4 & 10 & 4 \\
+5 & 1 & 10 & 4 \\
+-5 & 2 & -5 & -2 \\
+5 & -2 & 10 & 7
+\end{pmatrix} \sim \begin{pmatrix}
+1 & 0 & 0 & -1 \\
+0 & 1 & 0 & -1 \\
+0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0 
+\end{pmatrix} \Rightarrow \begin{cases}
+x_1 = x_4 \\
+x_2 = x_4 \\
+x_3 = -x_4 \\
+x_4 \in \mathbb{R}
+\end{cases} \Rightarrow v_3 = \begin{pmatrix}1 \\ 1 \\ -1 \\ 1\end{pmatrix}$$\\
+$$\la = -1$$
+$$\begin{pmatrix}
+7 & -4 & 10 & 4 \\
+5 & -2 & 10 & 4 \\
+-5 & 2 & -8 & -2 \\
+5 & -2 & 10 & 4
+\end{pmatrix} \sim \begin{pmatrix}
+1 & -1 & 0 & 0 \\
+5 & -2 & 10 & 4 \\
+0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0
+\end{pmatrix} \sim \begin{pmatrix}
+1 & -1 & 0 & 0 \\
+0 & 1 & 0 & -2 \\
+0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0
+\end{pmatrix} \Rightarrow \begin{cases}
+x_1 = x_2 \\
+x_2 = 2x_4 \\
+x_3 = -x_4 \\
+x_4 \in \mathbb{R}
+\end{cases} \Rightarrow v_4 = \begin{pmatrix}2 \\ 2 \\ -1 \\ 1\end{pmatrix}$$
+Геометрические кратности равны алгебраическим в спектре $\Rightarrow$ оператор скалярного типа. Проверим для последнего собственного вектора выполнения его основного свойства из определения $Av_4 = -v_4$:
+$$\begin{pmatrix}
+6 & -4 & 10 & 4 \\
+5 & -3 & 10 & 4 \\
+-5 & 2 & -9 & -2 \\
+5 & -2 & 10 & 3
+\end{pmatrix}\begin{pmatrix}
+2 \\ 2 \\ -1 \\ 1
+\end{pmatrix} = \begin{pmatrix}
+-2 \\
+-2 \\
+1 \\
+-1
+\end{pmatrix} = -1\times\begin{pmatrix}2 \\ 2 \\ -1 \\ 1\end{pmatrix}$$
+\paragraph*{Шаг 4. Матрица оператора в базисе собственных векторов} \, \\
+Матрица оператора в базисе собственных векторов выглядит так же, как и жорданова форма для оператора скалярного типа, то есть это диагональная матрица, на диагонали которой расположены собственные значения оператора. Пусть базис собственных векторов выглядит как $V = \left\{v_1, v_2, v_3, v_4\right\}$. Тогда матрица $A$ оператора в этом базисе является $D$, вычисляется как $A = VDV^{-1} \Rightarrow$\\ $\Rightarrow D = V^{-1}AV$ и будет выглядеть вот так:
+$$\begin{pmatrix}
+-2 & 0 & 1 & 2 \\
+0 & 1 & 1 & 2 \\
+1 & 0 & -1 & -1 \\
+0 & 1 & 1 & 1
+\end{pmatrix}^{-1}\times \begin{pmatrix}
+6 & -4 & 10 & 4 \\
+5 & -3 & 10 & 4 \\
+-5 & 2 & -9 & -2 \\
+5 & -2 & 10 & 3
+\end{pmatrix} \times \begin{pmatrix}
+-2 & 0 & 1 & 2 \\
+0 & 1 & 1 & 2 \\
+1 & 0 & -1 & -1 \\
+0 & 1 & 1 & 1
+\end{pmatrix} = \left[\left(\begin{array}{cccc|cccc}
+-2 & 0 & 1 & 2 & 1 & 0 & 0 & 0\\
+0 & 1 & 1 & 2 & 0 & 1 & 0 & 0\\
+1 & 0 & -1 & -1 & 0 & 0 & 1 & 0\\
+0 & 1 & 1 & 1 & 0 & 0 & 0 & 1
+\end{array}\right) \sim\right.$$
+$$\left.\sim \left(\begin{array}{cccc|cccc}
+-1 & 0 & 0 & 1 & 1 & 0 & 1 & 0\\
+0 & 0 & 0 & 1 & 0 & 1 & 0 & -1\\
+1 & 0 & -1 & -1 & 0 & 0 & 1 & 0\\
+0 & 1 & 1 & 1 & 0 & 0 & 0 & 1
+\end{array}\right) \sim \left(\begin{array}{cccc|cccc}
+-1 & 0 & 0 & 1 & 1 & 0 & 1 & 0\\
+0 & 0 & 0 & 1 & 0 & 1 & 0 & -1\\
+0 & 0 & -1 & 0 & 1 & 0 & 2 & 0\\
+0 & 1 & 1 & 0 & 0 & -1 & 0 & 2
+\end{array}\right) \sim \left(\begin{array}{cccc|cccc}
+-1 & 0 & 0 & 0 & 1 & -1 & 1 & 1\\
+0 & 0 & 0 & 1 & 0 & 1 & 0 & -1\\
+0 & 0 & -1 & 0 & 1 & 0 & 2 & 0\\
+0 & 1 & 0 & 0 & 1 & -1 & 2 & 2
+\end{array}\right) \sim \right.$$
+$$\left.\sim \left(\begin{array}{cccc|cccc}
+1 & 0 & 0 & 0 & -1 & 1 & -1 & -1\\
+0 & 1 & 0 & 0 & 1 & -1 & 2 & 2 \\
+0 & 0 & 1 & 0 & -1 & 0 & -2 & 0\\
+0 & 0 & 0 & 1 & 0 & 1 & 0 & -1
+\end{array}\right) = \begin{pmatrix}
+-1 & 1 & -1 & -1 \\
+1 & -1 & 2 & 2 \\
+-1 & 0 & -2 & 0 \\
+0 & 1 & 0 & -1
+\end{pmatrix}\right] \times \begin{pmatrix}
+6 & -4 & 10 & 4 \\
+5 & -3 & 10 & 4 \\
+-5 & 2 & -9 & -2 \\
+5 & -2 & 10 & 3
+\end{pmatrix} \times \begin{pmatrix}
+-2 & 0 & 1 & 2 \\
+0 & 1 & 1 & 2 \\
+1 & 0 & -1 & -1 \\
+0 & 1 & 1 & 1
+\end{pmatrix} =$$
+$$= \begin{pmatrix}
+-1 & 1 & -1 & -1 \\
+1 & -1 & 2 & 2 \\
+4 & 0 & 8 & 0 \\
+0 & -1 & 0 & 1
+\end{pmatrix} \times \begin{pmatrix}
+-2 & 0 & 1 & 2 \\
+0 & 1 & 1 & 2 \\
+1 & 0 & -1 & -1 \\
+0 & 1 & 1 & 1
+\end{pmatrix} = \begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & -4 & 0 \\
+0 & 0 & 0 & -1
+\end{pmatrix}$$
+\paragraph*{Шаг 5. Спектральные проекторы} \,\\
+Для расчёта проекторов нам понадобится сопряжённый базис к базису $\left\{v_1, v_2, v_3, v_4\right\}$, который был вычислен на предыдущем шаге как $V^{-1}$. Обозначим этот базис $\left\{u_1, u_2, u_3, u_4\right\}$, где $u_n$ --- n-ая строка этой матрицы. Тогда перебор произведений $u_n(e_1|e_2|e_3|e_4)v_n$ записывает по столбцам в проектор $P_{v_n}$ (здесь $e$ --- канонический базис). \pagebreak
+$$\left(u_1e_1v_1, u_1e_2v_1, u_1e_3v_1, u_1e_4v_1\right) =$$
+$$= \left(\left(-1, 1, -1, -1\right)\begin{pmatrix}1 \\ 0 \\ 0 \\ 0\end{pmatrix}\begin{pmatrix}-2 \\ 0 \\ 1 \\ 0\end{pmatrix}, \left(-1, 1, -1, -1\right)\begin{pmatrix}0 \\ 1 \\ 0 \\ 0\end{pmatrix}\begin{pmatrix}-2 \\ 0 \\ 1 \\ 0\end{pmatrix}, \left(-1, 1, -1, -1\right)\begin{pmatrix}0 \\ 0 \\ 1 \\ 0\end{pmatrix}\begin{pmatrix}-2 \\ 0 \\ 1 \\ 0\end{pmatrix}, \left(-1, 1, -1, -1\right)\begin{pmatrix}0 \\ 0 \\ 0 \\ 1\end{pmatrix}\begin{pmatrix}-2 \\ 0 \\ 1 \\ 0\end{pmatrix}\right) =$$
+$$= \left(-1\begin{pmatrix}-2 \\ 0 \\ 1 \\ 0\end{pmatrix}, \begin{pmatrix}-2 \\ 0 \\ 1 \\ 0\end{pmatrix}, -1\begin{pmatrix}-2 \\ 0 \\ 1 \\ 0\end{pmatrix}, -1\begin{pmatrix}-2 \\ 0 \\ 1 \\ 0\end{pmatrix}\right) = \left(\begin{pmatrix}2 \\ 0 \\ -1 \\ 0\end{pmatrix}, \begin{pmatrix}-2 \\ 0 \\ 1 \\ 0\end{pmatrix}, \begin{pmatrix}2 \\ 0 \\ -1 \\ 0\end{pmatrix}, \begin{pmatrix}2 \\ 0 \\ -1 \\ 0\end{pmatrix}\right) \Rightarrow P_{v_1} = \begin{pmatrix}
+2 & -2 & 2 & 2 \\
+0 & 0 & 0 & 0 \\
+-1 & 1 & -1 & -1 \\
+0 & 0 & 0 & 0 
+\end{pmatrix} $$ \\
+$$\left(u_2e_1v_2, u_2e_2v_2, u_2e_3v_2, u_2e_4v_2\right) =$$
+$$= \left(\left(1, -1, 2, 2\right)\begin{pmatrix}1 \\ 0 \\ 0 \\ 0\end{pmatrix}\begin{pmatrix}0 \\ 1 \\ 0 \\ 1\end{pmatrix}, \left(1, -1, 2, 2\right)\begin{pmatrix}0 \\ 1 \\ 0 \\ 0\end{pmatrix}\begin{pmatrix}0 \\ 1 \\ 0 \\ 1\end{pmatrix}, \left(1, -1, 2, 2\right)\begin{pmatrix}0 \\ 0 \\ 1 \\ 0\end{pmatrix}\begin{pmatrix}0 \\ 1 \\ 0 \\ 1\end{pmatrix}, \left(1, -1, 2, 2\right)\begin{pmatrix}0 \\ 0 \\ 0 \\ 1\end{pmatrix}\begin{pmatrix}0 \\ 1 \\ 0 \\ 1\end{pmatrix}\right) =$$
+$$= \left(\begin{pmatrix}0 \\ 1 \\ 0 \\ 1\end{pmatrix}, -1\begin{pmatrix}0 \\ 1 \\ 0 \\ 1\end{pmatrix}, 2\begin{pmatrix}0 \\ 1 \\ 0 \\ 1\end{pmatrix}, 2\begin{pmatrix}0 \\ 1 \\ 0 \\ 1\end{pmatrix}\right) = \left(\begin{pmatrix}0 \\ 1 \\ 0 \\ 1\end{pmatrix}, \begin{pmatrix}0 \\ -1 \\ 0 \\- 1\end{pmatrix}, \begin{pmatrix}0 \\ 2 \\ 0 \\ 2\end{pmatrix}, \begin{pmatrix}0 \\ 2 \\ 0 \\ 2\end{pmatrix}\right) \Rightarrow P_{v_2} = \begin{pmatrix}
+0 & 0 & 0 & 0 \\
+1 & -1 & 2 & 2 \\
+0 & 0 & 0 & 0 \\
+1 & -1 & 2 & 2 
+\end{pmatrix} $$ \\
+$$\left(u_3e_1v_3, u_3e_2v_3, u_3e_3v_3, u_3e_4v_3\right) =$$
+$$= \left(\left(-1, 0, -2, 0\right)\begin{pmatrix}1 \\ 0 \\ 0 \\ 0\end{pmatrix}\begin{pmatrix}1 \\ 1 \\ -1 \\ 1\end{pmatrix}, \left(-1, 0, -2, 0\right)\begin{pmatrix}0 \\ 1 \\ 0 \\ 0\end{pmatrix}\begin{pmatrix}1 \\ 1 \\ -1 \\ 1\end{pmatrix}, \left(-1, 0, -2, 0\right)\begin{pmatrix}0 \\ 0 \\ 1 \\ 0\end{pmatrix}\begin{pmatrix}1 \\ 1 \\ -1 \\ 1\end{pmatrix}, \left(-1, 0, -2, 0\right)\begin{pmatrix}0 \\ 0 \\ 0 \\ 1\end{pmatrix}\begin{pmatrix}1 \\ 1 \\ -1 \\ 1\end{pmatrix}\right) =$$
+$$= \left(-1\begin{pmatrix}1 \\ 1 \\ -1 \\ 1\end{pmatrix}, 0\begin{pmatrix}1 \\ 1 \\ -1 \\ 1\end{pmatrix}, -2\begin{pmatrix}1 \\ 1 \\ -1 \\ 1\end{pmatrix}, 0\begin{pmatrix}1 \\ 1 \\ -1 \\ 1\end{pmatrix}\right) = \left(\begin{pmatrix}-1 \\-1 \\ 1 \\ -1\end{pmatrix}, \begin{pmatrix}0 \\ 0 \\ 0 \\ 0\end{pmatrix}, \begin{pmatrix}-2 \\ -2 \\ 2 \\ -2\end{pmatrix}, \begin{pmatrix}0 \\ 0 \\ 0 \\ 0\end{pmatrix}\right) \Rightarrow P_{v_3} = \begin{pmatrix}
+-1 & 0 & -2 & 0 \\
+-1 & 0 & -2 & 0 \\
+1 & 0 & 2 & 0 \\
+-1 & 0 & -2 & 0
+\end{pmatrix} $$ \\
+$$\left(u_4e_1v_4, u_4e_2v_4, u_4e_3v_4, u_4e_4v_4\right) =$$
+$$= \left(\left(0, 1, 0, -1\right)\begin{pmatrix}1 \\ 0 \\ 0 \\ 0\end{pmatrix}\begin{pmatrix}2 \\ 2 \\ -1 \\ 1\end{pmatrix}, \left(0, 1, 0, -1\right)\begin{pmatrix}0 \\ 1 \\ 0 \\ 0\end{pmatrix}\begin{pmatrix}2 \\ 2 \\ -1 \\ 1\end{pmatrix}, \left(0, 1, 0, -1\right)\begin{pmatrix}0 \\ 0 \\ 1 \\ 0\end{pmatrix}\begin{pmatrix}2 \\ 2 \\ -1 \\ 1\end{pmatrix}, \left(0, 1, 0, -1\right)\begin{pmatrix}0 \\ 0 \\ 0 \\ 1\end{pmatrix}\begin{pmatrix}2 \\ 2 \\ -1 \\ 1\end{pmatrix}\right) =$$
+$$= \left(0\begin{pmatrix}2 \\ 2 \\ -1 \\ 1\end{pmatrix}, \begin{pmatrix}2 \\ 2 \\ -1 \\ 1\end{pmatrix}, 0\begin{pmatrix}2 \\ 2 \\ -1 \\ 1\end{pmatrix}, -1\begin{pmatrix}2 \\ 2 \\ -1 \\ 1\end{pmatrix}\right) = \left(\begin{pmatrix}0 \\ 0 \\ 0 \\ 0\end{pmatrix}, \begin{pmatrix}2 \\ 2 \\ -1 \\ 1\end{pmatrix}, \begin{pmatrix}0 \\ 0 \\ 0 \\ 0\end{pmatrix}, \begin{pmatrix}-2 \\ -2 \\ 1 \\ -1\end{pmatrix}\right) \Rightarrow P_{v_4} = \begin{pmatrix}
+0 & 2 & 0 & -2 \\
+0 & 2 & 0 & -2 \\
+0 & -1 & 0 & 1 \\
+0 & 1 & 0 & -1
+\end{pmatrix} $$ \\
+
+\noindent Проверяем выполнение спектральной теоремы. Согласно теореме, при сумма всех произведений проекторов на соответствующие им собственные значения должна равняться исходной матрице оператора, т.е. $\sum\limits_{i=1}^n\la_n P_{v_n} = A$.
+$$\la_1 (P_{v_1} + P_{v_2}) + \la_2 P_{v_3} + \la_3 P_{v_4} = \begin{pmatrix}
+2 & -2 & 2 & 2 \\
+0 & 0 & 0 & 0 \\
+-1 & 1 & -1 & -1 \\
+0 & 0 & 0 & 0 
+\end{pmatrix} + \begin{pmatrix}
+0 & 0 & 0 & 0 \\
+1 & -1 & 2 & 2 \\
+0 & 0 & 0 & 0 \\
+1 & -1 & 2 & 2 
+\end{pmatrix} -4\begin{pmatrix}
+-1 & 0 & -2 & 0 \\
+-1 & 0 & -2 & 0 \\
+1 & 0 & 2 & 0 \\
+-1 & 0 & -2 & 0
+\end{pmatrix} -\begin{pmatrix}
+0 & 2 & 0 & -2 \\
+0 & 2 & 0 & -2 \\
+0 & -1 & 0 & 1 \\
+0 & 1 & 0 & -1
+\end{pmatrix} =$$
+$$= \begin{pmatrix}
+2 & -2 & 2 & 2 \\
+1 & -1 & 2 & 2 \\
+-1 & 1 & -1 & -1 \\
+1 & -1 & 2 & 2
+\end{pmatrix} -4\begin{pmatrix}
+-1 & 0 & -2 & 0 \\
+-1 & 0 & -2 & 0 \\
+1 & 0 & 2 & 0 \\
+-1 & 0 & -2 & 0
+\end{pmatrix} -\begin{pmatrix}
+0 & 2 & 0 & -2 \\
+0 & 2 & 0 & -2 \\
+0 & -1 & 0 & 1 \\
+0 & 1 & 0 & -1
+\end{pmatrix} = \begin{pmatrix}
+2 & -4 & 2 & 4 \\
+1 & -3 & 2 & 4 \\
+-1 & 2 & -1 & -2 \\
+1 & -2 & 2 & 3
+\end{pmatrix} -\begin{pmatrix}
+-4 & 0 & -8 & 0 \\
+-4 & 0 & -8 & 0 \\
+4 & 0 & 8 & 0 \\
+-4 & 0 & -8 & 0
+\end{pmatrix} =$$ 
+$$= \begin{pmatrix}
+6 & -4 & 10 & 4 \\
+5 & -3 & 10 & 4 \\
+-5 & 2 & -9 & -2 \\
+5 & -2 & 10 & 3
+\end{pmatrix} = A$$\begin{flushright}ч.т.д.\end{flushright}
+
+\section*{Задание 4}
+\paragraph*{Шаг 1. Базис ядра и базис образа оператора} \, \\
+Аналогично предыдущему заданию приведём матрицу оператора к треугольному виду, и базисом ядра так же станет фундаментальная система решений определённой системы уравнений, полученной из матрицы.
+$$\begin{pmatrix}
+-13 & 11 & 4 & -17 & 7 \\
+40 & -35 & -16 & 60 & -20 \\
+12 & -16 & -7 & 26 & -8 \\
+20 & -18 & -8 & 31 & -10 \\
+-40 & 36 & 16 & -60 & 21
+\end{pmatrix} \sim \begin{pmatrix}
+-1 & -5 & -3 & 9 & -1 \\
+0 & 1 & 0 & 0 & 1 \\
+12 & -16 & -7 & 26 & -8 \\
+20 & -18 & -8 & 31 & -10 \\
+-40 & 36 & 16 & -60 & 21
+\end{pmatrix} \sim \begin{pmatrix}
+-1 & -5 & -3 & 9 & -1 \\
+0 & 1 & 0 & 0 & 1 \\
+12 & -16 & -7 & 26 & -8 \\
+8 & -2 & -1 & 5 & -2 \\
+0 & 0 & 0 & 2 & 1
+\end{pmatrix} \sim $$
+$$\sim \begin{pmatrix}
+-1 & 0 & -3 & -1 & 0 \\
+0 & 1 & 0 & 0 & 1 \\
+0 & -14 & -18 & 17 & -6 \\
+0 & 0 & 0 & 2 & 1 \\
+0 & -2 & -25 & -3 & -2
+\end{pmatrix} \sim \begin{pmatrix}
+-1 & 0 & -3 & -1 & 0 \\
+0 & 1 & 0 & 0 & 1 \\
+0 & 0 & -18 & 17 & 8 \\
+0 & 0 & 0 & 2 & 1 \\
+0 & 0 & -25 & -3 & 0
+\end{pmatrix} \sim \begin{pmatrix}
+-1 & 0 & -3 & -1 & 0 \\
+0 & 1 & 0 & 0 & 1 \\
+0 & 0 & -18 & 1 & 0 \\
+0 & 0 & 0 & 2 & 1 \\
+0 & 0 & -25 & -3 & 0
+\end{pmatrix} \sim \begin{pmatrix}
+-1 & 0 & -3 & -1 & 0 \\
+0 & 1 & 0 & 0 & 1 \\
+0 & 0 & -450 & 25 & 0 \\
+0 & 0 & 0 & 2 & 1 \\
+0 & 0 & -450 & -54 & 0
+\end{pmatrix} \sim$$
+$$ \sim \begin{pmatrix}
+-1 & 0 & -3 & -1 & 0 \\
+0 & 1 & 0 & 0 & 1 \\
+0 & 0 & -18 & 1 & 0 \\
+0 & 0 & 0 & 2 & 1 \\
+0 & 0 & 0 & -79 & 0
+\end{pmatrix} \sim \begin{pmatrix}
+-1 & 0 & -3 & -1 & 0 \\
+0 & 1 & 0 & 0 & 1 \\
+0 & 0 & -18 & 1 & 0 \\
+0 & 0 & 0 & 158 & 79 \\
+0 & 0 & 0 & -158 & 0
+\end{pmatrix} \sim \begin{pmatrix}
+-1 & 0 & -3 & -1 & 0 \\
+0 & 1 & 0 & 0 & 1 \\
+0 & 0 & -18 & 1 & 0 \\
+0 & 0 & 0 & 2 & 1 \\
+0 & 0 & 0 & 0 & 79
+\end{pmatrix} \Leftrightarrow \begin{cases}
+\xi_1 = -\xi_3-\xi_4 \\
+\xi_2 = -\xi_5 \\
+18\xi_3 = \xi_4 \\
+2\xi_4 = -\xi_5 \\
+79\xi_5 = 0
+\end{cases} \Rightarrow$$
+\begin{center}
+$\Rightarrow$ нуль-пространство оператора вновь состоит только из нулевого вектора $\Rightarrow$ базис ядра пуст, \\а базис образа состоит из векторов, образованных всей матрицей оператора.
+\end{center}
+\paragraph*{Шаг 2. Характеристический полином и спектр} \, \\
+Вновь найдём $\chi(\la)$ и затем приравняем его к нулю, чтобы выделить спектр оператора.
+$$\chi(\la) = \begin{vmatrix}
+-13-\la & 11 & 4 & -17 & 7 \\
+40 & -35-\la & -16 & 60 & -20 \\
+12 & -16 & -7-\la & 26 & -8 \\
+20 & -18 & -8 & 31-\la & -10 \\
+-40 & 36 & 16 & -60 & 21-\la
+\end{vmatrix} = (-13-\la)\begin{vmatrix}
+-35-\la & -16 & 60 & -20 \\
+-16 & -7-\la & 26 & -8 \\
+-18 & -8 & 31-\la & -10 \\
+36 & 16 & -60 & 21-\la
+\end{vmatrix}-$$
+$$-11\begin{vmatrix}
+40 & -16 & 60 & -20 \\
+12 & -7-\la & 26 & -8 \\
+20 & -8 & 31-\la & -10 \\
+-40 & 16 & -60 & 21-\la
+\end{vmatrix}+4\begin{vmatrix}
+40 & -35-\la & 60 & -20 \\
+12 & -16 & 26 & -8 \\
+20 & -18 & 31-\la & -10 \\
+-40 & 36 & -60 & 21-\la
+\end{vmatrix}+17\begin{vmatrix}
+40 & -35-\la & -16 & -20 \\
+12 & -16 & -7-\la & -8 \\
+20 & -18 & -8 & -10 \\
+-40 & 36 & 16 & 21-\la
+\end{vmatrix} + $$
+$$+ 7\begin{vmatrix}
+40 & -35-\la & -16 & 60 \\
+12 & -16 & -7-\la & 26 \\
+20 & -18 & -8 & 31-\la \\
+-40 & 36 & 16 & -60 
+\end{vmatrix} = (-13-\lambda)\left((-35-\lambda)\begin{vmatrix}
+-7-\la & 26 & -8 \\
+-8 & 31-\la & -10 \\
+16 & -60 & 21-\la
+\end{vmatrix}+16\begin{vmatrix}
+-16 & 26 & -8 \\
+-18 & 31-\la & -10 \\
+36 & -60 & 21-\la
+\end{vmatrix}+\right.$$
+$$\left.+60\begin{vmatrix}
+-16 & -7-\la & -8 \\
+-18 & -8 & -10 \\
+36 & 16 & 21-\la
+\end{vmatrix}+20\begin{vmatrix}
+-16 & -7-\la & 26 \\
+-18 & -8 & 31-\la \\
+36 & 16 & -60
+\end{vmatrix}\right)-11\left(40\begin{vmatrix}
+-7-\la & 26 & -8 \\
+-8 & 31-\la & -10 \\
+16 & -60 & 21-\la
+\end{vmatrix}+\right.$$
+$$\left.+16\begin{vmatrix}
+12 & 26 & -8 \\
+20 & 31-\la & -10 \\
+-40 & -60 & 21-\la
+\end{vmatrix}+60\begin{vmatrix}
+12 & -7-\la & -8 \\
+20 & -8 & -10 \\
+-40 & 16 & 21-\la
+\end{vmatrix}+20\begin{vmatrix}
+12 & -7-\la & 26\\
+20 & -8 & 31-\la \\
+-40 & 16 & -60
+\end{vmatrix}\right)+4\left(40\begin{vmatrix}
+-16 & 26 & -8 \\
+-18 & 31-\la & -10 \\
+36 & -60 & 21-\la
+\end{vmatrix}+\right.$$
+$$\left.+(35+\la)\begin{vmatrix}
+12 & 26 & -8 \\
+20 & 31-\la & -10 \\
+-40 & -60 & 21-\la
+\end{vmatrix}+60\begin{vmatrix}
+12 & -16 & -8 \\
+20 & -18 & -10 \\
+-40 & 36 & 21-\la
+\end{vmatrix}+20\begin{vmatrix}
+12 & -16 & 26 \\
+20 & -18 & 31-\la \\
+-40 & 36 & -60 
+\end{vmatrix}\right)+17\left(40\begin{vmatrix}
+-16 & -7-\la & -8 \\
+-18 & -8 & -10 \\
+36 & 16 & 21-\la
+\end{vmatrix}+\right.$$
+$$\left.+(35+\la)\begin{vmatrix}
+12 & -7-\la & -8 \\
+20 & -8 & -10 \\
+-40 & 16 & 21-\la
+\end{vmatrix}-16\begin{vmatrix}
+12 & -16 &  -8 \\
+20 & -18 & -10 \\
+-40 & 36 & 21-\la
+\end{vmatrix}+20\begin{vmatrix}
+12 & -16 & -7-\la \\
+20 & -18 & -8 \\
+-40 & 36 & 16
+\end{vmatrix}\right)+7\left(40\begin{vmatrix}
+-16 & -7-\la & 26 \\
+-18 & -8 & 31-\la \\
+36 & 16 & -60 
+\end{vmatrix}+\right.$$
+$$\left.+(35+\la)\begin{vmatrix}
+12 & -7-\la & 26 \\
+20 & -8 & 31-\la \\
+-40 & 16 & -60 
+\end{vmatrix}-16\begin{vmatrix}
+12 & -16 & 26 \\
+20 & -18 & 31-\la \\
+-40 & 36 & -60 
+\end{vmatrix}-60\begin{vmatrix}
+12 & -16 & -7-\la \\
+20 & -18 & -8 \\
+-40 & 36 & 16 
+\end{vmatrix}\right) =$$
+$$= \Big(-13-\la\Big)\Big(\big(-35-\la\big)\big((-7-\la)(31-\la)(21-\la) - 4160 - 3840 + 128(31-\la)-600(-7-\la)+208(21-\la)\big) +16\big(-16(31-\la)(21-\la)-$$
+$$-9360-8640+288(31-\la)+9600+468(21-\la)\big)+60\big(128(21-\la)-360(-7-\la)-2560+18(21-\la)(-7-\la)\big)+20\big(-7680+$$
+$$+36(-7-\la)(31-\la)+256(31-\la)-1080(-7-\la)\big)\Big)-11\Big(40\big((-7-\la)(31-\la)(21-\la) - 4160 - 3840 + 128(31-\la)-600(-7-\la)+$$
+$$+208(21-\la)\big)+16\big(12(31-\la)(21-\la)+10400+9600-320(31-\la)-7200-520(21-\la)\big)+60\big(-96(21-\la)+400(-7-\la)+1920-$$
+$$-20(-7-\la)(21-\la)\big)+20\big(5760-40(-7-\la)(31-\la)-192(31-\la)+1200(-7-\la)\big)\Big)+4\Big(40\big(-16(31-\la)(21-\la)-9360-8640+$$
+$$+288(31-\la)+9600+468(21-\la)\big)+\big(35+\la\big)\big(12(31-\la)(21-\la)+10400+9600-320(31-\la)-7200-520(21-\la)\big)+60\big(-216(21-\la)-$$
+$$-6400+4320+320(21-\la)\big)+20\big(12960+640(31-\la)-19200-432(31-\la)\big)\Big)+17\Big(40\big(128(21-\la)-360(-7-\la)-2560+$$
+$$+18(21-\la)(-7-\la)\big)+\big(35+\la\big)\big(-96(21-\la)+400(-7-\la)+1920-20(-7-\la)(21-\la)\big)-16\big(-216(21-\la)-6400+4320+320(21-\la)\big)+$$
+$$+20\big(-3456-5120+720(-7-\la)-720(-7-\la)+3456+5120\big)\Big)+7\Big(40\big(-7680+36(-7-\la)(31-\la)+256(31-\la)-1080(-7-\la)\big)+$$
+$$+\big(35+\la\big)\big(5760-40(-7-\la)(31-\la)-192(31-\la)+1200(-7-\la)\big)-16\big(12960+640(31-\la)-19200-432(31-\la)\big)-60\big(-3456-5120+$$ 
+$$+720(-7-\la)-720(-7-\la)+3456+5120\big)\Big) =$$
+$$= \Big(-13-\la\Big)\Big(\big(35+\la\big)\big(\la^3-45\la^2+23\la+21\big) -16\big(16\la^2-76\la+60\big)+60\big(18\la^2-20\la+2\big)+20\big(36\la^2-40\la+4\big)\Big)-$$
+$$-11\Big(40\big(-\la^3+45\la^2-23\la-21\big)+16\big(12\la^2+216\la-228\big)-60\big(20\la^2+24\la-44\big)-20\big(40\la^2+48\la-88\big)\Big)+$$
+$$+4\Big(40\big(-16\la^2+76\la-60\big)+\big(35+\la\big)\big(12\la^2+216\la-228\big)+60\big(104-104\la\big)+20\big(208-208\la\big)\Big)+$$
+$$+17\Big(40\big(18\la^2-20\la+2\big)-\big(35+\la\big)\big(20\la^2+24\la-44\big)-16\big(104-104\la\big)\Big)+$$
+$$+7\Big(40\big(36\la^2-40\la+4\big)-\big(35+\la\big)\big(40\la^2+48\la-88\big)-16\big(208-208\la\big)\Big) =$$
+$$=\Big(-13-\la\Big)\Big(\big(35+\la\big)\big(\la-1\big)\big(\la^2-44\la-21\big)-64\big(\la-1\big)\big(4\la-15\big)+120\big(\la-1\big)\big(9\la-1\big)+80\big(\la-1\big)\big(9\la-1\big)\Big)-$$
+$$-11\Big(-40\big(\la-1\big)\big(\la^2-44\la+21\big)+192\big(\la-1\big)\big(\la+19\big)-240\big(\la-1\big)\big(5\la+11\big)-160\big(\la-1\big)\big(5\la+11\big)\Big)+$$
+$$+4\Big(-160\big(\la-1\big)\big(4\la-15\big)+12\big(35+\la\big)\big(\la-1\big)\big(\la+19\big)-6240\big(\la-1\big)-4160\big(\la-1\big)\Big)+$$
+$$+17\Big(80\big(\la-1\big)\big(9\la-1\big)-4\big(35+\la\big)\big(\la-1\big)\big(5\la+11\big)+1664\big(\la-1\big)\Big)+$$
+$$+14\Big(80\big(\la-1\big)\big(9\la-1\big)-4\big(35+\la\big)\big(\la-1\big)\big(5\la+11\big)+1664\big(\la-1\big)\Big) =$$
+$$=\Big(-13-\la\Big)\Big(\la-1\Big)\Big(\big(35+\la\big)\big(\la^2-44\la-21\big)-64\big(4\la-15\big)+200\big(9\la-1\big)\Big)-$$
+$$-11\Big(\la-1\Big)\Big(-40\big(\la^2-44\la-21\big)+192\big(\la+19\big)-400\big(5\la+11\big)\Big)+$$
+$$+4\Big(\la-1\Big)\Big(-160\big(4\la-15\big)+12\big(35+\la\big)\big(\la+19\big)-6240-4160\Big)+31\Big(\la-1\Big)\Big(80\big(9\la-1\big)-4\big(35+\la\big)\big(5\la+11\big)+1664\Big) =$$
+$$=\Big(-13-\la\Big)\Big(\la-1\Big)^2\Big(\la^2-8\la-25\Big)+88\Big(\la-1\Big)^2\Big(5\la+11\Big)+16\Big(\la-1\Big)^2\Big(3\la+5\Big)-124\Big(\la-1\Big)^2\Big(5\la+11\Big) =$$
+$$=\Big(\la-1\Big)^2\Big(\big(-13-\la\big)\big(\la^2-8\la-25\big)-36\big(5\la+11\big)+16\big(3\la+5\big)\Big) = -\Big(\la-1\Big)^3\Big(\la+3\Big)^2$$
+$$(\la - 1)^3(\la+3)^2 = 0 \Rightarrow \sigma_A = \left\{1^{(3)}, -3^{(2)}\right\}$$
+\paragraph*{Шаг 3. Собственные векторы} \, \\
+Найдём собственные векторы оператора, подставив найденные собственные значения вместо $\la$ и решив однородную систему для полученной матрицы.
+$$\la = 1$$
+$$\begin{pmatrix}
+-14 & 11 & 4 & -17 & 7 \\
+40 & -36 & -16 & 60 & -20 \\
+12 & -16 & -8 & 26 & -8 \\
+20 & -18 & -8 & 30 & -10 \\
+-40 & 36 & 16 & -60 & 20
+\end{pmatrix} \sim \begin{pmatrix}
+-14 & 11 & 4 & -17 & 7 \\
+0 & 0 & 0 & 0 & 0 \\
+6 & -8 & -4 & 13 & -4 \\
+10 & -9 & -4 & 15 & -5 \\
+0 & 0 & 0 & 0 & 0
+\end{pmatrix} \sim \begin{pmatrix}
+-8 & 3 & 0 & -4 & 3 \\
+0 & 0 & 0 & 0 & 0 \\
+6 & -8 & -4 & 13 & -4 \\
+4 & -1 & 0 & 2 & -1 \\
+0 & 0 & 0 & 0 & 0
+\end{pmatrix} \sim \begin{pmatrix}
+0 & 1 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 & 0 \\
+2 & -7 & -4 & 11 & -3 \\
+4 & -1 & 0 & 2 & -1 \\
+0 & 0 & 0 & 0 & 0
+\end{pmatrix} \sim$$
+$$\sim \begin{pmatrix}
+0 & 1 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 & 0 \\
+0 & -6 & -4 & 10 & 0 \\
+2 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 0
+\end{pmatrix}\sim \begin{pmatrix}
+0 & 1 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 & 0 \\
+0 & -3 & -2 & 5 & 0 \\
+2 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 0
+\end{pmatrix} \sim \begin{pmatrix}
+0 & 1 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & -2 & 5 & 3 \\
+2 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 0
+\end{pmatrix} \Rightarrow \begin{cases}
+\xi_1 = -\frac{\xi_4}{2} \\
+\xi_2 = -\xi_5 \\
+\xi_3 = \frac{5\xi_4}{2} + \frac{3\xi_5}{2} \\
+\xi_4, \xi_5\in \mathbb{R}
+\end{cases} \shiftleft{5pt}{15pt}{$\Rightarrow$} v_1 = \begin{pmatrix}
+-1 \\ 0 \\ 5 \\ 2 \\ 0
+\end{pmatrix} \quad v_2 = \begin{pmatrix}
+0 \\ -2 \\ 3 \\ 0 \\ 2
+\end{pmatrix}$$ 
+$$\Downarrow$$
+$$m_a = 3,\;\;m_g = 2 \Rightarrow m_a\neq m_g$$\\
+$$\la = -3$$
+$$\begin{pmatrix}
+-10 & 11 & 4 & -17 & 7 \\
+40 & -32 & -16 & 60 & -20 \\
+12 & -16 & -4 & 26 & -8 \\
+20 & -18 & -8 & 34 & -10 \\
+-40 & 36 & 16 & -60 & 24
+\end{pmatrix} \sim \begin{pmatrix}
+-10 & 11 & 4 & -17 & 7 \\
+10 & -8 & -4 & 15 & -5 \\
+6 & -8 & -2 & 13 & -4 \\
+10 & -9 & -4 & 17 & -5 \\
+-10 & 9 & 4 & -15 & 6
+\end{pmatrix} \sim \begin{pmatrix}
+-4 & 3 & 2 & -4 & 3 \\
+0 & 1 & 0 & -2 & 0 \\
+6 & -8 & -2 & 13 & -4 \\
+0 & 2 & 0 & 0 & 2 \\
+0 & 1 & 0 & 0 & 1
+\end{pmatrix} \sim \begin{pmatrix}
+-4 & 3 & 2 & -4 & 3 \\
+0 & 1 & 0 & 0 & 1 \\
+2 & -5 & 0 & 9 & -1 \\
+0 & 1 & 0 & -2 & 0 \\
+0 & 0 & 0 & 0 & 0
+\end{pmatrix} \sim$$
+$$\sim \begin{pmatrix}
+0 & -7 & 2 & 14 & 1 \\
+0 & 1 & 0 & 0 & 1 \\
+2 & -5 & 0 & 9 & -1 \\
+0 & 0 & 0 & -2 & -1 \\
+0 & 0 & 0 & 0 & 0
+\end{pmatrix}\sim \begin{pmatrix}
+2 & -5 & 0 & 9 & -1 \\
+0 & 1 & 0 & 0 & 1 \\
+0 & 0 & 2 & 14 & 8 \\
+0 & 0 & 0 & -2 & -1 \\
+0 & 0 & 0 & 0 & 0
+\end{pmatrix} \Rightarrow \begin{cases}
+\xi_1 = \frac{5\xi_2}{2} -\frac{9\xi_4}{2}+\frac{\xi_5}{2} \\
+\xi_2 = -\xi_5 \\
+\xi_3 = -7\xi_4-4\xi_5 \\
+\xi_4 = -\frac{\xi_5}{2}
+\end{cases} \Leftrightarrow \begin{cases}
+\xi_1 = \frac{\xi_5}{4} \\
+\xi_2 = -\xi_5 \\
+\xi_3 = -\frac{\xi_5}{2} \\
+\xi_4 = -\frac{\xi_5}{2}
+\end{cases} \Rightarrow v_3 = \begin{pmatrix}1 \\ -4 \\ -2 \\ -2 \\ 4\end{pmatrix}$$ 
+$$\Downarrow$$
+$$m_a = 2,\;\;m_g = 1 \Rightarrow m_a\neq m_g$$
+Геометрические кратности не равны алгебраическим в спектре $\Rightarrow$ оператор нескалярного типа $\Rightarrow$ оператору необходимы присоединнённые вектора для базиса, в котором оператор будет иметь жорданову форму.
+\paragraph*{Шаг 4. Присоединённые векторы} \, \\
+Для создания присоединённых векторов необходимо уточнить процесс их формирования:
+\begin{center}
+Если для операторов скалярного типа $Ax = \la x$, то для операторов нескалярного типа это свойство приобретает вид $Au = \la u + x$, тогда \\
+$Au - \la u = x\qquad\quad$\\
+$(A - \la E)u = x\qquad\quad\;$ \\
+Здесь $u$ --- матрица присоединённых векторов, а $E$ --- единичная матрица. \\
+Решим неоднородную систему линейных алгебраических уравнений через матрицу: \\
+$\la = 1$
+$$\left(\begin{array}{ccccc|c}
+-14 & 11 & 4 & -17 & 7 & -1 \\
+40 & -36 & -16 & 60 & -20 & 0 \\
+12 & -16 & -8 & 26 & -8 & 5 \\
+20 & -18 & -8 & 30 & -10 & 2 \\
+-40 & 36 & 16 & -60 & 20 & 0
+\end{array}\right) \sim \left(\begin{array}{ccccc|c}
+-14 & 11 & 4 & -17 & 7 & -1 \\
+0 & 0 & 0 & 0 & 0 & -4 \\
+12 & -16 & -8 & 26 & -8 & 5 \\
+10 & -9 & -4 & 15 & -5 & 1 \\
+0 & 0 & 0 & 0 & 0 & 4
+\end{array}\right)\begin{array}{l}\, \\ !\;\;0 = -4 \\ \, \\ \, \\ !\;\;0 = 4\end{array} \shiftleft{100pt}{130pt}{$\Rightarrow$ у системы нет решений.}$$
+$$\left(\begin{array}{ccccc|c}
+-14 & 11 & 4 & -17 & 7 & 0 \\
+40 & -36 & -16 & 60 & -20 & -2 \\
+12 & -16 & -8 & 26 & -8 & 3 \\
+20 & -18 & -8 & 30 & -10 & 0 \\
+-40 & 36 & 16 & -60 & 20 & 2
+\end{array}\right) \sim \left(\begin{array}{ccccc|c}
+-14 & 11 & 4 & -17 & 7 & 0 \\
+0 & 0 & 0 & 0 & 0 & -2 \\
+12 & -16 & -8 & 26 & -8 & 3 \\
+20 & -18 & -8 & 30 & -10 & 0 \\
+0 & 0 & 0 & 0 & 0 & 2
+\end{array}\right)\begin{array}{l}\, \\ !\;\;0 = -2 \\ \, \\ \, \\ !\;\;0=2\end{array} \shiftleft{100pt}{130pt}{$\Rightarrow$ у системы нет решений.}$$
+$$\Downarrow$$
+$$\Downarrow$$
+Необходимо вычислить линейную комбинацию собственных векторов и найти её коэффициенты, при которой система выше будет иметь решение. И с уже полученной линейной комбинацией мы сможем вычислить присоединённый вектор.
+\end{center}
+$$v_л = \alpha_1\begin{pmatrix}-1 \\ 0 \\ 5 \\ 2 \\ 0\end{pmatrix}+\alpha_2\begin{pmatrix}0 \\ -2 \\ 3 \\ 0 \\ 2\end{pmatrix} = \begin{pmatrix}-\alpha_1 \\ -2\alpha_2 \\ 5\alpha_1+3\alpha_2 \\ 2\alpha_1 \\ 2\alpha_2\end{pmatrix}$$
+Подставим полученный вектор в расширенную матрицу, чтобы решить систему и найти $\alpha_1$ и $\alpha_2$. Решим систему только для тех строк, которые заведомо линейно зависимы:
+$$\left(\begin{array}{ccccc|c}
+-14 & 11 & 4 & -17 & 7 & -\alpha_1 \\
+40 & -36 & -16 & 60 & -20 & -2\alpha_2 \\
+12 & -16 & -8 & 26 & -8 & 5\alpha_1+3\alpha_2 \\
+20 & -18 & -8 & 30 & -10 & 2\alpha_1 \\
+-40 & 36 & 16 & -60 & 20 & 2\alpha_2
+\end{array}\right) \sim \left(\begin{array}{ccccc|c}
+40 & -36 & -16 & 60 & -20 & -2\alpha_2 \\
+20 & -18 & -8 & 30 & -10 & 2\alpha_1 \\
+-40 & 36 & 16 & -60 & 20 & 2\alpha_2
+\end{array}\right) \sim  $$
+$$ \sim \left(\begin{array}{ccccc|c}
+0 & 0 & 0 & 0 & 0 & -4\alpha_1-2\alpha_2 \\
+20 & -18 & -8 & 30 & -10 & 2\alpha_1 \\
+0 & 0 & 0 & 0 & 0 & 4\alpha_1+2\alpha_2
+\end{array}\right) \Rightarrow 2\alpha_1=-\alpha_2 \Rightarrow \begin{cases}
+\alpha_1 = 1 \\ \alpha_2 = -2
+\end{cases}$$
+Вернёмся к $v_л$ и подставим туда найденные коэффициенты: $v_л = \begin{pmatrix}-1 \\ 4 \\ -1 \\ 2 \\ -4\end{pmatrix}$. Теперь мы можем решить систему, расширяя основную матрицу вектором $v_л$:
+$$\left(\begin{array}{ccccc|c}
+-14 & 11 & 4 & -17 & 7 & -1 \\
+40 & -36 & -16 & 60 & -20 & 4 \\
+12 & -16 & -8 & 26 & -8 & -1 \\
+20 & -18 & -8 & 30 & -10 & 2 \\
+-40 & 36 & 16 & -60 & 20 & -4
+\end{array}\right) \sim \left(\begin{array}{ccccc|c}
+-14 & 11 & 4 & -17 & 7 & -1 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+12 & -16 & -8 & 26 & -8 & -1 \\
+10 & -9 & -4 & 15 & -5 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0
+\end{array}\right) \sim \left(\begin{array}{ccccc|c}
+-4 & 2 & 0 & -2 & 2 & 0 \\
+12 & -16 & -8 & 26 & -8 & -1 \\
+10 & -9 & -4 & 15 & -5 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0
+\end{array}\right) \sim$$
+$$\sim \left(\begin{array}{ccccc|c}
+-2 & 1 & 0 & -1 & 1 & 0 \\
+0 & -10 & -8 & 20 & -2 & -1 \\
+10 & -9 & -4 & 15 & -5 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0
+\end{array}\right)\sim \left(\begin{array}{ccccc|c}
+-2 & 1 & 0 & -1 & 1 & 0 \\
+0 & -10 & -8 & 20 & -2 & -1 \\
+0 & -4 & -4 & 10 & 0 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0
+\end{array}\right)\sim \left(\begin{array}{ccccc|c}
+-2 & 1 & 0 & -1 & 1 & 0 \\
+0 & -2 & 0 & 0 & -2 & -3 \\
+0 & -4 & -4 & 10 & 0 & 1 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0
+\end{array}\right) \sim$$
+$$\sim \left(\begin{array}{ccccc|c}
+-2 & 1 & 0 & -1 & 1 & 0 \\
+0 & -2 & 0 & 0 & -2 & -3 \\
+0 & 0 & -4 & 10 & 4 & 7 \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0
+\end{array}\right) \Rightarrow \begin{cases}
+2\xi_1 = \xi_2-\xi_4+\xi_5 \\
+\xi_2 = \frac{3}{2}-\xi_5 \\
+\xi_3 = \frac{5\xi_4}{2}+\xi_5-\frac{7}{4} \\
+\xi_4, \xi_5 \in \mathbb{R}
+\end{cases} \Leftrightarrow \begin{cases}
+\xi_1 = 0.75-\frac{\xi_4}{2} \\
+\xi_2 = 1.5-\xi_5 \\
+\xi_3 = \frac{5\xi_4}{2}+\xi_5-1.75 \\
+\xi_4, \xi_5 \in \mathbb{R}
+\end{cases} \Rightarrow u_1 = \begin{pmatrix}0.75 \\ 0.5 \\ -0.75 \\ 0 \\ 1\end{pmatrix}$$
+Аналогичные действия проводим и для второго собственного значения.
+$$\la = -3$$
+$$\left(\begin{array}{ccccc|c}
+-10 & 11 & 4 & -17 & 7 & 1 \\
+40 & -32 & -16 & 60 & -20 & -4 \\
+12 & -16 & -4 & 26 & -8 & -2 \\
+20 & -18 & -8 & 34 & -10 & -2 \\
+-40 & 36 & 16 & -60 & 24 & 4
+\end{array}\right) \sim \left(\begin{array}{ccccc|c}
+-10 & 11 & 4 & -17 & 7 & 1 \\
+10 & -8 & -4 & 15 & -5 & -1 \\
+6 & -8 & -2 & 13 & -4 & -1 \\
+10 & -9 & -4 & 17 & -5 & -1 \\
+-10 & 9 & 4 & -15 & 6 & 1
+\end{array}\right) \sim \left(\begin{array}{ccccc|c}
+0 & 2 & 0 & -2 & 1 & 0 \\
+0 & 1 & 0 & 0 & 1 & 0 \\
+6 & -8 & -2 & 13 & -4 & -1 \\
+0 & 0 & 0 & 2 & 1 & 0 \\
+-10 & 9 & 4 & -15 & 6 & 1
+\end{array}\right) \sim $$
+$$\sim \left(\begin{array}{ccccc|c}
+0 & 0 & 0 & -2 & -1 & 0 \\
+0 & 1 & 0 & 0 & 1 & 0 \\
+6 & -8 & -2 & 13 & -4 & -1 \\
+0 & 0 & 0 & 2 & 1 & 0 \\
+-10 & 9 & 4 & -15 & 6 & 1
+\end{array}\right)\sim \left(\begin{array}{ccccc|c}
+2 & -7 & 0 & 11 & -2 & -1 \\
+0 & 1 & 0 & 0 & 1 & 0 \\
+6 & -8 & -2 & 13 & -4 & -1 \\
+0 & 0 & 0 & 2 & 1 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0
+\end{array}\right)\sim \left(\begin{array}{ccccc|c}
+2 & -7 & 0 & 11 & -2 & -1 \\
+0 & 1 & 0 & 0 & 1 & 0 \\
+0 & 13 & -2 & -20 & 2 & 2 \\
+0 & 0 & 0 & 2 & 1 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0
+\end{array}\right)\sim$$
+$$\sim \left(\begin{array}{ccccc|c}
+2 & -7 & 0 & 11 & -2 & -1 \\
+0 & 1 & 0 & 0 & 1 & 0 \\
+0 & 0 & -2 & -20 & -11 & 2 \\
+0 & 0 & 0 & 2 & 1 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0
+\end{array}\right) \Rightarrow \begin{cases}
+2\xi_1=7\xi_2-11\xi_4+2\xi_5-1 \\
+\xi_2 = -\xi_5 \\
+\xi_3 = -10\xi_4-\frac{11\xi_5}{2}-1 \\
+\xi_4 = -\frac{\xi_5}{2} \\
+\xi_5 \in \mathbb{R}
+\end{cases} \Leftrightarrow \begin{cases}
+\xi_1=\frac{\xi_5}{4}-\frac{1}{2} \\
+\xi_2 = -\xi_5 \\
+\xi_3 = -\frac{\xi_5}{2}-1 \\
+\xi_4 = -\frac{\xi_5}{2} \\
+\xi_5 \in \mathbb{R}
+\end{cases} \Rightarrow u_2 = \begin{pmatrix}0 \\ -2 \\ -3 \\ -1 \\ 2\end{pmatrix}$$
+Нам повезло, для второго собственного значения в ходе элементарных преобразований не оказалось ложных утверждений в линейно зависимых строках, потому присоединённый вектор удалось найти без применения линейной комбинации. \\
+
+\noindent Таким образом базис, в котором оператор имеет жорданову форму, будет выглядеть вот так: $\left\{v_1, v_л, u_1, v_3, u_2\right\}$. Вместо $v_1$ так же может стоять $v_2$.
+
+\paragraph*{Шаг 5. Жорданова форма матрицы оператора} \, \\
+Жорданова форма для матриц операторов нескалярного типа составляется так же, как и для матриц операторов скалярного типа, но лишь с тем исключением, что над главной диагональю, состоящей из собственных значений оператора, для присоединённых векторов добавляются единицы $\Rightarrow$ жорданова форма матрицы заданного оператора будет выглядеть так:
+$$\mathcal{J} = \begin{pmatrix}
+1 & 0 & 0 & 0 & 0 \\
+0 & 1 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & -3 & 1 \\
+0 & 0 & 0 & 0 & -3
+\end{pmatrix}$$
+
+\section*{Задание 5}
+Основу жарданова блока составляют клетки, размер которых для операторов скалярного типа фиксированный и равен 1 и для операторов нескалярного типа может быть больше 1.
+\paragraph*{cos(A) для оператора скалярного типа из задания №3} \, \\
+Вычисление значения функции $\cos(A)$ для оператора скалярного типа выглядит как $\cos(A) = \cos(VDV^{-1}) = V\cos(D)V^{-1}$, где $D$ --- диагональная матрица оператора в базисе собственных векторов, вычисленная на шаге 4 задания 3, а $V$ --- базис оператора, состоящий из собственных векторов. $V^{-1}$ так же было вычислено на этом шаге, поэтому повторно вычисления проводиться не будут.
+$$cos(A) = \begin{pmatrix}
+-2 & 0 & 1 & 2 \\
+0 & 1 & 1 & 2 \\
+1 & 0 & -1 & -1 \\
+0 & 1 & 1 & 1
+\end{pmatrix} \begin{pmatrix}
+\cos(1) & 0 & 0 & 0 \\
+0 & \cos(1)& 0 & 0 \\
+0 & 0 & \cos(-4) & 0 \\
+0 & 0 & 0 & \cos(-1)
+\end{pmatrix} \begin{pmatrix}
+-1 & 1 & -1 & -1 \\
+1 & -1 & 2 & 2 \\
+-1 & 0 & -2 & 0 \\
+0 & 1 & 0 & -1
+\end{pmatrix} = $$
+$$= \begin{pmatrix}
+-2 & 0 & 1 & 2 \\
+0 & 1 & 1 & 2 \\
+1 & 0 & -1 & -1 \\
+0 & 1 & 1 & 1
+\end{pmatrix} \begin{pmatrix}
+\cos(1) & 0 & 0 & 0 \\
+0 & \cos(1)& 0 & 0 \\
+0 & 0 & \cos(4) & 0 \\
+0 & 0 & 0 & \cos(1)
+\end{pmatrix} \begin{pmatrix}
+-1 & 1 & -1 & -1 \\
+1 & -1 & 2 & 2 \\
+-1 & 0 & -2 & 0 \\
+0 & 1 & 0 & -1
+\end{pmatrix} =$$
+$$= \begin{pmatrix}
+-2\cos(1) & 0       & \cos(4)  & 2\cos(1) \\
+0         & \cos(1) & \cos(4)  & 2\cos(1) \\
+\cos(1)   & 0       & -\cos(4) & -\cos(1) \\
+0         & \cos(1) & \cos(4)  & \cos(1)
+\end{pmatrix}\begin{pmatrix}
+-1 & 1 & -1 & -1 \\
+1 & -1 & 2 & 2 \\
+-1 & 0 & -2 & 0 \\
+0 & 1 & 0 & -1
+\end{pmatrix} = $$
+$$= \begin{pmatrix}
+2\cos(1)-\cos(4) & -2\cos(1)+2\cos(1) & 2\cos(1)-2\cos(4) & 2\cos(1)-2\cos(1) \\
+\cos(1)-\cos(4) & -\cos(1)+2\cos(1) & 2\cos(1)-2\cos(4) & 2\cos(1)-2\cos(1) \\
+-\cos(1)+\cos(4) & \cos(1)-\cos(1) & -\cos(1)+2\cos(4) & -\cos(1)+\cos(1) \\
+\cos(1)-\cos(4) & -\cos(1)+\cos(1) & 2\cos(1)-2\cos(4) & 2\cos(1)-\cos(1)
+\end{pmatrix} = $$
+$$= \begin{pmatrix}
+2\cos(1)-\cos(4) & 0 & 2(\cos(1)-\cos(4)) & 0 \\
+\cos(1)-\cos(4) & \cos(1) & 2(\cos(1)-\cos(4)) & 0 \\
+\cos(4)-\cos(1) & 0 & 2\cos(4)-\cos(1) & 0 \\
+\cos(1)-\cos(4) & 0 & 2(\cos(1)-\cos(4)) & \cos(1)
+\end{pmatrix} \approx \begin{pmatrix}
+2\cdot0.54+0.65 & 0 & 2(0.54+0.65) & 0 \\
+0.54+0.65 & 0.54 & 2(0.54+0.65) & 0 \\
+-0.65-0.54 & 0 & -2\cdot0.65-0.54 & 0 \\
+0.54+0.65 & 0 & 2(0.54+0.65) & 0.54
+\end{pmatrix} \approx$$
+$$\approx \begin{pmatrix}
+1.73 & 0 & 2\cdot1.19 & 0 \\
+1.19 & 0.54 & 2\cdot1.19 & 0 \\
+-1.19 & 0 & -1.85 & 0 \\
+1.19 & 0 & 2\cdot1.19 & 0.54
+\end{pmatrix} \approx \begin{pmatrix}
+1.73 & 0 & 2.39 & 0 \\
+1.19 & 0.54 & 2.39 & 0 \\
+-1.19 & 0 & -1.85 & 0 \\
+1.19 & 0 & 2.39 & 0.54
+\end{pmatrix}$$
+\paragraph*{cos(A) для оператора нескалярного типа из задания №4} \, \\
+Вычисление значения функции $\cos(A)$ для оператора нескалярного типа выглядит как $\cos(A) = \cos(V\mathcal{J}V^{-1}) = V\cos(\mathcal{J})V^{-1}$, где $\mathcal{J}$ --- жорданова нормальная форма оператора в базисе собственных и присоединённых векторов, вычисленная на шаге 5 задания 4, а $V$ --- базис оператора, состоящий из собственных и присоединённых векторов.
+$$\cos(A) = \begin{pmatrix}
+-1 & -1 & 0.75 & 1 & 0 \\
+0 & 4 & 0.5 & -4 & -2\\
+5 & -1 & -0.75 & -2 & -3\\
+2 & 2 & 0 & -2 & -1\\
+0 & -4 & 1 & 4 & 2
+\end{pmatrix}\begin{pmatrix}
+\cos(1) & -\sin(1) & -\frac{\cos(1)}{2} & 0 & 0 \\
+0 & \cos(1) & -\sin(1) & 0 & 0 \\
+0 & 0 & \cos(1) & 0 & 0 \\
+0 & 0 & 0 & \cos(-3) & -\sin(-3) \\
+0 & 0 & 0 & 0 & \cos(-3)
+\end{pmatrix}\begin{pmatrix}
+-1 & -1 & 0.75 & 1 & 0 \\
+0 & 4 & 0.5 & -4 & -2\\
+5 & -1 & -0.75 & -2 & -3\\
+2 & 2 & 0 & -2 & -1\\
+0 & -4 & 1 & 4 & 2
+\end{pmatrix}^{-1} =$$
+$$= \begin{pmatrix}
+-1 & -1 & 0.75 & 1 & 0 \\
+0 & 4 & 0.5 & -4 & -2\\
+5 & -1 & -0.75 & -2 & -3\\
+2 & 2 & 0 & -2 & -1\\
+0 & -4 & 1 & 4 & 2
+\end{pmatrix}\begin{pmatrix}
+\cos(1) & -\sin(1) & -\frac{\cos(1)}{2} & 0 & 0 \\
+0 & \cos(1) & -\sin(1) & 0 & 0 \\
+0 & 0 & \cos(1) & 0 & 0 \\
+0 & 0 & 0 & \cos(3) & \sin(3) \\
+0 & 0 & 0 & 0 & \cos(3)
+\end{pmatrix}\begin{pmatrix}
+-1 & -1 & 0.75 & 1 & 0 \\
+0 & 4 & 0.5 & -4 & -2\\
+5 & -1 & -0.75 & -2 & -3\\
+2 & 2 & 0 & -2 & -1\\
+0 & -4 & 1 & 4 & 2
+\end{pmatrix}^{-1} = $$
+$$= \begin{pmatrix}
+-\cos(1) & \sin(1)-\cos(1) & 1.25\cos(1)+\sin(1) & \cos(3) & \sin(3) \\
+0 & 4\cos(1) & 0.5\cos(1)-2\sin(1) & -4\cos(3) & -2\cos(3)-4\sin(3) \\
+5\cos(1) & -\cos(1)-5\sin(1) & \sin(1)-3.25\cos(1) & -2\cos(3) & -3\cos(3)-2\sin(3) \\
+2\cos(1) & 2\cos(1)-2\sin(1) & -\cos(1)-2\sin(1) & -2\cos(3) & -\cos(3)-2\sin(3) \\
+0 & -4\cos(1) & \cos(1)+4\sin(1) & 4\cos(3) & 2\cos(3)+4\sin(3)
+\end{pmatrix}\times$$
+$$\times\left[\left(\begin{array}{ccccc|ccccc}
+-1 & -1 & 0.75 & 1 & 0 & 1 & 0 & 0 & 0 & 0\\
+0 & 4 & 0.5 & -4 & -2 & 0 & 1 & 0 & 0 & 0\\
+5 & -1 & -0.75 & -2 & -3 & 0 & 0 & 1 & 0 & 0\\
+2 & 2 & 0 & -2 & -1 & 0 & 0 & 0 & 1 & 0\\
+0 & -4 & 1 & 4 & 2 & 0 & 0 & 0 & 0 & 1
+\end{array}\right) \sim \left(\begin{array}{ccccc|ccccc}
+-1 & -1 & 0.75 & 1 & 0 & 1 & 0 & 0 & 0 & 0\\
+0 & 4 & 0.5 & -4 & -2 & 0 & 1 & 0 & 0 & 0\\
+0 & -6 & 3 & 3 & -3 & 5 & 0 & 1 & 0 & 0\\
+0 & 0 & 1.5 & 0 & -1 & 2 & 0 & 0 & 1 & 0\\
+0 & -4 & 1 & 4 & 2 & 0 & 0 & 0 & 0 & 1
+\end{array}\right) \sim \right.$$
+$$\left.\sim \left(\begin{array}{ccccc|ccccc}
+-1 & -1 & 0.75 & 1 & 0 & 1 & 0 & 0 & 0 & 0\\
+0 & 0 & 1.5 & 0 & 0 & 0 & 1 & 0 & 0 & 1\\
+0 & -2 & 2 & -1 & -5 & 5 & 0 & 1 & 0 & -1\\
+0 & 0 & 1.5 & 0 & -1 & 2 & 0 & 0 & 1 & 0\\
+0 & -4 & 1 & 4 & 2 & 0 & 0 & 0 & 0 & 1
+\end{array}\right)\sim \left(\begin{array}{ccccc|ccccc}
+-2 & -2 & 1.5 & 2 & 0 & 2 & 0 & 0 & 0 & 0\\
+0 & 0 & 1 & 0 & 0 & 0 & \frac{2}{3} & 0 & 0 & \frac{2}{3}\\
+0 & -2 & 2 & -1 & -5 & 5 & 0 & 1 & 0 & -1\\
+0 & 0 & 0 & 0 & -1 & 2 & -1 & 0 & 1 & -1\\
+0 & 0 & -3 & 6 & 12 & -10 & 0 & -2 & 0 & 3
+\end{array}\right)\sim \right.$$
+$$\left.\sim \left(\begin{array}{ccccc|ccccc}
+-2 & 0 & -0.5 & 3 & 5 & -3 & 0 & -1 & 0 & 1\\
+0 & 0 & 1 & 0 & 0 & 0 & \nicefrac{2}{3} & 0 & 0 & \nicefrac{2}{3}\\
+0 & -2 & 0 & -1 & -5 & 5 & -\nicefrac{4}{3} & 1 & 0 & -\nicefrac{7}{3}\\
+0 & 0 & 0 & 0 & -1 & 2 & -1 & 0 & 1 & -1\\
+0 & 0 & 0 & 6 & 12 & -10 & 2 & -2 & 0 & 5
+\end{array}\right)\sim \left(\begin{array}{ccccc|ccccc}
+-4 & 0 & 0 & 6 & 10 & -6 & \nicefrac{2}{3} & -2 & 0 & \nicefrac{8}{3}\\
+0 & 0 & 1 & 0 & 0 & 0 & \nicefrac{2}{3} & 0 & 0 & \nicefrac{2}{3}\\
+0 & -2 & 0 & -1 & -5 & 5 & -\nicefrac{4}{3} & 1 & 0 & -\nicefrac{7}{3}\\
+0 & 0 & 0 & 0 & -1 & 2 & -1 & 0 & 1 & -1\\
+0 & 0 & 0 & 6 & 12 & -10 & 2 & -2 & 0 & 5
+\end{array}\right) \sim\right.$$
+$$\left.\sim \left(\begin{array}{ccccc|ccccc}
+-4 & 0 & 0 & 0 & -2 & 4 & -\nicefrac{4}{3} & 0 & 0 & -\nicefrac{7}{3}\\
+0 & 0 & 1 & 0 & 0 & 0 & \nicefrac{2}{3} & 0 & 0 & \nicefrac{2}{3}\\
+0 & -2 & 0 & -1 & -5 & 5 & -\nicefrac{4}{3} & 1 & 0 & -\nicefrac{7}{3}\\
+0 & 0 & 0 & 0 & 1 & -2 & 1 & 0 & -1 & 1\\
+0 & 0 & 0 & 6 & 12 & -10 & 2 & -2 & 0 & 5
+\end{array}\right)\sim \left(\begin{array}{ccccc|ccccc}
+-4 & 0 & 0 & 0 & 0 & 0 & \nicefrac{2}{3} & 0 & -2 & -\nicefrac{1}{3}\\
+0 & 0 & 1 & 0 & 0 & 0 & \nicefrac{2}{3} & 0 & 0 & \nicefrac{2}{3}\\
+0 & -2 & 0 & -1 & 0 & -5 & \nicefrac{11}{3} & 1 & -5 & \nicefrac{8}{3}\\
+0 & 0 & 0 & 0 & 1 & -2 & 1 & 0 & -1 & 1\\
+0 & 0 & 0 & 6 & 0 & 14 & -10 & -2 & 12 & -7
+\end{array}\right)\sim \right.$$
+$$\left.\sim \left(\begin{array}{ccccc|ccccc}
+1 & 0 & 0 & 0 & 0 & 0 & -\nicefrac{1}{6} & 0 & \nicefrac{1}{2} & \nicefrac{1}{12}\\
+0 & 0 & 1 & 0 & 0 & 0 & \nicefrac{2}{3} & 0 & 0 & \nicefrac{2}{3}\\
+0 & -2 & 0 & -1 & 0 & -5 & \nicefrac{11}{3} & 1 & -5 & \nicefrac{8}{3}\\
+0 & 0 & 0 & 0 & 1 & -2 & 1 & 0 & -1 & 1\\
+0 & 0 & 0 & 1 & 0 & \nicefrac{7}{3} & -\nicefrac{5}{3} & -\nicefrac{1}{3} & 2 & -\nicefrac{7}{6}
+\end{array}\right)\sim \left(\begin{array}{ccccc|ccccc}
+1 & 0 & 0 & 0 & 0 & 0 & -\nicefrac{1}{6} & 0 & \nicefrac{1}{2} & \nicefrac{1}{12}\\
+0 & 0 & 1 & 0 & 0 & 0 & \nicefrac{2}{3} & 0 & 0 & \nicefrac{2}{3}\\
+0 & -2 & 0 & 0 & 0 & -\nicefrac{8}{3} & 2 & \nicefrac{2}{3} & -3 & \nicefrac{3}{2}\\
+0 & 0 & 0 & 0 & 1 & -2 & 1 & 0 & -1 & 1\\
+0 & 0 & 0 & 1 & 0 & \nicefrac{7}{3} & -\nicefrac{5}{3} & -\nicefrac{1}{3} & 2 & -\nicefrac{7}{6}
+\end{array}\right) = \right.$$
+$$\left. = \begin{pmatrix}
+0 & -\nicefrac{1}{6} & 0 & \nicefrac{1}{2} & \nicefrac{1}{12}\\
+\nicefrac{4}{3} & -1 & -\nicefrac{1}{3} & \nicefrac{3}{2} & -\nicefrac{3}{4}\\
+0 & \nicefrac{2}{3} & 0 & 0 & \nicefrac{2}{3}\\
+\nicefrac{7}{3} & -\nicefrac{5}{3} & -\nicefrac{1}{3} & 2 & -\nicefrac{7}{6} \\
+-2 & 1 & 0 & -1 & 1
+\end{pmatrix}\right] = \left[\begin{matrix}
+\cos(1) = 0.54 & \cos(3) = -0.99 \\
+\sin(1) = 0.84 & \sin(3) = 0.14
+\end{matrix}\right] =$$
+$$= \left(\begin{matrix}
+\frac{-4\cdot0.54-7\cdot0.99+4\cdot0.84-6\cdot0.14}{3} & \frac{6\cdot0.54+5\cdot0.99-0.84+3\cdot0.14}{3} & \frac{0.54+0.99-0.84}{3} & \frac{-4\cdot0.54-4\cdot0.99+3\cdot0.84-2\cdot0.14}{2} \\
+\frac{16\cdot0.54+16\cdot0.99+24\cdot0.14}{3} & \frac{-11\cdot0.54-14\cdot0.99-8\cdot0.84-12\cdot0.14}{3} & \frac{-4\cdot0.54-4\cdot0.99}{3} & 6\cdot0.54+6\cdot0.99+4\cdot0.14\\
+\frac{-4\cdot0.54-4\cdot0.99-20\cdot0.84+12\cdot0.14}{3} & \frac{-6\cdot0.54-0.99+17\cdot0.84-6\cdot0.14}{3} & \frac{0.54-2\cdot0.99+5\cdot0.84}{3} & \frac{2\cdot0.54+2\cdot0.99-15\cdot0.84+4\cdot0.14}{2} \\
+\frac{8\cdot0.54+8\cdot0.99-8\cdot0.84+12\cdot0.14}{3} & \frac{-9\cdot0.54-7\cdot0.99+2\cdot0.84-6\cdot0.14}{3} & \frac{-2\cdot0.54-2\cdot0.99+2\cdot0.84}{3} & 4\cdot0.54+3\cdot0.99-3\cdot0.84+2\cdot0.14 \\
+\frac{-16\cdot0.54-16\cdot0.99-24\cdot0.14}{3} & \frac{14\cdot0.54-14\cdot(-0.99)+8\cdot0.84+12\cdot0.14}{3} & \frac{4\cdot0.54+4\cdot0.99}{3} & -6\cdot0.54-6\cdot0.99-4\cdot0.14
+\end{matrix}\right.$$
+$$\left.\begin{matrix}
+\frac{18\cdot0.54+14\cdot0.99-0.84+12\cdot0.14}{12} \\
+\frac{-8\cdot0.54-8\cdot0.99-8\cdot0.84-12\cdot0.14}{3} \\
+\frac{-12\cdot0.54+8\cdot0.99+53\cdot0.84-24\cdot0.14}{12} \\
+\frac{-12\cdot0.54-8\cdot0.99+0.84-12\cdot0.14}{6} \\
+\frac{11\cdot0.54+8\cdot0.99+8\cdot0.84+12\cdot0.14}{3}
+\end{matrix}\right) \approx \begin{pmatrix}
+-2.19 & 2.59 & 0.23 & -1.94 & 2.04 \\
+9.29 & -9.41 & -2.04 & 9.75 & -6.89 \\
+-7.09 & 3.08 & 0.92 & -4.5 & 3.55 \\
+2.4 & -3.65 & -0.46 & 2.89 & -2.54 \\
+-9.29 & 9.95 & 2.04 & -9.75 & 7.43
+\end{pmatrix}$$
+\end{document}

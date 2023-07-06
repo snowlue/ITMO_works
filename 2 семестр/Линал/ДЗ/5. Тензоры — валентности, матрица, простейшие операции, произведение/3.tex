@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=14cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\pagenumbering{gobble}
+
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{%
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}\;}
+\newcommand{\e}{\text{e}}
+\newcommand{\la}{\lambda}
+\newcommand{\shiftleft}[3]{\makebox[#1][r]{\makebox[#2][l]{#3}}}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand{\at}{\biggr\rvert}
+
+\begin{document}
+\begin{center}
+$$3a_{kml} - 3b_{imk} = 3\;\begin{array}{||cc|cc||}
+-2 & 0 & 2 & -3 \\
+-3 & 1 & 0 & 2
+\end{array} - 3\;\begin{array}{||cc|cc||}
+-3 & -1 & 0 & 3 \\
+1 & -1 & 0 & 3
+\end{array} = \begin{array}{||cc|cc||}
+-6 & 0 & 6 & -9 \\
+-9 & 3 & 0 & 6
+\end{array} - \;\begin{array}{||cc|cc||}
+-9 & -3 & 0 & 9 \\
+3 & -3 & 0 & 9
+\end{array} = \begin{array}{||cc|cc||}
+3 & 3 & 6 & -18 \\
+-12 & 6 & 0 & -3
+\end{array}$$
+\end{center}
+\end{document}

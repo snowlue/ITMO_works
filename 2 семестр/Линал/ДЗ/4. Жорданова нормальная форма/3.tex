@@ -1,0 +1,133 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=30cm, paperheight=20cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\pagenumbering{gobble}
+
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{%
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}\;}
+\newcommand{\e}{\text{e}}
+\newcommand{\la}{\lambda}
+\newcommand{\shiftleft}[3]{\makebox[#1][r]{\makebox[#2][l]{#3}}}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand{\at}{\biggr\rvert}
+
+\begin{document}
+\begin{center}
+Вычислим характеристический полином и, как следствие, найдём спектр оператора:
+$$\chi_\varphi(\la) = \begin{vmatrix}
+4-\la & 1 & 0 & 0 & 0 \\
+13 & 9-\la & 4 & 2 & 1 \\
+81 & 40 & 23-\la & 14 & 7 \\
+-143 & -72 & -36 & -23-\la & -9 \\
+-143 & -72 & -36 & -18 & -14-\la \\
+\end{vmatrix} = -\la^5-\la^4+38\la^3-18\la^2-405\la+675 = -(\la - 3)^3(\la + 5)^2 \Rightarrow \sigma_\varphi = \left\{3^{(3)}, -5^{(2)}\right\}$$
+Найдём собственные вектора оператора к соответствующим собственным значениям:
+$$\la = 3$$
+$$\begin{pmatrix}
+1 & 1 & 0 & 0 & 0 \\
+13 & 6 & 4 & 2 & 1 \\
+81 & 40 & 20 & 14 & 7 \\
+-143 & -72 & -36 & -26 & -9 \\
+-143 & -72 & -36 & -18 & -17
+\end{pmatrix} \sim \begin{pmatrix}
+1 & 1 & 0 & 0 & 0 \\
+0 & -7 & 4 & 2 & 1 \\
+0 & -41 & 20 & 14 & 7 \\
+0 & -71 & 36 & 26 & 9 \\
+0 & 0 & 0 & 8 & -8
+\end{pmatrix} \sim \begin{pmatrix}
+1 & 1 & 0 & 0 & 0 \\
+0 & -7 & 4 & 3 & 0 \\
+0 & 1 & -4 & 3 & 0 \\
+0 & -1 & -4 & 5 & 0 \\
+0 & 0 & 0 & 1 & -1
+\end{pmatrix} \sim \begin{pmatrix}
+1 & 1 & 0 & 0 & 0 \\
+0 & 8 & -8 & 0 & 0 \\
+0 & 1 & -4 & 3 & 0 \\
+0 & 0 & -8 & 8 & 0 \\
+0 & 0 & 0 & 1 & -1
+\end{pmatrix} \sim \begin{pmatrix}
+1 & 1 & 0 & 0 & 0 \\
+0 & 1 & -1 & 0 & 0 \\
+0 & 0 & -3 & 3 & 0 \\
+0 & 0 & -1 & 1 & 0 \\
+0 & 0 & 0 & 1 & -1
+\end{pmatrix} \Rightarrow \begin{cases}
+\xi_1 = -\xi_2 \\
+\xi_2 = \xi_3 \\
+\xi_3 = \xi_4 \\
+\xi_4 = \xi_5 \\
+\xi_5 \in \mathbb{R}
+\end{cases} \shiftleft{-2pt}{14pt}{$\Rightarrow$} v_1 = \begin{pmatrix}
+-1 \\ 1 \\ 1 \\ 1 \\ 1
+\end{pmatrix}$$
+$$\la = -5$$
+$$\begin{pmatrix}
+9 & 1 & 0 & 0 & 0 \\
+13 & 14 & 4 & 2 & 1 \\
+81 & 40 & 28 & 14 & 7 \\
+-143 & -72 & -36 & -18 & -9 \\
+-143 & -72 & -36 & -18 & -9 \\
+\end{pmatrix} \sim \begin{pmatrix}
+9 & 1 & 0 & 0 & 0 \\
+4 & 13 & 4 & 2 & 1 \\
+0 & 31 & 28 & 14 & 7 \\
+0 & 82 & 8 & 4 & 2 \\
+0 & 0 & 0 & 0 & 0 \\
+\end{pmatrix} \sim \begin{pmatrix}
+9 & 1 & 0 & 0 & 0 \\
+4 & 13 & 4 & 2 & 1 \\
+0 & 31 & 28 & 14 & 7 \\
+-4 & 28 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+\end{pmatrix} \sim \begin{pmatrix}
+0 & 64 & 0 & 0 & 0 \\
+0 & 41 & 4 & 2 & 1 \\
+0 & 31 & 28 & 14 & 7 \\
+-1 & 7 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+\end{pmatrix} \sim \begin{pmatrix}
+0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 4 & 2 & 1 \\
+0 & 0 & 28 & 14 & 7 \\
+1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+\end{pmatrix} \Rightarrow \begin{cases}
+\xi_1 = 0 \\
+\xi_2 = 0 \\
+\xi_3, \xi_4 \in \mathbb{R} \\
+\xi_5 = -4\xi_3-2\xi_4 \\
+\end{cases}  \shiftleft{-15pt}{14pt}{$\Rightarrow$} v_2=\begin{pmatrix}
+0 \\ 0 \\ 1 \\ 0 \\ -4
+\end{pmatrix}\quad v_3 = \begin{pmatrix}
+0 \\ 0 \\ 0 \\ 1 \\ -2
+\end{pmatrix}$$
+Перед нами оператор нескалярного типа, базис которого будет составлен из 3 собственных векторов и 2 присоединённых и будет выглядеть так: $\left\{v_1, u_1, u_2, v_2, v_3\right\}$, \\ где $u_1$ и $u_2$ --- присоединённые вектора. Тогда жорданова форма оператора в этом базиса примет следующий вид:
+$$\mathcal{J} = \begin{pmatrix}
+3 & 1 & 0 & 0 & 0 \\
+0 & 3 & 1 & 0 & 0 \\
+0 & 0 & 3 & 0 & 0 \\
+0 & 0 & 0 & -5 & 0 \\
+0 & 0 & 0 & 0 & -5 \\
+\end{pmatrix}$$
+\end{center}
+\end{document}

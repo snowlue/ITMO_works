@@ -1,0 +1,67 @@
+\documentclass{article}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=21cm, paperheight=14cm, top=1cm,bottom=1cm,left=0.5cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\pagenumbering{gobble}
+
+\newcommand{\im}{\text{im}\,}
+\newcommand{\rang}{\text{rang}}
+\renewcommand{\ker}{\text{ker}\,}
+
+\begin{document}
+\begin{center}
+Базис образа оператора с заданной матрицей $A$ определяется как линейно независимый набор векторов с $\rang(\im\phi) = \rang(A) - \rang(\ker\phi)$, образованных действием оператора на стандартный базис:
+\end{center}
+\noindent$$\rang(A) = \left[\left(\begin{array}{rrr}
+1 & 1 & -1 \\
+-1 & 0 & 0 \\
+-2 & -2 & 3
+\end{array}\right) \sim \left(\begin{array}{rrr}
+1 & 1 & -1 \\
+-1 & 0 & 0 \\
+0 & 0 & 1
+\end{array}\right) \sim  \left(\begin{array}{rrr}
+0 & 1 & 0 \\
+-1 & 0 & 0 \\
+0 & 0 & 1
+\end{array}\right)\right] = 3$$ \\
+\noindent$$\rang(\ker\phi) = \left[\left(\begin{array}{rrr|c}
+0 & 1 & 0 & 0\\
+-1 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0
+\end{array}\right) \Leftrightarrow \begin{cases}
+\xi_1 = 0 \\ \xi_2 = 0 \\ \xi_3 = 0
+\end{cases}\right] = 0$$ \\
+\begin{center}
+Следовательно базиc образа оператора будет образован действием оператора на стандартный базис из $\rang(A) - \rang(\ker\phi) = 3$ элементов:
+\end{center}
+$$\im\phi = \left\{ \left(\begin{array}{rrr}
+1 & 1 & -1 \\
+-1 & 0 & 0 \\
+-2 & -2 & 3
+\end{array}\right) \times \begin{pmatrix}
+1 \\ 0 \\ 0
+\end{pmatrix},\;\left(\begin{array}{rrr}
+1 & 1 & -1 \\
+-1 & 0 & 0 \\
+-2 & -2 & 3
+\end{array}\right) \times \begin{pmatrix}
+0 \\ 1 \\ 0
+\end{pmatrix},\;\left(\begin{array}{rrr}
+1 & 1 & -1 \\
+-1 & 0 & 0 \\
+-2 & -2 & 3
+\end{array}\right) \times \begin{pmatrix}
+0\\ 0 \\ 1
+\end{pmatrix} \right\} = \left\{\begin{pmatrix}
+1 \\ -1 \\ -2
+\end{pmatrix},\;\begin{pmatrix}
+1 \\ 0 \\ -2
+\end{pmatrix},\;\begin{pmatrix}
+-1 \\ 0 \\ -2
+\end{pmatrix}\right\}$$
+\end{document}

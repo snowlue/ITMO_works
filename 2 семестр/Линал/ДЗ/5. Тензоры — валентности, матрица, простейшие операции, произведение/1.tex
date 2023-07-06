@@ -1,0 +1,40 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=14cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\pagenumbering{gobble}
+
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{%
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}\;}
+\newcommand{\e}{\text{e}}
+\newcommand{\la}{\lambda}
+\newcommand{\shiftleft}[3]{\makebox[#1][r]{\makebox[#2][l]{#3}}}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand{\at}{\biggr\rvert}
+
+\begin{document}
+\begin{center}
+$$a_k \otimes \left (3b^i \otimes c^l - 5d^{il} \otimes e\right ) = \begin{Vmatrix}1 & 1\end{Vmatrix} \otimes \left ( 3\begin{Vmatrix}-2 \\ 2\end{Vmatrix} \otimes \begin{Vmatrix}5 \\ 1\end{Vmatrix} - 5\begin{Vmatrix}-4 & 4 \\ 0 & -4\end{Vmatrix} \otimes \Vert1\Vert\right ) = \begin{Vmatrix}1 & 1\end{Vmatrix} \otimes \left ( \begin{Vmatrix}-6 \\ 6\end{Vmatrix} \otimes \begin{Vmatrix}5 \\ 1\end{Vmatrix} - \begin{Vmatrix}-20 & 20 \\ 0 & -20\end{Vmatrix} \otimes \Vert1\Vert\right) = \begin{Vmatrix}1 & 1\end{Vmatrix} \otimes \left( \begin{Vmatrix}-30 & -6 \\ 30 & 6\end{Vmatrix} - \begin{Vmatrix}-20 & 20 \\ 0 & -20\end{Vmatrix}\right) = $$
+$$= \begin{Vmatrix}1 & 1\end{Vmatrix} \otimes \begin{Vmatrix}-10 & -26 \\ 30 & 26\end{Vmatrix} = \begin{array}{||cc|cc||}
+-10 & -26 & -10 & -26 \\
+30 & 26 & 30 & 26
+\end{array}$$
+\end{center}
+\end{document}

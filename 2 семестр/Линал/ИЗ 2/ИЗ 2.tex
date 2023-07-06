@@ -1,0 +1,1022 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a4paper, top=2cm, bottom=2cm, left=0.9cm, right=0.9cm, marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{tikz}
+
+\pagestyle{fancy}
+\fancyhead[L]{Линейная алгебра (весна'23)}
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);
+}}}\;}
+\newcommand{\e}{\text{e}}
+\newcommand{\at}{\biggr\rvert}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand{\shiftleft}[3]{\makebox[#1][r]{\makebox[#2][l]{#3}}}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+
+\begin{document}
+\section*{Индивидуальное задание \#2}
+\begin{multicols}{2}
+\noindent\begin{large}ФИО: Овчинников Павел Алексеевич\end{large} \\
+\begin{large}Номер ИСУ: 368606\end{large} \\
+\begin{large}Группа: R3141\end{large} \\
+\begin{large}Поток: ЛИН АЛГ СУИР БИТ Б 1.5\end{large}
+\end{multicols}
+
+\subsection*{Задание 1}
+\paragraph*{Шаг 1. Матрица билинейной формы $B(x, y)$} \, \\
+Запишем билинейную форму в виде матрицы, где каждой $i$-й строке будет соответствовать коэффициент перед $x_i$, а каждому столбцу --- коэффициент перед $y_j$. Тогда:
+$$\squared{$B = \begin{pmatrix}
+2 & -1 & 2 \\
+-5 & -5 & -1 \\
+3 & -1 & -1
+\end{pmatrix}$}$$
+\paragraph*{Шаг 2. Квадратичная форма $Q(x)$} \, \\
+Для того, чтобы построить квадратичную форму на основе билинейной, необходимо заменить $y_j$ на $x$ с таким же индексом $j$. Тогда $Q(x) = 2x^2_1 - x_1x_2 + 2x_1x_3 - 5x_1x_2 - 5x^2_2 - x_2x_3 + 3x_1x_3 - x_2x_3 - x^2_3 = 2x_1^2 - 5x_2^2 - x_3^2 - 6x_1x_2 + 5x_1x_3 - 2x_2x_3$. В таком случае матрицу квадратичной формы можно найти по такому же принципу, что и матрицу билинейной формы лишь с тем исключением, что коэффициенты по обе стороны от побочных диагоналей делятся пополам.
+$$\squared{$Q = \begin{pmatrix}
+2 & -3 & 2.5 \\
+-3 & -5 & -1 \\
+2.5 & -1 & -1
+\end{pmatrix}$}$$
+\paragraph*{Шаг 3. Полярная форма $B_p(x,y)$ к $Q(x)$} \, \\
+Полярная форма строится как $B_p(x,y) = \nicefrac{1}{2}(Q(x+y) - Q(x)-Q(y))$ \\
+В рамках этого выражения:
+\begin{center}
+$Q(x+y) = 2(x_1 + y_1)^2 - 5(x_2 + y_2)^2 - (x_3 + y_3)^2 - 6(x_1 + y_1)(x_2 + y_2) + 5(x_1 + y_1)(x_3 + y_3) - 2(x_2 + y_2)(x_3 + y_3) =$ \\
+$= 2x_1^2 + 4x_1y_1 + 2y_1^2 - 5x_2^2 - 10x_2y_2 - 5y_2^2 - x_3^2 - 2x_3y_3 - y_3^2 - 6x_1x_2 - 6x_1y_2 - 6x_2y_1 - 6y_1y_2 + 5x_1x_3 + 5x_1y_3 + 5x_3y_1 +$ \\ $+ 5y_1y_3 - 2x_2x_3 - 2x_2y_3 - 2x_3y_2 - 2y_2y_3$
+\end{center}
+$Q(x)$ и $Q(y)$ в рамках квадратичной формы очевидны. Вычислим $Q(x+y) - Q(x) - Q(y)$:
+\begin{center}
+$\cancel{2x_1^2} + 4x_1y_1 + \cancel{2y_1^2} - \cancel{5x_2^2} - 10x_2y_2 - \cancel{5y_2^2} - \cancel{x_3^2} - 2x_3y_3 - \cancel{y_3^2} - \cancel{6x_1x_2} - 6x_1y_2 - 6x_2y_1 - \cancel{6y_1y_2} + \cancel{5x_1x_3} + 5x_1y_3 + 5x_3y_1 +$\\
+$+ \cancel{5y_1y_3} - \cancel{2x_2x_3} - 2x_2y_3 - 2x_3y_2 - \cancel{2y_2y_3} - \cancel{2x_1^2} + \cancel{5x_2^2} + \cancel{x_3^2} + \cancel{6x_1x_2} - \cancel{5x_1x_3} + \cancel{2x_2x_3} - \cancel{2y_1^2} + \cancel{5y_2^2} + \cancel{y_3^2} + \cancel{6y_1y_2} - \cancel{5y_1y_3} + \cancel{2y_2y_3} =$ \\
+$= 4x_1y_1 - 10x_2y_2 - 2x_3y_3 - 6x_1y_2 - 6x_2y_1 + 5x_1y_3 + 5x_3y_1 - 2x_2y_3 - 2x_3y_2$
+\end{center}
+В таком случае $B_p(x, y) = \nicefrac{1}{2}(Q(x+y) - Q(x)-Q(y))$ определяется как половина от вычисленного выше выражения:
+\begin{center}
+$B_p(x, y) = \dfrac{1}{2}\left(4x_1y_1 - 10x_2y_2 - 2x_3y_3 - 6x_1y_2 - 6x_2y_1 + 5x_1y_3 + 5x_3y_1 - 2x_2y_3 - 2x_3y_2\right) =$ \\
+$= \squared{$2x_1y_1 - 5x_2y_2 - 1x_3y_3 - 3x_1y_2 - 3x_2y_1 + 2.5x_1y_3 + 2.5x_3y_1 - x_2y_3 - x_3y_2$}$
+\end{center}
+\paragraph*{Шаг 4. Матрица билинейной формы $B_p(x, y)$} \, \\
+Матрица формы, вычисленной на предыдущем шаге, находится так же, как и в ш.1 и ш.2, путём подстановки в компоненты матрицы соответствующих коэффициентов формы.
+$$\squared{$B_p = \begin{pmatrix}
+2 & -3 & 2.5 \\
+-3 & -5 & -1 \\
+2.5 & -1 & -1
+\end{pmatrix}$}$$
+Нетрудно заметить, что коэффициенты полярной формы совпадают с коэффициентами квадратичной формы, от которой она образована.
+\paragraph*{Шаг 5. Симметричная и антисимметричная формы} \, \\
+Так как любая билинейная форма представляется как сумма соответствующих симметричной и антисимметричной форм, то нетрудно вычислить отдельно симметричную $S(x, y)$ и антисимметричную $A(x, y)$ формы, используя основную. Формулы и вычисления ниже:
+\begin{center}
+$S(x,y) = \dfrac{1}{2}(B(x,y) + B(y,x)) = \dfrac{1}{2}(2x_1y_1 - x_1y_2 + 2x_1y_3 - 5x_2y_1 - 5x_2y_2 - x_2y_3 + 3x_3y_1 - x_3y_2 - x_3y_3 + 2x_1y_1 - x_2y_1 +$\\$ + 2x_3y_1 - 5x_1y_2 - 5x_2y_2 - x_3y_2 + 3x_1y_3 - x_2y_3 - x_3y_3) = \dfrac{1}{2}(4x_1y_1 - 6x_1y_2 + 5x_1y_3 - 6x_2y_1 - 10x_2y_2 - 2x_2y_3 + 5x_3y_1 - 2x_3y_2 - 2x_3y_3) =$ \\
+$= \squared{$2x_1y_1 - 3x_1y_2 + 2.5x_1y_3 - 3x_2y_1 - 5x_2y_2 - x_2y_3 + 2.5x_3y_1 - x_3y_2 - x_3y_3$}$
+\end{center}
+\begin{center}
+$A(x, y) = \dfrac{1}{2}(B(x,y) - B(y,x)) = \dfrac{1}{2}(2x_1y_1 - x_1y_2 + 2x_1y_3 - 5x_2y_1 - 5x_2y_2 - x_2y_3 + 3x_3y_1 - x_3y_2 - x_3y_3 - 2x_1y_1 + x_2y_1 -$\\$ - 2x_3y_1 + 5x_1y_2 + 5x_2y_2 + x_3y_2 - 3x_1y_3 + x_2y_3 + x_3y_3) = \dfrac{1}{2}(4x_1y_2 - x_1y_3 - 4x_2y_1 + x_3y_1) = \squared{$2x_1y_2 - 0.5x_1y_3 - 2x_2y_1 + 0.5x_3y_1$}$
+\end{center}
+\paragraph*{Шаг 6. Свойства симметричной и антисимметричной форм} \, \\
+Сложим симметричную и антисимметричную формы, чтобы получить исходную билинейную форму, из которой вычислялись вышеупомянутые формы:
+\begin{center}
+$S(x,y) + A(x, y) = 2x_1y_1 - 3x_1y_2 + 2.5x_1y_3 - 3x_2y_1 - 5x_2y_2 - x_2y_3 + 2.5x_3y_1 - x_3y_2 - x_3y_3 + 2x_1y_2 - 0.5x_1y_3 - 2x_2y_1 + 0.5x_3y_1 = $ \\
+$= 2x_1y_1 - x_1y_2 + 2x_1y_3 - 5x_2y_1 - 5x_2y_2 - x_2y_3 + 3x_3y_1 - x_3y_2 - x_3y_3 = B(x, y) \Rightarrow$ \\ $\Rightarrow$ \squared{сумма симметричной и антисимметричной форм равна исходной билинейной форме.}
+\end{center}
+\paragraph*{Шаг 7. Переход из одного базиса в другой} \, \\
+Построим матрицу перехода $T$ исходя из преобразования базиса:
+$$T = \begin{pmatrix}
+0 & -2 & 1 \\
+-1 & -1 & 0 \\
+1 & 2 & 3
+\end{pmatrix} \Rightarrow T^T = \begin{pmatrix}
+0 & -1 & 1 \\
+-2 & -1 & 2 \\
+1 & 0 & 3
+\end{pmatrix}$$
+Вычислим матрицу билинейной формы в новом базисе --- это $\tilde{B}$. Матрица $B$ билинейной формы была найдена в ш.1.
+$$\tilde{B} = T^TBT = \begin{pmatrix}
+0 & -1 & 1 \\
+-2 & -1 & 2 \\
+1 & 0 & 3
+\end{pmatrix}\times\begin{pmatrix}
+2 & -1 & 2 \\
+-5 & -5 & -1 \\
+3 & -1 & -1
+\end{pmatrix}\times\begin{pmatrix}
+0 & -2 & 1 \\
+-1 & -1 & 0 \\
+1 & 2 & 3
+\end{pmatrix} = \begin{pmatrix}
+8 & 4 & 0 \\
+7 & 5 & -5 \\
+11 & -4 & -1
+\end{pmatrix}\times\begin{pmatrix}
+0 & -2 & 1 \\
+-1 & -1 & 0 \\
+1 & 2 & 3
+\end{pmatrix} = \squared{$\begin{pmatrix}
+-4 & -20 & 8 \\
+-10 & -29 & -8 \\
+3 & -20 & 8
+\end{pmatrix}$}$$
+$$\tilde{B}(x,y) = \squared{$-4x_1y_1 - 20x_1y_2 + 8x_1y_3 - 10x_2y_1 - 29x_2y_2 -8x_2y_3 + 3x_3y_1 - 20x_3y_2 + 8x_3y_3$}$$
+
+\subsection*{Задание 2}
+\paragraph*{Шаг 1. Произведение тензоров} \, \\
+Т.к. $A^i_k \otimes B^j_l = C^{ij}_{kl}$, то пробежимся по каждой из четвёрки индексов $i$, $j$, $k$, $l$ от 1 до 3 и получим каждый из компонентов результирующего тензора.
+
+\begin{center}
+$C^{11}_{11} = A^1_1 \cdot B^1_1 = -1 \quad C^{21}_{11} = A^2_1 \cdot B^1_1 = 3 \quad C^{31}_{11} = A^3_1 \cdot B^1_1 = 1 \quad C^{12}_{11} = -3 \quad C^{22}_{11} = 9 \quad C^{32}_{11} = 3 \quad C^{13}_{11} = -1 \quad C^{23}_{11} = 3 \quad C^{33}_{11} = 1$ \\
+$C^{11}_{21} = -3 \quad C^{21}_{21} = -1 \quad C^{31}_{21} = -2 \quad C^{12}_{21} = -9 \quad C^{22}_{21} = -3 \quad C^{32}_{21} = -6 \quad C^{13}_{21} = -3 \quad C^{23}_{21} = -1 \quad C^{33}_{21} = -2$ \\
+$C^{11}_{31} = 0 \quad C^{21}_{31} = -2 \quad C^{31}_{31} = -2 \quad C^{12}_{31} = 0 \quad C^{22}_{31} = -6 \quad C^{32}_{31} = -6 \quad C^{13}_{31} = 0 \quad C^{23}_{31} = -2 \quad C^{33}_{31} = -2$ \\ \, \\
+
+$C^{11}_{12} = 1 \quad C^{21}_{12} = -3 \quad C^{31}_{12} = -1 \quad C^{12}_{12} = 1 \quad C^{22}_{12} = -3 \quad C^{32}_{12} = -1 \quad C^{13}_{12} = -2 \quad C^{23}_{12} = 6 \quad C^{33}_{12} = 2$ \\
+$C^{11}_{22} = 3 \quad C^{21}_{22} = 1 \quad C^{31}_{22} = 2 \quad C^{12}_{22} = 3 \quad C^{22}_{22} = 1 \quad C^{32}_{22} = 2 \quad C^{13}_{22} = -6 \quad C^{23}_{22} = -2 \quad C^{33}_{22} = -4$ \\
+$C^{11}_{32} = 0 \quad C^{21}_{32} = 2 \quad C^{31}_{32} = 2 \quad C^{12}_{32} = 0 \quad C^{22}_{32} = 2 \quad C^{32}_{32} = 2 \quad C^{13}_{32} = 0 \quad C^{23}_{32} = -4 \quad C^{33}_{32} = -4$ \\ \, \\
+
+$C^{11}_{13} = -1 \quad C^{21}_{13} = 3 \quad C^{31}_{13} = 1 \quad C^{12}_{13} = 0 \quad C^{22}_{13} = 0 \quad C^{32}_{13} = 0 \quad C^{13}_{13} = 1 \quad C^{23}_{13} = -3 \quad C^{33}_{13} = -1$ \\
+$C^{11}_{23} = -3 \quad C^{21}_{23} = -1 \quad C^{31}_{23} = -2 \quad C^{12}_{23} = 0 \quad C^{22}_{23} = 0 \quad C^{32}_{23} = 0 \quad C^{13}_{23} = 3 \quad C^{23}_{23} = 1 \quad C^{33}_{23} = 2$ \\
+$C^{11}_{33} = 0 \quad C^{21}_{33} = -2 \quad C^{31}_{33} = -2 \quad C^{12}_{33} = 0 \quad C^{22}_{33} = 0 \quad C^{32}_{33} = 0 \quad C^{13}_{33} = 0 \quad C^{23}_{33} = 2 \quad C^{33}_{33} = 2$ \\ \, \\
+
+Таким образом результирующий тензор принимает вид:
+$$\squared{$C^{ij}_{kl} = \begin{array}{||ccc|ccc|ccc||}
+-1 & 3 & 1 & -3 & -1 & -2 & 0 & -2 & -2 \\
+-3 & 9 & 3 & -9 & -3 & -6 & 0 & -6 & -6 \\
+-1 & 3 & 1 & -3 & -1 & -2 & 0 & -2 & -2 \\
+\hline
+1 & -3 & -1 & 3 & 1 & 2 & 0 & 2 & 2 \\
+1 & -3 & -1 & 3 & 1 & 2 & 0 & 2 & 2 \\
+-2 & 6 & 2 & -6 & -2 & -4 & 0 & -4 & -4 \\
+\hline
+-1 & 3 & 1 & -3 & -1 & -2 & 0 & -2 & -2 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+1 & -3 & -1 & 3 & 1 & 2 & 0 & 2 & 2 \\
+\end{array}$}
+$$
+\end{center}
+Для тензора $D^{ji}_{lk} = B^j_l \otimes A^i_k$ опробуем другой подход, связанный с пониманием работы индексов и того, как они раскладываются в результирующем тензоре.
+\begin{itemize}
+\item Индекс $j$ (элементы в строках тензора $B$) обозначает элементы в строках в результирующем тензоре --- все элементы в строках остаются на своих местах.
+\item Индекс $i$ (элементы в строках тензора $A$) обозначают строки в результирующем тензоре --- таким образом каждая строка результирующего тензора домножается на элементы тензора $A$.
+\item Индекс $l$ (строки в тензоре $B$) обозначают вертикальный слой в результирующем тензоре --- каждая строка тензора $B$ раскладывается в одну строку через вертикальные слои.
+\item Индекс $k$ (строки в тензоре $A$) обозначает горизонтальный слой в результирующем тензоре --- так каждая строка тензора $A$ раскладывается в столбец.
+\end{itemize}
+\begin{center}
+Таким образом результирующий тензор принимает вид:
+$$\squared{$D^{ji}_{lk} = \begin{array}{||ccc|ccc|ccc||}
+-1 & -3 & -1 & 1 & 1 & -2 & -1 & 0 & 1 \\
+3 & 9 & 3 & -3 & -3 & 6 & 3 & 0 & -3 \\
+1 & 3 & 1 & -1 & -1 & 2 & 1 & 0 & -1 \\
+\hline
+-3 & -9 & -3 & 3 & 3 & -6 & -3 & 0 & 3 \\
+-1 & -3 & -1 & 1 & 1 & -2 & -1 & 0 & 1 \\
+-2 & -6 & -2 & 2 & 2 & -4 & -2 & 0 & 2 \\
+\hline
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+-2 & -6 & -2 & 2 & 2 & -4 & -2 & 0 & 2 \\
+-2 & -6 & -2 & 2 & 2 & -4 & -2 & 0 & 2
+\end{array}$}$$
+\end{center}
+
+\paragraph*{Шаг 2. Свёртки по парам индексов} \, \\
+Свернём по парам индексов последовательно с $i$, $j$, $k$ и $l$, получив таким образом тензор без слоёв только со строками и столбцами.
+\begin{center}
+\textbf{По индексу $i$}
+\end{center}
+\begin{multicols}{2}
+\begin{center}
+$C^{ij}_{il} \rightarrow C^{j}_{l}$ \\ \, \\
+$C^{1}_{1} = C^{11}_{11} + C^{21}_{21} + C^{31}_{31} = -1 -1 -2 = -4$ \\
+$C^{2}_{1} = C^{12}_{11} + C^{22}_{21} + C^{32}_{31} = -3 -3 -6 = -12$ \\
+$C^{3}_{1} = C^{13}_{11} + C^{23}_{21} + C^{33}_{31} = -1 -1 -2 = -4$ \\
+$C^{1}_{2} = C^{11}_{12} + C^{21}_{22} + C^{31}_{32} = 1 +1 +2 = 4$ \\
+$C^{2}_{2} = C^{12}_{12} + C^{22}_{22} + C^{32}_{32} = 1 +1 +2 = 4$ \\
+$C^{3}_{2} = C^{13}_{12} + C^{23}_{22} + C^{33}_{32} = -2 -2 -4 = -8$ \\
+$C^{1}_{3} = C^{11}_{13} + C^{21}_{23} + C^{31}_{33} = -1 -1 -2 = -4$ \\
+$C^{2}_{3} = C^{12}_{13} + C^{22}_{23} + C^{32}_{33} = 0$ \\
+$C^{3}_{3} = C^{13}_{13} + C^{23}_{23} + C^{33}_{33} = 1 +1 +2 = 4$ \\ \, \\
+$C^{j}_{l} = \begin{Vmatrix}-4 & -12 & -4 \\ 4 & 4 & -8 \\ -4 & 0 & 4\end{Vmatrix}$
+\end{center}
+\begin{center}
+$C^{ij}_{ki} \rightarrow C^{j}_{k}$ \\ \, \\
+$C^{1}_{1} = C^{11}_{11} + C^{21}_{12} + C^{31}_{13} = -1 -3 +1 = -3$ \\
+$C^{2}_{1} = C^{12}_{11} + C^{22}_{12} + C^{32}_{13} = -3 -3 = -6$ \\
+$C^{3}_{1} = C^{13}_{11} + C^{23}_{12} + C^{33}_{13} = -1 +6 -1 = 4$ \\
+$C^{1}_{2} = C^{11}_{21} + C^{21}_{22} + C^{31}_{23} = -3 +1 -2 = -4$ \\
+$C^{2}_{2} = C^{12}_{21} + C^{22}_{22} + C^{32}_{23} = -9 +1 = -8$ \\
+$C^{3}_{2} = C^{13}_{21} + C^{23}_{22} + C^{33}_{23} = -3 -2 +2 = -3$ \\
+$C^{1}_{3} = C^{11}_{31} + C^{21}_{32} + C^{31}_{33} = 2 -2 = 0$ \\
+$C^{2}_{3} = C^{12}_{31} + C^{22}_{32} + C^{32}_{33} = 2$ \\
+$C^{3}_{3} = C^{13}_{31} + C^{23}_{32} + C^{33}_{33} = -4 +2 = -2$ \\ \, \\
+$C^{j}_{k} = \begin{Vmatrix}-3 & -6 & 4 \\ -4 & -8 & -3 \\ 0 & 2 & -2\end{Vmatrix}$
+\end{center}
+\end{multicols}
+\pagebreak
+\begin{center}
+\textbf{По индексу $j$}
+\end{center}
+\begin{multicols}{2}
+\begin{center}
+$C^{ij}_{jl} \rightarrow C^{i}_{l}$ \\ \, \\
+$C^{1}_{1} = C^{11}_{11} + C^{12}_{21} + C^{13}_{31} = -1 -9 = -10$ \\
+$C^{2}_{1} = C^{21}_{11} + C^{22}_{21} + C^{23}_{31} = 3 -3 -2 = -2$ \\
+$C^{3}_{1} = C^{31}_{11} + C^{32}_{21} + C^{33}_{31} = 1 -6 -2 = -7$ \\
+$C^{1}_{2} = C^{11}_{12} + C^{12}_{22} + C^{13}_{32} = 1 +3 = 4$ \\
+$C^{2}_{2} = C^{21}_{12} + C^{22}_{22} + C^{23}_{32} = -3 +1 -4 = -6$ \\
+$C^{3}_{2} = C^{31}_{12} + C^{32}_{22} + C^{33}_{32} = -1 +2 -4 = -3$ \\
+$C^{1}_{3} = C^{11}_{13} + C^{12}_{23} + C^{13}_{33} = -1$ \\
+$C^{2}_{3} = C^{21}_{13} + C^{22}_{23} + C^{23}_{33} = 3 +2 = 5$ \\
+$C^{3}_{3} = C^{31}_{13} + C^{32}_{23} + C^{33}_{33} = 1 +2 = 3$ \\ \, \\
+$C^{i}_{l} = \begin{Vmatrix}-10 & -2 & -7 \\ 4 & -6 & -3 \\ -1 & 5 & 3\end{Vmatrix}$
+\end{center}
+\begin{center}
+$C^{ij}_{kj} \rightarrow C^{i}_{k}$ \\ \, \\
+$C^{1}_{1} = C^{11}_{11} + C^{12}_{12} + C^{13}_{13} = -1 +1 +1 = 1$ \\
+$C^{2}_{1} = C^{21}_{11} + C^{22}_{12} + C^{23}_{13} = 3 -3 -3 = -3$ \\
+$C^{3}_{1} = C^{31}_{11} + C^{32}_{12} + C^{33}_{13} = 1 -1 -1 = -1$ \\
+$C^{1}_{2} = C^{11}_{21} + C^{12}_{22} + C^{13}_{23} = -3 +3 +3 = 3$ \\
+$C^{2}_{2} = C^{21}_{21} + C^{22}_{22} + C^{23}_{23} = -1 +1 +1 = 1$ \\
+$C^{3}_{2} = C^{31}_{21} + C^{32}_{22} + C^{33}_{23} = -2 +2 +2 = 2$ \\
+$C^{1}_{3} = C^{11}_{31} + C^{12}_{32} + C^{13}_{33} = 0$ \\
+$C^{2}_{3} = C^{21}_{31} + C^{22}_{32} + C^{23}_{33} = -2 +2 +2 = 2$ \\
+$C^{3}_{3} = C^{31}_{31} + C^{32}_{32} + C^{33}_{33} = -2 +2 +2 = 2$ \\ \, \\
+$C^{i}_{k} = \begin{Vmatrix}1 & -3 & -1 \\ 3 & 1 & 2 \\ 0 & 2 & 2\end{Vmatrix}$
+\end{center}
+\end{multicols}
+\begin{center}
+\textbf{По индексу $k$}
+\end{center}
+\begin{multicols}{2}
+\begin{center}
+$C^{kj}_{kl} \rightarrow C^{j}_{l}$ \\ \, \\
+Вычислено ранее для свёртки $C^{ij}_{il}$. \\ \, \\
+$C^{j}_{l} = \begin{Vmatrix}-4 & -12 & -4 \\ 4 & 4 & -8 \\ -4 & 0 & 4\end{Vmatrix}$
+\end{center}
+\begin{center}
+$C^{ik}_{kl} \rightarrow C^{i}_{l}$ \\ \, \\
+Вычислено ранее для свёртки $C^{ij}_{jl}$. \\ \, \\
+$C^{i}_{l} = \begin{Vmatrix}-10 & -2 & -7 \\ 4 & -6 & -3 \\ -1 & 5 & 3\end{Vmatrix}$
+\end{center}
+\end{multicols}
+\begin{center}
+\textbf{По индексу $l$}
+\end{center}
+\begin{multicols}{2}
+\begin{center}
+$C^{lj}_{kl} \rightarrow C^{j}_{k}$ \\ \, \\
+Вычислено ранее для свёртки $C^{ij}_{ki}$. \\ \, \\
+$C^{j}_{k} = \begin{Vmatrix}-3 & -6 & 4 \\ -4 & -8 & -3 \\ 0 & 2 & -2\end{Vmatrix}$
+\end{center}
+\begin{center}
+$C^{il}_{kl} \rightarrow C^{i}_{k}$ \\ \, \\
+Вычислено ранее для свёртки $C^{ij}_{kj}$. \\ \, \\
+$C^{i}_{k} = \begin{Vmatrix}1 & -3 & -1 \\ 3 & 1 & 2 \\ 0 & 2 & 2\end{Vmatrix}$
+\end{center}
+\end{multicols}
+Все возможные свёртки по парам индексов вычислены, причём некоторые из них совпадают.
+\paragraph*{Шаг 3. Полные свёртки до скаляра} \, \\
+На предыдущем шаге обнаружили, что некоторые из свёрток по парам индексов совпали. Получается, перед нами имеются 4 тензора: $C^{i}_{k}$, $C^{i}_{l}$, $C^{j}_{k}$ и $C^{j}_{l}$ --- их и будем сворачивать до скаляра. Ввиду равенства сворачивания $T^{p}_{p}$ и $T^{q}_{q}$ (так или иначе получаем $\sum_1^n T^{i}_{i}$ в пространстве $S$, где $\text{dim}\,S = n$) для тензора вида $T^{p}_{q}$, свёртка будет проводиться всегда по верхним индексам (однако это не имеет значения и выбор может быть любым).
+\begin{multicols}{4}
+\begin{center}
+$C^{i}_{k}:\; C^{i}_{i} \rightarrow C$ \\
+$C = 1 +1 +2 = 4$
+\end{center}
+\begin{center}
+$C^{i}_{l}:\; C^{i}_{i} \rightarrow C$ \\
+$C = -10 -6 +3 = -13$
+\end{center}
+\begin{center}
+$C^{j}_{k}:\; C^{j}_{j} \rightarrow C$ \\
+$C = -3 -8 -2 = -13$
+\end{center}
+\begin{center}
+$C^{j}_{l}:\; C^{j}_{j} \rightarrow C$ \\
+$C = -4 +4 +4 = 4$
+\end{center}
+\end{multicols}
+\noindent Полные свёртки вычислены. В результате получено два значения: \squared{$4$ и $-13$.}
+\paragraph*{Шаг 4. Количество различных полных свёрток} \, \\
+В результате расчёта полных свёрток на предыдущем шаге мы получили 2 разных значения: $4$ и $-13$. Такое количество значений связано с валентностями исходного тензора и их взаимосвязью с числом полных свёрток. Для тензора $T$ с валентностью (p, p) количество полных свёрток равно $p!$. \\
+В моём случае тензор $C^{ij}_{kl}$ валентности (2, 2) --- тогда количество полных свёрток равно $2! = 1 \cdot 2 = 2$, т.е. это означает, что всевозможные расчёты полных свёрток всегда приводят к 2 различным значениям.
+
+\pagebreak
+\section*{Задание 3}
+\paragraph*{Шаг 1. Преобразование базиса для тензоров A и B} \, \\
+Построим матрицу перехода из текущего базиса в новый по заданному преобразованию базиса и сразу же выведем обратную матрицу перехода:
+$$T = \begin{pmatrix}
+0 & 2 & 1 \\ -1 & -1 & 1 \\ -1 & -2 & 0
+\end{pmatrix} \quad \Rightarrow \quad S = T^{-1} = \left[\left(\begin{array}{ccc|ccc}
+0 & 2 & 1 & 1 & 0 & 0 \\
+-1 & -1 & 1 & 0 & 1 & 0 \\
+-1 & -2 & 0 & 0 & 0 & 1
+\end{array}\right) \sim \left(\begin{array}{ccc|ccc}
+1 & 1 & -1 & 0 & -1 & 0 \\
+0 & 1 & 0.5 & 0.5 & 0 & 0 \\
+0 & -1 & -1 & 0 & -1 & 1
+\end{array}\right) \sim\right.$$
+$$\left.\sim \left(\begin{array}{ccc|ccc}
+1 & 1 & -1 & 0 & -1 & 0 \\
+0 & 1 & 0 & 1 & -1 & 1 \\
+0 & 0 & -0.5 & 0.5 & -1 & 1
+\end{array}\right) \sim \left(\begin{array}{ccc|ccc}
+1 & 0 & -1 & -1 & 0 & -1 \\
+0 & 1 & 0 & 1 & -1 & 1 \\
+0 & 0 & 1 & -1 & 2 & -2
+\end{array}\right) \sim \left(\begin{array}{ccc|ccc}
+1 & 0 & 0 & -2 & 2 & -3 \\
+0 & 1 & 0 & 1 & -1 & 1 \\
+0 & 0 & 1 & -1 & 2 & -2
+\end{array}\right)\right] = \begin{pmatrix}
+-2 & 2 & -3 \\ 1 & -1 & 1 \\ -1 & 2 & -2
+\end{pmatrix}$$
+Матрица перехода $T$ будет использоваться для ковариантных индексов (т.е. для преобразования тензора $B$), а обратная матрица перехода $S$ --- для контравариантных (соответственно для преобразования тензора $A$). \\ \, \\
+Преобразование тензоров в общем виде будет выглядеть так:
+\begin{center}
+$\tilde{A}^{ij} = \sum\limits_{n=1}^3\sum\limits_{m=1}^3 A^{nm}S^{i}_{n}S^{j}_{m}$ \\
+$\tilde{B}_k = \sum\limits_{l=1}^3 B_lT^l_k$
+\end{center} \, \\
+Вычислим $\tilde{A}^{ij}$:
+\begin{center}
+$\tilde{A}^{11} = A^{11}S^{1}_{1}S^{1}_{1} + A^{12}S^{1}_{1}S^{1}_{2} + A^{13}S^{1}_{1}S^{1}_{3} + A^{21}S^{1}_{2}S^{1}_{1} + A^{22}S^{1}_{2}S^{1}_{2} + A^{23}S^{1}_{2}S^{1}_{3} + A^{31}S^{1}_{3}S^{1}_{1} + A^{32}S^{1}_{3}S^{1}_{2} + A^{33}S^{1}_{3}S^{1}_{3} =$ \\
+$= 4+8-12+12-6+18-18 = 6$ \\
+$\tilde{A}^{12} = -2-4+6-4+3-9+6 = -4 \quad \tilde{A}^{13} = 2+8-6+8-3+18-12 = 15$\\
+$\tilde{A}^{21} = -2-4+6-6+2-6+6 = -4 \quad \tilde{A}^{22} = 1+2-3+2-1+3-2 = 2 \quad \tilde{A}^{23} = -1-4+3-4+1-6+4 = -7$ \\
+$\tilde{A}^{31} = 2+4-12+12-4+12-12 = 2 \quad \tilde{A}^{32} = -1-2+6-4+2-6+4 = -1 \quad \tilde{A}^{33} = 1+4-6+8-2+12-8 = 9$ \\
+\end{center}
+Таким образом тензор $A$ в новом базисе будет выглядеть так:
+$$\tilde{A}^{ij} = \begin{Vmatrix}
+\tilde{A}^{11} & \tilde{A}^{12} & \tilde{A}^{13} \\ \tilde{A}^{21} & \tilde{A}^{22} & \tilde{A}^{23} \\ \tilde{A}^{31} & \tilde{A}^{32} & \tilde{A}^{33}
+\end{Vmatrix} = \squared{$\begin{Vmatrix}
+6 & -4 & 15 \\ -4 & 2 & -7 \\ 2 & -1 & 9
+\end{Vmatrix}$}$$ \, \\
+Вычислим таким же образом $\tilde{B}_k$:
+\begin{center}
+$\tilde{B}_1 = B_1T^1_1 + B_2T^2_1 + B_3T^3_1 = -1+2 = 1 \quad \tilde{B}_2 = 6 -1+4 = 9 \quad \tilde{B}_3 = 3 + 1 = 4$ \\
+\end{center}
+Таким образом тензор $B$ в новом базисе будет выглядеть так:
+$$\tilde{B}_k = \begin{Vmatrix}
+\tilde{B}_1 & \tilde{B}_2 & \tilde{B}_3
+\end{Vmatrix} = \squared{$\begin{Vmatrix}
+1 & 9 & 4
+\end{Vmatrix}$}$$
+\paragraph*{Шаг 2. Произведение тензоров} \, \\
+Проведём рассуждения, схожие с теми, что были в задании 2 пункте 1. Итак, $A^{ij} \otimes B_{k} = C^{ij}_{k}$. Взглянем на индексы результирующего тензора:
+\begin{itemize}
+\item Индексы $i$ и $j$ результирующего тензора совпадают по своей сути с индексами тензора $A^{ij} \Rightarrow$ строки и столбцы внутри каждого слоя по горизонтали будут совпадать с исходным тензором.
+\item Индекс $k$ результирующего тензора означает номер слоя по горизонтали $\Rightarrow$ фиксирует элемент тензора $B_{k}$ на весь слой.
+\end{itemize}
+Таким образом результирующий тензор можно представить так:
+$$C^{ij}_{k} = \begin{array}{||ccc|ccc|ccc||}
+\nwarrow & & \nearrow & \nwarrow & & \nearrow & \nwarrow & & \nearrow \\
+& B_1 \cdot A & & & B_2 \cdot A & & & B_3 \cdot A & \\
+\swarrow & & \searrow & \swarrow & & \searrow & \swarrow & & \searrow \\
+\end{array} = \squared{$\begin{array}{||ccc|ccc|ccc||}
+3 & -6 & 0 & 1 & -2 & 0 & -2 & 4 & 0 \\
+9 & 0 & -6 & 3 & 0 & -2 & -6 & 0 & 4 \\
+-3 & -9 & -6 & -1 & -3 & -2 & 2 & 6 & 4
+\end{array}$}$$
+\paragraph*{Шаг 3. Преобразование базиса тензора C} \, \\
+В общем виде тензор $C$ в новом базисе будет выглядеть так: $\tilde{C}^{ij}_{k} = \sum\limits_{l=1}^{3}\sum\limits_{m=1}^{3}\sum\limits_{n=1}^{3}C^{mn}_{l}T^l_kS^i_mS^j_n$. \\
+Проведём расчёты компонентов тензора в новом базисе:
+\begin{center}
+$\tilde{C}^{11}_1 = -4+8-8+16+12-24-12+24+6-12-18+36+18-36 = 6 \quad \tilde{C}^{12}_1 = 2-4+4-8-6+12+6-12-2+4+6-12-6+12 = -4$ \\
+$\tilde{C}^{13}_1 = -2+4+6-12+3-6-8+16-18+36-8+16+12-24 = 15 \quad \tilde{C}^{21}_1 = 2-4+4-8-6+12+4-8-3+6+9-18-6+12 = -4$ \\
+$\tilde{C}^{22}_1 = -1+2-2+4+3-6-2+4+1-2-3+6+2-4 = 2 \quad \tilde{C}^{23}_1 = 1-2-3+6-1+2+4-8+6-12+4-8-4+8 = -7$ \\
+$\tilde{C}^{31}_1 = -2+4+12-24+4-8-4+8-12+24-12+24+12-24 = 2 \quad \tilde{C}^{32}_1 = 1-2-6+12-2+4+2-4+6-12+4-8-4+8 = -1$ \\
+$\tilde{C}^{33}_1 = -1+2-4+8+6-12-8+16+2-4-12+24+8-16 = 9$ \\ \, \\
+
+$\tilde{C}^{11}_{2}=24-4+16+48-8+32-72+12-48+72-12+48-36+6-24+108-18+72-108+18-72 = 54$ \\ $\tilde{C}^{12}_2 = -12+2-8-24+4-16+36-6+24-36+6-24+12-2+8-36+6-24+36-6+24 = -36$ \\
+$\tilde{C}^{13}_2 = 12-2+8-36+6-24-18+3-12+48-8+32+108-18+72+48-8+32-72+12-48 = 135$ \\ $\tilde{C}^{21}_2 = -12+2-8-24+4-16+36-6+24-24+4-16+18-3+12-54+9-36+36-6+24 = -36$ \\
+$\tilde{C}^{22}_2 = 6-1+4+12-2+8-18+3-12+12-2+8-6+1-4+18-3+12-12+2-8 = 18$ \\ $\tilde{C}^{23}_2 = -6+1-4+18-3+12+6-1+4-24+4-16-36+6-24-24+4-16+24-4+16 = -63$ \\
+$\tilde{C}^{31}_2 = 12-2+8-72+12-48-24+4-16+24-4+16+72-12+48+72-12+48-72+12-48 = 18$ \\ $\tilde{C}^{32}_2 = -6+1-4+36-6+24+12-2+8-12+2-8-36+6-24-24+4-16+24-4+16 = -9$ \\
+$\tilde{C}^{33}_2 = 6-1+4+24-4+16-36+6-24+48-8+32-12+2-8+72-12+48-48+8-32 = 81$ \\ \, \\
+
+$\tilde{C}^{11}_3 = 12+4+24+8-36-12+36+12-18-6+54+18-54-18 = 24$ \\ $\tilde{C}^{12}_3 = -6-2-12-4+18+6-18-6+6+2-18-6+18+6 = -16$ \\
+$\tilde{C}^{13}_3 = 6+2-18-6-9-3+24+8+54+18+24+8-36-12 = 60 \quad \tilde{C}^{21}_3 = -6-2-12-4+18+6-12-4+9+3-27-9+18+6 = -16$ \\
+$\tilde{C}^{22}_3 = 3+1+6+2-9-3+6+2-3-1+9+3-6-2 = 8 \quad \tilde{C}^{23}_3 = -3-1+9+3+3+1-12-4-18-6-12-4+12+4 = -28$ \\
+$\tilde{C}^{31}_3 = 6+2-36-12-12-4+12+4+36+12+36+12-36-12 = 8 \quad \tilde{C}^{32}_3 = -3-1+18+6+6+2-6-2-18-6-12-4+12+4 = -4$ \\
+$\tilde{C}^{33}_3 = 3+1+12+4-18-6+24+8-6-2+36+12-24-8 = 36$
+\end{center}
+В результате получаем тензор $C$ в новом базисе со следующими компонентами, вычисленными выше:
+$$\tilde{C}^{ij}_{k} = \squared{$\begin{array}{||ccc|ccc|ccc||}
+6 & -4 & 15 & 54 & -36 & 135 & 24 & -16 & 60 \\
+-4 & 2 & -7 & -36 & 18 & -63 & -16 & 8 & -28 \\
+2 & -1 & 9 & 18 & -9 & 81 & 8 & -4 & 36
+\end{array}$}$$
+\paragraph*{Шаг 4. Тензор C через преобразование базиса тензоров A и B} \, \\
+Попробуем вычислить тензор $\tilde{C}$, пользуясь ранее вычисленными на шаге 1 тензорами $\tilde{A}$ и $\tilde{B}$. Продублирую эти тензоры здесь ещё раз.
+$$\tilde{A}^{ij} = \begin{Vmatrix}
+6 & -4 & 15 \\ -4 & 2 & -7 \\ 2 & -1 & 9
+\end{Vmatrix} \qquad \tilde{B}_k = \begin{Vmatrix}
+1 & 9 & 4
+\end{Vmatrix}$$
+Так как $C = A \otimes B$, то после преобразования базиса заданное произведение должно выполняться $\Rightarrow$ $\tilde{C} = \tilde{A} \otimes \tilde{B}$. \\
+Вычислим произведение не покомпонентно, а применяя рассуждения, выведенные в пунктах на шаге 2:
+\begin{center}
+$\tilde{A} \otimes \tilde{B} = \begin{array}{||ccc|ccc|ccc||}
+\nwarrow & & \nearrow & \nwarrow & & \nearrow & \nwarrow & & \nearrow \\
+& \tilde{B}_1 \cdot \tilde{A} & & & \tilde{B}_2 \cdot \tilde{A} & & & \tilde{B}_3 \cdot \tilde{A} & \\
+\swarrow & & \searrow & \swarrow & & \searrow & \swarrow & & \searrow \\
+\end{array} = \begin{array}{||ccc|ccc|ccc||}
+\nwarrow & & \nearrow & \nwarrow & & \nearrow & \nwarrow & & \nearrow \\
+& \tilde{A} & & & 9\tilde{A} & & & 4\tilde{A} & \\
+\swarrow & & \searrow & \swarrow & & \searrow & \swarrow & & \searrow \\
+\end{array} = $ \\ \, \\
+$ = \begin{array}{||ccc|ccc|ccc||}
+6 & -4 & 15 & 54 & -36 & 135 & 24 & -16 & 60 \\
+-4 & 2 & -7 & -36 & 18 & -63 & -16 & 8 & -28 \\
+2 & -1 & 9 & 18 & -9 & 81 & 8 & -4 & 36
+\end{array} = \tilde{C}$
+\end{center}
+Убеждаемся в том, что если произведение двух тензоров задано в одном базисе, то получить его в другом базисе можно как переводом результирующего тензора в новый базис, так и произведением этих двух тензоров, но уже переведённых в новый базис.
+\paragraph*{Шаг 5. Законы преобразования в матричном виде} \, \\
+Для частных случаев имеются готовые формулы в матричном виде для перехода из одного базиса в другой. К примеру, тензоры с валентностью (0, 2) преобразуются по базису в матричном виде как $\tilde{M} = SMS^{T}$. А тензоры с валентностью (1, 0) преобразуются как $\tilde{M} = MT$. Попробуем применить эти формулы для тензоров $A$ и $B$, чтобы получить те же самые $\tilde{A}$ и $\tilde{B}$.
+\begin{center}
+$SAS^T = \begin{pmatrix}
+-2 & 2 & -3 \\ 1 & -1 & 1 \\ -1 & 2 & -2
+\end{pmatrix}\begin{Vmatrix}
+1 & -2 & 0 \\ 3 & 0 & -2 \\ -1 & -3 & -2
+\end{Vmatrix}\begin{pmatrix}
+-2 & 1 & -1 \\ 2 & -1 & 2 \\ -3 & 1 & -2
+\end{pmatrix} = \begin{Vmatrix}
+7 & 13 & 2 \\ -3 & -5 & 0 \\ 7 & 8 & 0
+\end{Vmatrix}\begin{pmatrix}
+-2 & 1 & -1 \\ 2 & -1 & 2 \\ -3 & 1 & -2
+\end{pmatrix} = \begin{Vmatrix}
+6 & -4 & 15 \\ -4 & 2 & -7 \\ 2 & -1 & 9
+\end{Vmatrix} = \tilde{A}$ \\ \, \\
+$BT = \begin{Vmatrix}
+3 & 1 & 2
+\end{Vmatrix}\begin{pmatrix}
+0 & 2 & 1 \\ -1 & -1 & 1 \\ -1 & -2 & 0
+\end{pmatrix} = \begin{Vmatrix}
+1 & 9 & 4
+\end{Vmatrix} = \tilde{B}$
+\end{center}
+Мы получили исходные тензоры, пользуясь законами преобразования в матричном виде, что доказывает правильность выполненных ранее вычислений.
+
+\section*{Задание 4}
+\paragraph*{Шаг 1. Симметрирование тензора} \, \\
+По правилу симметрирования: $S_{ijk} = T_{(ijk)} =  \nicefrac{1}{3!}\left(T_{ijk} + T_{ikj} + T_{jik} + T_{jki} + T_{kij} + T_{kji}\right)$. Вычислим каждый элемент $S_{ijk}$ через $T_{ijk}$.
+\begin{center}
+$S_{111} = T_{111} = 1 \quad S_{222} = T_{222} = 3 \quad S_{333} = T_{333} = 2$ \\ \, \\
+$S_{112} = S_{121} = S_{211} = \dfrac{1}{6}\left(2T_{112} + 2T_{121} + 2T_{211}\right) = \dfrac{1}{3}\left(T_{112} + T_{121} + T_{211}\right) = \dfrac{1}{3}(3 + 1 -1) = 1$ \\
+$S_{113} = S_{131} = S_{311} = \dfrac{1}{6}\left(2T_{113} + 2T_{131} + 2T_{311}\right) = \dfrac{1}{3}\left(T_{113} + T_{131} + T_{311}\right) = \dfrac{1}{3}(-2 -2 -2) = -2$ \\
+$S_{122} = S_{212} = S_{221} = \dfrac{1}{6}\left(2T_{122} + 2T_{212} + 2T_{221}\right) = \dfrac{1}{3}\left(T_{122} + T_{212} + T_{221}\right) = \dfrac{1}{3}(-3) = -1$ \\
+$S_{133} = S_{313} = S_{331} = \dfrac{1}{6}\left(2T_{133} + 2T_{313} + 2T_{331}\right) = \dfrac{1}{3}\left(T_{133} + T_{313} + T_{331}\right) = \dfrac{1}{3}(-1-2-1) = \dfrac{-4}{3}$ \\
+$S_{223} = S_{232} = S_{322} = \dfrac{1}{6}\left(2T_{223} + 2T_{232} + 2T_{322}\right) = \dfrac{1}{3}\left(T_{223} + T_{232} + T_{322}\right) = \dfrac{1}{3}(-1+1-3) = -1$ \\
+$S_{233} = S_{323} = S_{332} = \dfrac{1}{6}\left(2T_{233} + 2T_{323} + 2T_{332}\right) = \dfrac{1}{3}\left(T_{233} + T_{323} + T_{332}\right) = \dfrac{1}{3}(-1+1+2) = \dfrac{2}{3}$ \\
+$S_{123} = S_{132} = S_{213} = S_{231} = S_{312} = S_{321} = \dfrac{1}{6}(T_{123} + T_{132} + T_{213} + T_{231} + T_{312} + T_{321}) = \dfrac{1}{6}(-3 -1 + 3 -2 + 1 + 2) = 0$\\
+$$S_{ijk} = \squared{$\begin{array}{||ccc|ccc|ccc||}
+1 & 1 & -2 & 1 & -1 & 0 & -2 & 0 & \nicefrac{-4}{3} \\
+1 & -1 & 0 & -1 & 3 & -1 & 0 & -1 & \nicefrac{2}{3} \\
+-2 & 0 & \nicefrac{-4}{3} & 0 & -1 & \nicefrac{2}{3} & \nicefrac{-4}{3} & \nicefrac{2}{3} & 2 \\
+\end{array}$}$$
+\end{center}
+\paragraph*{Шаг 2. Альтернирование (антисимметрирование) тензора} \, \\
+По правилу альтернирования: $A_{ijk} = T_{[ijk]} = \nicefrac{1}{3!}(T_{ijk} - T_{ikj} + T_{kij} - T_{kji} + T_{jki} - T_{jik})$. Вычислим каждый элемент $S_{ijk}$ через $T_{ijk}$.
+\begin{center}
+$A_{111} = A_{121} = A_{112} = A_{211} = A_{131} = A_{113} = A_{311} = A_{212} = A_{221} = A_{122} = A_{222} = A_{232} = A_{223} = A_{322} = A_{313} = A_{331} =$ \\
+$= A_{133} = A_{323} = A_{332} = A_{233} = A_{333} = 0$ \\ \, \\
+$A_{123} = \dfrac{1}{6}\left(T_{123} - T_{132} + T_{312} - T_{321} + T_{231} - T_{213}\right) = \dfrac{1}{6}(-3 +1 +1 - 2 -2 - 3) = \dfrac{-4}{3}$ \\
+$A_{123} = -A_{132} = A_{312} = -A_{321} = A_{231} = -A_{213}$\\
+$$A_{ijk} = \squared{$\begin{array}{||ccc|ccc|ccc||}
+0 & 0 &	0 &	0 &	0 &	\nicefrac{4}{3} &	0 &	\nicefrac{-4}{3} &	0 \\
+0 & 0 &	\nicefrac{-4}{3} &	0 &	0 &	0 &	\nicefrac{4}{3} &	0 &	0 \\
+0 & \nicefrac{4}{3} &	0 &	\nicefrac{-4}{3} &	0 &	0 &	0 &	0 &	0 \\
+\end{array}$}$$
+\end{center}
+
+\pagebreak
+\section*{Задание 5}
+Общая формула для всех этапов ($p$ и $q$ --- полные валентности тензоров $T_1$ и $T_2$): $T_1\wedge T_2 = \dfrac{(p+q)!}{p!\,q!}\,\text{Asym}(T_1\otimes T_2)$. \\
+Также будет полезна формула коммутативности: $T_2\wedge T_1 = (-1)^{p\cdot q}(T_1\wedge T_2)$.
+\paragraph*{Шаг 1. Попарные внешние произведения} \, \\
+Представлю полный список попарных внешних произведений:
+\begin{multicols}{4}
+\noindent $A_i \wedge B_j$ \\
+$B_j \wedge A_i$ \\
+$A_i \wedge C_k$ \\
+$C_k \wedge A_i$ \\
+$A_i \wedge D_l$ \\
+$D_l \wedge A_i$ \\
+$B_j \wedge C_k$ \\
+$C_k \wedge B_j$ \\
+$B_j \wedge D_l$ \\
+$D_l \wedge B_j$ \\
+$C_k \wedge D_l$ \\
+$D_l \wedge C_k$
+\end{multicols}
+\noindent Вычислим поочерёдно каждое.
+\begin{center}
+$A_i \wedge B_j = \dfrac{2!}{1!\,1!}\,\text{Asym}(A_i\otimes B_j) = 2\,\text{Asym}(A_i\otimes B_j)$
+\end{center}
+Вычислим $A_i\otimes B_j$:
+$$A_i\otimes B_j = E_{ij} = \begin{Vmatrix}
+A_1 \cdot B \\
+A_2 \cdot B \\
+A_3 \cdot B \\
+\end{Vmatrix} = \begin{Vmatrix}
+6 & -3 & -3 \\
+-6 & 3 & 3 \\
+6 & -3 & -3
+\end{Vmatrix}$$
+Теперь найдём $\text{Asym}(A_i\otimes B_j)$:
+$$\text{Asym}(A_i\otimes B_j) = \text{Asym}(E_{ij}) = \begin{Vmatrix}
+0 & \nicefrac{(E_{12} - E_{21})}{2} & \nicefrac{(E_{13} - E_{31})}{2} \\
+\nicefrac{(E_{21} - E_{12})}{2} & 0 & \nicefrac{(E_{23} - E_{32})}{2} \\
+\nicefrac{(E_{31} - E_{13})}{2} & \nicefrac{(E_{32} - E_{23})}{2} & 0
+\end{Vmatrix} = \begin{Vmatrix}
+0 & \nicefrac{3}{2} & \nicefrac{-9}{2} \\
+\nicefrac{-3}{2} & 0 & 3 \\
+\nicefrac{9}{2} & -3 & 0
+\end{Vmatrix}$$
+Тогда $A_i \wedge B_j = 2\,\text{Asym}(E_{ij}) = \squared{$\begin{Vmatrix}
+0 & 3 & -9 \\
+-3 & 0 & 6 \\
+9 & -6 & 0
+\end{Vmatrix}$}$
+\, \\
+\begin{center}
+$B_j \wedge A_i = (-1)^{p\cdot q}(A_i \wedge B_j) = - \begin{Vmatrix}
+0 & 3 & -9 \\
+-3 & 0 & 6 \\
+9 & -6 & 0
+\end{Vmatrix} = \squared{$\begin{Vmatrix}
+0 & -3 & 9 \\
+3 & 0 & -6 \\
+-9 & 6 & 0
+\end{Vmatrix}$}$
+\end{center}
+\, \\ \, \\
+\begin{center}
+$A_i \wedge C_k = \dfrac{2!}{1!\,1!}\,\text{Asym}(A_i\otimes C_k) = 2\,\text{Asym}(A_i\otimes C_k)$
+\end{center}
+Вычислим $A_i\otimes C_k$:
+$$A_i\otimes C_k = F_{ik} = \begin{Vmatrix}
+A_1 \cdot C \\
+A_2 \cdot C \\
+A_3 \cdot C \\
+\end{Vmatrix} = \begin{Vmatrix}
+-6 & 9 & -9 \\
+6 & -9 & 9 \\
+-6 & 9 & -9 \\
+\end{Vmatrix}$$
+Теперь найдём $\text{Asym}(A_i\otimes C_k)$:
+$$\text{Asym}(A_i\otimes C_k) = \text{Asym}(F_{ik}) = \begin{Vmatrix}
+0 & \nicefrac{(F_{12} - F_{21})}{2} & \nicefrac{(F_{13} - F_{31})}{2} \\
+\nicefrac{(F_{21} - F_{12})}{2} & 0 & \nicefrac{(F_{23} - F_{32})}{2} \\
+\nicefrac{(F_{31} - F_{13})}{2} & \nicefrac{(F_{32} - F_{23})}{2} & 0
+\end{Vmatrix} = \begin{Vmatrix}
+0 & \nicefrac{3}{2} & \nicefrac{-3}{2} \\
+\nicefrac{-3}{2} & 0 & 0 \\
+\nicefrac{3}{2} & 0 & 0
+\end{Vmatrix}$$
+Тогда $A_i \wedge C_k = 2\,\text{Asym}(F_{ik}) = \squared{$\begin{Vmatrix}
+0 & 3 & -3 \\
+-3 & 0 & 0 \\
+3 & 0 & 0
+\end{Vmatrix}$}$
+\, \\
+\begin{center}
+$C_k \wedge A_i = (-1)^{p\cdot q}(A_i \wedge C_k) = - \begin{Vmatrix}
+0 & 3 & -3 \\
+-3 & 0 & 0 \\
+3 & 0 & 0
+\end{Vmatrix} = \squared{$\begin{Vmatrix}
+0 & -3 & 3 \\
+3 & 0 & 0 \\
+-3 & 0 & 0
+\end{Vmatrix}$}$
+\end{center}
+
+\pagebreak
+\begin{center}
+$A_i \wedge D_l = \dfrac{2!}{1!\,1!}\,\text{Asym}(A_i\otimes D_l) = 2\,\text{Asym}(A_i\otimes D_l)$
+\end{center}
+Вычислим $A_i\otimes D_l$:
+$$A_i\otimes D_l = G_{il} = \begin{Vmatrix}
+A_1 \cdot D \\
+A_2 \cdot D \\
+A_3 \cdot D \\
+\end{Vmatrix} = \begin{Vmatrix}
+6 & 0 & 3 \\
+-6 & 0 & -3 \\
+6 & 0 & 3 \\
+\end{Vmatrix}$$
+Теперь найдём $\text{Asym}(A_i\otimes D_l)$:
+$$\text{Asym}(A_i\otimes D_l) = \text{Asym}(G_{il}) = \begin{Vmatrix}
+0 & \nicefrac{(G_{12} - G_{21})}{2} & \nicefrac{(G_{13} - G_{31})}{2} \\
+\nicefrac{(G_{21} - G_{12})}{2} & 0 & \nicefrac{(G_{23} - G_{32})}{2} \\
+\nicefrac{(G_{31} - G_{13})}{2} & \nicefrac{(G_{32} - G_{23})}{2} & 0
+\end{Vmatrix} = \begin{Vmatrix}
+0 & 3 & \nicefrac{-3}{2} \\
+-3 & 0 & \nicefrac{-3}{2} \\
+\nicefrac{3}{2} & \nicefrac{3}{2} & 0
+\end{Vmatrix}$$
+Тогда $A_i \wedge D_l = 2\,\text{Asym}(G_{il}) = \squared{$\begin{Vmatrix}
+0 & 6 & -3 \\
+-6 & 0 & -3 \\
+3 & 3 & 0
+\end{Vmatrix}$}$
+\, \\
+\begin{center}
+$D_l \wedge A_i = (-1)^{p\cdot q}(A_i \wedge D_l) = - \begin{Vmatrix}
+0 & 6 & -3 \\
+-6 & 0 & -3 \\
+3 & 3 & 0
+\end{Vmatrix} = \squared{$\begin{Vmatrix}
+0 & -6 & 3 \\
+6 & 0 & 3 \\
+-3 & -3 & 0
+\end{Vmatrix}$}$
+\end{center}
+\, \\ \, \\
+\begin{center}
+$B_j \wedge C_k = \dfrac{2!}{1!\,1!}\,\text{Asym}(B_j\otimes C_k) = 2\,\text{Asym}(B_j\otimes C_k)$
+\end{center}
+Вычислим $B_j\otimes C_k$:
+$$B_j\otimes C_k = H_{jk} = \begin{Vmatrix}
+B_1 \cdot C \\
+B_2 \cdot C \\
+B_3 \cdot C \\
+\end{Vmatrix} = \begin{Vmatrix}
+-4 & 6 & -6 \\
+2 & -3 & 3 \\
+2 & -3 & 3 \\
+\end{Vmatrix}$$
+Теперь найдём $\text{Asym}(B_j\otimes C_k)$:
+$$\text{Asym}(B_j\otimes C_k) = \text{Asym}(H_{jk}) = \begin{Vmatrix}
+0 & \nicefrac{(H_{12} - H_{21})}{2} & \nicefrac{(H_{13} - H_{31})}{2} \\
+\nicefrac{(H_{21} - H_{12})}{2} & 0 & \nicefrac{(H_{23} - H_{32})}{2} \\
+\nicefrac{(H_{31} - H_{13})}{2} & \nicefrac{(H_{32} - H_{23})}{2} & 0
+\end{Vmatrix} = \begin{Vmatrix}
+0 & 2 & -4 \\
+-2 & 0 & 3 \\
+4 & -3 & 0
+\end{Vmatrix}$$
+Тогда $B_j\wedge C_k = 2\,\text{Asym}(H_{jk}) = \squared{$\begin{Vmatrix}
+0 & 4 & -8 \\
+-4 & 0 & 6 \\
+8 & -6 & 0
+\end{Vmatrix}$}$
+\, \\
+\begin{center}
+$C_k \wedge B_j = (-1)^{p\cdot q}(B_j\wedge C_k) = - \begin{Vmatrix}
+0 & 4 & -8 \\
+-4 & 0 & 6 \\
+8 & -6 & 0
+\end{Vmatrix} = \squared{$\begin{Vmatrix}
+0 & -4 & 8 \\
+4 & 0 & -6 \\
+-8 & 6 & 0
+\end{Vmatrix}$}$
+\end{center}
+\, \\ \, \\
+\begin{center}
+$B_j \wedge D_l = \dfrac{2!}{1!\,1!}\,\text{Asym}(B_j\otimes D_l) = 2\,\text{Asym}(B_j\otimes D_l)$
+\end{center}
+Вычислим $B_j\otimes D_l$:
+$$B_j\otimes D_l = M_{jl} = \begin{Vmatrix}
+B_1 \cdot D \\
+B_2 \cdot D \\
+B_3 \cdot D \\
+\end{Vmatrix} = \begin{Vmatrix}
+4 & 0 & 2 \\
+-2 & 0 & -1 \\
+-2 & 0 & -1 \\
+\end{Vmatrix}$$
+Теперь найдём $\text{Asym}(B_j\otimes D_l)$:
+$$\text{Asym}(B_j\otimes D_l) = \text{Asym}(M_{jl}) = \begin{Vmatrix}
+0 & \nicefrac{(M_{12} - M_{21})}{2} & \nicefrac{(M_{13} - M_{31})}{2} \\
+\nicefrac{(M_{21} - M_{12})}{2} & 0 & \nicefrac{(M_{23} - M_{32})}{2} \\
+\nicefrac{(M_{31} - M_{13})}{2} & \nicefrac{(M_{32} - M_{23})}{2} & 0
+\end{Vmatrix} = \begin{Vmatrix}
+0 & 1 & 2 \\
+-1 & 0 & \nicefrac{-1}{2} \\
+-2 & \nicefrac{1}{2} & 0
+\end{Vmatrix}$$
+Тогда $B_j\wedge D_l = 2\,\text{Asym}(M_{jl}) = \squared{$\begin{Vmatrix}
+0 & 2 & 4 \\
+-2 & 0 & -1 \\
+-4 & 1 & 0
+\end{Vmatrix}$}$
+\, \\ \, \\
+\begin{center}
+$D_l \wedge B_j = (-1)^{p\cdot q}(B_j\wedge D_l) = - \begin{Vmatrix}
+0 & 2 & 4 \\
+-2 & 0 & -1 \\
+-4 & 1 & 0
+\end{Vmatrix} = \squared{$\begin{Vmatrix}
+0 & -2 & -4 \\
+2 & 0 & 1 \\
+4 & -1 & 0
+\end{Vmatrix}$}$
+\end{center}
+\, \\
+\begin{center}
+$C_k \wedge D_l = \dfrac{2!}{1!\,1!}\,\text{Asym}(C_k\otimes D_l) = 2\,\text{Asym}(C_k\otimes D_l)$
+\end{center}
+Вычислим $C_k\otimes D_l$:
+$$C_k\otimes D_l = N_{kl} = \begin{Vmatrix}
+C_1 \cdot D \\
+C_2 \cdot D \\
+C_3 \cdot D \\
+\end{Vmatrix} = \begin{Vmatrix}
+-4 & 0 & -2 \\
+6 & 0 & 3 \\
+-6 & 0 & -3 \\
+\end{Vmatrix}$$
+Теперь найдём $\text{Asym}(C_k\otimes D_l)$:
+$$\text{Asym}(C_k\otimes D_l) = \text{Asym}(N_{kl}) = \begin{Vmatrix}
+0 & \nicefrac{(N_{12} - N_{21})}{2} & \nicefrac{(N_{13} - N_{31})}{2} \\
+\nicefrac{(N_{21} - N_{12})}{2} & 0 & \nicefrac{(N_{23} - N_{32})}{2} \\
+\nicefrac{(N_{31} - N_{13})}{2} & \nicefrac{(N_{32} - N_{23})}{2} & 0
+\end{Vmatrix} = \begin{Vmatrix}
+0 & -3 & 2 \\
+3 & 0 & \nicefrac{3}{2} \\
+-2 & \nicefrac{-3}{2} & 0
+\end{Vmatrix}$$
+Тогда $C_k\wedge D_l = 2\,\text{Asym}(N_{kl}) = \squared{$\begin{Vmatrix}
+0 & -6 & 4 \\
+6 & 0 & 3 \\
+-4 & -3 & 0
+\end{Vmatrix}$}$
+\, \\
+\begin{center}
+$D_l \wedge C_k = (-1)^{p\cdot q}(C_k\wedge D_l) = - \begin{Vmatrix}
+0 & -6 & 4 \\
+6 & 0 & 3 \\
+-4 & -3 & 0
+\end{Vmatrix} = \squared{$\begin{Vmatrix}
+0 & 6 & -4 \\
+-6 & 0 & -3 \\
+4 & 3 & 0
+\end{Vmatrix}$}$
+\end{center}
+\paragraph*{Шаг 2. Тройные внешние произведения} \, \\
+Представлю полный список тройных внешних произведений:
+\begin{multicols}{6}
+\noindent $A_i \wedge B_j \wedge C_k$ \\
+$A_i \wedge C_k \wedge B_j$ \\
+$C_k \wedge A_i \wedge B_j$ \\
+$C_k \wedge B_j \wedge A_i$ \\
+$B_j \wedge C_k \wedge A_i$ \\
+$B_j \wedge A_i \wedge C_k$ \\
+$A_i \wedge B_j \wedge D_l$ \\
+$B_j \wedge A_i \wedge D_l$ \\
+$B_j \wedge D_l \wedge A_i$ \\
+$D_l \wedge B_j \wedge A_i$ \\
+$D_l \wedge A_i \wedge B_j$ \\
+$A_i \wedge D_l \wedge B_j$ \\
+$A_i \wedge C_k \wedge D_l$ \\
+$C_k \wedge A_i \wedge D_l$ \\
+$C_k \wedge D_l \wedge A_i$ \\
+$D_l \wedge C_k \wedge A_i$ \\
+$D_l \wedge A_i \wedge C_k$ \\
+$A_i \wedge D_l \wedge C_k$ \\
+$D_l \wedge B_j \wedge C_k$ \\
+$D_l \wedge C_k \wedge B_j$ \\
+$C_k \wedge D_l \wedge B_j$ \\
+$C_k \wedge B_j \wedge D_l$ \\
+$B_j \wedge C_k \wedge D_l$ \\
+$B_j \wedge D_l \wedge C_k$
+\end{multicols}
+\noindent Вычислим поочерёдно каждое.
+\begin{center}
+$A_i \wedge B_j \wedge C_k = E_{ij} \wedge C_k = \dfrac{3!}{1!\,2!}\,\text{Asym}(E_{ij}\otimes C_k) = 3\,\text{Asym}(E_{ij}\otimes C_k)$
+\end{center}
+Вычислим $E_{ij}\otimes C_k$:
+$$E_{ij}\otimes C_k = O_{ijk} = \begin{array}{||c|c|c||}
+E_{ij}\cdot C_1 & E_{ij}\cdot C_2 & E_{ij}\cdot C_3
+\end{array} = \begin{array}{||ccc|ccc|ccc||}
+0 & 6 & -18 & 0 & -9 & 27 & 0 & 9 & -27 \\
+6 & 0 & -12 & 9 & 0 & -18 & -9 & 0 & 18 \\
+18 & -12 & 0 & -27 & 18 & 0 & 27 & -18 & 0
+\end{array}$$
+Теперь найдём $\text{Asym}(O_{ijk})$:
+$$a = \frac{1}{6}(O_{123} - O_{132} + O_{312} - O_{321} + O_{231} - O_{213}) = \frac{1}{6}(9 - 27 -27 +12 - 12 + 9) = -6$$
+$$\text{Asym}(O_{ijk}) = \begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & 0 & 0 & -a & 0 & a & 0 \\
+0 & 0 & a & 0 & 0 & 0 & -a & 0 & 0 \\
+0 & -a & 0 & a & 0 & 0 & 0 & 0 & 0
+\end{array} =  \begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & 0 & 0 & 6 & 0 & -6 & 0 \\
+0 & 0 & -6 & 0 & 0 & 0 & 6 & 0 & 0 \\
+0 & 6 & 0 & -6 & 0 & 0 & 0 & 0 & 0
+\end{array}$$
+Тогда $A_i \wedge B_j \wedge C_k = 3\,\text{Asym}(O_{ijk}) = \squared{$\begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & 0 & 0 & 18 & 0 & -18 & 0 \\
+0 & 0 & -18 & 0 & 0 & 0 & 18 & 0 & 0 \\
+0 & 18 & 0 & -18 & 0 & 0 & 0 & 0 & 0
+\end{array}$}$
+
+\noindent Остальные комбинации внешних произведений вычислить не так трудно, пользуясь свойством коммутативности внешнего произведения $T_2\wedge T_1 = (-1)^{p\cdot q}(T_1\wedge T_2)$.
+\begin{center}
+$B_j \wedge A_i \wedge C_k = -A_i \wedge B_j \wedge C_k = - \begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & 0 & 0 & 18 & 0 & -18 & 0 \\
+0 & 0 & -18 & 0 & 0 & 0 & 18 & 0 & 0 \\
+0 & 18 & 0 & -18 & 0 & 0 & 0 & 0 & 0
+\end{array} = \squared{$\begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & 0 & 0 & -18 & 0 & 18 & 0 \\
+0 & 0 & 18 & 0 & 0 & 0 & -18 & 0 & 0 \\
+0 & -18 & 0 & 18 & 0 & 0 & 0 & 0 & 0
+\end{array}$}$
+\end{center}
+\begin{center}
+$B_j \wedge C_k \wedge A_i = -B_j \wedge A_i \wedge C_k = - \begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & 0 & 0 & -18 & 0 & 18 & 0 \\
+0 & 0 & 18 & 0 & 0 & 0 & -18 & 0 & 0 \\
+0 & -18 & 0 & 18 & 0 & 0 & 0 & 0 & 0
+\end{array} = \squared{$\begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & 0 & 0 & 18 & 0 & -18 & 0 \\
+0 & 0 & -18 & 0 & 0 & 0 & 18 & 0 & 0 \\
+0 & 18 & 0 & -18 & 0 & 0 & 0 & 0 & 0
+\end{array}$}$
+\end{center}
+\begin{center}
+$C_k \wedge B_j \wedge A_i = - B_j \wedge C_k \wedge A_i = \squared{$\begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & 0 & 0 & -18 & 0 & 18 & 0 \\
+0 & 0 & 18 & 0 & 0 & 0 & -18 & 0 & 0 \\
+0 & -18 & 0 & 18 & 0 & 0 & 0 & 0 & 0
+\end{array}$}$
+\end{center}
+\begin{center}
+$C_k \wedge A_i \wedge B_j = - C_k \wedge B_j \wedge A_i = \squared{$\begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & 0 & 0 & 18 & 0 & -18 & 0 \\
+0 & 0 & -18 & 0 & 0 & 0 & 18 & 0 & 0 \\
+0 & 18 & 0 & -18 & 0 & 0 & 0 & 0 & 0
+\end{array}$}$
+\end{center}
+\begin{center}
+$A_i \wedge C_k \wedge B_j = - C_k \wedge A_i \wedge B_j = \squared{$\begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & 0 & 0 & -18 & 0 & 18 & 0 \\
+0 & 0 & 18 & 0 & 0 & 0 & -18 & 0 & 0 \\
+0 & -18 & 0 & 18 & 0 & 0 & 0 & 0 & 0
+\end{array}$}$
+\end{center}
+\, \\ \, \\
+\begin{center}
+$A_i \wedge B_j \wedge D_l = E_{ij} \wedge D_l = \dfrac{3!}{1!\,2!}\,\text{Asym}(E_{ij}\otimes D_l) = 3\,\text{Asym}(E_{ij}\otimes D_l)$
+\end{center}
+Вычислим $E_{ij}\otimes D_l$:
+$$E_{ij}\otimes D_l = P_{ijl} = \begin{array}{||c|c|c||}
+E_{ij}\cdot D_1 & E_{ij}\cdot D_2 & E_{ij}\cdot D_3
+\end{array} = \begin{array}{||ccc|ccc|ccc||}
+0 & -6 & 18 & 0 & 0 & 0 & 0 & -3 & 9 \\
+6 & 0 & -12 & 0 & 0 & 0 & 3 & 0 & -6 \\
+-18 & 12 & 0 & 0 & 0 & 0 & -9 & 6 & 0
+\end{array}$$
+Теперь найдём $\text{Asym}(P_{ijl})$:
+$$a = \frac{1}{6}(P_{123} - P_{132} + P_{312} - P_{321} + P_{231} - P_{213}) = \frac{1}{6}(-3 -12 -12 -3) = -5$$
+$$\text{Asym}(P_{ijl}) = \begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & 0 & 0 & -a & 0 & a & 0 \\
+0 & 0 & a & 0 & 0 & 0 & -a & 0 & 0 \\
+0 & -a & 0 & a & 0 & 0 & 0 & 0 & 0
+\end{array} =  \begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & 0 & 0 & 5 & 0 & -5 & 0 \\
+0 & 0 & -5 & 0 & 0 & 0 & 5 & 0 & 0 \\
+0 & 5 & 0 & -5 & 0 & 0 & 0 & 0 & 0
+\end{array}$$
+Тогда $A_i \wedge B_j \wedge D_l = 3\,\text{Asym}(P_{ijl}) = \squared{$\begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & 0 & 0 & 15 & 0 & -15 & 0 \\
+0 & 0 & -15 & 0 & 0 & 0 & 15 & 0 & 0 \\
+0 & 15 & 0 & -15 & 0 & 0 & 0 & 0 & 0
+\end{array}$} =  B_j \wedge D_l \wedge A_i = D_l \wedge A_i \wedge B_j$
+$$A_i \wedge D_l \wedge B_j = B_j \wedge A_i \wedge D_l = D_l \wedge B_j \wedge A_i = - A_i \wedge B_j \wedge D_l = \squared{$\begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & 0 & 0 & -15 & 0 & 15 & 0 \\
+0 & 0 & 15 & 0 & 0 & 0 & -15 & 0 & 0 \\
+0 & -15 & 0 & 15 & 0 & 0 & 0 & 0 & 0
+\end{array}$}$$
+\, \\ \, \\
+\begin{center}
+$A_i \wedge C_k \wedge D_l = F_{ik} \wedge D_l = \dfrac{3!}{1!\,2!}\,\text{Asym}(F_{ik}\otimes D_l) = 3\,\text{Asym}(F_{ik}\otimes D_l)$
+\end{center}
+Вычислим $F_{ik}\otimes D_l$:
+$$F_{ik}\otimes D_l = Q_{ikl} = \begin{array}{||c|c|c||}
+F_{ik}\cdot D_1 & E_{ij}\cdot D_2 & E_{ij}\cdot D_3
+\end{array} = \begin{array}{||ccc|ccc|ccc||}
+0 & -6 & 6 & 0 & 0 & 0 & 0 & -3 & 3 \\
+6 & 0 & 0 & 0 & 0 & 0 & 3 & 0 & 0 \\
+-6 & 0 & 0 & 0 & 0 & 0 & -3 & 0 & 0 \\
+\end{array}$$
+Теперь найдём $\text{Asym}(Q_{ikl})$:
+$$a = \frac{1}{6}(Q_{123} - Q_{132} + Q_{312} - Q_{321} + Q_{231} - Q_{213}) = \frac{1}{6}(-3 - 3) = -1$$
+$$\text{Asym}(Q_{ikl}) = \begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & 0 & 0 & -a & 0 & a & 0 \\
+0 & 0 & a & 0 & 0 & 0 & -a & 0 & 0 \\
+0 & -a & 0 & a & 0 & 0 & 0 & 0 & 0
+\end{array} =  \begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & 0 & 0 & 1 & 0 & -1 & 0 \\
+0 & 0 & -1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 1 & 0 & -1 & 0 & 0 & 0 & 0 & 0
+\end{array}$$
+Тогда $A_i \wedge C_k \wedge D_l = 3\,\text{Asym}(Q_{ikl}) = \squared{$\begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & 0 & 0 & 3 & 0 & -3 & 0 \\
+0 & 0 & -3 & 0 & 0 & 0 & 3 & 0 & 0 \\
+0 & 3 & 0 & -3 & 0 & 0 & 0 & 0 & 0
+\end{array}$} =  C_k \wedge D_l \wedge A_i = D_l \wedge A_i \wedge C_k$
+$$A_i \wedge D_l \wedge C_k = C_k \wedge A_i \wedge D_l = D_l \wedge C_k \wedge A_i = - A_i \wedge C_k \wedge D_l = \squared{$\begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & 0 & 0 & -3 & 0 & 3 & 0 \\
+0 & 0 & 3 & 0 & 0 & 0 & -3 & 0 & 0 \\
+0 & -3 & 0 & 3 & 0 & 0 & 0 & 0 & 0
+\end{array}$}$$
+\, \\ \, \\
+\begin{center}
+$D_l \wedge B_j \wedge C_k = M_{lj} \wedge C_k = \dfrac{3!}{1!\,2!}\,\text{Asym}(M_{lj}\otimes C_k) = 3\,\text{Asym}(M_{lj}\otimes C_k)$
+\end{center}
+Вычислим $M_{lj}\otimes C_k$:
+$$M_{lj}\otimes C_k = R_{ljk} = \begin{array}{||c|c|c||}
+M_{lj}\cdot C_1 & M_{lj}\cdot C_2 & M_{lj}\cdot C_3
+\end{array} = \begin{array}{||ccc|ccc|ccc||}
+0 & -4 & -8 & 0 & 6 & 12 & 0 & -6 & -12 \\
+4 & 0 & 2 & -6 & 0 & -3 & 6 & 0 & 3 \\
+8 & -2 & 0 & -12 & 3 & 0 & 12 & -3 & 0
+\end{array}$$
+Теперь найдём $\text{Asym}(R_{ljk})$:
+$$a = \frac{1}{6}(R_{123} - R_{132} + R_{312} - R_{321} + R_{231} - R_{213}) = \frac{1}{6}(-6 - 12 -12 + 2 + 2 - 6) = \frac{-16}{3}$$
+$$\text{Asym}(R_{ljk}) = \begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & 0 & 0 & -a & 0 & a & 0 \\
+0 & 0 & a & 0 & 0 & 0 & -a & 0 & 0 \\
+0 & -a & 0 & a & 0 & 0 & 0 & 0 & 0
+\end{array} =  \begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & 0 & 0 & \nicefrac{16}{3} & 0 & \nicefrac{-16}{3} & 0 \\
+0 & 0 & \nicefrac{-16}{3} & 0 & 0 & 0 & \nicefrac{16}{3} & 0 & 0 \\
+0 & \nicefrac{16}{3} & 0 & \nicefrac{-16}{3} & 0 & 0 & 0 & 0 & 0
+\end{array}$$
+Тогда $D_l \wedge B_j \wedge C_k = 3\,\text{Asym}(R_{ljk}) = \squared{$\begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & 0 & 0 & 16 & 0 & -16 & 0 \\
+0 & 0 & -16 & 0 & 0 & 0 & 16 & 0 & 0 \\
+0 & 16 & 0 & -16 & 0 & 0 & 0 & 0 & 0
+\end{array}$} = C_k \wedge D_l \wedge B_j = B_j \wedge C_k \wedge D_l$
+$$B_j \wedge D_l \wedge C_k = C_k \wedge B_j \wedge D_l = D_l \wedge C_k \wedge B_j = - D_l \wedge B_j \wedge C_k = \squared{$\begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & 0 & 0 & -3 & 0 & 3 & 0 \\
+0 & 0 & 3 & 0 & 0 & 0 & -3 & 0 & 0 \\
+0 & -3 & 0 & 3 & 0 & 0 & 0 & 0 & 0
+\end{array}$}$$
+\paragraph*{Шаг 3. A $\wedge$ B $\wedge$ C $\wedge$ D} \, \\
+Представим $A \wedge B \wedge C \wedge D$ как $(A \wedge B \wedge C) \wedge D$, где $A \wedge B \wedge C$ было вычислено на предыдущем шаге.
+$$A_i \wedge B_j \wedge C_k \wedge D_l = O_{ijk} \wedge D_l = \dfrac{4!}{1!\,3!}\,\text{Asym}(O_{ijk}\otimes D_l) = 4\,\text{Asym}(O_{ijk}\otimes D_l)$$
+Вычислим $O_{ijk}\otimes D_l$:
+$$O_{ijk}\otimes D_l = U_{ijkl} = \begin{Vmatrix}
+O_{ijk} \cdot D_1 \\
+\hline
+O_{ijk} \cdot D_2 \\
+\hline
+O_{ijk} \cdot D_3
+\end{Vmatrix} = \begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & 0 & 0 & -36 & 0 & 36 & 0 \\
+0 & 0 & 36 & 0 & 0 & 0 & -36 & 0 & 0 \\
+0 & -36 & 0 & 36 & 0 & 0 & 0 & 0 & 0 \\
+\hline
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\hline
+0 & 0 & 0 & 0 & 0 & -18 & 0 & 18 & 0 \\
+0 & 0 & 18 & 0 & 0 & 0 & -18 & 0 & 0 \\
+0 & -18 & 0 & 18 & 0 & 0 & 0 & 0 & 0
+\end{array}$$
+\pagebreak
+Теперь найдём $\text{Asym}(U_{ijkl})$:
+\begin{center}
+При антисимметризации ненулевыми сохранятся только те элементы, у которых $i \neq j \neq k \neq l$. Такое возможно, только если $i = 1$, $j = 2$, $k = 3$, $l = 4$, что невозможно в линейном пространстве $\mathbb{R}^{3} \Rightarrow$ всегда найдётся элемент, у которого хотя бы пара индексов совпадает $\Rightarrow$ весь антисимметрированный тензор --- нулевой.
+\end{center}
+$$\text{Asym}(U_{ijkl}) = \begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\hline
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\hline
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\end{array} \Rightarrow A \wedge B \wedge C \wedge D = \begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\hline
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\hline
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 & 0 \\
+\end{array}$$
+\end{document}

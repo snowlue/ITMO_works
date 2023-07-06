@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage{cmap}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=14cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\pagenumbering{gobble}
+
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{%
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}\;}
+\newcommand{\e}{\text{e}}
+\newcommand{\la}{\lambda}
+\newcommand{\shiftleft}[3]{\makebox[#1][r]{\makebox[#2][l]{#3}}}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand{\at}{\biggr\rvert}
+
+\begin{document}
+\begin{center}
+    Для того, чтобы найти угол между векторами, для начала нужно найти косинус этого угла, который вычисляется по следующей формуле:
+    $$\cos\varphi = \frac{x^{T}Gy}{\sqrt{x^{T}Gx}\sqrt{y^{T}Gy}}$$
+    Разделим на компоненты и посчитаем каждый отдельно:
+    $$x^{T}Gy = \begin{pmatrix}
+            0 & -2 & 2 & 6
+        \end{pmatrix}\times\begin{pmatrix}
+            6 & 3 & 1 & 5 \\
+            3 & 2 & 1 & 3 \\
+            1 & 1 & 2 & 1 \\
+            5 & 3 & 1 & 5
+        \end{pmatrix}\times\begin{pmatrix}
+            -2 \\ 4 \\ 0 \\ -6
+        \end{pmatrix} = \begin{pmatrix}
+            26 & 16 & 8 & 26
+        \end{pmatrix} \times \begin{pmatrix}
+            -2 \\ 4 \\ 0 \\ -6
+        \end{pmatrix} = -144$$
+    $$x^{T}Gx = \begin{pmatrix}
+            0 & -2 & 2 & 6
+        \end{pmatrix}\times\begin{pmatrix}
+            6 & 3 & 1 & 5 \\
+            3 & 2 & 1 & 3 \\
+            1 & 1 & 2 & 1 \\
+            5 & 3 & 1 & 5
+        \end{pmatrix}\times\begin{pmatrix}
+            0 \\ -2 \\ 2 \\ 6
+        \end{pmatrix} = \begin{pmatrix}
+            26 & 16 & 8 & 26
+        \end{pmatrix} \times \begin{pmatrix}
+            0 \\ -2 \\ 2 \\ 6
+        \end{pmatrix} = 140$$
+    $$y^{T}Gy = \begin{pmatrix}
+            -2 & 4 & 0 & -6
+        \end{pmatrix}\times\begin{pmatrix}
+            6 & 3 & 1 & 5 \\
+            3 & 2 & 1 & 3 \\
+            1 & 1 & 2 & 1 \\
+            5 & 3 & 1 & 5
+        \end{pmatrix}\times\begin{pmatrix}
+            -2 \\ 4 \\ 0 \\ -6
+        \end{pmatrix} = \begin{pmatrix}
+            -30 & -16 & -4 & -28
+        \end{pmatrix} \times \begin{pmatrix}
+            -2 \\ 4 \\ 0 \\ -6
+        \end{pmatrix} = 164$$
+    Посчитаем косинус, подставив найденные выше значения:
+    $$\cos\varphi = \frac{-144}{\sqrt{140}\sqrt{164}} = -\frac{36\sqrt{1435}}{1435} \Rightarrow \varphi = \pi - \arccos\frac{36\sqrt{1435}}{1435} \approx 2.83$$
+\end{center}
+\end{document}

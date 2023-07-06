@@ -1,0 +1,76 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=28cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\pagenumbering{gobble}
+\newcommand{\e}{\text{e}}
+
+\begin{document}
+\begin{center}
+Найдём собственные значения оператора:
+\end{center}
+$$\left|\begin{matrix}
+4-\lambda & 0 & 0 & 9 \\
+0 & 4-\lambda & 0 & -9 \\
+0 & 0 & 4-\lambda & 9 \\
+0 & 0 & 0 & -5-\lambda
+\end{matrix}\right| = 0$$
+$$\lambda^4-7\lambda^3-12\lambda^2+176\lambda-320 = 0$$
+$$(\lambda+5)(\lambda-4)^3=0$$
+$$\Downarrow$$
+$$\sigma_A = \{-5^{(1)},4^{(3)}\}$$ \\
+\begin{center}
+Найдём собственные вектора:
+\end{center}
+$$\lambda = -5$$
+$$\begin{pmatrix}
+9 & 0 & 0 & 9 \\
+0 & 9 & 0 & -9 \\
+0 & 0 & 9 & 9 \\
+0 & 0 & 0 & 0
+\end{pmatrix} \Rightarrow \begin{cases}
+x_1 = -x_4 \\
+x_2 = x_4\\
+x_3 = -x_4 \\
+x_4 \in \mathbb{R}
+\end{cases} \Rightarrow v_1 = \begin{pmatrix}
+-1 \\ 1 \\ -1 \\ 1
+\end{pmatrix}$$\\
+$$\lambda = 4$$
+$$\begin{pmatrix}
+0 & 0 & 0 & 9 \\
+0 & 0 & 0 & -9 \\
+0 & 0 & 0 & 9 \\
+0 & 0 & 0 & -9
+\end{pmatrix} \sim \begin{pmatrix}
+0 & 0 & 0 & 1 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0
+\end{pmatrix} \Rightarrow \begin{cases}
+x_1 \in \mathbb{R} \\
+x_2 \in \mathbb{R} \\
+x_3 \in \mathbb{R} \\
+x_4 = 0 \\
+\end{cases} \Rightarrow v_2 = \begin{pmatrix}
+1 \\ 0 \\ 0 \\ 0
+\end{pmatrix} \quad v_3 = \begin{pmatrix}
+0 \\ 1 \\ 0 \\ 0
+\end{pmatrix} \quad v_4 = \begin{pmatrix}
+0 \\ 0 \\ 1 \\ 0
+\end{pmatrix}$$ \\
+\begin{center}
+Алгебраическая и геометрическая кратности значений спектра совпадают, а значит мы уже можем построить Жорданову форму, или диагональную матрицу оператора в базисе $\{v_1, v_2, v_3, v_4\}$, или $\hat{A}$:
+\end{center}
+$$\hat{A} = \begin{pmatrix}
+-5 & 0 & 0 & 0 \\
+0 & 4 & 0 & 0 \\
+0 & 0 & 4 & 0 \\
+0 & 0 & 0 & 4
+\end{pmatrix}$$
+\end{document}

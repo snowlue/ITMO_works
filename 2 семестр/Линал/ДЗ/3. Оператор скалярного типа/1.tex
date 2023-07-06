@@ -1,0 +1,189 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=28cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\pagenumbering{gobble}
+\newcommand{\e}{\text{e}}
+
+\begin{document}
+\begin{center}
+Найдём собственные значения оператора:
+\end{center}
+$$\left|\begin{matrix}
+-2-\lambda & 4 & 2 & 2 \\
+-18 & 16-\lambda & 6 & 6 \\
+6 & -4 & 2-\lambda & -2 \\
+18 & -12 & -6 & -2-\lambda
+\end{matrix}\right| = (-2-\lambda)\left|\begin{matrix}
+16-\lambda & 6 & 6 \\
+-4 & 2-\lambda & -2 \\
+-12 & -6 & -2-\lambda
+\end{matrix}\right| - 4\left|\begin{matrix}
+-18 & 6 & 6 \\
+6 & 2-\lambda & -2 \\
+18 & -6 & -2-\lambda
+\end{matrix}\right| + 2\left|\begin{matrix}
+-18 & 16-\lambda & 6 \\
+6 & -4 & -2 \\
+18 & -12 & -2-\lambda
+\end{matrix}\right| - 2\left|\begin{matrix}
+-18 & 16-\lambda & 6 \\
+6 & -4 & 2-\lambda \\
+18 & -12 & -6
+\end{matrix}\right| =$$
+
+$$= (-2-\lambda)\left((16-\lambda)\left|\begin{matrix}
+2-\lambda & -2 \\
+ -6 & -2-\lambda
+\end{matrix}\right|-6\left|\begin{matrix}
+-4 & -2 \\
+-12 & -2-\lambda
+\end{matrix}\right|+6\left|\begin{matrix}
+-4 & 2-\lambda \\
+-12 & -6
+\end{matrix}\right|\right) - 4\left(-18\left|\begin{matrix}
+2-\lambda & -2 \\
+-6 & -2-\lambda
+\end{matrix}\right|-6\left|\begin{matrix}
+6 & -2 \\
+18 & -2-\lambda
+\end{matrix}\right|+6\left|\begin{matrix}
+6 & 2-\lambda \\
+18 & -6
+\end{matrix}\right|\right) +$$
+
+$$+ 2\left(-18\left|\begin{matrix}
+-4 & -2 \\
+-12 & -2-\lambda
+\end{matrix}\right|-(16-\lambda)\left|\begin{matrix}
+6 & -2 \\
+18 & -2-\lambda
+\end{matrix}\right|+6\left|\begin{matrix}
+6 & -4 \\
+18 & -12
+\end{matrix}\right|\right) - 2\left(-18\left|\begin{matrix}
+-4 & 2-\lambda \\
+-12 & -6
+\end{matrix}\right|-(16-\lambda)\left|\begin{matrix}
+6 & 2-\lambda \\
+18 & -6
+\end{matrix}\right|+6\left|\begin{matrix}
+6 & -4 \\
+18 & -12
+\end{matrix}\right|\right) =$$
+
+$$= (-2-\lambda)((16-\lambda)((2-\lambda)(-2-\lambda) - 12)-6(-4(-2-\lambda)-24)+6(24+12(2-\lambda))) - 4(-18((2-\lambda)(-2-\lambda)-12)-6(6(-2-\lambda)+36)+6(-36-18(2-\lambda))) +$$
+
+$$+ 2(-18(-4(-2-\lambda)-24)-(16-\lambda)(6(-2-\lambda)+36)+6(-72+72)) - 2(-18(24+12(2-\lambda))-(16-\lambda)(-36-18(2-\lambda))+6(-72+72)) =$$
+
+$$= \lambda^4-14\lambda^3+48\lambda^2+32\lambda-256 + 72\lambda^2 - 576\lambda + 1152 - 12\lambda^2 + 96\lambda -192 -36\lambda^2+288\lambda-576 = \lambda^4-14\lambda^3+72\lambda^2-160\lambda+128 = (\lambda -2)(\lambda-4)^3=0$$
+$$\Downarrow$$
+$$\sigma_A = \{2^{(1)},4^{(3)}\}$$ \\
+\begin{center}
+Найдём собственные вектора, которые составят базис и, как следствие, матрицу перехода для диагональной матрицы:
+\end{center}
+$$\lambda = 2$$
+$$\begin{pmatrix}
+-4 & 4 & 2 & 2 \\
+-18 & 14 & 6 & 6 \\
+6 & -4 & 0 & -2 \\
+18 & -12 & -6 & -4
+\end{pmatrix} \sim \begin{pmatrix}
+2 & -2 & -1 & -1 \\
+0 & 4 & 3 & 3 \\
+0 & 0 & 3 & -1 \\
+0 & 0 & 0 & 0
+\end{pmatrix} \Rightarrow \begin{cases}
+2x_1 = 2x_2 +x_3 +x_4 \\
+4x_2 = - 3x_3 - 3x_4 \\
+3x_3 = x_4 \\
+x_4 \in \mathbb{R}
+\end{cases} \Leftrightarrow \begin{cases}
+x_1 = -\frac{x_4}{3} \\
+x_2 = -x_4 \\
+x_3 = \frac{x_4}{3} \\
+x_4 \in \mathbb{R}
+\end{cases} \Rightarrow v_1=\begin{pmatrix}
+-1 \\ -3 \\ 1 \\ 3
+\end{pmatrix}$$ \\
+$$\lambda = 4$$
+$$\begin{pmatrix}
+-6 & 4 & 2 & 2 \\
+-18 & 12 & 6 & 6 \\
+6 & -4 & -2 & -2 \\
+18 & -12 & -6 & -6
+\end{pmatrix} \sim \begin{pmatrix}
+3 & -2 & -1 & -1 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{pmatrix} \Rightarrow \begin{cases}
+x_1 = \frac{2x_2}{3} + \frac{x_3}{3} + \frac{x_4}{3} \\
+x_2 \in \mathbb{R} \\
+x_3 \in \mathbb{R} \\
+x_4 \in \mathbb{R} \\
+\end{cases} \Rightarrow v_2 = \begin{pmatrix}
+2 \\ 3 \\ 0 \\ 0
+\end{pmatrix} \quad v_3 = \begin{pmatrix}
+1 \\ 0 \\ 3 \\ 0
+\end{pmatrix} \quad v_4 = \begin{pmatrix}
+1 \\ 0 \\ 0 \\ 3
+\end{pmatrix}$$ \\
+
+\begin{center}
+Алгебраическая кратность совпадает с геометрическое $\Rightarrow$ оператор скалярного типа. \\
+В базисе $\{v_1, v_2, v_3, v_4\}$ найдём значение $\e^{(\varphi)}$ --- для этого воспользуемся формулой $\e^A = T\e^{\tilde{A}}T^{-1}$, где $\tilde{A}$ --- Жорданова форма для оператора.
+\end{center}
+$$\begin{pmatrix}
+-1 & 2 & 1 & 1 \\
+-3 & 3 & 0 & 0 \\
+1 & 0 & 3 & 0 \\
+3 & 0 & 0 & 3
+\end{pmatrix}\times \begin{pmatrix}
+\e^2 & 0 & 0 & 0 \\
+0 & \e^4 & 0 & 0 \\
+0 & 0 & \e^4 & 0 \\
+0 & 0 & 0 & \e^4
+\end{pmatrix} \times \begin{pmatrix}
+-1 & 2 & 1 & 1 \\
+-3 & 3 & 0 & 0 \\
+1 & 0 & 3 & 0 \\
+3 & 0 & 0 & 3
+\end{pmatrix}^{-1} = \begin{pmatrix}
+-1 & 2 & 1 & 1 \\
+-3 & 3 & 0 & 0 \\
+1 & 0 & 3 & 0 \\
+3 & 0 & 0 & 3
+\end{pmatrix}\times \begin{pmatrix}
+7.38905 & 0 & 0 & 0 \\
+0 & 54.59815 & 0 & 0 \\
+0 & 0 & 54.59815 & 0 \\
+0 & 0 & 0 & 54.59815
+\end{pmatrix} \times \begin{pmatrix}
+-3 & 2 & 1 & 1 \\
+-3 & \frac{2}{3} & 1 & 1 \\
+1 & -\frac{2}{3} & 0 & -\frac{1}{3} \\
+3 & -2 & -1 & -\frac{2}{3}
+\end{pmatrix} =$$
+$$= \begin{pmatrix}
+-7.38905 & 109.1963 & 54.59815 & 54.59815 \\
+-22.16715 & 163.79445 & 0 & 0 \\
+7.38905 & 0 & 163.79445 & 0 \\
+22.16715 & 0 & 0 & 163.79445
+\end{pmatrix} \times \begin{pmatrix}
+-3 & 2 & 1 & 1 \\
+-3 & \frac{2}{3} & 1 & 1 \\
+1 & -\frac{2}{3} & 0 & -\frac{1}{3} \\
+3 & -2 & -1 & -\frac{2}{3}
+\end{pmatrix} = \begin{pmatrix}
+-87.02915 & 94.4182 & 47.2091 & 47.2091 \\
+-424.8819 & 337.85275 & 141.6273 & 141.6273 \\
+141.6273 & -94.4182 & 7.38905 & -47.2091 \\
+424.8819 & -283.2546 & -141.6273 & -87.02915
+\end{pmatrix}$$
+\end{document}

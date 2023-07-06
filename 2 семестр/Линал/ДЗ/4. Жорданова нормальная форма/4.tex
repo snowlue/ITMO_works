@@ -1,0 +1,102 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=30cm, paperheight=20cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\pagenumbering{gobble}
+
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{%
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}\;}
+\newcommand{\e}{\text{e}}
+\newcommand{\la}{\lambda}
+\newcommand{\shiftleft}[3]{\makebox[#1][r]{\makebox[#2][l]{#3}}}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand{\at}{\biggr\rvert}
+
+\begin{document}
+\begin{center}
+Вычислим характеристический полином и, как следствие, найдём спектр оператора:
+$$\chi_\varphi(\la) = \begin{vmatrix}
+-1-\la & 1 & 0 & 0 \\
+5 & -\la & 2 & 1 \\
+-15 & -8 & -6-\la & -3 \\
+9 & 4 & 2 & 1-\la \\
+\end{vmatrix} = \la^4+6\la^3+12\la^2+8\la = \la(\la + 2)^3 \Rightarrow \sigma_\varphi = \left\{0^{(1)}, -2^{(3)}\right\}$$
+Найдём собственные вектора оператора к соответствующим собственным значениям:
+$$\la = 0$$
+$$\begin{pmatrix}
+-1 & 1 & 0 & 0 \\
+5 & 0 & 2 & 1 \\
+-15 & -8 & -6 & -3 \\
+9 & 4 & 2 & 1 \\
+\end{pmatrix} \sim \begin{pmatrix}
+-1 & 1 & 0 & 0 \\
+5 & 0 & 2 & 1 \\
+0 & -8 & 0 & 0 \\
+4 & 4 & 0 & 0 \\
+\end{pmatrix} \sim \begin{pmatrix}
+1 & 0 & 0 & 0 \\
+0 & 0 & 2 & 1 \\
+0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 0 \\
+\end{pmatrix} \Rightarrow \begin{cases}
+\xi_1 = \xi_2 = 0 \\
+\xi_4 = -2\xi_3 \\
+\xi_3 \in \mathbb{R}
+\end{cases} \shiftleft{3pt}{14pt}{$\Rightarrow$} v_1 = \begin{pmatrix}
+0 \\ 0 \\ 1 \\ -2
+\end{pmatrix}$$
+$$\la = -2$$
+$$\begin{pmatrix}
+1 & 1 & 0 & 0 \\
+5 & 2 & 2 & 1 \\
+-15 & -8 & -4 & -3 \\
+9 & 4 & 2 & 3 \\
+\end{pmatrix} \sim \begin{pmatrix}
+1 & 1 & 0 & 0 \\
+5 & 2 & 2 & 1 \\
+0 & -2 & 2 & 0 \\
+4 & 2 & 0 & 2 \\
+\end{pmatrix} \sim \begin{pmatrix}
+1 & 1 & 0 & 0 \\
+0 & -1 & 2 & -1 \\
+0 & -1 & 1 & 0 \\
+0 & 0 & -1 & 1 \\
+\end{pmatrix} \sim \begin{pmatrix}
+1 & 0 & 0 & 1 \\
+0 & 1 & 0 & -1 \\
+0 & 0 & -1 & 1 \\
+0 & 0 & 0 & 0 \\
+\end{pmatrix} \Rightarrow \begin{cases}
+\xi_1 = -\xi_4 \\
+\xi_2 = \xi_4 \\
+\xi_3 = \xi_4 \\
+\xi_4 \in \mathbb{R}
+\end{cases}  \shiftleft{0pt}{14pt}{$\Rightarrow$} v_2=\begin{pmatrix}
+-1 \\ 1 \\ 1 \\ 1
+\end{pmatrix}$$
+Перед нами оператор нескалярного типа, базис которого будет составлен из 2 собственных векторов и 2 присоединённых и будет выглядеть так: $\left\{v_1, v_2, u_1, u_2\right\}$, \\ где $u_1$ и $u_2$ --- присоединённые вектора. Тогда жорданова форма оператора в этом базиса примет следующий вид:
+$$\mathcal{J} = \begin{pmatrix}
+0 & 0 & 0 & 0 \\
+0 & -2 & 1 & 0 \\
+0 & 0 & -2 & 1 \\
+0 & 0 & 0 & -2 \\
+\end{pmatrix}$$
+\end{center}
+\end{document}

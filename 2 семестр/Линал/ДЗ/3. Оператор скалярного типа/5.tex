@@ -1,0 +1,69 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=28cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\pagenumbering{gobble}
+\newcommand{\e}{\text{e}}
+
+\begin{document}
+\begin{center}
+Найдём собственные значения оператора:
+\end{center}
+$$\left|\begin{matrix}
+6-\lambda & -2 & 2 & 4 & 2 \\
+-11 & 12-\lambda & -7 & -11 & -4 \\
+-11 & 7 & -4-\lambda & -11 & -5\\
+-16 & 17 & -11 & -14-\lambda & -5 \\
+22 & -26 & 16 & 22 & 8-\lambda
+\end{matrix}\right| = 0$$
+$$-\lambda^5+8\lambda^4-25\lambda^3+38\lambda^2-28\lambda+8 = 0$$
+$$(\lambda-1)^2(\lambda-2)^3=0$$
+$$\Downarrow$$
+$$\sigma_A = \{1^{(2)},2^{(3)}\}$$ \\
+\begin{center}
+Найдём собственные вектора:
+\end{center}
+$$\lambda = 1$$
+$$\begin{pmatrix}
+5 & -2 & 2 & 4 & 2 \\
+-11 & 11 & -7 & -11 & -4 \\
+-11 & 7 & -5 & -11 & -5\\
+-16 & 17 & -11 & -15 & -5 \\
+22 & -26 & 16 & 22 & 7
+\end{pmatrix} \sim \begin{pmatrix}
+5 & -2 & 2 & 4 & 2 \\
+0 & 33 & -13 & -11 & 2 \\
+0 & 0 & 14 & -4 & -25\\
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0
+\end{pmatrix} \Rightarrow v_1 = \begin{pmatrix}
+-10 \\ 11 \\ 22 \\ 7 \\ 0
+\end{pmatrix} \quad v_2 = \begin{pmatrix}
+-12 \\ 9 \\ 25 \\ 0 \\ 14
+\end{pmatrix}$$\\
+$$\lambda = 2$$
+$$\begin{pmatrix}
+4 & -2 & 2 & 4 & 2 \\
+-11 & 10 & -7 & -11 & -4 \\
+-11 & 7 & -6 & -11 & -5\\
+-16 & 17 & -11 & -16 & -5 \\
+22 & -26 & 16 & 22 & 6
+\end{pmatrix} \sim \begin{pmatrix}
+2 & -1 & 1 & 2 & 1 \\
+0 & 3 & -1 & 0 & 1 \\
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 \\
+\end{pmatrix} \Rightarrow  v_3 = \begin{pmatrix}
+-1 \\ 1 \\ 3 \\ 0 \\ 0
+\end{pmatrix} \quad v_4 = \begin{pmatrix}
+-1 \\ 0 \\ 0 \\ 1 \\ 0
+\end{pmatrix} \quad v_5 = \begin{pmatrix}
+-2 \\ -1 \\ 0 \\ 0 \\ 3
+\end{pmatrix}$$
+\end{document}

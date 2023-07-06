@@ -1,0 +1,27 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=28cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\pagenumbering{gobble}
+\newcommand{\e}{\text{e}}
+
+\begin{document}
+\begin{center}
+Найдём собственные значения оператора:
+\end{center}
+$$\left|\begin{matrix}
+-10-\lambda & 0 & 6 & 4 \\
+18 & 8-\lambda & -6 & -4 \\
+-36 & 0 & 20-\lambda & 8 \\
+-18 & 0 & 6 & 12-\lambda
+\end{matrix}\right| = 0$$
+$$\lambda^4-30\lambda^3+336\lambda^2-1664\lambda+3072 = 0$$
+$$(\lambda-6)(\lambda-8)^{3}=0$$
+$$\Downarrow$$
+$$\sigma_A = \{6^{(1)},8^{(3)}\}$$
+\end{document}

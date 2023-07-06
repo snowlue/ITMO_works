@@ -1,0 +1,89 @@
+
+\documentclass{article}
+\usepackage{cmap}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=14cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\pagenumbering{gobble}
+
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{%
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}\;}
+\newcommand{\e}{\text{e}}
+\newcommand{\la}{\lambda}
+\newcommand{\shiftleft}[3]{\makebox[#1][r]{\makebox[#2][l]{#3}}}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand{\at}{\biggr\rvert}
+
+\begin{document}
+\begin{center}
+    Найдём матрицу перехода $T$ из базиса $e$ в базис $\tilde{e}$:
+    $$
+        T = e^{-1}\tilde{e} = \begin{pmatrix}
+            1  & -1 & 1  \\
+            1  & 0  & 2  \\
+            -2 & 1  & -2
+        \end{pmatrix}^{-1}\begin{pmatrix}
+            -1 & 1 & 1 \\
+            -1 & 0 & 0 \\
+            0  & 1 & 2
+        \end{pmatrix} = \begin{pmatrix}
+            -2 & -1 & -2 \\
+            -2 & 0  & -1 \\
+            1  & 1  & 1
+        \end{pmatrix}\begin{pmatrix}
+            -1 & 1 & 1 \\
+            -1 & 0 & 0 \\
+            0  & 1 & 2
+        \end{pmatrix} = \begin{pmatrix}
+            3  & -4 & -6 \\
+            2  & -3 & -4 \\
+            -2 & 2  & 3
+        \end{pmatrix}
+    $$
+    Тогда уже не трудно вычислить матрицу Грама в базисе $\left\{\tilde{e}_1, \tilde{e}_2\right\}$:
+    $$
+        \tilde{G} = T^{T}GT = \begin{pmatrix}
+            3  & 2  & -2 \\
+            -4 & -3 & 2  \\
+            -6 & -4 & 3
+        \end{pmatrix}\begin{pmatrix}
+            11 & 6 & 2 \\
+            6  & 4 & 2 \\
+            2  & 2 & 2
+        \end{pmatrix}\begin{pmatrix}
+            3  & -4 & -6 \\
+            2  & -3 & -4 \\
+            -2 & 2  & 3
+        \end{pmatrix} = \begin{pmatrix}
+            41  & 22  & 6   \\
+            -58 & -32 & -10 \\
+            -84 & -46 & -14
+        \end{pmatrix}\begin{pmatrix}
+            3  & -4 & -6 \\
+            2  & -3 & -4 \\
+            -2 & 2  & 3
+        \end{pmatrix} = \begin{pmatrix}
+            155  & -218 & -316 \\
+            -218 & 308  & 446  \\
+            -316 & 446  & 646
+        \end{pmatrix}
+    $$
+\end{center}
+\end{document}

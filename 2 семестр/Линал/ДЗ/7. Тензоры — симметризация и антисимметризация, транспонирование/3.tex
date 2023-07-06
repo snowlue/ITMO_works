@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=14cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\pagenumbering{gobble}
+
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{%
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}\;}
+\newcommand{\e}{\text{e}}
+\newcommand{\la}{\lambda}
+\newcommand{\shiftleft}[3]{\makebox[#1][r]{\makebox[#2][l]{#3}}}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand{\at}{\biggr\rvert}
+
+\begin{document}
+\begin{center}
+Результатом симметризации по двум индексам будет тензор $b^{qkj} = \dfrac{1}{2!}\left (a^{qkj} - a^{jkq}\right )$. \\
+Теперь переберём каждый индекс, чтобы найти компоненты результирующего тензора:
+\begin{gather*}
+b^{111} = b^{121} = b^{131} = b^{212} = b^{222} = b^{232} = b^{313} = b^{323} = b^{333} = 0 \\
+b^{112} = \frac{1}{2}\left(a^{112} - a^{211}\right) = \frac{1}{2}(-1 - 3) = -2 \qquad b^{113} = \frac{1}{2}\left(a^{113} - a^{311}\right) = \frac{1}{2}(3 + 2) = \frac{5}{2}\\
+b^{122} = \frac{1}{2}\left(a^{122} - a^{221}\right) = \frac{1}{2}(3 + 1) = 2 \qquad b^{123} = \frac{1}{2}\left(a^{123} - a^{321}\right) = \frac{1}{2}(-2 + 3) = \frac{1}{2}\\
+b^{132} = \frac{1}{2}\left(a^{132} - a^{231}\right) = \frac{1}{2}(-5 - 0) = -\frac{5}{2} \qquad b^{133} = \frac{1}{2}\left(a^{133} - a^{331}\right) = \frac{1}{2}(3 - 2) = \frac{1}{2}\\
+b^{211} = -b^{112} = 2 \qquad b^{213} = \frac{1}{2}\left(a^{213} - a^{312}\right) = \frac{1}{2}(2 - 1) = \frac{1}{2}\\
+b^{221} = -b^{122} = -2 \qquad b^{223} = \frac{1}{2}\left(a^{223} - a^{322}\right) = \frac{1}{2}(1 - 3) = -1\\
+b^{231} = -b^{132} = \frac{5}{2} \qquad b^{233} = \frac{1}{2}\left(a^{233} - a^{332}\right) = \frac{1}{2}(-3 + 3) = 0\\
+b^{311} = -b^{113} = -\frac{5}{2} \qquad b^{312} = -b^{213} = -\frac{1}{2}\\
+b^{321} = -b^{123} = -\frac{1}{2} \qquad b^{322} = -b^{223} = 1\\
+b^{331} = -b^{133} = -\frac{1}{2} \qquad b^{332} = -b^{233} = 0\\
+\end{gather*}
+Итак, тензор $b^{qkj}$ будет определяться матрицей $B$:
+$$B = \begin{array}{||ccc|ccc|ccc||}
+0 & 0 & 0 & -2 & 2 & -2.5 & 2.5 & 0.5 & 0.5\\
+2 & -2 & 2.5 & 0 & 0 & 0 & 0.5 & -1 & 0\\
+-2.5 & -0.5 & -0.5 & -0.5 & 1 & 0 & 0 & 0 & 0
+\end{array}$$
+\end{center}
+\end{document}

@@ -1,0 +1,84 @@
+
+\documentclass{article}
+\usepackage{cmap}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=14cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{fancyhdr}
+\usepackage{nicefrac}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\pagenumbering{gobble}
+
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{%
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}\;}
+\newcommand{\e}{\text{e}}
+\newcommand{\la}{\lambda}
+\newcommand{\shiftleft}[3]{\makebox[#1][r]{\makebox[#2][l]{#3}}}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand{\at}{\biggr\rvert}
+
+\begin{document}
+\begin{center}
+    Зададим ортогональный базис как $e_1, e_2, e_3$, где каждый из элементов найдём путём ортогонализации Грама-Шмидта:
+    $$
+        e_1 = l_1 = \begin{pmatrix}
+            -4 \\ 0 \\ -2 \\ -2
+        \end{pmatrix} \qquad
+        e_2 = l_2 - \frac{e_1^{T}Gl_2}{e_1^{T}Ge_1} e_1 = \begin{pmatrix}
+            10 \\ 4 \\ 8 \\ 6
+        \end{pmatrix} - \frac{-8}{4} \begin{pmatrix}
+            -4 \\ 0 \\ -2 \\ -2
+        \end{pmatrix} = \begin{pmatrix}
+            2 \\ 4 \\ 4 \\ 2
+        \end{pmatrix} \qquad
+        e_3 = l_3 - \frac{e_2^{T}Gl_3}{e_2^{T}Ge_2} e_2 - \frac{e_1^{T}Gl_3}{e_1^{T}Ge_1} e_1 = \begin{pmatrix}
+            0 \\ 5 \\ 4 \\ 1
+        \end{pmatrix} - \frac{4}{4} \begin{pmatrix}
+            2 \\ 4 \\ 4 \\ 2
+        \end{pmatrix} - \frac{0}{4} \begin{pmatrix}
+            -4 \\ 0 \\ -2 \\ -2
+        \end{pmatrix} = \begin{pmatrix}
+            -2 \\ 1 \\ 0 \\ -1
+        \end{pmatrix}
+    $$
+    Теперь проведём ортонормирование базиса:
+    $$
+        \tilde{e}_1 = \frac{e_1}{\left\lVert e_1\right\rVert} = \frac{e_1}{\sqrt{e_1^TGe_1}} =\frac{1}{\sqrt{4}}\begin{pmatrix}
+            -4 \\ 0 \\ -2 \\ -2
+        \end{pmatrix} = \begin{pmatrix}
+            -2 \\ 0 \\ -1 \\ -1
+        \end{pmatrix} \qquad
+        \tilde{e}_2 = \frac{e_1}{\left\lVert e_2\right\rVert} = \frac{e_2}{\sqrt{e_2^TGe_2}} =\frac{1}{\sqrt{4}}\begin{pmatrix}
+            2 \\ 4 \\ 4 \\ 2
+        \end{pmatrix} = \begin{pmatrix}
+            1 \\ 2 \\ 2 \\ 1
+        \end{pmatrix} \qquad
+        \tilde{e}_3 = \frac{e_3}{\left\lVert e_3\right\rVert} = \frac{e_3}{\sqrt{e_3^TGe_3}} =\frac{1}{\sqrt{1}}\begin{pmatrix}
+            -2 \\ 1 \\ 0 \\ -1
+        \end{pmatrix} = \begin{pmatrix}
+            -2 \\ 1 \\ 0 \\ -1
+        \end{pmatrix}
+    $$
+    И тогда ортонормированный базис будет выглядеть так: $\left\{\begin{pmatrix}
+        -2 \\ 0 \\ -1 \\ -1
+    \end{pmatrix}, \begin{pmatrix}
+        1 \\ 2 \\ 2 \\ 1
+    \end{pmatrix}, \begin{pmatrix}
+        -2 \\ 1 \\ 0 \\ -1
+    \end{pmatrix}\right\} $
+\end{center}
+\end{document}

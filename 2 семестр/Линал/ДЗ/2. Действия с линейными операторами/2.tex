@@ -1,0 +1,70 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a3paper, paperwidth=28cm, paperheight=14cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\pagenumbering{gobble}
+\usepackage{tikz,amstext}
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{%
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.5\pgflinewidth}{%
+\tikz[baseline,line cap=round,line join=round] \draw (0,0) --++ (0.4em,0) --++ (0,1.5ex) --++ (-0.4em,0);%
+}}}\;}
+
+\begin{document}
+\begin{center}
+$\Let \varphi$: $x \to y$, при этом $\{e\}$ и $\{\tilde{e}\}$ --- базис $x$, а $\{h\}$ и $\{\tilde{h}\}$ --- базис $y$. Для перехода из между базисами нужны матрицы перехода $T_x$ и $T_y$.\\
+Осталось выяснить их расположение в конечной формуле: \\
+$\begin{cases}
+A\cdot x = y \\
+\tilde{A}\cdot \tilde{x} = \tilde{y}
+\end{cases} \Rightarrow \left[\begin{array}{l}
+\tilde{x} = S_x\cdot  x \\
+\tilde{y} = S_y\cdot  y
+\end{array}\right] \Rightarrow \begin{cases}
+A\cdot x = y \\
+\tilde{A} \cdot S_x\cdot x = S_y\cdot y
+\end{cases} \Rightarrow \tilde{A} \cdot S_x\cdot \cancel{x} = S_y\cdot A\cdot \cancel{x} \Rightarrow \begin{array}{|c|}\hline \\ [-1ex]\tilde{A} = S_y\cdot A\cdot T_x \\[1.5ex] \hline\end{array}$ \\
+Тогда $S_y = \tilde{h}^{-1}h$, а $T_x = e^{-1}\tilde{e}$. Приступим к вычислениям:
+$$S_y = \left(\begin{array}{rrr}
+1 & 1 & -2 \\ -2 & -1 & 3 \\ -4 & -3 & 8
+\end{array}\right)^{-1}\times\left(\begin{array}{rrr}
+1 & 1 & 1 \\ 1 & 2 & 0 \\ -2 & -3 & 0
+\end{array}\right) = \left(\begin{array}{rrr}
+1 & -2 & 1 \\ 4 & 0 & 1 \\ 2 & -1 & 1
+\end{array}\right)\times\left(\begin{array}{rrr}
+1 & 1 & 1 \\ 1 & 2 & 0 \\ -2 & -3 & 0
+\end{array}\right) = \left(\begin{array}{rrr}
+-3 & -6 & 1 \\ 2 & 1 & 4 \\ -1 & -3 & 2
+\end{array}\right)$$
+$$T_x = \left(\begin{array}{rrr}
+1 & 1 & -1 \\ -1 & 0 & 2 \\ -2 & -1 & 4
+\end{array}\right)^{-1}\times\left(\begin{array}{rrr}
+-1 & 1 & -2 \\ 1 & 0 & 1 \\ 3 & -2 & 6
+\end{array}\right) = \left(\begin{array}{rrr}
+2 & -3 & 2 \\ 0 & 2 & -1 \\ 1 & -1 & 1
+\end{array}\right)\times\left(\begin{array}{rrr}
+-1 & 1 & -2 \\ 1 & 0 & 1 \\ 3 & -2 & 6
+\end{array}\right) = \left(\begin{array}{rrr}
+1 & -2 & 5 \\ -1 & 2 & -4 \\ 1 & -1 & 3
+\end{array}\right)$$ \\
+$$\tilde{A}_x = \left(\begin{array}{rrr}
+-3 & -6 & 1 \\ 2 & 1 & 4 \\ -1 & -3 & 2
+\end{array}\right) \times \left(\begin{array}{rrr}
+15 & -6 & 15 \\ -6 & 3 & -6 \\ 3 & 0 & 0
+\end{array}\right) \times \left(\begin{array}{rrr}
+1 & -2 & 5 \\ -1 & 2 & -4 \\ 1 & -1 & 3
+\end{array}\right) = \left(\begin{array}{rrr}
+-6 & 0 & -9 \\ 36 & -9 & 24 \\ 9 & -3 & 3
+\end{array}\right) \times \left(\begin{array}{rrr}
+1 & -2 & 5 \\ -1 & 2 & -4 \\ 1 & -1 & 3
+\end{array}\right) = \left(\begin{array}{rrr}
+-15 & 21 & -57 \\ 69 & -114 & 288 \\ 15 & -27 & 66
+\end{array}\right)$$
+\end{center}
+\end{document}
