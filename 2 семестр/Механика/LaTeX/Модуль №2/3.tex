@@ -1,0 +1,32 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[paperwidth=28cm, paperheight=9cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\pagenumbering{gobble}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand{\at}{\biggr\rvert}
+
+\begin{document}
+\noindent \begin{tabular}{l|l}
+    Доказать, что: & Приведу решение сначала для указанной в задании формуле. Здесь и далее энергия релятивистской частицы $E = mc^2$ \\
+    $E-p^2c^2$ --- инвариантен & Преобразованиями Лоренца получим $E - p^2c^2 = \dfrac{mc^2}{\sqrt{1-\frac{v^2}{c^2}}} - \left(\dfrac{mv}{\sqrt{1-\frac{v^2}{c^2}}}\right)^2c^2 = \dfrac{mc^2\sqrt{1-\frac{v^2}{c^2}}-m^2v^2c^2}{\frac{c^2-v^2}{c^2}} = \dfrac{mc^4\sqrt{\frac{c^2-v^2}{c^2}}-m^2v^2c^4}{c^2-v^2} =$ \\
+\end{tabular} \\ \, \\
+$= \dfrac{mc^3\sqrt{c^2-v^2}-m^2v^2c^4}{c^2-v^2} = \dfrac{mc^3\left (\sqrt{c^2-v^2}-mv^2c\right )}{c^2-v^2} \Rightarrow$ выражение по-прежнему зависит от переменной величины $v$, поэтому задание некорректно. \\
+Воспользуемся преобразованием Лоренца для выражения \squared{$E^2 - p^2c^2$}$\,$. \\
+$E^2 - p^2c^2 = \left (\dfrac{mc^2}{\sqrt{1-\frac{v^2}{c^2}}}\right )^2 - \left(\dfrac{mv}{\sqrt{1-\frac{v^2}{c^2}}}\right)^2c^2 = \dfrac{m^2c^4 - m^2v^2c^2}{1-\frac{v^2}{c^2}} = \dfrac{m^2c^2\left (c^2 - v^2\right )}{\frac{c^2 - v^2}{c^2}} =\dfrac{m^2c^4\cancel{\left (c^2 - v^2\right )}}{\cancel{c^2 - v^2}} = m^2c^4 = \text{const} \Rightarrow$ величина $E^2 - p^2c^2$ инварианта, т.е. не зависит от системы отсчёта и одинакова.
+
+\begin{flushright}
+ч.т.д. (с поправкой на некорректность задания)
+\end{flushright}
+
+\end{document}

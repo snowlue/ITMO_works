@@ -1,0 +1,38 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[a4paper, paperheight=14cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\pagenumbering{gobble}
+
+\begin{document}
+\noindent \begin{tabular}{l|l}
+    Дано: & Траектория движения тела, брошенного под углом параболическое, т.к. на него действует \\
+    $m = 12$ кг & ускорение свободного падения. В верхней точки $R$ вектор скорости параллелен оси ox \\
+    $\varphi = 45^{\circ}$ & и равен $V_в = V_0\cos\varphi$. \\
+    $V_0 = 200$ м/с & \\
+    $V_1 = 400$ м/с & 1. Спроецируем закон сохранения импульса $mv = \sum m_iv_i$ на каждую из осей: \\ 
+    $V_2 = 100$ м/с & ox: $mV_в = \frac{m}{3}(V_1\cos\varphi+0+V_{3x})$ \\
+    \rule{58px}{0.5pt} & oy: $0 = \frac{m}{3}(V_1\sin\varphi + V_2 + V_{3y})$\\
+    $V_3$ --- ? & \\
+\end{tabular} \begin{wrapfigure}{r}{0.45\textwidth}
+    \includegraphics[width=\linewidth]{"3_graphics"}
+    \end{wrapfigure} \\ \, \\
+\noindent 2. Подставим значения в формулу \\
+\noindent ox: $\cancelto{3}{12}\cdot200\frac{\sqrt{2}}{2} = \cancel{4}(400\frac{\sqrt{2}}{2}+0+V_{3x})$ \\
+\noindent oy: $0 = \cancel{4}(400\frac{\sqrt{2}}{2}+100+V_{3y})$ \\ \, \\
+\noindent 3. Выразим искомую $V_3$ в обеих проекциях: \\
+\noindent ox: $300\sqrt{2} - 200\sqrt{2} = V_{3x} \Leftrightarrow 100\sqrt{2} = V_{3x}$ \\
+\noindent oy: $-200\sqrt{2} - 100 = V_{3y} \Leftrightarrow -100(2\sqrt{2}-1) = V_{3y}$ \\ \, \\
+\noindent 4. Найдём исходную скорость как гипотенузу, равную сумме квадратов проекций как катетов: \\
+\noindent $V_3 = \sqrt{V_{3x}^2 + V_{3y}^2} \approx \sqrt{2000 + 146568.54} \approx 385.45$
+
+\begin{flushright}
+Ответ: 385.45 м/с
+\end{flushright}
+
+\end{document}

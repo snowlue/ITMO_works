@@ -1,0 +1,37 @@
+\documentclass{article}
+\usepackage[russian]{babel}
+\usepackage[a4paper, paperheight=14cm, top=1cm,bottom=1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\pagenumbering{gobble}
+
+\begin{document}
+\noindent \begin{tabular}{l|l}
+    Дано: & Из уравнения траектории частицы делаем вывод, что частица двигается по параболе. \\
+    $a = const$ & 1. Найдём вершину параболы по формуле $x = \frac{-b}{2a}$ для параболы $y = ax^2+bx$: \\
+    $y = kx - bx^2$ & $x_\text{в} = \frac{k}{2b} \; \Rightarrow \; y_\text{в} = \frac{k^2}{2b} - b\frac{k^2}{4b^2} = \frac{k^2}{2b} - \frac{k^2}{4b} = \frac{k^2}{4b}$. \\
+    $k, b > 0$  \\
+    \rule{56px}{0.5pt} & 2. Возьмём производную и выясним угловой коэффициент касательной к графику в точке $x=0$: \\
+    $V(0, 0) - ?$ & $y' = k - 2bx \quad y'(0) = k\; \Rightarrow $ угловой коэффициент равен $k$.
+\end{tabular} \\\begin{wrapfigure}{r}{0.34\textwidth}
+\includegraphics[width=\linewidth]{"1_graphics"}
+\end{wrapfigure} \, \\
+\noindent 3. Проецируем $V$ на оси: \\
+$V_x = V\cos\alpha\qquad V_y = V\ sin\alpha$ \\
+$\frac{V_y}{V_x} = \tg\alpha \; \Rightarrow \; V_y = V_x\tg\alpha = V_xk$, т.к. $\tg\alpha = k$. \\ \, \\
+\noindent 4. Найдём перемещение частицы до вершины параболы: \\
+$S_x = V_xt = \frac{k}{2b}$ \\
+$S_y = V_yt - \frac{at^2}{2} = \frac{k^2}{4b}$ \\ \, \\
+5. Получаем систему и находим в ней $V_x$: \\
+$\begin{cases}V_xt = \frac{k}{2b} \\ V_yt - \frac{at^2}{2} = \frac{k^2}{4b}\end{cases} \Leftrightarrow
+\begin{cases}t = \frac{k}{2bV_x} \\ V_xkt - \frac{at^2}{2} = \frac{k^2}{4b}\end{cases} \Leftrightarrow \begin{cases}t = \frac{k}{2bV_x} \\ \cancel{V_x}\frac{k^2}{2b\cancel{V_x}} - \frac{ak^2}{8b^2V_x^2} = \frac{k^2}{4b}\end{cases} \Leftrightarrow \newline \Leftrightarrow   \begin{cases}t = \frac{k}{2bV_x} \\ \frac{\cancel{k^2}}{\cancel{2b}} - \frac{a\cancel{k^2}}{\cancelto{4b}{8b^2}V_x^2} = \frac{\cancel{k^2}}{\cancelto{2}{4b}}\end{cases} \Leftrightarrow \left.\begin{cases}t = \frac{k}{2bV_x} \\ 0.5 = \frac{a}{4bV_x^2}\end{cases}\right|\begin{matrix}\, \\ \cdot 2\end{matrix} \;\;\Leftrightarrow \begin{cases}t = \frac{k}{2bV_x} \\ V_x^2 = \frac{a}{2b}\end{cases} \Rightarrow V_x = \sqrt{\frac{a}{2b}}$ \\ \, \\ \, \\
+6. Итак, имеем скорости, выраженные через ускорение $a$ и коэффициенты $k$ и $b$: \\
+$V_x = \sqrt{\frac{a}{2b}}\qquad V_y = k\sqrt{\frac{a}{2b}} \quad \Rightarrow$ по теореме Пифагора $V(0, 0) = \sqrt{V_x^2+V_y^2} = \sqrt{\frac{a}{2b} + \frac{k^2a}{2b}} = \sqrt{(1+k^2)\frac{a}{2b}}$
+\begin{flushright}
+Ответ: $\sqrt{(1+k^2)\frac{a}{2b}}$
+\end{flushright}
+
+\end{document}

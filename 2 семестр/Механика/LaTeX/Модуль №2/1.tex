@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage{mathtext}
+\usepackage[russian]{babel}
+\usepackage[paperwidth=28cm, paperheight=15cm, top=1cm,bottom=-1cm,left=1cm,right=1cm,marginparwidth=1.75cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{cancel}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\pagenumbering{gobble}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand{\at}{\biggr\rvert}
+
+
+\begin{document}
+\noindent \begin{tabular}{l|l}
+    Дано: & 0. Перед нами предельный угол $\alpha$, при котором сила трения для удер- \\
+    $L = 52$ см & жания стержня должна быть равна $\mu N$, где $N$ --- реакция опоры. \\
+    $\alpha = 33.6^{\circ}$ & \\
+    $\mu = 0.27$ & 1. Спроецируем все вектора на оси: \\
+    \rule{76px}{0.5pt} & ox: $N_2 - F_1 = 0 \Rightarrow F_1 = N_2 \Rightarrow \mu N_1 = N_2\;\circled{1}$\\
+    AB --- ? & oy: $F_2 - mg + N_1 = 0 \Rightarrow F_2 = mg - N_1\;\circled{2};\; F_2 + N_1 = mg \Rightarrow \mu N_2 + N_1 = mg$
+\end{tabular}\begin{wrapfigure}{r}{0.42\textwidth}\includegraphics[width=\linewidth]{"1_graphics"}\end{wrapfigure} \\ \, \\
+2. Решим получившуюся систему относительно $N_1$ и $N_2$: \\
+$N_2 = \dfrac{mg - N_1}{\mu} \Leftrightarrow \mu N_1 = \dfrac{mg - N_1}{\mu} \Leftrightarrow \mu^2 N_1 + N_1 = mg$\\
+Из этого следует, что $N_1 = \dfrac{mg}{\mu^2+1}\;\circled{3}$ и, по формуле $(1)$, $N_2 = \dfrac{\mu mg}{\mu^2+1}\;\;\circled{4}$.\\ \, \\ 
+3. Построим уравнение моментов относительно т. B: \\
+$mgh\ctg\alpha - F_2L\cos\alpha - N_2L\sin\alpha = 0$ \\
+По формулам (2) и (4) разложим уравнение и выразим $h$: \\
+$mgh\ctg\alpha = \left(mg - \dfrac{mg}{\mu^2+1}\right)L\cos\alpha + \dfrac{\mu mg}{\mu^2+1}L \sin\alpha \at :mg$\\
+$h\ctg\alpha = L\left(\dfrac{\mu^2\cancel{+1}\cancel{-1}}{\mu^2+1}\cos\alpha + \dfrac{\mu}{\mu^2+1}\sin\alpha\right)\at :\ctg\alpha$\\
+$h = \dfrac{L\mu}{\ctg\alpha(\mu^2+1)}(\mu\cos\alpha+\sin\alpha)$ \\ \, \\
+4. Подставим числа в выражение: \\
+$h = \dfrac{52\cdot0.27}{\ctg33.6^{\circ}(0.27^2+1)}(0.27\cos33.6^{\circ} + \sin33.6^{\circ}) \approx 6.77$ \\ \, \\
+5. Относительно найденного $h$ вычислим искомый отрезок AB в прямоугольном $\triangle$AB$h$:
+
+\noindent$AB = \dfrac{h}{\sin\alpha} = \dfrac{6.67}{\sin33.6^{\circ}} \approx$ \squared{$12.23$ см}
+\end{document}
