@@ -1,0 +1,194 @@
+\documentclass[a3paper,14pt]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage{extsizes}
+\usepackage[T2A]{fontenc}
+\usepackage[english,russian]{babel} 
+\usepackage[left=15mm, top=25mm, right=15mm, bottom=25mm, nohead, nofoot]{geometry}
+\usepackage{amsmath,amsfonts,amssymb} % математический пакет
+\usepackage{fancybox,fancyhdr} % хедер и футер
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Практическая линейная алгебра}
+\fancyhead[R]{Овчинников Павел}
+\fancyfoot[C]{\thepage}
+\setcounter{page}{1}
+\headsep=10mm 
+\usepackage{hyperref}
+% \usepackage{xcolor}
+% \hypersetup{colorlinks=true, allcolors=[RGB]{010 090 200}} % цвет ссылок 
+% \newcommand{\lr}[1]{\left({#1}\right)} % команда для скобок
+
+\begin{document}
+\subsection*{\centering Задание №1}
+Найдём собственные числа матрицы:
+$$\det(A-\lambda E) = \begin{vmatrix}
+    5-\lambda & -7 & -4 \\ 0 & -2-\lambda & 0 \\ 0 & 0 & 1-\lambda
+\end{vmatrix} = (5-\lambda)(-2-\lambda)(1-\lambda)=0$$
+$$\lambda_1 = 5 \qquad \lambda_2 = -2 \qquad \lambda_3 = 1$$
+Теперь найдём собственные вектора каждого из собственный чисел:
+$$\lambda_1 = 5$$
+$$\begin{bmatrix}
+    5 & -7 & -4 \\ 0 & -2 & 0 \\ 0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+    x \\ y \\ z
+\end{bmatrix} = \begin{bmatrix}
+    5x \\ 5y \\ 5z
+\end{bmatrix}$$
+$$\begin{cases}
+    5x-7y-4z=5x \\
+    -2y = 5y \\
+    z = 5z
+\end{cases} \Leftrightarrow \begin{cases}
+    5x-7y-4z=5x \\
+    y = 0 \\
+    z = 0
+\end{cases} \Leftrightarrow \begin{cases}
+    x = x \\
+    y = 0 \\
+    z = 0
+\end{cases} \Rightarrow v_1 = \begin{pmatrix}
+    1 \\ 0 \\ 0
+\end{pmatrix}$$ \,\\
+$$\lambda_2 = -2$$
+$$\begin{bmatrix}
+    5 & -7 & -4 \\ 0 & -2 & 0 \\ 0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+    x \\ y \\ z
+\end{bmatrix} = \begin{bmatrix}
+    -2x \\ -2y \\ -2z
+\end{bmatrix}$$
+$$\begin{cases}
+    5x-7y-4z=-2x \\
+    -2y = -2y \\
+    z = -2z
+\end{cases} \Leftrightarrow \begin{cases}
+    5x-7y-0=-2x \\
+    y = y \\
+    z = 0
+\end{cases} \Leftrightarrow \begin{cases}
+    x = y \\
+    y = y \\
+    z = 0
+\end{cases} \Rightarrow v_2 = \begin{pmatrix}
+    1 \\ 1 \\ 0
+\end{pmatrix}$$\,\\
+$$\lambda_3 = 1$$
+$$\begin{bmatrix}
+    5 & -7 & -4 \\ 0 & -2 & 0 \\ 0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+    x \\ y \\ z
+\end{bmatrix} = \begin{bmatrix}
+    x \\ y \\ z
+\end{bmatrix}$$
+$$\begin{cases}
+    5x-7y-4z=x \\
+    -2y = y \\
+    z = z
+\end{cases} \Leftrightarrow \begin{cases}
+    5x-0-4z=x \\
+    y = 0 \\
+    z = z
+\end{cases} \Leftrightarrow \begin{cases}
+    x = z \\
+    y = 0 \\
+    z = z
+\end{cases} \Rightarrow v_3 = \begin{pmatrix}
+    1 \\ 0 \\ 1
+\end{pmatrix}$$ \, \\[10mm]
+Спектральное разложение --- разожение, которое представляет матрицу в базисе собственных векторов, где она представлена диагональной матрицей с собственными числами на диагонали. И вот как оно выглядит:
+$$A = PA^*P^{-1}=\begin{bmatrix}
+    1 & 1 & 1 \\ 0 & 1 & 0 \\ 0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+    5 & 0 & 0 \\ 0 & -2 & 0 \\ 0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+    1 & 1 & 1 \\ 0 & 1 & 0 \\ 0 & 0 & 1
+\end{bmatrix}^{-1}=\begin{bmatrix}
+    1 & 1 & 1 \\ 0 & 1 & 0 \\ 0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+    5 & 0 & 0 \\ 0 & -2 & 0 \\ 0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+    0 & 0 & 1 \\ 0 & 1 & 0 \\ 1 & -1 & -1
+\end{bmatrix}$$\pagebreak
+\subsection*{\centering Задание №2}
+Найдём собственные числа матрицы:
+$$\det(A-\lambda E) = \begin{vmatrix}
+    2-\lambda & 0 & -1 \\ 1 & 2-\lambda & -1 \\ 0 & 0 & 1-\lambda
+\end{vmatrix} = (2-\lambda)(2-\lambda)(1-\lambda)=0$$
+$$\lambda_{1,2} = 2 \qquad \lambda_3 = 1$$
+Теперь найдём собственные вектора каждого из собственный чисел:
+$$\lambda_{1,2} = 2$$
+$$\begin{bmatrix}
+    2 & 0 & -1 \\ 1 & 2 & -1 \\ 0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+    x \\ y \\ z
+\end{bmatrix} = \begin{bmatrix}
+    2x \\ 2y \\ 2z
+\end{bmatrix}$$
+$$\begin{cases}
+    2x-z=2x \\
+    x+2y-z=2y \\
+    z = 2z
+\end{cases} \Leftrightarrow \begin{cases}
+    2x-z=2x \\
+    x+2y-z=2y \\
+    z = 0
+\end{cases} \Leftrightarrow \begin{cases}
+    2x=2x \\
+    x = 0 \\
+    z = 0
+\end{cases} \Rightarrow v_1 = \begin{pmatrix}
+    0 \\ 1 \\ 0
+\end{pmatrix}$$
+Найдём присоединённый вектор к $v_1$:
+$$\begin{bmatrix}
+    0 & 0 & -1 \\ 1 & 0 & -1 \\ 0 & 0 & -1
+\end{bmatrix}\begin{bmatrix}
+    x \\ y \\ z
+\end{bmatrix} = \begin{bmatrix}
+    0 \\ 1 \\ 0
+\end{bmatrix}$$
+$$\begin{cases}
+    z=0 \\
+    x-z=1 \\
+    z = 0
+\end{cases} \Leftrightarrow \begin{cases}
+    z=0 \\
+    x=1 \\
+    z=0
+\end{cases} \Rightarrow w_1 = \begin{pmatrix}
+    1 \\ 1 \\ 0
+\end{pmatrix}$$\,\\
+$$\lambda_3 = 1$$
+$$\begin{bmatrix}
+    2 & 0 & -1 \\ 1 & 2 & -1 \\ 0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+    x \\ y \\ z
+\end{bmatrix} = \begin{bmatrix}
+    x \\ y \\ z
+\end{bmatrix}$$
+$$\begin{cases}
+    2x-z=x \\
+    x+2y-z=y \\
+    z = z
+\end{cases} \Leftrightarrow \begin{cases}
+    x=z \\
+    2y = y \\
+    z = z
+\end{cases} \Rightarrow v_2 = \begin{pmatrix}
+    1 \\ 0 \\ 1
+\end{pmatrix}$$\,\\[10mm]
+Жорданово разложение --- разложение матрицы, образованное Жордановой формой матрицы в базисе её собственных и присоединённых векторов. Она выглядит так:
+$$A=P\mathcal{J}P^{-1}=\begin{bmatrix}
+    0 & 1 & 1 \\ 1 & 1 & 0 \\ 0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+    2 & 1 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+    0 & 1 & 1 \\ 1 & 1 & 0 \\ 0 & 0 & 1
+\end{bmatrix}^{-1} = \begin{bmatrix}
+    0 & 1 & 1 \\ 1 & 1 & 0 \\ 0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+    2 & 1 & 0 \\ 0 & 2 & 0 \\ 0 & 0 & 1
+\end{bmatrix}\begin{bmatrix}
+    -1 & 1 & 1 \\ 1 & 0 & -1 \\ 0 & 0 & 1
+\end{bmatrix}$$
+\end{document}

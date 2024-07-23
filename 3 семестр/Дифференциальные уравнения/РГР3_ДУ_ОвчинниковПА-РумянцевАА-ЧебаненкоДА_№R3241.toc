@@ -1,0 +1,10 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{Метод Эйлера}{1}{Item.8}%
+\contentsline {subsection}{В чем заключается суть метода Эйлера?}{1}{section*.2}%
+\contentsline {subsection}{Теоретическая справка}{1}{section*.3}%
+\contentsline {subsection}{Алгоритм}{2}{section*.4}%
+\contentsline {subsection}{Пример}{3}{section*.5}%
+\contentsline {section}{Метод Рунге-Кутта}{3}{section*.6}%
+\contentsline {subsection}{Пример}{4}{section*.7}%
+\contentsline {section}{Метод стрельбы}{5}{Item.11}%
+\contentsline {subsection}{Пример}{6}{section*.9}%

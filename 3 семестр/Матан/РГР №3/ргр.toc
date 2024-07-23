@@ -1,0 +1,13 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{Задание №1}{2}{section*.2}%
+\contentsline {section}{Задание №2}{3}{section*.4}%
+\contentsline {section}{Задание №3}{3}{section*.6}%
+\contentsline {section}{Задание №4}{3}{section*.8}%
+\contentsline {section}{Задание №5}{4}{section*.10}%
+\contentsline {section}{Задание №6}{5}{section*.12}%
+\contentsline {section}{Задание №7}{5}{section*.14}%
+\contentsline {subsection}{Тригонометрический ряд Фурье}{6}{section*.16}%
+\contentsline {subsection}{Ряд Фурье по синусам}{7}{section*.18}%
+\contentsline {subsection}{Ряд Фурье по косинусам}{7}{section*.20}%
+\contentsline {subsection}{Ряд Фурье в комплексной форме}{8}{section*.22}%
+\contentsline {section}{Задание №8}{9}{section*.24}%

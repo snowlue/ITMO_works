@@ -1,0 +1,486 @@
+\documentclass[a3paper,14pt]{extarticle}
+\usepackage{extsizes}
+\usepackage{cmap}
+\usepackage[warn]{mathtext}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[english,russian]{babel}
+\usepackage[left=15mm, top=25mm, right=15mm, bottom=30mm, nohead, nofoot]{geometry}
+\usepackage{graphicx}  % изобржаения
+\usepackage{xcolor} % определение цветов
+\usepackage{nicefrac} % красивые дроби
+\usepackage{cancel} % сокращение
+\usepackage{amsmath,amsfonts,amssymb} % математический пакет
+\usepackage{fancybox,fancyhdr} % хедер и футер
+\usepackage{hyperref}  % гиперссылки
+\usepackage{tikz} % графика
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Дифференциальные уравнения}
+\fancyhead[R]{Вариант №6}
+\fancyfoot[C]{\thepage}
+\setcounter{page}{1}
+\headsep=10mm
+\footskip=15mm
+
+\definecolor{urlcolor}{HTML}{3454D1}
+\definecolor{linkcolor}{HTML}{3454D1}
+\hypersetup{pdfstartview=FitH, linkcolor=linkcolor,urlcolor=urlcolor, colorlinks=true}
+
+\newlength{\tempheight}
+\newcommand{\Let}{
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.4\pgflinewidth}{
+\tikz[baseline=0.5ex,line cap=round,line join=round] \draw (0,0) --++ (0.3em,0) --++ (0,2.3ex) --++ (-0.3em,0);
+}}}}
+\newcommand\NB{\textbf{N\kern-0.32em\textcolor{red}{B}}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand{\at}{\biggr\rvert}
+
+
+\begin{document}
+\begin{titlepage}
+    \begin{center}
+        Министерство образования и науки Российской Федерации \\
+        Федеральное государственное автономное образовательное учреждение \\ высшего образования \\[6pt]
+        САНКТ-ПЕТЕРБУРГСКИЙ НАЦИОНАЛЬНЫЙ \\ ИССЛЕДОВАТЕЛЬСКИЙ УНИВЕРСИТЕТ ИТМО \\[16pt]
+        Факультет систем управления и робототехники \\[25em]
+        \textbf{РАСЧЁТНО-ГРАФИЧЕСКАЯ РАБОТА №2\\ПО РЕШЕНИЮ ДИФФЕРЕНЦИАЛЬНЫХ УРАВНЕНИЙ}
+    \end{center}\,\\[12em]
+    \begin{flushright}
+        Студенты: Овчинников П. А.\\
+                  Румянцев А. А.\\
+                  Чебаненко Д. А.\\
+        Группа: R3241 \\[1em]
+        Вариант №6 \\[1em]
+        Преподаватель: Шиманская Г.С.
+    \end{flushright}\,\\[8.82em]
+    \begin{center}
+        {\small Санкт-Петербург \\ 2023}
+    \end{center}    
+\end{titlepage}
+
+\subsection*{\centering Задача №11}
+Многократно проинтегрируем обе части уравнения, чтобы получить исходную функцию $y$:
+\begin{gather*}
+    y'''=x+\sin x\\
+    y'' = \int (x +\sin x) dx
+    y'' = \frac{x^2}{2} - \cos x + C_1\\
+    y' = \int \frac{x^2}{2} - \cos x + C_1 = \frac{x^3}{6} - \sin x + C_1x+C_2\\
+    \squared{$y = \dfrac{x^4}{24} + \cos x + \dfrac{C_1}{2}x^2 + C_2x + C_3$}
+\end{gather*}
+
+\subsection*{\centering Задача №12}
+\begin{gather*}
+    xy''=y'\cdot\ln{\frac{y'}{x}}\\
+    \Let y' = r\\
+    xr' = r \cdot \ln{\frac{r}{x}}\\
+    \frac{dr}{dx} = \frac{r\ln{\nicefrac{r}{x}}}{x}\\
+    \Let \frac{r}{x} = t\quad r = tx \quad dr = x\,dt+t\,dx\\
+    x(x\,dt + t\,dx) = tx\ln t \,dx\\
+    x^2\,dt+xt\,dx=tx\ln t \,dx\\
+    x^2\,dt=(\ln t -1)xt\,dx\\
+    \frac{dt}{t(\ln{t}-1)} = \frac{dx}{x}
+\end{gather*}
+Перед нами уравнение с разделяющимися переменными --- проинтегрируем обе половины уравнения:
+\begin{gather*}
+    \int{\frac{dt}{t(\ln{t}-1)}} = \int\frac{d(\ln t)}{\ln t - 1} = \ln{(\ln t -1)}\\
+    \ln{(\ln t -1)} = \ln x + C\\
+    \Let C_1 = \ln C\\
+    \ln{(\ln t -1)} = \ln{C_1x}\\
+    \ln t -1 = C_1x\\
+    \ln t = C_1x + 1\\
+    t = e^{C_1x + 1}
+\end{gather*}
+Проводим обратные замены, чтобы вновь вернуться к $y'$:
+\begin{gather*}
+    r = xe^{C_1x + 1}\\
+    y' = xe^{C_1x + 1}
+\end{gather*}
+Остаётся проинтегрировать обе части уравнения, чтобы получить искомую функцию $y(x)$:
+\begin{gather*}
+    y = \int {xe^{C_1x + 1}\,dx} =
+    \begin{bmatrix}
+        u = x & du = dx\\
+        dv = e^{C_1x+1}\,dx & v = \frac{1}{C_1}\cdot e^{C_1x+1}
+    \end{bmatrix} = uv - \int{v\,du} = x\frac{1}{C_1}\cdot e^{C_1x+1}- \frac{1}{C_1}\int{e^{C_1x+1}}\,dx = \\
+    = \squared{$\dfrac{1}{C_1}e^{C_1x+1}(x-\dfrac{1}{C_1}+C_2)$}
+\end{gather*} \pagebreak
+
+\subsection*{\centering Задача №13}
+Перед нами дифференциальное уравнение $y^3y''=-1$, удовлетворяющее начальным условиям $y(1) = 1,\ y'(1) = 0$, частное решение которого нам необходимо найти. Решим его понижением порядка через замену:
+$$y' = u(y)\quad y'' = \frac{u\,du}{dy}$$
+$$\frac{uy^3\,du}{dy} = -1\quad \Rightarrow \quad u\,du = \frac{-dy}{y^3}$$
+Перед нами уравнение с разделяющимися переменными. Проинтегрируем обе части:
+$$\int u\,du = -\int\frac{dy}{y^3}\quad \Rightarrow \quad u^2 = \frac{1}{y^2}+C_1$$
+Делаем обратную замену:
+$$(y')^2 = \frac{1}{y^2} + C_1\quad \Rightarrow \quad (y'y)^2 = 1 + C_1y^2$$
+Пусть $v(x) = y^2$, тогда возможна следующая замена:
+$$v' = 2yy' \Rightarrow y' = \frac{v'}{2y}\quad \Rightarrow \quad \frac{(v')^2\cancel{y^2}}{4\cancel{y^2}} = C_1v + 1\quad \Rightarrow \quad v = \frac{(v')^2}{4C_1} - \frac{1}{C_1}$$
+Введём последнюю замену $q = v' \Rightarrow dv = q\,dx$:
+$$v = \frac{q^2}{4C_1}-\frac{1}{C_1}\quad(1)$$
+Возьмём производную от обеих частей равенства:
+$$dv = \frac{q\,dq}{2C_1}$$
+И применим следствие из объявленной выше замены:
+$$\cancel{q}\,dx = \frac{\cancel{q}\,dq}{2C_1}\quad \Rightarrow \quad dx = \frac{dq}{2C_1}$$
+Вновь перед нами уравнение с разделяющимися переменными. Проинтегрируем обе части:
+$$\int dx = \int\frac{dq}{2C_1} \quad \Rightarrow \quad x = \frac{q}{2C_1} + C_2 \quad \Rightarrow \quad q = 2C_1x - 2C_1C_2$$
+Выраженное из получившегося уравнения $q$ подставим в уравнение $(1)$:
+$$v = \frac{\cancel{4}C_1^{\cancel{2}}x^2 - \cancelto{2}{8}C_1^{\cancel{2}}C_2x + \cancel{4}C_1^{\cancel{2}}C_2^2}{\cancel{4C_1}}-\frac{1}{C_1} = C_1x^2 - 2C_1C_2x + C_1C_2^2-\frac{1}{C_1}$$
+Делаем обратную замену $v(x) = y^2$ и найдём возьмём от получившегося выражения производную:
+$$\left[\begin{array}{l}
+    y^2 = C_1x^2 - 2C_1C_2x + C_1C_2^2-\dfrac{1}{C_1} \\
+    2yy' = 2C_1x - C_1C_2
+\end{array}\right.$$
+Итак, у нас уже есть общее решение. Теперь найдём частное, подставив в каждое из выражений $x = 1, y = 1, y' = 0$ и вычислим $C_1$ и $C_2$:
+$$\left[\begin{array}{l}
+    1 = C_1 - 2C_1C_2 + C_1C_2^2 - \dfrac{1}{C_1} \\
+    0 = \cancelto{1}{2C_1} - \cancel{2C_1}C_2 
+\end{array}\right. \Leftrightarrow \left[\begin{array}{l}
+    1 = C_1 - 2C_1C_2 + C_1C_2^2 - \dfrac{1}{C_1} \\
+    C_2 = 1
+\end{array}\right. \Leftrightarrow \left[\begin{array}{l}
+    1 = - \dfrac{1}{C_1} \\
+    C_2 = 1
+\end{array}\right. \Rightarrow \left[\begin{array}{l}
+    C_1 = -1 \\
+    C_2 = 1
+\end{array}\right.$$
+При таких коэффициентах $C_1$ и $C_2$ частное решение дифференциального уравнения будет выглядеть так:
+$$\squared{$y^2 = -x^2 + 2x$}$$
+
+\subsection*{\centering Задача №14}
+Уравнение, описывающее такой процесс, будет выглядеть так:
+$$\frac{dT}{dt}=k(T-20)\quad\Rightarrow\quad \frac{dT}{k(T-20)}=dt$$
+Здесь $t$ --- прошедшее время, а $T$ --- температура тела в момент времени $t$. Проинтегрируем обе половины уравнения с разделяющимися переменными:
+$$\int\frac{dT}{k(T-20)}=\int dt \quad\Rightarrow\quad t = \frac{1}{k}\ln{(T-20)} + C$$
+Имеем следующие начальные условия, которые подставим в полученное уравнение:
+$$\begin{cases}
+    t=0\quad T=100 \\ t=20\quad T=60
+\end{cases} \Leftrightarrow \begin{cases}
+    0 = \frac{1}{k}\ln80 + C \\ 20 = \frac{1}{k}\ln40 + C
+\end{cases} \Leftrightarrow \begin{cases}
+    C = -\frac{1}{k}\ln80 \\ 20 = \frac{1}{k}\ln\frac{1}{2}
+\end{cases} \Rightarrow \begin{cases}
+    C = -\frac{20\ln80}{\ln\frac{1}{2}} \\ \frac{1}{k} = \frac{20}{\ln\frac{1}{2}}
+\end{cases}$$
+Итак, мы нашли $\frac{1}{k}$ и $C$ --- подставим их в исходное уравнение, зададим температуру $T=25$ и найдём время $t$, через которое тело достигнет этой температуры:
+$$t = \frac{20\ln{(T-20)}}{\ln\frac{1}{2}} -\frac{20\ln80}{\ln\frac{1}{2}} = \frac{20\ln{(T-20)} - 20\ln80}{\ln\frac{1}{2}} = \frac{20\ln{\frac{T-20}{80}}}{\ln\frac{1}{2}}$$
+$$t(25) = \frac{20\ln{\frac{\cancelto{1}{5}}{\cancelto{16}{80}}}}{\ln\frac{1}{2}} = \frac{20\ln{\left( \frac{1}{2} \right)^4}}{\ln\frac{1}{2}} = \frac{20\cdot4\cancel{\ln{\frac{1}{2}}}}{\cancel{\ln\frac{1}{2}}} = \squared{$80$}$$
+
+\subsection*{\centering Задача №15}
+Перед нами две функции $y = \sin{2x}$ и $y = \sin{\left( 2x+\frac{\pi}{2} \right)}$. Необходимо исследовать, являются ли они линейно зависимыми. Для этого преобразуем вторую функцию в соответствии с преобразованием углов в тригонометрических функциях, где $\sin{\left( \alpha + \frac{\pi}{2} \right)} = \cos{\alpha}$.
+Функции линейно зависимы, если найдутся такие $a \ne 0$ и $b \ne 0$, что $a\cdot f(x) + b\cdot g(x) = 0$ С учётом условий нашей задачи получаем $a\cdot \sin{2x} + b\cdot \cos{2x}$.\\[1em]
+Функции $\sin{\alpha}$ и $\cos{\alpha}$ --- функции, отличающиеся на фазу $\varphi = \frac{\pi}{4}$. Поэтому нет ни одной пары $a$ и $b$, кроме $a = 0$ и $b = 0$, при которых $a\cdot \sin{2x} + b\cdot \cos{2x} = 0 \  \Rightarrow$ \squared{функции линейно независимые.}
+
+\subsection*{\centering Задача №16}
+Итак, имеем функцию $y = C_1x + 2C_2e^{3-x}+C_3e^{-x}$. В общем решении ДУ на каждый корень приходится по экспоненте $e^{r_ix}$, где $r_i$ --- корни характеристического уравнения ДУ. Это означает, что мы никак не можем получить $e^{3-x}$, находящуюся в функции выше, поэтому необходимо сделать небольшое преобразование: $y = C_1e^{0x}x + 2C_2e^3e^{-x}+C_3e^{-x}$. В таком виде функции наблюдаем, что характеристическое уравнение ДУ имеет корни $r_1=0,\ r_2=-1$. \\[1em]
+ Рассмотрим первый корень $r_1 = 0$ --- исходя из того, что первый член многочлена $C_1e^{0x}x$ имеет $x$ как один из сомножителей, делаем вывод, что кратность этого корня равна 2, но в таком случае в функции не хватает члена $C_0e^{0x}x^0$. Таким образом \squared{функция \textbf{не является} общим решением требуемого дифференциального уравнения.}
+\subsection*{\centering Задача №17}
+Для решения каждого из этих линейных однородных дифференциальных уравнений с постоянными коэффициентами необходимо воспользоваться характеристическим уравнением.\\[1em]
+1) $y''+2y'-63y=0$
+$$r^2+2r-63 = 0 \ \Rightarrow\  r_1 = -9\quad r_2 = 7$$
+$$\squared{$y = C_1e^{-9x} + C_2e^{7x}$}$$
+2) $9y''+48y'+64y=0$
+$$9r^2+48r+64 = 0 \ \Rightarrow\  r_{1,2} = -\frac{8}{3}$$
+$$\squared{$y = e^{-\nicefrac{8x}{3}}(C_1+C_2x)$}$$
+3) $y''+18y'+90y=0$
+$$r^2+18r+90=0 \ \Rightarrow\ r_{1,2} = -9\pm3i$$
+$$\squared{$y = e^{-9x}(C_1\sin{3x}+C_2\cos{3x})$}$$
+4) $y'''-10y''-11y'+180y=0$
+$$r^3-10r^2-11r+180=0 \ \Rightarrow\ r_1=-4\quad r_2=5\quad r_3=9$$
+$$\squared{$y = C_1e^{-4x}+C_2e^{5x}+C_3e^{9x}$}$$
+5) $y'''-17y''+96y'-180y=0$
+$$r^3-17r^2+96r-180=0 \ \Rightarrow\ r_1=5\quad r_{2,3}=6$$
+$$\squared{$y = C_1e^{5x} + e^{6x}(C_2+C_3x)$}$$
+6) $y'''+14y''+124y'+200y=0$
+$$r^3+14r^2+124r+200=0 \ \Rightarrow\ r_1=-2\quad r_{2,3}=-6\pm8i$$
+$$\squared{$y = C_1e^{-2x}+e^{-6x}(C_2\sin{8x}+C_3\cos{8x})$}$$
+7) $y^{\text{IV}}-70y''+1369y=0$
+$$r^4-70r^2+1369=0 \ \Rightarrow\ r^4+74r^2+1369-144r^2=0 \ \Rightarrow\ (r^2+37)^2-(12r)^2 = 0 \ \Rightarrow\ (r^2+37-12r)(r^2+17+12r) = 0$$
+$$r_{1,2} = 6\pm i\quad r_{3,4} = -6\pm i$$
+$$\squared{$y = e^{6x}(C_1\sin{x}+C_2\cos{x}) + e^{-6x}(C_3\sin{x}+C_4\cos{x})$}$$
+
+\subsection*{\centering Задача №18}
+В этой задаче ход решения предыдущей дополняется нахождением коэффициентов $C_n$, путём взятия производной от полученной функции $y(x)$ и подстановкой начальных условий. Для решения каждого из этих дифференциальных уравнений воспользуемся характеристическим уравнением и затем найдём частное решение каждого. \\[1em]
+1) $y''-6y'-27y=0$
+$$r^2-6r-27=0 \ \Rightarrow\ r_1=9\quad r_2=-3$$
+$$\begin{cases}
+    y= C_1e^{9x}+C_2e^{-3x} \\ y' = 9C_1e^{9x}-3C_2e^{-3x}
+\end{cases} \Rightarrow \begin{cases}
+    4 = C_1+C_2 \\ 0 = 9C_1-3C_2
+\end{cases} \Rightarrow \begin{cases}
+    C_1 = 1 \\ C_2 = 3
+\end{cases} \Rightarrow \squared{$y_\text{ч} = e^{9x}+3e^{-3x}$}$$
+2) $49y''-126y'+81y=0$
+$$49r^2-126r+81=0 \ \Rightarrow\ r_{1,2}=\frac{9}{7}$$
+$$\begin{cases}
+    y= e^{\nicefrac{9x}{7}}(C_1+C_2x) \\ y' = \frac{9}{7}C_1e^{\nicefrac{9x}{7}} + C_2e^{\nicefrac{9x}{7}}(\frac{9}{7}x+1)
+\end{cases} \Rightarrow \begin{cases}
+    C_1 = 0 \\ C_2 = 4
+\end{cases} \Rightarrow \squared{$y_\text{ч} = 4xe^{\nicefrac{9x}{7}}$}$$
+3) $y''-16y'+128y=0$
+$$r^2-16r+128=0 \ \Rightarrow\ r_{1,2}=8\pm8i$$
+$$\begin{cases}
+    y= e^{8x}(C_1\cos{8x}+C_2\sin{8x}) \\ y' = 8e^{8x}(C_1(\cos{8x}-\sin{8x})+C_2(\sin{8x} + \cos{8x}))
+\end{cases} \Rightarrow \begin{cases}
+    -5 = C_1 \\ 0 = 8(C_1+C_2)
+\end{cases} \Rightarrow \begin{cases}
+    C_1 = -5 \\ C_2 = 5
+\end{cases} \Rightarrow \squared{$y_\text{ч} = 5e^{8x}(\sin{8x}-\cos{8x})$}$$
+
+\subsection*{\centering Задача №19}
+В общем виде частное решение выглядит как $x^me^{\alpha x}P(x)$, где $P(x)$ --- полином степени не выше степени полинома внутри $f(x)$, $\alpha$ определяется из экспоненты в $f(x)$, а $x$ появляется в случае $\alpha$ равна любому из $k_i$, т.е. является корнем характеристического уравнения.\\[1em]
+1) $x^0e^{0\cdot x}(Ax^2 + Bx + C) \ \Rightarrow\  \alpha = 0 \ne k_{1,2} \ \Rightarrow\  m = 0 \ \Rightarrow\ \squared{$\text{вид: } y_{\text{ч}} = Ax^2+Bx+C$}$ \\[0.5em]
+2) $x^1e^{0\cdot x}(Ax + B) \ \Rightarrow\  \alpha = 0 = k_1 \ne k_2 \ \Rightarrow\  m = 1 \ \Rightarrow\ \squared{$\text{вид: } y_{\text{ч}} = x(Ax+B)$}$ \\[0.5em]
+3) $x^2e^{0\cdot x}(Ax + B) \ \Rightarrow\  \alpha = 0 = k_{1,2} \ \Rightarrow\  m = 2 \ \Rightarrow\ \squared{$\text{вид: } y_{\text{ч}} = x^2(Ax+B)$}$ \\[0.5em]
+4) $x^0e^{2\cdot x}(Ax^2 + Bx + C) \ \Rightarrow\  \alpha = 2 \ne k_{1,2} \ \Rightarrow\  m = 0 \ \Rightarrow\ \squared{$\text{вид: } y_{\text{ч}} = e^{2x}(Ax^2+Bx+C)$}$ \\[0.5em]
+5) $x^1e^{-1\cdot x}(Ax + B) \ \Rightarrow\  \alpha = -1 = k_1 \ne k_2 \ \Rightarrow\  m = 1 \ \Rightarrow\ \squared{$\text{вид: } y_{\text{ч}} = xe^{-x}(Ax+B)$}$ \\[0.5em]
+6) $x^2e^{4\cdot x}(Ax^2 + Bx + C) \ \Rightarrow\  \alpha = 4 = k_{1,2} \ \Rightarrow\  m = 2 \ \Rightarrow\ \squared{$\text{вид: } y_{\text{ч}} = x^2e^{4x}(Ax^2+Bx+C)$}$ \\[0.5em]
+7) $x^me^{\alpha\cdot x}(P(x)\cos{\beta x} + Q(x)\sin{\beta x}) \ \Rightarrow\ \alpha \pm \beta i = 0 \pm 3i \ne k_{1,2} \ \Rightarrow\ m = 0 \ \Rightarrow$ \\[0.25em]
+$\Rightarrow\ \squared{$\text{вид: } y_{\text{ч}} = (Ax^2+Bx+C)\cos{3x}+(Dx^2+Ex+F)\sin{3x}$}$ \\[0.5em]
+8) $x^me^{\alpha\cdot x}(P(x)\cos{\beta x} + Q(x)\sin{\beta x}) \ \Rightarrow\ \alpha \pm \beta i = 0 \pm 5i = k_{1,2} \ \Rightarrow\ m = 1 \ \Rightarrow$ \\[0.25em]
+$\Rightarrow\ \squared{$\text{вид: } y_{\text{ч}} =x((Ax+B)\cos{5x}+(Cx+D)\sin{5x})$}$ \\[0.5em]
+9) $x^me^{\alpha\cdot x}(P(x)\cos{\beta x} + Q(x)\sin{\beta x}) \ \Rightarrow\ \alpha \pm \beta i = -5 \pm 3i \ne k_{1,2} \ \Rightarrow\ m = 0 \ \Rightarrow$ \\[0.25em]
+$\Rightarrow\ \squared{$\text{вид: } y_{\text{ч}} = e^{-5x}\left( (Ax^2+Bx+C)\cos{3x}+(Dx^2+Ex+F)\sin{3x} \right)$}$ \\[0.5em]
+10) $x^me^{\alpha\cdot x}(P(x)\cos{\beta x} + Q(x)\sin{\beta x}) \ \Rightarrow\ \alpha \pm \beta i = 1 \pm 3i = k_{1,2} \ \Rightarrow\ m = 1 \ \Rightarrow$ \\[0.25em]
+$\Rightarrow\ \squared{$\text{вид: } y_{\text{ч}} = xe^x\left( (Ax+B)\cos{3x}+(Cx+D)\sin{3x} \right)$}$ \\[0.5em]
+11) $C_1x^{m_1}e^{\alpha x} + C_2x^{m_2}e^{\beta x} + \dots + C_nx^{m_n}e^{\gamma x} \ \Rightarrow\ \begin{array}{c}
+    \alpha = 3 \Rightarrow m_1 = 1 \\ \alpha = 5 \Rightarrow m_2 = 1
+\end{array} \ \Rightarrow\ \squared{$\text{вид: } y_{\text{ч}} = x(Ae^{3x}+Be^{5x})$}$
+
+\subsection*{\centering Задача №20}
+Коэффициенты характеристического уравнения будет восстанавливать из его корней по теореме Виета, а общее решение ЛНДУ с постоянными коэффициентами, получившегося из характеристического уравнения, будет состоять из общего решения соответствующего ему ЛОДУ и частного решения с коэффициентами, найденными путём подстановки производных общего вида частного решения ЛНДУ в исходное ДУ. Как говорил Гагарин, поехали!
+\subsubsection*{\centering Уравнение 1}
+$$\begin{cases}
+    -4+2 = -p \\ -4\cdot2=q
+\end{cases}\Rightarrow \begin{cases}
+    p = 2 \\ q = -8
+\end{cases} \Rightarrow \begin{array}{l}
+    y''+2y'-8y = -16x^2+72x-76 \\ y_o = C_1e^{-4x}+C_2e^{2x}
+\end{array}$$
+$$y_{\text{ч}} = Ax^2+Bx+C\quad y'_{\text{ч}} = 2Ax+B\quad y''_\text{ч} = 2A$$
+$$2A + 4Ax + 2B-8Ax^2-8Bx-8C = -16x^2+72x-76 \ \Rightarrow \begin{cases}
+    -8A= -16 \\ 4A-8B=72 \\ 2A+2B-8C = -76
+\end{cases} \Rightarrow \begin{cases}
+    A=2 \\ B=-8 \\ C=8
+\end{cases}$$
+$$\squared{$y = y_o+y_\text{ч} = C_1e^{-4x}+C_2e^{2x} + 2x^2-8x+8$}$$
+\subsubsection*{\centering Уравнение 2}
+$$\begin{cases}
+    0 - 1 = -p \\ 0=q
+\end{cases}\Rightarrow \begin{cases}
+    p = 1 \\ q = 0
+\end{cases} \Rightarrow \begin{array}{l}
+    y''+y'= 8x-1 \\ y_o = C_1+C_2e^{-x}
+\end{array}$$
+$$y_{\text{ч}} = Ax^2+Bx\quad y'_{\text{ч}} = 2Ax+B\quad y''_\text{ч} = 2A$$
+$$2A + 2Ax + B = 8x-1 \ \Rightarrow \begin{cases}
+    2A= 8 \\ 2A+B=-1
+\end{cases} \Rightarrow \begin{cases}
+    A=4 \\ B=-9
+\end{cases}$$
+$$\squared{$y = y_o+y_\text{ч} = C_1+C_2e^{-x} + x(4x-9)$}$$
+\subsubsection*{\centering Уравнение 3}
+$$\begin{cases}
+    0 = -p \\ 0=q
+\end{cases}\Rightarrow \begin{cases}
+    p = 0 \\ q = 0
+\end{cases} \Rightarrow \begin{array}{l}
+    y''= 12x-14 \\ y_o = C_1+C_2x
+\end{array}$$
+$$y_{\text{ч}} = Ax^3+Bx^2\quad y'_{\text{ч}} = 3Ax^2+2Bx\quad y''_\text{ч} = 6Ax+2B$$
+$$6Ax+2B = 12x-14 \ \Rightarrow \begin{cases}
+    6A= 12 \\ 2B=-14
+\end{cases} \Rightarrow \begin{cases}
+    A=2 \\ B=-7
+\end{cases}$$
+$$\squared{$y = y_o+y_\text{ч} = C_1+C_2x+x^2(2x-7)$}$$
+\subsubsection*{\centering Уравнение 4}
+$$\begin{cases}
+    3+7 = -p \\ 3\cdot7=q
+\end{cases}\Rightarrow \begin{cases}
+    p = -10 \\ q = 21
+\end{cases} \Rightarrow \begin{array}{l}
+    y''-10y'+21y= e^{2x}(5x^2-7x+31) \\ y_o = C_1e^{3x}+C_2e^{7x}
+\end{array}$$
+$$y_{\text{ч}} = e^{2x}(Ax^2+Bx+C)\quad y'_{\text{ч}} = 2e^{2x}(Ax^2+Bx+C) + e^{2x}(2Ax+B)\quad y''_\text{ч} = 2Ae^{2x}+4e^{2x}(2Ax+B)+4e^{2x}(Ax^2+Bx+C)$$
+$$e^{2x}(4Ax^2+8Ax+4Bx+2A+4B+4C)-10e^{2x}(2Ax^2+2Ax+2Bx+B+2C)+21e^{2x}(Ax^2+Bx+C)=e^{2x}(5x^2-7x+31)$$
+$$(2A-6B+5C)+x(5B-12A)+5Ax^2 = 5x^2-7x+31 \ \Rightarrow \begin{cases}
+    5A= 5 \\ 5B-12A=-7 \\ 2A-6B+5C=31
+\end{cases} \Rightarrow \begin{cases}
+    A=1 \\ B=1 \\ C=7
+\end{cases}$$
+$$\squared{$y = y_o+y_\text{ч} = C_1e^{3x}+C_2e^{7x}+e^{2x}(x^2+x+7)$}$$
+\subsubsection*{\centering Уравнение 5}
+$$\begin{cases}
+    -1+6 = -p \\ -1\cdot6=q
+\end{cases}\Rightarrow \begin{cases}
+    p = 5 \\ q = -6
+\end{cases} \Rightarrow \begin{array}{l}
+    y''-5y'-6y= e^{x}(-42x+34) \\ y_o = C_1e^{-x}+C_2e^{6x}
+\end{array}$$
+$$y_{\text{ч}} = e^{-x}(Ax^2+Bx)\quad y'_{\text{ч}} = e^{-x}(2Ax+B) - e^{-x}(Ax^2+Bx)\quad y''_\text{ч} = 2Ae^{-x}-2e^{-x}(2Ax+B)+e^{-x}(Ax^2+Bx)$$
+$$2Ae^{-x}-e^{-x}(2Ax+B)+e^{-x}(Ax^2+Bx)-e^{-x}(2Ax+B)-5e^{-x}(B+2Ax-Bx-Ax^2)-6e^{-x}(Ax^2+Bx)=e^{-x}(-42x+34)$$
+$$2A-7B-14Ax = -42x+34 \ \Rightarrow \begin{cases}
+    2A-7B= 34 \\ -14A=-42
+\end{cases} \Rightarrow \begin{cases}
+    A= 3 \\ B=-4
+\end{cases}$$
+$$\squared{$y = y_o+y_\text{ч} = C_1e^{-x}+C_2e^{6x} + e^{-x}(3x^2-4x)$}$$
+\subsubsection*{\centering Уравнение 6}
+$$\begin{cases}
+    4+4 = -p \\ 4\cdot4=q
+\end{cases}\Rightarrow \begin{cases}
+    p = -8 \\ q = 16
+\end{cases} \Rightarrow \begin{array}{l}
+    y''-8y'+16y= e^{4x}(60x^2+24x+18) \\ y_o = e^{4x}(C_1+C_2x)
+\end{array}$$
+$$y_{\text{ч}} = e^{4x}(Ax^4+Bx^3+Cx^2)\quad y'_{\text{ч}} = 4e^{4x}(Ax^4+Bx^3+Cx^2)+e^{4x}(4Ax^3+3Bx^2+2Cx)$$
+$$y''_\text{ч} = 16e^{4x}(Ax^4+Bx^3+Cx^2)+8e^{4x}(4Ax^3+3Bx^2+2Cx)+e^{4x}(12Ax^2+6Bx+2C)$$
+\centerline{Опустим подстановку производных в исходное ДУ и сразу перейдём к уравнению, которое необходимо решить:}
+$$12Ax^2+6Bx+2C = 60x^2+24x+18 \ \Rightarrow \begin{cases}
+    12A=60 \\ 6B=24 \\ 2C=18
+\end{cases} \Rightarrow \begin{cases}
+    A=5 \\ B=4 \\ C=9
+\end{cases}$$
+$$\squared{$y = y_o+y_\text{ч} = e^{4x}(C_1+C_2x)+x^2e^{4x}(5x^2+4x+9)$}$$
+\subsubsection*{\centering Уравнение 7}
+$$\begin{cases}
+    2i-2i= -p \\ -2i\cdot2i=q
+\end{cases}\Rightarrow \begin{cases}
+    p = 0 \\ q = 4
+\end{cases} \Rightarrow \begin{array}{l}
+    y''+4y= (-10x^2+45x-42)\cos{3x}+(-25x^2+6x+37)\sin{3x} \\ y_o = C_1\cos{2x}+C_2\sin{2x}
+\end{array}$$
+$$y_{\text{ч}} = (Ax^2+Bx+C)\cos{3x}+(Dx_2+Ex+F)\sin{3x}$$
+$$y'_{\text{ч}} = (3Dx^2+2Ax+3Ex+B+3F)\cos{3x}+(E-3C+2Dx-3Bx-3Ax^2)\sin{3x}$$
+$$y''_\text{ч} = (6E-9C+2A+12Dx-9Bx-9Ax^2)\cos{3x}+(-9Dx^2-12Ax-9Ex-6B+2D-9F)\sin{3x}$$
+\centerline{Опустим подстановку производных в исходное ДУ и сразу перейдём к системе, которую необходимо решить:}
+$$\begin{cases}
+    -5Ax^2+(12D-5B)x+2A+6E-5C=-10x^2+45x-42 \\ -5Dx^2+(-12A-5E)x+2D-6B-5F
+\end{cases} \ \Rightarrow \begin{cases}
+    2A+6E-5C=-42 \\ 12D-5B=45 \\ -5A = -10 \\ -5D = -25 \\ -12A-5E=6 \\ 2D-6B-5F=37
+\end{cases} \Rightarrow \begin{cases}
+    A = 2 \\ B = 3 \\ C = 2 \\ D = 5 \\ E = -6 \\ F = -9
+\end{cases}$$
+$$\squared{$y = y_o+y_\text{ч} = C_1\cos{2x}+C_2\sin{2x}+(2x^2+3x+2)\cos{3x}+(5x^2-6x-9)\sin{3x}$}$$
+\subsubsection*{\centering Уравнение 8}
+$$\begin{cases}
+    5i-5i= -p \\ -5i\cdot5i=q
+\end{cases}\Rightarrow \begin{cases}
+    p = 0 \\ q = 25
+\end{cases} \Rightarrow \begin{array}{l}
+    y''+25y= (80x+16)\cos{5x}+(-60x-22)\sin{5x} \\ y_o = C_1\cos{5x}+C_2\sin{5x}
+\end{array}$$
+$$y_{\text{ч}} = (Ax^2+Bx)\cos{5x}+(Cx^2+Dx)\sin{5x}$$
+$$y'_{\text{ч}} = (5Cx^2+2Ax+5Dx+B)\cos{5x}+(D+2Cx-5Bx-5Ax^2)\sin{5x}$$
+$$y''_\text{ч} = (10D-25B+2A+20Cx-25Ax^2)\cos{5x}+(2C-10B-25Dx-20Ax-25Cx^2)\sin{5x}$$
+\centerline{Опустим подстановку производных в исходное ДУ и сразу перейдём к системе, которую необходимо решить:}
+$$\begin{cases}
+    20Cx+2A+10D=80x+16 \\ -20Ax-10B+2C=-60x-22
+\end{cases} \ \Rightarrow \begin{cases}
+    2A+10D=16 \\ 20C=80 \\ -10B+2C=-22 \\ -20A=-60
+\end{cases} \Rightarrow \begin{cases}
+    A = 3 \\ B = 3 \\ C = 4 \\ D = 1
+\end{cases}$$
+$$\squared{$y = y_o+y_\text{ч} = C_1\cos{5x}+C_2\sin{5x}+x((3x+3)\cos{5x}+(4x+1)\sin{5x})$}$$
+\subsubsection*{\centering Уравнение 9}
+$$\begin{cases}
+    -3+i-3-i= -p \\ (-3+i)(-3-i)=q
+\end{cases}\Rightarrow \begin{cases}
+    p = 6 \\ q = 10
+\end{cases} \Rightarrow \begin{array}{l}
+    y''+6y'+10y= e^{-5x}\left( (-88x^2+92x+26)\cos{3x}+(24x^2+28x+76)\sin{3x} \right) \\ y_o = e^{-3x}(C_1\cos{x}+C_2\sin{x})
+\end{array}$$
+$$y_{\text{ч}} = e^{-5x}\left( (Ax^2+Bx+C)\cos{3x} + (Dx^2+Ex+F)\sin{3x} \right)$$
+$$y'_{\text{ч}} = -{e}^{-5x}\left(\left(\left(5D+3A\right){x}^{2}+\left(-2D+3B+5E\right)x+5F+3C-E\right)\sin{3x}+\right.$$
+$$\left.+\left(\left(5A-3D\right){x}^{2}+\left(5B-2A-3E\right)x-3F+5C-B\right)\cos{3x}\right)$$
+$$y''_\text{ч} = {e}^{-5x}\left(\left(\left(16D+30A\right){x}^{2}+\left(-20D+30B-12A+16E\right)x+16F+2D+30C-6B-10E\right)\sin{3x}+\right.$$
+$$\left.+\left(\left(16A-30D\right){x}^{2}+\left(12D+16B-20A-30E\right)x-30F+16C-10B+2A+6E\right)\cos{3x}\right)$$
+\centerline{Опустим подстановку производных в исходное ДУ и сразу перейдём к системе, которую необходимо решить:}
+$$\begin{cases}
+    12A-4D = 24 \\ -4E-8D+12B-12A=28 \\ -4F-4E+2D+12C-6B=76 \\ -12D-4A=-88 \\ -12E+12D-4B-8A=92 \\ -12F+6E-4C-4B+2A=26
+\end{cases} \ \Rightarrow \begin{cases}
+    A = 4 \\ B = 8 \\ C = 4 \\ D = 6 \\ E = -7 \\ F = -9
+\end{cases}$$
+$$\squared{$y = y_o+y_\text{ч} = e^{-3x}(C_1\cos{x}+C_2\sin{x})+e^{-5x}\left( (4x^2+8x+4)\cos{3x}+(6x^2-7x-9)\sin{3x} \right)$}$$
+\subsubsection*{\centering Уравнение 10}
+$$\begin{cases}
+    1+3i+1-3i= -p \\ (1+3i)(1-3i)=q
+\end{cases}\Rightarrow \begin{cases}
+    p = -2 \\ q = 10
+\end{cases} \Rightarrow \begin{array}{l}
+    y''-2y'+10y= e^x\left( (60x+26)\cos{3x}+(-84x+52)\sin{3x} \right) \\ y_o = e^x(C_1\cos{3x}+C_2\sin{3x})
+\end{array}$$
+$$y_{\text{ч}} = e^x\left( (Ax^2+Bx)\cos{3x}+(Cx^2+Dx)\sin{3x} \right)$$
+$$y'_{\text{ч}} = {e}^{x}\left(\left(\left(C-3A\right){x}^{2}+\left(D+2C-3B\right)x+D\right)\sin{3x}+\left(\left(3C+A\right){x}^{2}+\left(3D+B+2A\right)x+B\right)\cos{3x}\right)$$
+$$y''_\text{ч} = {e}^{x}\left(\left(\left(-8C-6A\right){x}^{2}+\left(-8D+4C-6B-12A\right)x+2D+2C-6B\right){e}^{x}\sin{3x}+\right.$$
+$$\left.+\left(\left(6C-8A\right){x}^{2}+\left(6D+12C-8B+4A\right)x+6D+2B+2A\right)\cos{3x}\right)$$
+\centerline{Опустим подстановку производных в исходное ДУ и сразу перейдём к системе, которую необходимо решить:}
+$$\begin{cases}
+    -12A=-84 \\ 2C-8B=52 \\ 12C = 60 \\ 6D+2A=26
+\end{cases} \ \Rightarrow \begin{cases}
+    A = 7 \\ B = -7 \\ C = 5 \\ D = 2
+\end{cases}$$
+$$\squared{$y = y_o+y_\text{ч} = e^x(C_1\cos{3x}+C_2\sin{3x}) + xe^x\left( (7x-7) \right)\cos{3x}+(5x-2)\sin{3x}$}$$
+\subsubsection*{\centering Уравнение 11}
+$$\begin{cases}
+    3+5 = -p \\ 3\cdot5=q
+\end{cases}\Rightarrow \begin{cases}
+    p = -8 \\ q = 15
+\end{cases} \Rightarrow \begin{array}{l}
+    y''-8y'+15y= -6e^{3x}+4e^{5x} \\ y_o = C_1e^{2x}+C_2e^{5x}
+\end{array}$$
+$$y_{\text{ч}} = Axe^{3x}+Bxe^{5x}\quad y'_{\text{ч}} = e^{3x}(3Ax+A) + e^{5x}(5Bx+B)\quad y''_\text{ч} = e^{3x}(9Ax+6A)+e^{5x}(25Bx+10B)$$
+$$-2Ae^{3x}+2Be^{5x}=-6e^{3x}+4e^{5x}$$
+$$2A-7B-14Ax = -42x+34 \ \Rightarrow \begin{cases}
+    -2A = -6 \\ 2B = 4
+\end{cases} \Rightarrow \begin{cases}
+    A= 3 \\ B = 2
+\end{cases}$$
+$$\squared{$y = y_o+y_\text{ч} = C_1e^{2x}+C_2e^{5x} + x(3e^{3x}+2e^{5x})$}$$
+
+\subsection*{\centering Задача №21}
+В этом задании необходимо найти общее решение ЛНДУ с постоянными коэффициентами, а затем определить коэффициенты $C_n$, имея начальные условия ДУ.\\[1em]
+1) $y''-5y'+4y = 4x^2+2x-5$ с начальными условиями $y(0) = 2,\ y'(0) = 0$
+$$r^2-5r+4=0 \ \Rightarrow\ r_1=1\quad r_2=4 \ \Rightarrow\ y_o = C_1e^x+C_2e^{4x}$$
+$$y_{\text{ч}} = Ax^2+Bx+C\quad y'_{\text{ч}} = 2Ax+B\quad y''_\text{ч} = 2A$$
+$$4Ax^2-10Ax+4Bx+2A-5B+4C = 4x^2+2x-5$$
+$$\begin{cases}
+    4A = 4 \\ -10A+4B = 2 \\ -5B+4C = -5
+\end{cases} \Rightarrow \begin{cases}
+    A = 1 \\ B = 3 \\ C = 2
+\end{cases}$$
+$$y = y_o+y_{\text{ч}} = C_1e^x+C_2e^{4x} + x^2+3x+2$$
+$$\begin{cases}
+    y= C_1e^x+C_2e^{4x} + x^2+3x+2 \\ y' = C_1e^x+4C_2e^{4x} +2x+3
+\end{cases} \Rightarrow \begin{cases}
+    0 = C_1+C_2 \\ -3 = C_1+4C_2
+\end{cases} \Rightarrow \begin{cases}
+    C_1 = 1 \\ C_2 = -1
+\end{cases} \Rightarrow \squared{$y = e^x-e^{4x}+x^2+3x+2$}$$
+2) $y''-6y'+18y = e^{4x}\left( (26x^2+2x+12)\cos{2x}+(26x^2+14x-6)\sin{2x} \right)$ с начальными условиями $y(0) = 1,\ y'(0) = -1$
+$$r^2-6r+18=0 \ \Rightarrow\ r_{1,2} = 3\pm 3i \ \Rightarrow\ y_o = e^{3x}(C_1\cos{3x}+C_2\sin{3x})$$
+$$y_{\text{ч}} = e^{4x}\left( (Ax^2+Bx+C)\cos{2x} + (Dx^2+Ex+F)\sin{2x} \right)$$
+$$y'_{\text{ч}} = {e}^{4x}\left(\left(\left(4D-2A\right){x}^{2}+\left(2D-2B+4E\right)x+4F-2C+E\right)\sin{2x}+\right.$$
+$$\left.+\left(\left(2D+4A\right){x}^{2}+\left(4B+2A+2E\right)x+2F+4C+B\right)\cos{2x}\right)$$
+$$y''_\text{ч} = {e}^{4x}\left(\left(\left(12D-16A\right){x}^{2}+\left(16D-16B-8A+12E\right)x+12F+2D-16C-4B+8E\right)\sin{2x}+\right.$$
+$$\left.+\left(\left(16D+12A\right){x}^{2}+\left(8D+12B+16A+16E\right)x+16F+12C+8B+2A+4E\right)\cos{2x}\right)$$
+\centerline{Опустим подстановку производных в исходное ДУ и сразу перейдём к системе, которую необходимо решить:}
+$$\begin{cases}
+    6D - 4A = 26 \\ 6E+4D-4B-8A = 14 \\ 6F + 2E + 2D - 4C - 4B = -6 \\ 4D+6A = 26 \\ 4E + 8D + 6B + 4A = 2 \\ 4F+4E+6C+2B+2A = 12
+\end{cases} \Rightarrow \begin{cases}
+    A = 1 \\ B = -5 \\ C = 6 \\ D = 5 \\ E = -3 \\ F = -1
+\end{cases}$$
+$$y = y_o+y_{\text{ч}} = e^{3x}(C_1\cos{3x}+C_2\sin{3x}) + e^{4x}\left( (x^2-5x+6)\cos{2x}+(5x^2-3x-1)\sin{2x} \right)$$
+$$y' = \left(3C_{2}-3C_{1}\right){e}^{3x}\sin{3x}+\left(3C_{2}+3C_{1}\right){e}^{3x}\cos{3x}+\left(18{x}^{2}+8x-19\right){e}^{4x}\sin{2x}+\left(14{x}^{2}-24x+17\right){e}^{4x}\cos{2x}$$
+$$\begin{cases}
+    1= C_1 + 6 \\ -1 = 3C_{2}+3C_{1}+17
+\end{cases} \Rightarrow \begin{cases}
+    C_1 = -5 \\ C_2 = -1
+\end{cases}$$
+$$\squared{$y = e^{3x}(-5\cos{3x}-\sin{3x}) + e^{4x}\left( (x^2-5x+6)\cos{2x}+(5x^2-3x-1)\sin{2x} \right)$}$$
+\end{document}

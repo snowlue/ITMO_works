@@ -1,0 +1,323 @@
+\documentclass[a3paper,14pt]{extarticle}
+\usepackage[utf8]{inputenc}
+\usepackage{extsizes}
+\usepackage[T2A]{fontenc}
+\usepackage[english,russian]{babel} 
+\usepackage[left=15mm, top=25mm, right=15mm, bottom=25mm, nohead, nofoot]{geometry}
+\usepackage{amsmath,amsfonts,amssymb} % математический пакет
+\usepackage{tikz} % графика
+\usepackage{fancybox,fancyhdr} % хедер и футер
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Практическая линейная алгебра}
+\fancyhead[R]{Овчинников Павел}
+\fancyfoot[C]{\thepage}
+\setcounter{page}{1}
+\headsep=10mm 
+\usepackage{hyperref}
+\usepackage{cancel}
+\usepackage{nicefrac}
+
+\newlength{\tempheight}
+\newcommand{\Let}[0]{
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.4\pgflinewidth}{
+\tikz[baseline=0.5ex,line cap=round,line join=round] \draw (0,0) --++ (0.3em,0) --++ (0,2.3ex) --++ (-0.3em,0);
+}}}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {$#1$};}}
+\newcommand{\at}{\biggr\rvert}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+
+\newcommand\NB{\textbf{N\kern-0.32em\textcolor{red}{B}}}
+
+\begin{document}
+\section*{\centering Дифференциальные уравнения}
+\subsection*{\centering Задание №1}
+Составим характеристическое уравнение и найдём его корни в $\lambda$:
+$$2\lambda^5 + 5\lambda^3 + 2\lambda = 0$$
+$$\lambda(2\lambda^4+5\lambda^2 + 2) = 0\ \ \at\ t = \lambda^2$$
+$$\left[\begin{array}{l}
+    \lambda_1 = 0 \\
+    2t^2+5t+2 = 0
+\end{array}\right. \quad \Leftrightarrow \quad \left[\begin{array}{l}
+    \lambda_1 = 0 \\
+    t_1 = -2 \\
+    t_2=\nicefrac{-1}{2}
+\end{array}\right. \quad \Leftrightarrow \quad \left[\begin{array}{l}
+    \lambda_1 = 0 \\
+    \lambda^2 = -2 \\
+    \lambda^2=\nicefrac{-1}{2}
+\end{array}\right. \quad \Leftrightarrow \quad \left[\begin{array}{l}
+    \lambda_1 = 0 \\
+    \lambda_{2,3} = \pm \sqrt{2}i \\
+    \lambda_{4,5}=\pm \nicefrac{\sqrt{2}}{2}i
+\end{array}\right.$$
+Теперь, зная моды, из которых составляются решения дифференциальных уравнений, составим линейные комбинации мод, которые и станут общим решением для заданного дифф.уравнения:
+$$\squared{y(t) = c_1+c_2\sin\sqrt{2}t + c_3\cos\sqrt{2}t+c_4\sin\dfrac{\sqrt{2}}{2}t+c_5\cos\dfrac{\sqrt{2}}{2}t}$$
+\subsection*{\centering Задание №2}
+С учётом имеющихся начальных условий дифф.уравнения, найдём его частное решение, уточнив каждую из констант $c$:
+$$\begin{cases}
+    y(0) = c_1 + c_3 + c_5 = 2 \\
+    \dot{y}(0) = \left(\sqrt{2}c_2\cos\sqrt{2}t + \sqrt{2}c_3\sin\sqrt{2}t + \frac{\sqrt{2}}{2}c_4\cos\frac{\sqrt{2}}{2}t + \frac{\sqrt{2}}{2}c_5\sin\frac{\sqrt{2}}{2}t\right)\at_{t=0}\shiftright{1em}{0em}{=}\sqrt{2}c_2+\frac{\sqrt{2}}{2}c_4=0 \\
+    \ddot{y}(0) = \left(2c_2\sin\sqrt{2}t + 2c_3\cos\sqrt{2}t + \frac{c_4}{2}\sin\frac{\sqrt{2}}{2}t + \frac{c_5}{2}\cos\frac{\sqrt{2}}{2}t\right)\at_{t=0}\shiftright{1em}{0em}{=}2c_3+\frac{c_5}{2} = 2 \\
+    \dddot{y}(0) = \left(2\sqrt{2}c_2\cos\sqrt{2}t + 2\sqrt{2}c_3\sin\sqrt{2}t + \frac{\sqrt{2}}{4}c_4\cos\frac{\sqrt{2}}{2}t + \frac{\sqrt{2}}{4}c_5\sin\frac{\sqrt{2}}{2}t\right)\at_{t=0}\shiftright{1em}{0em}{=}2\sqrt{2}c_2+\frac{\sqrt{2}}{4}c_4=0 \\
+    y^{(4)}(0) = \left(4c_2\sin\sqrt{2}t + 4c_3\cos\sqrt{2}t + \frac{c_4}{4}\sin\frac{\sqrt{2}}{2}t + \frac{c_5}{4}\cos\frac{\sqrt{2}}{2}t\right)\at_{t=0}\shiftright{1em}{0em}{=} 4c_3 + \frac{c_5}{4} = 2
+\end{cases}$$
+Получаем обычную систему линейных уравнений, которую решаем как всегда:
+$$\begin{cases}
+    c_1 + c_3 + c_5 = 2 \\
+    \sqrt{2}c_2+\nicefrac{\sqrt{2}}{2}c_4=0 \\
+    2c_3+\nicefrac{c_5}{2} = 2 \\
+    2\sqrt{2}c_2+\nicefrac{\sqrt{2}}{4}c_4=0 \\
+    4c_3 + \nicefrac{c_5}{4} = 2
+\end{cases} \quad \Leftrightarrow \quad \begin{cases}
+    c_1 + c_3 + c_5 = 2 \\
+    2\sqrt{2}c_2+\sqrt{2}c_4=0 \\
+    4c_3+c_5 = 4 \\
+    8\sqrt{2}c_2+\sqrt{2}c_4=0 \\
+    16c_3 + c_5 = 8
+\end{cases} \Rightarrow \left[\begin{array}{ccccc|c}
+    1 & 0 & 1 & 0 & 1 & 2 \\
+    0 & 2\sqrt{2} & 0 & \sqrt{2} & 0 & 0 \\
+    0 & 0 & 4 & 0 & 1 & 4 \\
+    0 & 8\sqrt{2} & 0 & \sqrt{2} & 0 & 0 \\
+    0 & 0 & 16 & 0 & 1 & 8    
+\end{array}\right] \Leftrightarrow \left[\begin{array}{ccccc|c}
+    1 & 0 & 1 & 0 & 1 & 2 \\
+    0 & 2\sqrt{2} & 0 & \sqrt{2} & 0 & 0 \\
+    0 & 0 & 4 & 0 & 1 & 4 \\
+    0 & 0 & 0 & 3\sqrt{2} & 0 & 0 \\
+    0 & 0 & 16 & 0 & 1 & 8    
+\end{array}\right] \Leftrightarrow$$
+$$\Leftrightarrow \left[\begin{array}{ccccc|c}
+    1 & 0 & 1 & 0 & 1 & 2 \\
+    0 & 2\sqrt{2} & 0 & \sqrt{2} & 0 & 0 \\
+    0 & 0 & 4 & 0 & 1 & 4 \\
+    0 & 0 & 0 & 3\sqrt{2} & 0 & 0 \\
+    0 & 0 & 0 & 0 & 3 & 8    
+\end{array}\right] \Rightarrow \begin{cases}
+    c_1 = 2 - c_3 - c_5 \\
+    2\sqrt{2}c_2 = -\sqrt{2}c_4 \\
+    c_3 = 1 - \nicefrac{c_5}{4} \\
+    3\sqrt{2}c_4 = 0 \\
+    c_5 = \nicefrac{8}{3}
+\end{cases} \Leftrightarrow \begin{cases}
+    c_1 = -1 \\ c_2 = 0 \\ c_3 = \nicefrac{1}{3} \\ c_4 = 0 \\ c_5 = \nicefrac{8}{3}
+\end{cases}$$
+Итак, частное решение этого дифф.уравнения для заданных начальных условий: \squared{y(t) = -1 + \frac{1}{3}\cos\sqrt{2}t+\frac{8}{3}\cos\frac{\sqrt{2}}{2}t}
+\pagebreak
+\section*{\centering Непрерывные системы дифференциальных уравнений}
+\subsection*{\centering Задание №1}
+Перед нами система простейших дифф.уравнений вида $\dot{x} = Ax$, который решается так:
+$$\dot{x} = Ax \Leftrightarrow \frac{dx}{dt} = Ax \Rightarrow \frac{dx}{x} = A\,dt \Rightarrow \int\frac{dx}{x} = \int A\,dt \Rightarrow \ln x = At \Rightarrow x = e^{At}$$
+Из получившего решения мы делаем вывод, что нам необходимо вычислить матричную экспоненту. Для этого необходимо получить спектральное разложение матрицы. Подробный процесс будет описан в задании №2, а сейчас рекомендую просто принять результат, полученный <<путём нетрудных вычислений>> ;)
+$$\begin{bmatrix}
+    x_1(t) \\ x_2(t) \\ x_3(t)
+\end{bmatrix} = \begin{bmatrix}
+    -8 & 0 & 1 \\ 0 & -2 & 0 \\ -4 & 0 & 0
+\end{bmatrix} e^{\left[\begin{smallmatrix}
+    0 & 1 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0
+\end{smallmatrix}\right]t} \begin{bmatrix}
+    0 & 0 & \nicefrac{-1}{4} \\ 0 & \nicefrac{-1}{2} & 0 \\ 1 & 0 & -2
+\end{bmatrix}\begin{bmatrix}
+    x_1(0) \\ x_2(0) \\ x_3(0)
+\end{bmatrix}$$
+$$\begin{bmatrix}
+    x_1(t) \\ x_2(t) \\ x_3(t)
+\end{bmatrix} = \begin{bmatrix}
+    -8 & 0 & 1 \\ 0 & -2 & 0 \\ -4 & 0 & 0
+\end{bmatrix} \begin{bmatrix}
+    e^{0t} & te^{0t} & \frac{t^2}{2}e^{0t} \\ 0 & e^{0t} & te^{0t} \\ 0 & 0 & e^{0t}
+\end{bmatrix} \begin{bmatrix}
+    0 & 0 & \nicefrac{-1}{4} \\ 0 & \nicefrac{-1}{2} & 0 \\ 1 & 0 & -2
+\end{bmatrix}\begin{bmatrix}
+    x_1(0) \\ x_2(0) \\ x_3(0)
+\end{bmatrix}$$
+$$\begin{bmatrix}
+    x_1(t) \\ x_2(t) \\ x_3(t)
+\end{bmatrix} = \begin{bmatrix}
+    -8 & 0 & 1 \\ 0 & -2 & 0 \\ -4 & 0 & 0
+\end{bmatrix} \begin{bmatrix}
+    1 & t & \frac{t^2}{2} \\ 0 & 1 & t \\ 0 & 0 & 1
+\end{bmatrix} \begin{bmatrix}
+    0 & 0 & \nicefrac{-1}{4} \\ 0 & \nicefrac{-1}{2} & 0 \\ 1 & 0 & -2
+\end{bmatrix}\begin{bmatrix}
+    x_1(0) \\ x_2(0) \\ x_3(0)
+\end{bmatrix}$$
+$$\begin{bmatrix}
+    x_1(t) \\ x_2(t) \\ x_3(t)
+\end{bmatrix} = \begin{bmatrix}
+    1-4t^2 & 4t & 8t^2 \\ -2t & 1 & 4t \\ -2t^2 & 2t & 4t^2+1
+\end{bmatrix}\begin{bmatrix}
+    x_1(0) \\ x_2(0) \\ x_3(0)
+\end{bmatrix} = \begin{bmatrix}
+    (1 - 4t^2)x_1(0) + 4tx_2(0) + 8t^2x_3(0) \\
+    -2tx_1(0)+x_2(0)+4tx_3(0) \\
+    -2t^2x_1(0)+2tx_2(0)+(4t^2+1)x_3(0)
+\end{bmatrix}$$
+\subsection*{\centering Задание №2}
+Для того, чтобы найти собственные вектора и числа матрицы, необходимо вычислить корни её характеристического полинома:
+$$\begin{vmatrix}
+    -\lambda & 4 & 0 \\ -2 & -\lambda & 4 \\ 0 & 2 & -\lambda
+\end{vmatrix} = -\lambda^3 + \cancel{8\lambda} - \cancel{8\lambda} = 0 \ \Rightarrow\ \lambda_{1,2,3} = 0$$
+Итак, у нас одно собственное число $0$ с алгебраическом кратностью $0$. Теперь найдём собственные векторы к этому числу:
+$$\begin{bmatrix}
+    0 & 4 & 0 \\ -2 & 0 & 4 \\ 0 & 2 & 0
+\end{bmatrix}\begin{bmatrix}
+    x \\ y \\ z
+\end{bmatrix} = \begin{bmatrix}
+    0 \\ 0 \\ 0
+\end{bmatrix} \Rightarrow \begin{cases}
+    4y = 0 \\
+    -2x + 4z = 0 \\
+    2y = 0
+\end{cases} \Leftrightarrow \begin{cases}
+    x = 2z \\
+    y = 0 \\
+    z \in \mathbb{R}
+\end{cases} \Rightarrow v_1 = \begin{pmatrix}
+    2 \\ 0 \\ 1
+\end{pmatrix}$$
+\NB: Заметим, что мы заодно нашли и ядро матрицы, так как ядро --- множество векторов, которое обнуляется под действием матрицы.\\
+Нам необходимо найти ещё два присоединённых вектора к собсвтенному, чтобы получить базис собственных векторов, в котором мы и строили жорданово разложение матрицы выше, в задании №1.
+$$\begin{bmatrix}
+    0 & 4 & 0 \\ -2 & 0 & 4 \\ 0 & 2 & 0
+\end{bmatrix}\begin{bmatrix}
+    x \\ y \\ z
+\end{bmatrix} = \begin{bmatrix}
+    2 \\ 0 \\ 1
+\end{bmatrix} \Rightarrow \begin{cases}
+    4y = 2 \\
+    -2x + 4z = 0 \\
+    2y = 1
+\end{cases} \Leftrightarrow \begin{cases}
+    x = 2z \\
+    y = \nicefrac{1}{2} \\
+    z \in \mathbb{R}
+\end{cases} \Rightarrow u_1 = \begin{pmatrix}
+    0 \\ \nicefrac{1}{2} \\ 0
+\end{pmatrix}$$
+$$\begin{bmatrix}
+    0 & 4 & 0 \\ -2 & 0 & 4 \\ 0 & 2 & 0
+\end{bmatrix}\begin{bmatrix}
+    x \\ y \\ z
+\end{bmatrix} = \begin{bmatrix}
+    0 \\ \nicefrac{1}{2} \\ 0
+\end{bmatrix} \Rightarrow \begin{cases}
+    4y = 0 \\
+    -2x + 4z = \nicefrac{1}{2} \\
+    2y = 0
+\end{cases} \Leftrightarrow \begin{cases}
+    x = 2z - \nicefrac{1}{4} \\
+    y = 0 \\
+    z \in \mathbb{R}
+\end{cases} \Rightarrow u_2 = \begin{pmatrix}
+    -\nicefrac{1}{4} \\ 0 \\ 0
+\end{pmatrix}$$
+Может показаться, что здесь другие собственные и присоединённые вектора, но это не так --- числа в собственных векторах, как ни странно, зависят от того, какое частное решение системы мы выбираем на каждом шаге.\\[1em] 
+Ввиду того, что все собственные числа матрицы равны нулю, мы можем смело заявить, что \squared{\text{система неустойчива.}} Это в том числе можно заметить, если устремить $t \rightarrow \infty$, и тогда $x_n(t)$ в найденном в задании №1 решении будут также увеличиваться.\pagebreak
+\section*{\centering Дискретные системы дифференциальных уравнений}
+\subsection*{\centering Задание №1}
+Найдём общее решение такой системы. Здесь так же результат $A^k$ предоставится как есть, а процесс получения разложения, необходимого для возведения матрицы $A$ в степень $k$, будет описан в задании №2:
+$$\begin{bmatrix}
+    x_1(k) \\ x_2(k)
+\end{bmatrix} = \begin{bmatrix}
+    i & -i \\ 1 & 1 
+\end{bmatrix}\begin{bmatrix}
+    \nicefrac{\sqrt{2}}{2} - \nicefrac{\sqrt{2}i}{2} & 0 \\ 0 & \nicefrac{\sqrt{2}}{2} + \nicefrac{\sqrt{2}i}{2}
+\end{bmatrix}^k\begin{bmatrix}
+    \nicefrac{-i}{2} & \nicefrac{1}{2} \\ \nicefrac{i}{2} & \nicefrac{1}{2}
+\end{bmatrix}\begin{bmatrix}
+    x_1(0) \\ x_2(0)
+\end{bmatrix}$$
+$$\begin{bmatrix}
+    x_1(k) \\ x_2(k)
+\end{bmatrix} = \begin{bmatrix}
+    i & -i \\ 1 & 1 
+\end{bmatrix}\begin{bmatrix}
+    \cos{\nicefrac{\pi}{4}} & \sin{\nicefrac{\pi}{4}} \\ -\sin{\nicefrac{\pi}{4}} & \cos{\nicefrac{\pi}{4}}
+\end{bmatrix}^k\begin{bmatrix}
+    \nicefrac{-i}{2} & \nicefrac{1}{2} \\ \nicefrac{i}{2} & \nicefrac{1}{2}
+\end{bmatrix}\begin{bmatrix}
+    x_1(0) \\ x_2(0)
+\end{bmatrix}$$
+$$\begin{bmatrix}
+    x_1(k) \\ x_2(k)
+\end{bmatrix} = \begin{bmatrix}
+    i & -i \\ 1 & 1 
+\end{bmatrix}\begin{bmatrix}
+    \cos{\nicefrac{\pi k}{4}} & \sin{\nicefrac{\pi k}{4}} \\ -\sin{\nicefrac{\pi k}{4}} & \cos{\nicefrac{\pi k}{4}}
+\end{bmatrix}\begin{bmatrix}
+    \nicefrac{-i}{2} & \nicefrac{1}{2} \\ \nicefrac{i}{2} & \nicefrac{1}{2}
+\end{bmatrix}\begin{bmatrix}
+    x_1(0) \\ x_2(0)
+\end{bmatrix}$$
+$$\begin{bmatrix}
+    x_1(k) \\ x_2(k)
+\end{bmatrix} =\begin{bmatrix}
+    \cos{\nicefrac{\pi k}{4}} & i\sin{\nicefrac{\pi k}{4}} \\ i\sin{\nicefrac{\pi k}{4}} & \cos{\nicefrac{\pi k}{4}}
+\end{bmatrix}\begin{bmatrix}
+    x_1(0) \\ x_2(0)
+\end{bmatrix}$$
+$$\begin{bmatrix}
+    x_1(k) \\ x_2(k)
+\end{bmatrix} = \squared{\begin{bmatrix}
+    \cos{\nicefrac{\pi k}{4}}\cdot x_1(0)+i\sin{\nicefrac{\pi k}{4}}\cdot x_2(0) \\ i\sin{\nicefrac{\pi k}{4}}\cdot x_1(0) + \cos{\nicefrac{\pi k}{4}}\cdot x_2(0)
+\end{bmatrix}}$$
+\subsection*{\centering Задание №2}
+Вычислим корни характеристического полинома матрицы, чтобы найти её собственные числа:
+$$\frac{\sqrt{2}}{2}\begin{vmatrix}
+    1-\lambda & 1 \\ -1 & 1-\lambda
+\end{vmatrix} = (\lambda^2 -2\lambda + 2) = 0 \Rightarrow \lambda_{1,2} = \frac{\sqrt{2}}{2} \pm \frac{i\sqrt{2}}{2}$$
+Перед нами два комплексно сопряжённых собственных числа. Найдём для каждого из них собственный вектор:
+$$\begin{bmatrix}
+    \nicefrac{\sqrt{2}}{2} & \nicefrac{\sqrt{2}}{2} \\ -\nicefrac{\sqrt{2}}{2} & \nicefrac{\sqrt{2}}{2}
+\end{bmatrix}\begin{bmatrix}
+    x \\ y
+\end{bmatrix} = \begin{bmatrix}
+    \left(\nicefrac{\sqrt{2}}{2} + \nicefrac{i\sqrt{2}}{2}\right)x \\ \left(\nicefrac{\sqrt{2}}{2} + \nicefrac{i\sqrt{2}}{2}\right)y
+\end{bmatrix} \ \Rightarrow\ \begin{bmatrix}
+    \nicefrac{\sqrt{2}}{2}x + \nicefrac{\sqrt{2}}{2}y \\ \nicefrac{\sqrt{2}}{2}y -\nicefrac{\sqrt{2}}{2}x
+\end{bmatrix} = \begin{bmatrix}
+    \nicefrac{\sqrt{2}}{2}x + \nicefrac{i\sqrt{2}}{2}x \\ \nicefrac{\sqrt{2}}{2}y + \nicefrac{i\sqrt{2}}{2}y
+\end{bmatrix} \ \Rightarrow\ \begin{cases}
+    x = -iy \\
+    y = ix
+\end{cases} \ \Rightarrow\ v_1=\begin{pmatrix}
+    -i \\ 1
+\end{pmatrix}$$
+$$\begin{bmatrix}
+    \nicefrac{\sqrt{2}}{2} & \nicefrac{\sqrt{2}}{2} \\ -\nicefrac{\sqrt{2}}{2} & \nicefrac{\sqrt{2}}{2}
+\end{bmatrix}\begin{bmatrix}
+    x \\ y
+\end{bmatrix} = \begin{bmatrix}
+    \left(\nicefrac{\sqrt{2}}{2} - \nicefrac{i\sqrt{2}}{2}\right)x \\ \left(\nicefrac{\sqrt{2}}{2} - \nicefrac{i\sqrt{2}}{2}\right)y
+\end{bmatrix} \ \Rightarrow\ \begin{bmatrix}
+    \nicefrac{\sqrt{2}}{2}x + \nicefrac{\sqrt{2}}{2}y \\ \nicefrac{\sqrt{2}}{2}y -\nicefrac{\sqrt{2}}{2}x
+\end{bmatrix} = \begin{bmatrix}
+    \nicefrac{\sqrt{2}}{2}x - \nicefrac{i\sqrt{2}}{2}x \\ \nicefrac{\sqrt{2}}{2}y - \nicefrac{i\sqrt{2}}{2}y
+\end{bmatrix} \ \Rightarrow\ \begin{cases}
+    x = iy \\
+    y = -ix
+\end{cases} \ \Rightarrow\ v_2=\begin{pmatrix}
+    i \\ 1
+\end{pmatrix}$$
+Теперь найдём ядро матрицы:
+$$\begin{bmatrix}
+    \nicefrac{\sqrt{2}}{2} & \nicefrac{\sqrt{2}}{2} \\ -\nicefrac{\sqrt{2}}{2} & \nicefrac{\sqrt{2}}{2}
+\end{bmatrix}\begin{bmatrix}
+    x \\ y
+\end{bmatrix} = \begin{bmatrix}
+    0 \\ 0
+\end{bmatrix} \ \Rightarrow\ \begin{bmatrix}
+    \nicefrac{\sqrt{2}}{2}x + \nicefrac{\sqrt{2}}{2}y \\ \nicefrac{\sqrt{2}}{2}y -\nicefrac{\sqrt{2}}{2}x
+\end{bmatrix} = \begin{bmatrix}
+    0 \\ 0
+\end{bmatrix} \ \Rightarrow\ \begin{cases}
+    x = -y \\
+    x = y
+\end{cases} \ \Rightarrow\ \text{Nullspace A} = \left\{\begin{pmatrix}
+    0 \\ 0
+\end{pmatrix}\right\}$$
+Для дискретных систем асимптотическая устойчивость определяется через собственные числа, если $|\lambda| < 1$, но если $|\lambda| = 1$, то система устойчива не асимптотически. Для комплексных собственных чисел $\lambda = a \pm bi$ свойство модифицируется --- система асимптотически устойчива, если $\sqrt{a^2 + b^2} < 1$, и устойчива не асимптотически, если аналогично $\sqrt{a^2 + b^2} = 1$. В нашем случае $\sqrt{\left(\frac{\sqrt{2}}{2}\right)^2 + \left(\frac{\sqrt{2}}{2}\right)^2} = 1 \Rightarrow$ \squared{\text{система устойчива не асимптотически.}}
+\end{document}
