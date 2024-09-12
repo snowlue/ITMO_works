@@ -1,0 +1,287 @@
+\documentclass[a4paper]{article}
+\usepackage{cmap}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[english,russian]{babel} 
+\usepackage[left=15mm, top=15mm, right=15mm, bottom=42mm, nohead, nofoot]{geometry}
+\usepackage{blindtext}  % рыба-текст
+\usepackage{graphicx}  % изобржаения
+\usepackage{float} % плавающие объекты
+\usepackage{wrapfig}  % изобржаения
+\usepackage{tikz} % графика
+\usepackage{mdframed} % рамки
+\usepackage{xcolor} % определение цветов
+\usepackage{nicefrac} % красивые дроби
+\usepackage{cancel} % сокращение
+\usepackage{amsmath,amsfonts,amssymb} % математический пакет
+\usepackage{hyperref}  % гиперссылки
+\usepackage{fancybox,fancyhdr} % хедер и футер
+\usepackage{listings} % код
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Задачи №2025, 1296, 1604}
+\fancyhead[R]{Овчинников П.А., АиСД 3.3}
+\fancyfoot[C]{\thepage}
+\headsep=8mm
+\footskip=20mm
+
+\definecolor{urlcolor}{HTML}{3454D1}
+\definecolor{linkcolor}{HTML}{3454D1}
+\hypersetup{pdfstartview=FitH, linkcolor=linkcolor, urlcolor=urlcolor, colorlinks=true}
+
+\definecolor{strings}{rgb}{0,0.6,0}
+\definecolor{comments}{rgb}{0,0.3,0}
+\definecolor{numbers}{rgb}{0.5,0.5,0.5}
+\definecolor{keywords}{rgb}{0.09,0.61,0.95}
+\definecolor{background}{rgb}{0.97,0.97,0.97}
+\lstdefinestyle{codestyle}{
+    backgroundcolor=\color{background},
+    commentstyle=\color{comments},
+    keywordstyle=\color{keywords},
+    stringstyle=\color{strings},
+    numberstyle=\tiny\color{numbers},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    inputencoding=utf8,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    extendedchars=true,
+    literate=
+    {а}{{\cyra}}1
+    {б}{{\cyrb}}1
+    {в}{{\cyrv}}1
+    {г}{{\cyrg}}1
+    {д}{{\cyrd}}1
+    {е}{{\cyre}}1
+    {ж}{{\cyrzh}}1
+    {з}{{\cyrz}}1
+    {и}{{\cyri}}1
+    {й}{{\cyrishrt}}1
+    {к}{{\cyrk}}1
+    {л}{{\cyrl}}1
+    {м}{{\cyrm}}1
+    {н}{{\cyrn}}1
+    {о}{{\cyro}}1
+    {п}{{\cyrp}}1
+    {р}{{\cyrr}}1
+    {с}{{\cyrs}}1
+    {т}{{\cyrt}}1
+    {у}{{\cyru}}1
+    {ф}{{\cyrf}}1
+    {х}{{\cyrh}}1
+    {ц}{{\cyrc}}1
+    {ч}{{\cyrch}}1
+    {ш}{{\cyrsh}}1
+    {щ}{{\cyrshch}}1
+    {ъ}{{\cyrhrdsn}}1
+    {ы}{{\cyrery}}1
+    {ь}{{\cyrsftsn}}1
+    {э}{{\cyrerev}}1
+    {ю}{{\cyryu}}1
+    {я}{{\cyrya}}1
+    {А}{{\CYRA}}1
+    {Б}{{\CYRB}}1
+    {В}{{\CYRV}}1
+    {Г}{{\CYRG}}1
+    {Д}{{\CYR96}}1
+    {Е}{{\CYRE}}1
+    {Ж}{{\CYRZH}}1
+    {З}{{\CYRZ}}1
+    {И}{{\CYRI}}1
+    {Й}{{\CYRISHRT}}1
+    {К}{{\CYRK}}1
+    {Л}{{\CYRL}}1
+    {М}{{\CYRM}}1
+    {Н}{{\CYRN}}1
+    {О}{{\CYRO}}1
+    {П}{{\CYRP}}1
+    {Р}{{\CYRR}}1
+    {С}{{\CYRS}}1
+    {Т}{{\CYRT}}1
+    {У}{{\CYRU}}1
+    {Ф}{{\CYRF}}1
+    {Х}{{\CYRH}}1
+    {Ц}{{\CYRC}}1
+    {Ч}{{\CYRCH}}1
+    {Ш}{{\CYRSH}}1
+    {Щ}{{\CYRSHCH}}1
+    {Ъ}{{\CYRHRDSN}}1
+    {Ы}{{\CYRERY}}1
+    {Ь}{{\CYRSFTSN}}1
+    {Э}{{\CYREREV}}1
+    {Ю}{{\CYRYU}}1
+    {Я}{{\CYRYA}}1
+}
+
+\lstset{style=codestyle}
+
+\addto\captionsrussian{
+  \renewcommand{\contentsname}
+    {\centering Содержание}
+}
+\newcommand{\addsection}[1]{
+    \phantomsection
+    \addcontentsline{toc}{section}{#1}
+    \section*{\centering #1}
+}
+\newcommand{\addsubsection}[1]{
+    \phantomsection
+    \addcontentsline{toc}{subsection}{#1}
+    \subsection*{\centering #1}
+}
+\newcommand{\addsubsubsection}[1]{
+    \phantomsection
+    \addcontentsline{toc}{subsubsection}{#1}
+    \subsubsection*{\centering #1}
+}
+
+\newmdenv[
+  leftmargin = 0.5em,
+  skipabove = 0.5em,
+  skipbelow = 0.5em,
+  linewidth = 1pt,
+  rightline = false,
+  topline = false,
+  bottomline = false
+]{quotebox}
+
+\newlength{\tempheight}
+\newcommand{\Let}{
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.4\pgflinewidth}{
+\tikz[baseline=0.5ex,line cap=round,line join=round] \draw (0,0) --++ (0.3em,0) --++ (0,2.3ex) --++ (-0.3em,0);
+}}}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand*\msquared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {$\displaystyle #1$};}}
+\newcommand{\at}{\biggr\rvert}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+\newcommand{\e}{\;\text{e}}
+\let\oldint\int
+\def\int{\oldint\limits}
+\DeclareRobustCommand{\divby}{%
+  \mathrel{\vbox{\baselineskip.65ex\lineskiplimit0pt\hbox{.}\hbox{.}\hbox{.}}}%
+}
+
+\newcommand\NB{\textbf{N\kern-0.32em\textcolor{red}{B}}}
+
+\begin{document}
+\addsection{\href{https://acm.timus.ru/problem.aspx?space=1&num=2025}{Задача №2025. Стенка на стенку}}
+Бокс, каратэ, самбо… Классические боевые единоборства пресытили аудиторию. Поэтому известный спортивный канал запускает новый формат соревнований, основанный на традиционной русской забаве — боях стенка на стенку. В соревновании могут участвовать от двух до k команд, каждая из которых будет соперничать с остальными. Всего в соревновании примут участие n бойцов. Перед началом боя они должны разделиться на команды, каждый боец должен войти ровно в одну команду. За время боя два бойца сразятся, если они состоят в разных командах. Организаторы считают, что популярность соревнований будет тем выше, чем больше будет количество схваток между бойцами. Помогите распределить бойцов по командам так, чтобы максимизировать количество схваток между бойцами, и выведите это количество.\\[1em]
+\textbf{Исходные данные:}
+\begin{quotebox}
+    В первой строке дано количество тестов $T$ $(1 \leq T \leq 10)$. В следующих $T$ строках перечислены тесты. В каждой из них записаны целые числа $n$ и $k$ через пробел $(2 \leq k \leq n \leq 10^4)$.
+\end{quotebox}
+\textbf{Результат:}
+\begin{quotebox}
+    Для каждого теста в отдельной строке выведите одно целое число --- ответ на задачу.
+\end{quotebox}
+\addsubsection{Рабочий код}
+\begin{lstlisting}[language=python]
+s = int(input())
+
+for i in range(s):
+    n, k = map(int, input().split())
+    a = [0] * k
+
+    for j in range(k):
+        a[j] = n // k
+
+    for j in range(n % k):
+        a[j] += 1
+
+    res = 0
+    for j in range(k-1):
+        res += a[j] * (n - a[j])
+        n -= a[j]
+
+    print(res)
+\end{lstlisting}
+\addsubsection{Объяснение алгоритма}
+Для начала нам нужно разделить наших бойцов по командам как можно более
+равномерно, иначе количество боев окажется меньшим.
+Далее достаточно лишь вычислить сумму ряда:
+$$t^k + t^{k-1} + t^{k-2}+\dots+t^0$$
+
+\newpage
+\addsection{\href{https://acm.timus.ru/problem.aspx?space=1&num=1296}{Задача №1296. Гиперпереход}}
+Гиперпереход, открытый ещё в начале XXI-го века, и сейчас остаётся основным способом перемещения на расстояния до сотен тысяч парсеков. Но совсем недавно физиками открыто новое явление. Оказывается, длительностью альфа-фазы перехода можно легко управлять. Корабль, находящийся в альфа-фазе перехода, накапливает гравитационный потенциал. Чем больше накопленный гравитационный потенциал корабля, тем меньше энергии потребуется ему на прыжок сквозь пространство. Ваша цель — написать программу, которая позволит кораблю за счёт выбора времени начала альфа-фазы и её длительности накопить максимальный гравитационный потенциал.\\[0.5em]
+В самой грубой модели грави-интенсивность — это последовательность целых чисел $p_i$. Будем считать, что если альфа-фаза началась в момент $i$ и закончилась в момент $j$, то накопленный в течение альфа-фазы потенциал — это сумма всех чисел, стоящих в последовательности на местах от $i$ до $j$.\\[1em]
+\textbf{Исходные данные:}
+\begin{quotebox}
+    В первой строке записано целое число $N$ --- длина последовательности, отвечающей за грави-интенсивность $(0 \leq N \leq 6\cdot10^4)$. Далее идут $N$ строк, в каждой записано целое число $p_i (-3\cdot10^4\leq p_i \leq 3\cdot10^4)$.
+\end{quotebox}
+\textbf{Результат:}
+\begin{quotebox}
+    Выведите максимальный гравитационный потенциал, который может накопить корабль в альфа-фазе прыжка. Считается, что потенциал корабля в начальный момент времени равен нулю.
+\end{quotebox}
+\addsubsection{Рабочий код}
+\begin{lstlisting}[language=python]
+count, maximal = 0, 0
+
+s = int(input())
+    
+for i in range(s):
+    elem = int(input())
+    if count + elem > 0:
+        count += elem
+    else:
+        count = 0
+    if count > maximal:
+        maximal = count
+
+print(maximal)
+\end{lstlisting}
+\addsubsection{Объяснение алгоритма}
+По сути нашей задачей является нахождение последовательности с наибольшей
+суммой. Для наилучшего решения нам нужно учитывать все числа, которые не обращают сумму в отрицательное значение. Если же найдется такое число, которое сделает сумму
+последовательности отрицательной, то начинаем счет заново. На каждом шаге нам
+нужно запоминать максимальную сумму.
+
+\newpage
+\addsection{\href{https://acm.timus.ru/problem.aspx?space=1&num=1604}{Задача №1604. В Стране Дураков}}
+Главный бульдог-полицейский Страны Дураков решил ввести ограничение скоростного режима на автомобильной трассе, ведущей от Поля Чудес к пруду Черепахи Тортиллы. Для этого он заказал у Папы Карло $n$ знаков ограничения скорости. Папа Карло слабо разбирался в дорожном движении и поэтому изготовил знаки с разными ограничениями на скорость: 49 км/ч, 34 км/ч, 42 км/ч, и т.д. Всего получилось $k$ различных ограничений: $n_1$ знаков с одним ограничением, $n_2$ знаков со вторым ограничением, и т.д. $(n_1 + \dots + n_k = n)$.\\[0.5em]
+Бульдог-полицейский ничуть не расстроился, получив такие знаки, напротив, он решил извлечь из этого экономическую выгоду. Дело в том, что по Правилам дорожного движения Страны Дураков ограничение на скорость действует вплоть до следующего знака. Если на знаке написано число 60, это означает, что участок от данного знака до следующего нужно проехать ровно со скоростью 60 километров в час — не больше и не меньше. Бульдог распорядился расставить знаки так, чтобы обогатившимся на Поле Чудес автолюбителям во время своего движения по трассе приходилось как можно больше раз менять скорость. Для этого нужно расставить имеющиеся знаки в правильном порядке. Если Вы поможете бульдогу это сделать, то он готов будет поделиться с Вами частью своих доходов.\\[1em]
+\textbf{Исходные данные:}
+\begin{quotebox}
+    В первой строке дано число $k$ — количество различных типов знаков с ограничением скорости $(1 \leq k \leq 10000)$. Во второй строке через пробел перечислены целые положительные числа $n_1,\dots, n_k$. Сумма всех $n_i$ не превосходит $10000$.
+\end{quotebox}
+\textbf{Результат:}
+\begin{quotebox}
+    Выведите $n$ целых чисел в пределах от $1$ до $k$ — порядок, в котором нужно расставить по трассе имеющиеся знаки. Вне зависимости от того, какой знак стоит первым, считается, что, проезжая его, водитель меняет скорость, так как до этого ограничения не действовали. Если задача имеет несколько решений, выведите любое.
+\end{quotebox}
+\addsubsection{Рабочий код}
+\begin{lstlisting}[language=python]
+import heapq
+
+k = int(input())
+a = []
+if k == 1:
+    temp = input().split()
+    print("1 " * int(temp[0]))
+    exit()
+
+temp = input().split()
+for i in range(k):
+    heapq.heappush(a, (-int(temp[i]), i + 1))
+while all[0][0] != 0:
+    first = heapq.heappop(a)
+    second = heapq.heappop(a)
+    print(first[1], end=" ")
+    first = (first[0] + 1, first[1])
+    if second[0] != 0:
+        print(second[1], end=" ")
+        second = (second[0] + 1, second[1])
+    heapq.heappush(a, first)
+    heapq.heappush(a, second)
+\end{lstlisting}
+\addsubsection{Объяснение алгоритма}
+По приоритетной очереди распределяем кортежи, рассматриваем каждую пару, выводим числа, уменьшаем количество и возвращаем обратно в приоритетную очередь, пока первое слагаемое не достигнет 0.
+\end{document}

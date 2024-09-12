@@ -1,0 +1,347 @@
+\documentclass[a4paper]{article}
+\usepackage{cmap}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[english,russian]{babel} 
+\usepackage[left=10mm, top=10mm, right=10mm, bottom=20mm, nohead, nofoot]{geometry}
+\usepackage{blindtext}  % рыба-текст
+\usepackage{graphicx}  % изобржаения
+\usepackage{float} % плавающие объекты
+\usepackage{wrapfig}  % изобржаения
+\usepackage{tikz} % графика
+\usepackage{mdframed} % рамки
+\usepackage{xcolor} % определение цветов
+\usepackage{nicefrac} % красивые дроби
+\usepackage{cancel} % сокращение
+\usepackage{multicol}
+\usepackage{amsmath,amsfonts,amssymb} % математический пакет
+\usepackage{hyperref}  % гиперссылки
+\usepackage{fancybox,fancyhdr} % хедер и футер
+\usepackage{listings} % код
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Задачи №1494, 1067, 1322}
+\fancyhead[R]{Овчинников П.А., АиСД 3.3}
+\fancyfoot[C]{\thepage}
+\headsep=8mm
+\footskip=8mm
+\setlength{\parindent}{0mm}
+
+\definecolor{urlcolor}{HTML}{3454D1}
+\definecolor{linkcolor}{HTML}{3454D1}
+\hypersetup{pdfstartview=FitH, linkcolor=linkcolor, urlcolor=urlcolor, colorlinks=true}
+
+\definecolor{strings}{rgb}{0,0.6,0}
+\definecolor{comments}{rgb}{0,0.3,0}
+\definecolor{numbers}{rgb}{0.5,0.5,0.5}
+\definecolor{keywords}{rgb}{0.09,0.61,0.95}
+\definecolor{background}{rgb}{0.97,0.97,0.97}
+\lstdefinestyle{codestyle}{
+    backgroundcolor=\color{background},
+    commentstyle=\color{comments},
+    keywordstyle=\color{keywords},
+    stringstyle=\color{strings},
+    numberstyle=\tiny\color{numbers},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    inputencoding=utf8,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    extendedchars=true,
+    literate=
+    {а}{{\cyra}}1
+    {б}{{\cyrb}}1
+    {в}{{\cyrv}}1
+    {г}{{\cyrg}}1
+    {д}{{\cyrd}}1
+    {е}{{\cyre}}1
+    {ж}{{\cyrzh}}1
+    {з}{{\cyrz}}1
+    {и}{{\cyri}}1
+    {й}{{\cyrishrt}}1
+    {к}{{\cyrk}}1
+    {л}{{\cyrl}}1
+    {м}{{\cyrm}}1
+    {н}{{\cyrn}}1
+    {о}{{\cyro}}1
+    {п}{{\cyrp}}1
+    {р}{{\cyrr}}1
+    {с}{{\cyrs}}1
+    {т}{{\cyrt}}1
+    {у}{{\cyru}}1
+    {ф}{{\cyrf}}1
+    {х}{{\cyrh}}1
+    {ц}{{\cyrc}}1
+    {ч}{{\cyrch}}1
+    {ш}{{\cyrsh}}1
+    {щ}{{\cyrshch}}1
+    {ъ}{{\cyrhrdsn}}1
+    {ы}{{\cyrery}}1
+    {ь}{{\cyrsftsn}}1
+    {э}{{\cyrerev}}1
+    {ю}{{\cyryu}}1
+    {я}{{\cyrya}}1
+    {А}{{\CYRA}}1
+    {Б}{{\CYRB}}1
+    {В}{{\CYRV}}1
+    {Г}{{\CYRG}}1
+    {Д}{{\CYR96}}1
+    {Е}{{\CYRE}}1
+    {Ж}{{\CYRZH}}1
+    {З}{{\CYRZ}}1
+    {И}{{\CYRI}}1
+    {Й}{{\CYRISHRT}}1
+    {К}{{\CYRK}}1
+    {Л}{{\CYRL}}1
+    {М}{{\CYRM}}1
+    {Н}{{\CYRN}}1
+    {О}{{\CYRO}}1
+    {П}{{\CYRP}}1
+    {Р}{{\CYRR}}1
+    {С}{{\CYRS}}1
+    {Т}{{\CYRT}}1
+    {У}{{\CYRU}}1
+    {Ф}{{\CYRF}}1
+    {Х}{{\CYRH}}1
+    {Ц}{{\CYRC}}1
+    {Ч}{{\CYRCH}}1
+    {Ш}{{\CYRSH}}1
+    {Щ}{{\CYRSHCH}}1
+    {Ъ}{{\CYRHRDSN}}1
+    {Ы}{{\CYRERY}}1
+    {Ь}{{\CYRSFTSN}}1
+    {Э}{{\CYREREV}}1
+    {Ю}{{\CYRYU}}1
+    {Я}{{\CYRYA}}1
+}
+
+\lstset{style=codestyle}
+
+\addto\captionsrussian{
+  \renewcommand{\contentsname}
+    {\centering Содержание}
+}
+\newcommand{\addsection}[1]{
+    \phantomsection
+    \addcontentsline{toc}{section}{#1}
+    \section*{\centering #1}
+}
+\newcommand{\addsubsection}[1]{
+    \phantomsection
+    \addcontentsline{toc}{subsection}{#1}
+    \subsection*{\centering #1}
+}
+\newcommand{\addsubsubsection}[1]{
+    \phantomsection
+    \addcontentsline{toc}{subsubsection}{#1}
+    \subsubsection*{\centering #1}
+}
+
+\newmdenv[
+  leftmargin = 0.5em,
+  skipabove = 0.5em,
+  skipbelow = 0.5em,
+  linewidth = 1pt,
+  rightline = false,
+  topline = false,
+  bottomline = false
+]{quotebox}
+
+\newlength{\tempheight}
+\newcommand{\Let}{
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.4\pgflinewidth}{
+\tikz[baseline=0.5ex,line cap=round,line join=round] \draw (0,0) --++ (0.3em,0) --++ (0,2.3ex) --++ (-0.3em,0);
+}}}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand*\msquared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {$\displaystyle #1$};}}
+\newcommand{\at}{\biggr\rvert}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+\newcommand{\e}{\;\text{e}}
+\let\oldint\int
+\def\int{\oldint\limits}
+\DeclareRobustCommand{\divby}{%
+  \mathrel{\vbox{\baselineskip.65ex\lineskiplimit0pt\hbox{.}\hbox{.}\hbox{.}}}%
+}
+
+\newcommand\NB{\textbf{N\kern-0.32em\textcolor{red}{B}}}
+
+\begin{document}
+\addsection{\href{https://acm.timus.ru/problem.aspx?space=1&num=1494}{Задача №1494. Монобильярд}}
+Стол для монобильярда, установленный в игровом доме уездного города $N$, оказался очень прибыльным вложением. До того, как в городе появился небезызвестный господин Чичиков. Раз за разом он выигрывал, и хозяин, подсчитывая убытки, понимал, что дело тут нечисто. Однако уличить подлеца в жульничестве не удавалось до прибытия в город $N$ ревизора из Петербурга.\\[0.5em]
+Правила игры в монобильярд очень просты: нужно последовательно закатить в единственную лузу шары с номерами $1, 2, \dots, N$ (именно в этом порядке). Пока господин Чичиков играл, ревизор несколько раз подходил к столу и забирал из лузы последний закатившийся туда шар. В конце концов, оказалось, что Чичиков закатил в лузу все шары, а ревизор все шары достал и обследовал. Аферист утверждал, что закатил шары в правильном порядке. Хозяин понял, что это его шанс: ревизор должен помнить, в каком порядке он доставал шары. Однако так ли легко будет доказать жульничество?\\[1em]
+\textbf{Исходные данные:}
+\begin{quotebox}
+    В первой строке записано целое число $N$ — количество бильярдных шаров $(1 \leq N \leq 10^5)$. В следующих $N$ строках даны номера этих шаров в том порядке, в котором ревизор забирал их из лузы.
+\end{quotebox}
+\textbf{Результат:}
+\begin{quotebox}
+    Выведите слово «Cheater», если Чичиков не мог закатить все $N$ шаров в правильном порядке. Иначе выведите «Not a proof».
+\end{quotebox}
+\addsubsection{Рабочий код}
+\begin{lstlisting}[language=c++]
+#include <iostream>
+#include <stack>
+using namespace std;
+int main() {
+    int n;
+    int numberBall;
+    int lastBallStack = 1;
+    bool cheaterStatus = false;
+    stack <int> inBall;
+    cin >> n;
+    cin >> numberBall;
+    for (int j=lastBallStack; j<numberBall; ++j) { inBall.push(j); }
+    lastBallStack = numberBall;
+    for (int i=1; i<n; i++) {
+        std::cin >> numberBall;
+        if (inBall.empty() || numberBall > inBall.top()) {
+            for (int j=lastBallStack+1; j<numberBall; ++j) { inBall.push(j); }
+            lastBallStack = numberBall;
+        }
+        else if (numberBall == inBall.top()){ inBall.pop(); }
+        else { cheaterStatus = true; }
+    }
+    if (cheaterStatus) { cout << "Cheater"; }
+    else { cout << "Not a proof"; }
+}
+\end{lstlisting}
+\addsubsection{Объяснение алгоритма}
+Алгоритм предполагает использования стека для отслеживания ожидаемых чисел. Если следующее число больше вершины стека, оно добавляет недостающие числа в стек. Если число совпадает с вершиной стека, оно удаляется. Если число меньше и не совпадает с вершиной, алгоритм определяет, что было совершено «читерство». И в конце, если обнаружено «читерство», выводится «Cheater», иначе --- «Not a proof».
+
+\newpage
+\addsection{\href{https://acm.timus.ru/problem.aspx?space=1&num=1067}{Задача №1067. Структура папок}}
+Хакер Билл случайно потерял всю информацию с жесткого диска своего компьютера, и у него нет резервных копий его содержимого. Но он сожалеет не о потере самих файлов, а о потере очень понятной и удобной структуры папок, которую он создавал и сохранял в течение многих лет работы.\\[0.5em]
+К счастью, у Билла есть несколько копий списков папок с его жесткого диска. С помощью этих списков он смог восстановить полные пути к некоторым папкам (например, «WINNT\textbackslash SYSTEM32\textbackslash CERTSRV\textbackslash CERTCO~1\textbackslash X86»). Он поместил их все в файл, записав каждый найденный путь в отдельную строку.\\[0.5em]
+Напишите программу, которая восстановит структуру папок Билла и выведет ее в виде отформатированного дерева.\\[1em]
+\textbf{Исходные данные:}
+\begin{quotebox}
+    Первая строка содержит целое число $N$ – количество различных путей к папкам $(1 \leq N \leq 500)$. Далее следуют N строк с путями к папкам. Каждый путь занимает одну строку и не содержит пробелов, в том числе, начальных и конечных. Длина каждого пути не превышает 80 символов. Каждый путь встречается в списке один раз и состоит из нескольких имен папок, разделенных обратной косой чертой («\textbackslash»).\\[0.5em]
+    Имя каждой папки состоит из 1-8 заглавных букв, цифр или специальных символов из следующего списка: восклицательный знак, решетка, знак доллара, знак процента, амперсанд, апостроф, открывающаяся и закрывающаяся скобки, знак дефиса, собаки, циркумфлекс, подчеркивание, гравис, открывающаяся и закрывающаяся фигурная скобка и тильда \verb|(«!\#\$\%\&'()-@^_`\{\}~»)|.
+\end{quotebox}
+\textbf{Результат:}
+\begin{quotebox}
+    Выведите отформатированное дерево папок. Каждое имя папки должно быть выведено в отдельной строке, перед ним должно стоять несколько пробелов, указывающих на глубину этой папки в иерархии. Подпапки должны быть перечислены в лексикографическом порядке непосредственно после их родительской папки; перед их именем должно стоять на один пробел больше, чем перед именем их родительской папки. Папки верхнего уровня выводятся без пробелов и также должны быть перечислены в лексикографическом порядке.
+\end{quotebox}
+\addsubsection{Рабочий код}
+\begin{lstlisting}[language=c++]
+#include <iostream>
+#include <string>
+#include <sstream>
+#include <map>
+using namespace std;
+
+class Directory {
+private: map<string, Directory *> root;
+public: Directory() = default;
+
+    Directory *getDir(const string& name) {
+        if (root.find(name) != root.end()) return root[name];
+        else return createDir(name);
+    }
+    Directory *createDir(const string& name) {
+        root[name] = new Directory();
+        return root[name];
+    }
+
+    void printTree(const string& separator = "") {
+        string tabs = " ";
+        tabs += separator;
+        map<string, Directory *> contents(root.begin(), root.end());
+        for (auto it = contents.begin(); it != contents.end(); it++) {
+            cout << separator << it->first << endl;
+            it->second->printTree(tabs);
+        }
+    }
+};
+
+int main() {
+    int n;
+    cin >> n;
+    auto *root = new Directory();
+    for (int i = 0; i < n; i++) {
+        Directory *currentDir = root;
+        string fullPath, name;
+        cin >> fullPath;
+        stringstream ss(fullPath);
+        while (getline(ss, name, '\\')) { currentDir = currentDir->getDir(name); }
+    }
+    root->printTree();
+    return 0;
+}
+\end{lstlisting}
+\addsubsection{Объяснение алгоритма}
+Алгоритм использует структуру данных hash-map, которая хранит пары ключ-значение, для представления связи вложенности между директориями и воссоздания иерархии. Это позволяет создавать вложенные структуры, имитирующие файловую систему.
+Алгоритм работает следующим образом:
+\begin{enumerate}
+    \item Считывает полный путь к директории.
+    \item Разделяет путь на отдельные директории по обратному слешу как по разделителю.
+    \item Для каждого имени директории создаёт связь в словаре (метод \verb|getDir|), а если папка не существует, то создает новую (метод \verb|createDir|).
+    \item В конце вызывает метод \verb|printTree|, который рекурсивно выводит всю иерархию директорий с отступами вложенности.
+\end{enumerate}
+
+\newpage
+\addsection{\href{https://acm.timus.ru/problem.aspx?space=1&num=1322}{Задача №1322. Шпион}}
+Спецслужбы обнаружили действующего иностранного агента. Шпиона то есть. Установили наблюдение и выяснили, что каждую неделю он через Интернет посылает кому-то странные нечитаемые тексты. Чтобы выяснить, к какой информации получил доступ шпион, требуется расшифровать информацию. Сотрудники спецслужб проникли в квартиру разведчика, изучили шифрующее устройство и выяснили принцип его работы.\\[0.5em]
+На вход устройства подается строка текста $S_1 = s_1s_2\dots s_N$. Получив её, устройство строит все циклические перестановки этой строки, то есть $S_2 = s_2s_3\dots s_Ns_1, \dots$, $S_N = s_Ns_1s_2\dots s_{N-1}$. Затем множество строк $S_1, S_2, \dots, S_N$ сортируется лексикографически по возрастанию. И в этом порядке строчки выписываются в столбец, одна под другой. Получается таблица размером $N \times N$. В какой-то строке $K$ этой таблицы находится исходное слово. Номер этой строки вместе с последним столбцом устройство и выдает на выход.\\[0.5em]
+Например, если исходное слово $S_1$ = abracadabra, то таблица имеет такой вид:
+\begin{multicols}{3}
+    \begin{enumerate}
+        \item aabracadabr = $S_{11}$
+        \item abraabracad = $S_{8}$
+        \item abracadabra = $S_{1}$
+        \item acadabraabr = $S_{4}$
+        \item adabraabrac = $S_{6}$
+        \item braabracada = $S_{9}$
+        \item bracadabraa = $S_{2}$
+        \item cadabraabra = $S_{5}$
+        \item dabraabraca = $S_{7}$
+        \item raabracadab = $S_{10}$
+        \item racadabraab = $S_{3}$
+    \end{enumerate}
+\end{multicols}
+И результатом работы устройства является число $3$ и строка rdarcaaaabb.\\[0.5em]
+Это все, что известно про шифрующее устройство. А вот дешифрующего устройства не нашли. Но поскольку заведомо известно, что декодировать информацию можно (а иначе зачем же ее передавать?), Вам предложили помочь в борьбе с хищениями секретов и придумать алгоритм для дешифровки сообщений. А заодно и реализовать дешифратор.\\[1em]
+\textbf{Исходные данные:}
+\begin{quotebox}
+    В первой и второй строках находятся соответственно целое число и строка, возвращаемые шифратором. Длина строки и число не превосходят $10^5$. Строка содержит лишь следующие символы: a-z, A-Z, символ подчеркивания. Других символов в строке нет. Лексикографический порядок на множестве слов задается таким порядком символов:
+    ABCDEFGHIJKLMNOPQRSTUVWXYZ\_abcdefghijklmnopqrstuvwxyz\\[0.5em]
+    Символы здесь выписаны в порядке возрастания.
+\end{quotebox}
+\textbf{Результат:}
+\begin{quotebox}
+    Выведите декодированное сообщение в единственной строке.
+\end{quotebox}
+\addsubsection{Рабочий код}
+\begin{lstlisting}[language=c++]
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+int main() {
+    int k;
+    cin >> k;
+    string s;
+    cin >> s;
+    vector<pair<char, int>> temp(s.size());
+    for (int i = 0; i < s.size(); i++) {temp[i] = {s[i], i};}
+    std::sort(temp.begin(), temp.end());
+    k = k - 1;
+    for (int i = 0; i < s.size(); i++) {
+        cout << temp[k].first;
+        k = temp[k].second;
+    }
+    return 0;
+}
+\end{lstlisting}
+\addsubsection{Объяснение алгоритма}
+Этот код выполняет сортировку символов в строке и затем переставляет их в новом порядке декодированном порядке. Используется структура данных vector для хранения пар символов и их индексов. Алгоритм сортирует эти пары по символам, затем использует второй элемент пары (индекс) для перехода к следующему символу в отсортированной последовательности, начиная с позиции $k-1$. В результате на выходе формируется новая последовательность символов, основанная на исходных позициях символов после сортировки, которая представляет собой декодированное сообщение.
+\end{document}

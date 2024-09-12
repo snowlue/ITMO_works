@@ -1,0 +1,20 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{Цель работы}{3}{section*.2}%
+\contentsline {section}{Код, используемый в работе}{3}{section*.4}%
+\contentsline {subsection}{Вычисление гистограмм}{3}{section*.6}%
+\contentsline {subsection}{Отрисовка гистограмм и изображения}{3}{section*.8}%
+\contentsline {section}{Преобразование гистограммы изображения}{5}{section*.10}%
+\contentsline {subsection}{Линейное выравнивание гистограммы}{6}{section*.12}%
+\contentsline {subsection}{Арифметические операции}{7}{section*.14}%
+\contentsline {subsection}{Растяжение динамического диапазона}{8}{section*.16}%
+\contentsline {subsection}{Равномерное преобразование}{9}{section*.18}%
+\contentsline {subsection}{Экспоненциальное преобразование}{10}{section*.20}%
+\contentsline {subsection}{Преобразование по закону Рэлея}{11}{section*.22}%
+\contentsline {subsection}{Преобразование по законку степени $\nicefrac {2}{3}$}{12}{section*.24}%
+\contentsline {subsection}{Гиперболическое преобразование}{13}{section*.26}%
+\contentsline {subsection}{Таблица поиска}{14}{section*.28}%
+\contentsline {section}{Профили и проекции}{15}{section*.30}%
+\contentsline {subsection}{Профиль изображения вдоль горизонтальной линии по середине}{15}{section*.32}%
+\contentsline {subsection}{Проекция изображения на оси}{16}{section*.34}%
+\contentsline {section}{Вывод}{17}{section*.36}%
+\contentsline {section}{Вопросы к защите}{17}{section*.38}%

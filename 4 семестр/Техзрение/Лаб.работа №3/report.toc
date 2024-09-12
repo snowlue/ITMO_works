@@ -1,0 +1,26 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{Цель работы}{3}{section*.2}%
+\contentsline {section}{Давайте пошумим!}{3}{section*.4}%
+\contentsline {subsection}{Импульсный шум}{3}{section*.6}%
+\contentsline {subsection}{Аддитивный шум}{3}{section*.8}%
+\contentsline {subsection}{Мультипликативный шум и спекл-шум}{3}{section*.10}%
+\contentsline {subsection}{Гауссов шум}{4}{section*.12}%
+\contentsline {subsection}{Шум квантования}{4}{section*.14}%
+\contentsline {subsection}{Применение шумов к изображению}{4}{section*.16}%
+\contentsline {section}{Низкочастотная фильтрация (или повесть «Прекращаем шуметь!»)}{5}{section*.18}%
+\contentsline {subsection}{Фильтр Гаусса}{5}{section*.20}%
+\contentsline {subsection}{Контргармонический усредняющий фильтр}{6}{section*.22}%
+\contentsline {section}{Нелинейная фильтрация (покупайте нелинейки, чтобы разобраться)}{11}{section*.24}%
+\contentsline {subsection}{Медианный фильтр}{11}{section*.26}%
+\contentsline {subsection}{Взвешенный медианный фильтр}{13}{section*.28}%
+\contentsline {subsection}{Ранговый фильтр}{16}{section*.30}%
+\contentsline {subsection}{Винеровский фильтр}{23}{section*.32}%
+\contentsline {subsection}{Адаптивный медианный фильтр}{25}{section*.34}%
+\contentsline {section}{Высокочастотная фильтрация (выстраиваем границы понимания)}{28}{section*.36}%
+\contentsline {subsection}{Фильтр Робертса}{28}{section*.38}%
+\contentsline {subsection}{Фильтр Превитта (Прюитта)}{28}{section*.40}%
+\contentsline {subsection}{Фильтр Собела}{29}{section*.42}%
+\contentsline {subsection}{Фильтр Лапласа}{30}{section*.44}%
+\contentsline {subsection}{Алгоритм Кэнни}{31}{section*.46}%
+\contentsline {section}{Вывод}{33}{section*.48}%
+\contentsline {section}{Вопросы к защите}{33}{section*.50}%

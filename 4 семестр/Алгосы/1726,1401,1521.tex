@@ -1,0 +1,360 @@
+\documentclass[a4paper]{article}
+\usepackage{cmap}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[english,russian]{babel} 
+\usepackage[left=10mm, top=10mm, right=10mm, bottom=20mm, nohead, nofoot]{geometry}
+\usepackage{blindtext}  % рыба-текст
+\usepackage{graphicx}  % изобржаения
+\usepackage{float} % плавающие объекты
+\usepackage{wrapfig}  % изобржаения
+\usepackage{tikz} % графика
+\usepackage{mdframed} % рамки
+\usepackage{xcolor} % определение цветов
+\usepackage{nicefrac} % красивые дроби
+\usepackage{cancel} % сокращение
+\usepackage{multicol}
+\usepackage{amsmath,amsfonts,amssymb} % математический пакет
+\usepackage{hyperref}  % гиперссылки
+\usepackage{fancybox,fancyhdr} % хедер и футер
+\usepackage{listings} % код
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Задачи №1726, 1401, 1521}
+\fancyhead[R]{Овчинников П.А., АиСД 3.3}
+\fancyfoot[C]{\thepage}
+\headsep=8mm
+\footskip=8mm
+\setlength{\parindent}{0mm}
+
+\definecolor{urlcolor}{HTML}{3454D1}
+\definecolor{linkcolor}{HTML}{3454D1}
+\hypersetup{pdfstartview=FitH, linkcolor=linkcolor, urlcolor=urlcolor, colorlinks=true}
+
+\definecolor{strings}{rgb}{0,0.6,0}
+\definecolor{comments}{rgb}{0,0.3,0}
+\definecolor{numbers}{rgb}{0.5,0.5,0.5}
+\definecolor{keywords}{rgb}{0.09,0.61,0.95}
+\definecolor{background}{rgb}{0.97,0.97,0.97}
+\lstdefinestyle{codestyle}{
+    backgroundcolor=\color{background},
+    commentstyle=\color{comments},
+    keywordstyle=\color{keywords},
+    stringstyle=\color{strings},
+    numberstyle=\tiny\color{numbers},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    inputencoding=utf8,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    extendedchars=true,
+    literate=
+    {а}{{\cyra}}1
+    {б}{{\cyrb}}1
+    {в}{{\cyrv}}1
+    {г}{{\cyrg}}1
+    {д}{{\cyrd}}1
+    {е}{{\cyre}}1
+    {ж}{{\cyrzh}}1
+    {з}{{\cyrz}}1
+    {и}{{\cyri}}1
+    {й}{{\cyrishrt}}1
+    {к}{{\cyrk}}1
+    {л}{{\cyrl}}1
+    {м}{{\cyrm}}1
+    {н}{{\cyrn}}1
+    {о}{{\cyro}}1
+    {п}{{\cyrp}}1
+    {р}{{\cyrr}}1
+    {с}{{\cyrs}}1
+    {т}{{\cyrt}}1
+    {у}{{\cyru}}1
+    {ф}{{\cyrf}}1
+    {х}{{\cyrh}}1
+    {ц}{{\cyrc}}1
+    {ч}{{\cyrch}}1
+    {ш}{{\cyrsh}}1
+    {щ}{{\cyrshch}}1
+    {ъ}{{\cyrhrdsn}}1
+    {ы}{{\cyrery}}1
+    {ь}{{\cyrsftsn}}1
+    {э}{{\cyrerev}}1
+    {ю}{{\cyryu}}1
+    {я}{{\cyrya}}1
+    {А}{{\CYRA}}1
+    {Б}{{\CYRB}}1
+    {В}{{\CYRV}}1
+    {Г}{{\CYRG}}1
+    {Д}{{\CYR96}}1
+    {Е}{{\CYRE}}1
+    {Ж}{{\CYRZH}}1
+    {З}{{\CYRZ}}1
+    {И}{{\CYRI}}1
+    {Й}{{\CYRISHRT}}1
+    {К}{{\CYRK}}1
+    {Л}{{\CYRL}}1
+    {М}{{\CYRM}}1
+    {Н}{{\CYRN}}1
+    {О}{{\CYRO}}1
+    {П}{{\CYRP}}1
+    {Р}{{\CYRR}}1
+    {С}{{\CYRS}}1
+    {Т}{{\CYRT}}1
+    {У}{{\CYRU}}1
+    {Ф}{{\CYRF}}1
+    {Х}{{\CYRH}}1
+    {Ц}{{\CYRC}}1
+    {Ч}{{\CYRCH}}1
+    {Ш}{{\CYRSH}}1
+    {Щ}{{\CYRSHCH}}1
+    {Ъ}{{\CYRHRDSN}}1
+    {Ы}{{\CYRERY}}1
+    {Ь}{{\CYRSFTSN}}1
+    {Э}{{\CYREREV}}1
+    {Ю}{{\CYRYU}}1
+    {Я}{{\CYRYA}}1
+}
+
+\lstset{style=codestyle}
+
+\addto\captionsrussian{
+  \renewcommand{\contentsname}
+    {\centering Содержание}
+}
+\newcommand{\addsection}[1]{
+    \phantomsection
+    \addcontentsline{toc}{section}{#1}
+    \section*{\centering #1}
+}
+\newcommand{\addsubsection}[1]{
+    \phantomsection
+    \addcontentsline{toc}{subsection}{#1}
+    \subsection*{\centering #1}
+}
+\newcommand{\addsubsubsection}[1]{
+    \phantomsection
+    \addcontentsline{toc}{subsubsection}{#1}
+    \subsubsection*{\centering #1}
+}
+
+\newmdenv[
+  leftmargin = 0.5em,
+  skipabove = 0.5em,
+  skipbelow = 0.5em,
+  linewidth = 1pt,
+  rightline = false,
+  topline = false,
+  bottomline = false
+]{quotebox}
+
+\newlength{\tempheight}
+\newcommand{\Let}{
+\mathbin{\text{\settoheight{\tempheight}{\mathstrut}\raisebox{0.4\pgflinewidth}{
+\tikz[baseline=0.5ex,line cap=round,line join=round] \draw (0,0) --++ (0.3em,0) --++ (0,2.3ex) --++ (-0.3em,0);
+}}}}
+\newcommand*\squared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {#1};}}
+\newcommand*\msquared[1]{\tikz[baseline=(char.base)]{
+            \node[shape=rectangle,draw,inner sep=4pt] (char) {$\displaystyle #1$};}}
+\newcommand{\at}{\biggr\rvert}
+\newcommand{\shiftright}[3]{\makebox[#2][r]{\makebox[#1][l]{#3}}}
+\newcommand{\e}{\;\text{e}}
+\let\oldint\int
+\def\int{\oldint\limits}
+\DeclareRobustCommand{\divby}{%
+  \mathrel{\vbox{\baselineskip.65ex\lineskiplimit0pt\hbox{.}\hbox{.}\hbox{.}}}%
+}
+
+\newcommand\NB{\textbf{N\kern-0.32em\textcolor{red}{B}}}
+
+\begin{document}
+\addsection{\href{https://acm.timus.ru/problem.aspx?space=1&num=1726}{Задача №1726. Кто ходит в гости...}}
+Программный комитет школьных соревнований по программированию, проходящих в УрГУ — многочисленная, весёлая и дружная команда. Дружная настолько, что общения в университете им явно не хватает, поэтому они часто ходят друг к другу в гости. Все ребята в программном комитете очень спортивные и ходят только пешком.\\[0.5em]
+Однажды хранитель традиций олимпиадного движения УрГУ подумал, что на пешие прогулки от дома к дому члены программного комитета тратят слишком много времени, которое могли бы вместо этого потратить на придумывание и подготовку задач. Чтобы доказать это, он решил посчитать, какое расстояние в среднем преодолевают члены комитета, когда ходят друг к другу в гости. Хранитель традиций достал карту Екатеринбурга, нашёл на ней дома всех членов программного комитета и выписал их координаты. Но координат оказалось так много, что хранитель не смог справиться с этой задачей самостоятельно и попросил вас помочь ему.\\[0.5em]
+Город Екатеринбург представляет собой прямоугольник со сторонами, ориентированными по сторонам света. Все улицы города идут строго с запада на восток или с севера на юг, проходя через весь город от края до края. Дома всех членов программного комитета расположены строго на пересечении каких-то двух перпендикулярных улиц. Известно, что все члены комитета ходят только по улицам, поскольку идти по тротуару гораздо приятнее, чем по дворовым тропинкам. И, конечно, при переходе от дома к дому они всегда выбирают кратчайший путь. Программный комитет очень дружный, и все его члены ходят в гости ко всем одинаково часто.\\[1em]
+\textbf{Исходные данные:}
+\begin{quotebox}
+    Первая строка содержит целое число $n$ — количество членов программного комитета $(2 \leq n \leq 105)$. В $i$-й из следующих $n$ строк через пробел записаны целые числа $x_i$, $y_i$ — координаты дома $i$-го члена программного комитета $(1 \leq x_i,\ y_i \leq 106)$.
+\end{quotebox}
+\textbf{Результат:}
+\begin{quotebox}
+    Выведите среднее расстояние, которое проходит член программного комитета от своего дома до дома своего товарища, округлённое вниз до целых.
+\end{quotebox}
+\addsubsection{Рабочий код}
+\begin{lstlisting}[language=c++]
+#include <iostream>
+#include <vector>
+using namespace std;
+void quicksort(vector<int> &vec, int L, int R) {
+    int i = L, j = R, mid = L + (R - L) / 2, piv = vec[mid];
+    while (i < R || j > L) {
+        while (vec[i] < piv) i++;
+        while (vec[j] > piv) j--;
+        if (i <= j) {
+            int temp = vec[i];
+            vec[i] = vec[j];
+            vec[j] = temp;
+            i++; j--;
+        } else {
+            if (i < R) quicksort(vec, i, R);
+            if (j > L) quicksort(vec, L, j);
+            return;
+        }
+    }
+}
+int main() {
+    long long n, sum = 0;
+    cin >> n;
+    vector<int> xCoords(n);
+    vector<int> yCoords(n);
+    for (long long i = 0; i < n; i++) cin >> xCoords[i] >> yCoords[i];
+    quicksort(xCoords, 0, n - 1);
+    quicksort(yCoords, 0, n - 1);
+    for (long long i = 1; i < n; i++) {
+        int dX = xCoords[i] - xCoords[i - 1], dY = yCoords[i] - yCoords[i-1];
+        sum += (dX + dY) * i * (n - i) * 2;
+    }
+    sum = sum / (n * (n - 1));
+    cout << sum << endl;
+    return 0;
+}
+\end{lstlisting}
+\addsubsection{Объяснение алгоритма}
+Алгоритм сначала сортирует координаты точек по осям x и y с помощью быстрой сортировки (quicksort). Затем он вычисляет сумму расстояний между каждой парой точек по оси x и по оси y, суммируя вклад каждой точки в общую сумму на основе ее позиции в отсортированном списке. В итоге, он выводит среднее значение суммы расстояний между всеми парами точек.
+
+\newpage
+\addsection{\href{https://acm.timus.ru/problem.aspx?space=1&num=1401}{Задача №1401. Игроки}}
+Известно, что господин Чичиков зарабатывал свой капитал и таким способом: он спорил со всякими недотёпами, что сможет доказать, что квадратную доску размера 512 × 512 нельзя замостить следующими фигурами:
+$$\begin{matrix}
+    \text{X} & \text{XX} & \text{X} & \text{XX} \\
+    \text{XX} & \text{X} & \text{XX} & \text{X} \\
+\end{matrix}$$
+и всегда выигрывал. Однако один из недотёп оказался не так уж глуп, и сказал, что сможет замостить такими фигурами доску размера $512 \times 512$ без правой верхней клетки. Чичиков, не подумав, ляпнул, что он вообще может любую доску размера $2^n \times 2^n$ без одной произвольной клетки замостить такими фигурами. Слово за слово, они поспорили. Чичиков чувствует, что сам он не докажет свою правоту. Помогите же ему!\\[1em]
+\textbf{Исходные данные:}
+\begin{quotebox}
+    В первой строке записано целое число $n$ $(1 \leq n \leq 9)$. Во второй строке через пробел даны два целых числа $x$, $y$: координаты «выколотой» клетки доски $(1 \leq x,\ y \leq 2^n)$, $x$ --- номер строки, $y$ --- номер столбца. Левый верхний угол доски имеет координаты (1, 1).
+\end{quotebox}
+\textbf{Результат:}
+\begin{quotebox}
+    Ваша программа должна выдать $2^n$ строчек по $2^n$ чисел в каждой строке. На месте выбитой клетки должно стоять число 0. На месте остальных клеток должны стоять числа от $1$ до $(2^{2n} - 1) : 3$ --- номер фигуры, закрывающей данную клетку. Разумеется, одинаковые номера должны образовывать фигуры. Если же такую доску нельзя покрыть фигурами, выведите «--1».
+\end{quotebox}
+\addsubsection{Рабочий код}
+\begin{lstlisting}[language=c++]
+#include <iostream>
+#include <vector>
+using namespace std;
+void paint(vector<vector<int>> &table, int x, int y, int i, int j, int n) {
+    static int c;
+    c++;
+    int voidPosX = x - j, voidPosY = y - i;
+    n = n / 2;
+    int ax = i + n, ay = j + n;
+    int bx = i + n - 1, by = j + n;
+    int cx = i + n, cy = j + n - 1;
+    int dx = i + n - 1, dy = j + n - 1;
+    if (voidPosX >= n and voidPosY >= n) {
+        table[bx][by] = c;
+        table[cx][cy] = c;
+        table[dx][dy] = c;
+        if (n > 1) {
+            paint(table, x, y, ax, ay, n);
+            paint(table, by, bx, i, by, n);
+            paint(table, cy, cx, cx, j, n);
+            paint(table, dy, dx, i, j, n);
+        }
+    } else if (voidPosX >= n and voidPosY < n) {
+        table[ax][ay] = c;
+        table[cx][cy] = c;
+        table[dx][dy] = c;
+        if (n > 1) {
+            paint(table, ay, ax, ax, ay, n);
+            paint(table, x, y, i, by, n);
+            paint(table, cy, cx, cx, j, n);
+            paint(table, dy, dx, i, j, n);
+        }
+    } else if (voidPosX < n and voidPosY >= n) {
+        table[ax][ay] = c;
+        table[bx][by] = c; 
+        table[dx][dy] = c; 
+        if (n > 1) { 
+            paint(table, ay, ax, ax, ay, n);
+            paint(table, by, bx, i, by, n);
+            paint(table, x, y, cx, j, n);
+            paint(table, dy, dx, i, j, n);
+        }
+    } else if (voidPosX < n and voidPosY < n) {
+        table[ax][ay] = c;
+        table[bx][by] = c;
+        table[cx][cy] = c;
+        if (n > 1) {
+            paint(table, ay, ax, ax, ay, n);
+            paint(table, by, bx, i, by, n);
+            paint(table, cy, cx, cx, j, n);
+            paint(table, x, y, i, j, n);
+        }
+    }
+    return;
+}
+int main() {
+    int n, x, y;
+    cin >> n >> y >> x;
+    n = 1 << n;
+    x--;
+    y--;
+    vector<vector<int>> table(n, (vector<int>(n)));
+    paint(table, x, y, 0, 0, n);
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) cout << table[i][j] << " ";
+        cout << endl;
+    }
+    return 0;
+}
+\end{lstlisting}
+\addsubsection{Объяснение алгоритма}
+Алгоритм заполняет поле размером $2^n \times 2^n$ с одной пропущенной клеткой (дыркой) с помощью рекурсивного метода. Он разбивает поле на четыре квадранта, отмечает три клетки в центральных позициях и рекурсивно заполняет каждый из квадрантов, пока не достигнет базового случая. В итоге, каждая клетка поля получает уникальное значение, соответствующее шагу рекурсии, что позволяет полностью покрыть поле плитками L-образной формы.
+
+\newpage
+\addsection{\href{https://acm.timus.ru/problem.aspx?space=1&num=1521}{Задача №1521. Военные учения 2}}
+В соответствии с этой схемой учения делятся на $N$ раундов, в течение которых $N$ солдат, последовательно пронумерованных от $1$ до $N$, маршируют друг за другом по кругу, т.е. первый следует за вторым, второй за третьим, ..., $(N-1)$-й за $N$-м, а $N$-й за первым. В каждом раунде очередной солдат выбывает из круга и идёт чистить унитазы, а оставшиеся продолжают маршировать. В очередном раунде выбывает солдат, марширующий на $K$ позиций впереди выбывшего на предыдущем раунде. В первом раунде выбывает солдат с номером $K$.\\[0.5em]
+Разумеется, г-н Шульман не питал никаких надежд на то, что солдаты в состоянии сами определить очерёдность выбывания из круга. «Эти неучи даже траву не могут ровно покрасить», – фыркнул он и отправился за помощью к прапорщику Шкурко.\\[1em]
+\textbf{Исходные данные:}
+\begin{quotebox}
+    Единственная строка содержит целые числа $N$ $(1 \leq N \leq 10^5)$ и $K$ $(1 \leq K \leq N)$.
+\end{quotebox}
+\textbf{Результат:}
+\begin{quotebox}
+    Вывести через пробел номера солдат в порядке их выбывания из круга.
+\end{quotebox}
+\addsubsection{Рабочий код}
+\begin{lstlisting}[language=c++]
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    int N, K;
+    cin >> N >> K;
+    vector<int> soldiers(N); // Вектор для хранения солдат
+    for (int i = 0; i < N; ++i) soldiers[i] = i + 1; // Инициализация солдат
+    
+    int index = K - 1; // Начальная позиция для удаления
+    while (!soldiers.empty()) {
+        index = index % soldiers.size(); // Обновление индекса
+        cout << soldiers[index] << " "; // Вывод номера солдата
+        soldiers.erase(soldiers.begin() + index); // Удаление солдата из круга
+        index += K - 1; // Переход к следующему солдату
+    }
+    
+    return 0;
+}
+\end{lstlisting}
+\addsubsection{Объяснение алгоритма}
+Этот алгоритм использует «задачу Иосифа Флавия» или «игру в горячо-холодно» для получения порядка выбывания солдат. Он использует вектор для хранения номеров солдат, которые образуют круг. В каждой итерации солдат с определенным номером удаляется из круга, а затем индекс для удаления обновляется на основе заданного шага K. Алгоритм продолжает это, выводя номера солдат в порядке их удаления из круга, до тех пор, пока вектор с номерами солдат не станет пустым.
+\end{document}
