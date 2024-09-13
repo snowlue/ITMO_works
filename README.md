@@ -55,14 +55,14 @@
 <table>
     <tbody>
         <tr>
-            <td><a href="https://github.com/PaveTranquil/ITMOPython-2022_Lab-1">1-я лаба (CSV)</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMOPython-2022_Lab-2">2-я лаба (рисование в консоли)</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMOPython-2022_Lab-3">3-я лаба (Задача о рюкзаке)</a></td>
+            <td><a href="https://github.com/snowlue/ITMOPython-2022_Lab-1">1-я лаба (CSV)</a></td>
+            <td><a href="https://github.com/snowlue/ITMOPython-2022_Lab-2">2-я лаба (рисование в консоли)</a></td>
+            <td><a href="https://github.com/snowlue/ITMOPython-2022_Lab-3">3-я лаба (Задача о рюкзаке)</a></td>
         </tr>
         <tr>
-            <td><a href="https://github.com/PaveTranquil/ITMOPython-2022_Lab-4">4-я лаба (Tkinter)</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMOPython-2022_Lab-5">5-я лаба (API)</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMOPython-2022_Lab-6">6-я лаба (ООП)</a></td>
+            <td><a href="https://github.com/snowlue/ITMOPython-2022_Lab-4">4-я лаба (Tkinter)</a></td>
+            <td><a href="https://github.com/snowlue/ITMOPython-2022_Lab-5">5-я лаба (API)</a></td>
+            <td><a href="https://github.com/snowlue/ITMOPython-2022_Lab-6">6-я лаба (ООП)</a></td>
         </tr>
     </tbody>
 </table>
@@ -72,57 +72,57 @@
 <table>
     <tbody>
         <tr>
-            <td><a href="https://gist.github.com/PaveTranquil/e4fa5b8b0af8590f5859f59ef4a64ea8">1-й типовик (Полином Жегалкина из функции)</a></td>
+            <td><a href="https://gist.github.com/snowlue/e4fa5b8b0af8590f5859f59ef4a64ea8">1-й типовик (Полином Жегалкина из функции)</a></td>
         </tr>
         <tr>
-            <td><a href="https://gist.github.com/PaveTranquil/5884c49ad97161ecd8dc2b42b63f8405">2-й типовик (Определение бинарных отношений в графе)</a></td>
+            <td><a href="https://gist.github.com/snowlue/5884c49ad97161ecd8dc2b42b63f8405">2-й типовик (Определение бинарных отношений в графе)</a></td>
         </tr>
     </tbody>
 </table>
 
 #### Линейная алгебраㅤ`линал` `линейка` `линалгебра`
-- [Лекции](https://github.com/PaveTranquil/ITMO_works/raw/main/1%20семестр/Линал%201%20сем.zip)
+- [Лекции](https://github.com/snowlue/ITMO_works/raw/main/1%20семестр/Линал%201%20сем.zip)
 
 #### Компьютерная и инженерная графикаㅤ`киг` `инжграф` `инжграфика`
 В каждой лабе приложены pdf для просмотра готовых деталей и чертежей.
 <table>
     <tbody>
         <tr>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/tree/main/1%20семестр/КИГ/1">1-я лаба</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/tree/main/1%20семестр/КИГ/2">2-я лаба</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/tree/main/1%20семестр/КИГ/3">3-я лаба</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/tree/main/1%20семестр/КИГ/1">1-я лаба</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/tree/main/1%20семестр/КИГ/2">2-я лаба</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/tree/main/1%20семестр/КИГ/3">3-я лаба</a></td>
         </tr>
         <tr>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/tree/main/1%20семестр/КИГ/4">4-я лаба</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/tree/main/1%20семестр/КИГ/5">5-я лаба</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/tree/main/1%20семестр/КИГ/6">6-8 лабы</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/tree/main/1%20семестр/КИГ/4">4-я лаба</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/tree/main/1%20семестр/КИГ/5">5-я лаба</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/tree/main/1%20семестр/КИГ/6">6-8 лабы</a></td>
         </tr>
     </tbody>
 </table>
 
 #### Введение в профессиональную деятельностьㅤ`впд`
-- [Выходной реферат по теме «Индивидуальная траектория обучения»](https://github.com/PaveTranquil/ITMO_works/raw/main/1%20семестр/Реферат%20по%20теме%20«Индивидуальная%20траектория%20обучения».docx)
+- [Выходной реферат по теме «Индивидуальная траектория обучения»](https://github.com/snowlue/ITMO_works/raw/main/1%20семестр/Реферат%20по%20теме%20«Индивидуальная%20траектория%20обучения».docx)
 
 ### 2-й семестр
 #### Программирование на Pythonㅤ`прога` `питон` `пайтон`
 <table>
     <tbody>
         <tr>
-            <td><a href="https://github.com/PaveTranquil/ITMOPython-2023_Lab-7">7-я лаба (NumPy и MatPlotLib)</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMOPython-2023_Lab-8">8-я лаба (OpenCV)</a></td>
+            <td><a href="https://github.com/snowlue/ITMOPython-2023_Lab-7">7-я лаба (NumPy и MatPlotLib)</a></td>
+            <td><a href="https://github.com/snowlue/ITMOPython-2023_Lab-8">8-я лаба (OpenCV)</a></td>
         </tr>
         <tr>
-            <td><a href="https://github.com/PaveTranquil/ITMOPython-2023_Lab-9">9-я лаба (Flask)</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMOPython-2023_Lab-10">10-я лаба (Voice assistant)</a></td>
+            <td><a href="https://github.com/snowlue/ITMOPython-2023_Lab-9">9-я лаба (Flask)</a></td>
+            <td><a href="https://github.com/snowlue/ITMOPython-2023_Lab-10">10-я лаба (Voice assistant)</a></td>
         </tr>
         <tr>
-            <td colspan="3" style="text-align: center; vertical-align: middle;"><a href="https://github.com/PaveTranquil/Zephyrsky">Итоговый проект (Zephyrsky)</a></td>
+            <td colspan="3" style="text-align: center; vertical-align: middle;"><a href="https://github.com/snowlue/Zephyrsky">Итоговый проект (Zephyrsky)</a></td>
         </tr>
     </tbody>
 </table>
 
 #### Линейная алгебраㅤ`линал` `линейка` `линалгебра`
-- [Лекции](https://github.com/PaveTranquil/ITMO_works/raw/main/2%20семестр/Линал/Линал%202%20сем.zip)
+- [Лекции](https://github.com/snowlue/ITMO_works/raw/main/2%20семестр/Линал/Линал%202%20сем.zip)
 
 Домашние и индивидуальные задания:
 <table>
@@ -138,23 +138,23 @@
             <td colspan="5">9. Основные операции</td>
         </tr>
         <tr>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/1.%20Линейные%20отображения/2.pdf">2</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/1.%20Линейные%20отображения/3.pdf">3</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/1.%20Линейные%20отображения/5.pdf">5</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/1.%20Линейные%20отображения/6.pdf">6</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/1.%20Линейные%20отображения/7.pdf">7</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/1.%20Линейные%20отображения/8.pdf">8</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/1.%20Линейные%20отображения/9.pdf">9</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/1.%20Линейные%20отображения/10.pdf">10</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/5.%20Тензоры%20—%20валентности%2C%20матрица%2C%20простейшие%20операции%2C%20произведение/1.pdf">1</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/5.%20Тензоры%20—%20валентности%2C%20матрица%2C%20простейшие%20операции%2C%20произведение/2.pdf">2</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/5.%20Тензоры%20—%20валентности%2C%20матрица%2C%20простейшие%20операции%2C%20произведение/3.pdf">3</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/5.%20Тензоры%20—%20валентности%2C%20матрица%2C%20простейшие%20операции%2C%20произведение/4.pdf">4</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/9.%20Евклидовое%20пространство%20—%20основные%20операции/1.pdf">1</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/9.%20Евклидовое%20пространство%20—%20основные%20операции/2.pdf">2</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/9.%20Евклидовое%20пространство%20—%20основные%20операции/3.pdf">3</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/9.%20Евклидовое%20пространство%20—%20основные%20операции/4.pdf">4</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/9.%20Евклидовое%20пространство%20—%20основные%20операции/5.pdf">5</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/1.%20Линейные%20отображения/2.pdf">2</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/1.%20Линейные%20отображения/3.pdf">3</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/1.%20Линейные%20отображения/5.pdf">5</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/1.%20Линейные%20отображения/6.pdf">6</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/1.%20Линейные%20отображения/7.pdf">7</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/1.%20Линейные%20отображения/8.pdf">8</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/1.%20Линейные%20отображения/9.pdf">9</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/1.%20Линейные%20отображения/10.pdf">10</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/5.%20Тензоры%20—%20валентности%2C%20матрица%2C%20простейшие%20операции%2C%20произведение/1.pdf">1</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/5.%20Тензоры%20—%20валентности%2C%20матрица%2C%20простейшие%20операции%2C%20произведение/2.pdf">2</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/5.%20Тензоры%20—%20валентности%2C%20матрица%2C%20простейшие%20операции%2C%20произведение/3.pdf">3</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/5.%20Тензоры%20—%20валентности%2C%20матрица%2C%20простейшие%20операции%2C%20произведение/4.pdf">4</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/9.%20Евклидовое%20пространство%20—%20основные%20операции/1.pdf">1</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/9.%20Евклидовое%20пространство%20—%20основные%20операции/2.pdf">2</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/9.%20Евклидовое%20пространство%20—%20основные%20операции/3.pdf">3</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/9.%20Евклидовое%20пространство%20—%20основные%20операции/4.pdf">4</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/9.%20Евклидовое%20пространство%20—%20основные%20операции/5.pdf">5</a></td>
         </tr>
         <tr>
             <td colspan="8">2. Действия с линейными операторами</td>
@@ -162,20 +162,20 @@
             <td colspan="5">10. Работа с базисами</td>
         </tr>
         <tr>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/2.%20Действия%20с%20линейными%20операторами/1.pdf">1</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/2.%20Действия%20с%20линейными%20операторами/2.pdf">2</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/2.%20Действия%20с%20линейными%20операторами/3.pdf">3</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/2.%20Действия%20с%20линейными%20операторами/4.pdf">4</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/2.%20Действия%20с%20линейными%20операторами/5.pdf">5</a></td>
-            <td colspan="3"><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/2.%20Действия%20с%20линейными%20операторами/6.pdf">6</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/6.%20Тензоры%20—%20свёртки%2C%20замена%20базиса/3.pdf">3</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/6.%20Тензоры%20—%20свёртки%2C%20замена%20базиса/4.pdf">4</a></td>
-            <td colspan="2"><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/6.%20Тензоры%20—%20свёртки%2C%20замена%20базиса/5.pdf">5</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/10.%20Евклидовое%20пространство%20—%20работа%20с%20базисами/1.pdf">1</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/10.%20Евклидовое%20пространство%20—%20работа%20с%20базисами/2.pdf">2</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/10.%20Евклидовое%20пространство%20—%20работа%20с%20базисами/3.pdf">3</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/10.%20Евклидовое%20пространство%20—%20работа%20с%20базисами/4.pdf">4</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/10.%20Евклидовое%20пространство%20—%20работа%20с%20базисами/5.pdf">5</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/2.%20Действия%20с%20линейными%20операторами/1.pdf">1</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/2.%20Действия%20с%20линейными%20операторами/2.pdf">2</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/2.%20Действия%20с%20линейными%20операторами/3.pdf">3</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/2.%20Действия%20с%20линейными%20операторами/4.pdf">4</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/2.%20Действия%20с%20линейными%20операторами/5.pdf">5</a></td>
+            <td colspan="3"><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/2.%20Действия%20с%20линейными%20операторами/6.pdf">6</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/6.%20Тензоры%20—%20свёртки%2C%20замена%20базиса/3.pdf">3</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/6.%20Тензоры%20—%20свёртки%2C%20замена%20базиса/4.pdf">4</a></td>
+            <td colspan="2"><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/6.%20Тензоры%20—%20свёртки%2C%20замена%20базиса/5.pdf">5</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/10.%20Евклидовое%20пространство%20—%20работа%20с%20базисами/1.pdf">1</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/10.%20Евклидовое%20пространство%20—%20работа%20с%20базисами/2.pdf">2</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/10.%20Евклидовое%20пространство%20—%20работа%20с%20базисами/3.pdf">3</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/10.%20Евклидовое%20пространство%20—%20работа%20с%20базисами/4.pdf">4</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/10.%20Евклидовое%20пространство%20—%20работа%20с%20базисами/5.pdf">5</a></td>
         </tr>
         <tr>
             <td colspan="8">3. Оператор скалярного типа</td>
@@ -183,22 +183,22 @@
             <td colspan="5">11. Проекции</td>
         </tr>
         <tr>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/3.%20Оператор%20скалярного%20типа/1.pdf">1</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/3.%20Оператор%20скалярного%20типа/2.pdf">2</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/3.%20Оператор%20скалярного%20типа/3.pdf">3</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/3.%20Оператор%20скалярного%20типа/4.pdf">4</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/3.%20Оператор%20скалярного%20типа/5.pdf">5</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/3.%20Оператор%20скалярного%20типа/6.pdf">6</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/3.%20Оператор%20скалярного%20типа/7.pdf">7</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/3.%20Оператор%20скалярного%20типа/8.pdf">8</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/7.%20Тензоры%20—%20симметризация%20и%20антисимметризация%2C%20транспонирование/1%2C2.pdf">1,2</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/7.%20Тензоры%20—%20симметризация%20и%20антисимметризация%2C%20транспонирование/3.pdf">3</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/7.%20Тензоры%20—%20симметризация%20и%20антисимметризация%2C%20транспонирование/4.pdf">4</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/7.%20Тензоры%20—%20симметризация%20и%20антисимметризация%2C%20транспонирование/5.png">5</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/11.%20Евклидовое%20пространство%20—%20проекции/1.pdf">1</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/11.%20Евклидовое%20пространство%20—%20проекции/2.pdf">2</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/11.%20Евклидовое%20пространство%20—%20проекции/3.pdf">3</a></td>
-            <td colspan="2"><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/11.%20Евклидовое%20пространство%20—%20проекции/4.pdf">4</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/3.%20Оператор%20скалярного%20типа/1.pdf">1</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/3.%20Оператор%20скалярного%20типа/2.pdf">2</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/3.%20Оператор%20скалярного%20типа/3.pdf">3</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/3.%20Оператор%20скалярного%20типа/4.pdf">4</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/3.%20Оператор%20скалярного%20типа/5.pdf">5</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/3.%20Оператор%20скалярного%20типа/6.pdf">6</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/3.%20Оператор%20скалярного%20типа/7.pdf">7</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/3.%20Оператор%20скалярного%20типа/8.pdf">8</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/7.%20Тензоры%20—%20симметризация%20и%20антисимметризация%2C%20транспонирование/1%2C2.pdf">1,2</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/7.%20Тензоры%20—%20симметризация%20и%20антисимметризация%2C%20транспонирование/3.pdf">3</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/7.%20Тензоры%20—%20симметризация%20и%20антисимметризация%2C%20транспонирование/4.pdf">4</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/7.%20Тензоры%20—%20симметризация%20и%20антисимметризация%2C%20транспонирование/5.png">5</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/11.%20Евклидовое%20пространство%20—%20проекции/1.pdf">1</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/11.%20Евклидовое%20пространство%20—%20проекции/2.pdf">2</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/11.%20Евклидовое%20пространство%20—%20проекции/3.pdf">3</a></td>
+            <td colspan="2"><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/11.%20Евклидовое%20пространство%20—%20проекции/4.pdf">4</a></td>
         </tr>
         <tr>
             <td colspan="8">4. Жорданова нормальная форма</td>
@@ -206,13 +206,13 @@
             <td colspan="5">12. Квадратичные формы</td>
         </tr>
         <tr>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/4.%20Жорданова%20нормальная%20форма/1.pdf">1</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/4.%20Жорданова%20нормальная%20форма/2.pdf">2</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/4.%20Жорданова%20нормальная%20форма/3.pdf">3</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/4.%20Жорданова%20нормальная%20форма/4.pdf">4</a></td>
-            <td colspan="4"><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/4.%20Жорданова%20нормальная%20форма/5.pdf">5</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/8.%20Тензоры%20—%20внешнее%20произведение%2C%20разложение%20на%20одновалентные/1.pdf">1</a></td>
-            <td colspan="3"><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/8.%20Тензоры%20—%20внешнее%20произведение%2C%20разложение%20на%20одновалентные/2.pdf">2</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/4.%20Жорданова%20нормальная%20форма/1.pdf">1</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/4.%20Жорданова%20нормальная%20форма/2.pdf">2</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/4.%20Жорданова%20нормальная%20форма/3.pdf">3</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/4.%20Жорданова%20нормальная%20форма/4.pdf">4</a></td>
+            <td colspan="4"><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/4.%20Жорданова%20нормальная%20форма/5.pdf">5</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/8.%20Тензоры%20—%20внешнее%20произведение%2C%20разложение%20на%20одновалентные/1.pdf">1</a></td>
+            <td colspan="3"><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ДЗ/8.%20Тензоры%20—%20внешнее%20произведение%2C%20разложение%20на%20одновалентные/2.pdf">2</a></td>
             <td colspan="5">ㅤ</td>
         </tr>
         <tr>
@@ -221,74 +221,74 @@
             <td colspan="5"><b>Индивидуальное задание #3</b></td>
         </tr>
         <tr>
-            <td colspan="4"><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ИЗ%201/Задания.pdf">Задание</a></td>
-            <td colspan="4"><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ИЗ%201/ИЗ.pdf">Решение</a></td>
-            <td colspan="2"><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ИЗ%202/Задания.pdf">Задание</a></td>
-            <td colspan="2"><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ИЗ%202/ИЗ%202.pdf">Решение</a></td>
-            <td colspan="3"><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ИЗ%203/Задания.pdf">Задание</a></td>
-            <td colspan="2"><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Линал/ИЗ%203/ИЗ%203.pdf">Решение</a></td>
+            <td colspan="4"><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ИЗ%201/Задания.pdf">Задание</a></td>
+            <td colspan="4"><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ИЗ%201/ИЗ.pdf">Решение</a></td>
+            <td colspan="2"><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ИЗ%202/Задания.pdf">Задание</a></td>
+            <td colspan="2"><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ИЗ%202/ИЗ%202.pdf">Решение</a></td>
+            <td colspan="3"><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ИЗ%203/Задания.pdf">Задание</a></td>
+            <td colspan="2"><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Линал/ИЗ%203/ИЗ%203.pdf">Решение</a></td>
         </tr>
     </tbody>
 </table>
 
 #### Математический анализㅤ`матан` `матанализ` `ma` `mi`
-- [Лекции от Попова](https://github.com/PaveTranquil/ITMO_works/raw/main/2%20семестр/Матан/Лекции%20Попова.pdf)
-- [Задачник от Демидовича](https://github.com/PaveTranquil/ITMO_works/raw/main/2%20семестр/Матан/Задачи%20по%20мат.анализу%20от%20Демидовича.pdf)
-- [Реферат на тему «Дельта-функция Дирака и её приложения» (РГР-1)](https://github.com/PaveTranquil/ITMO_works/raw/main/2%20семестр/Матан/report/report%20MA.pdf)
-- [Типовик с задачами по рядам (РГР-2)](https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Матан/standart/standart%20MA.pdf)
+- [Лекции от Попова](https://github.com/snowlue/ITMO_works/raw/main/2%20семестр/Матан/Лекции%20Попова.pdf)
+- [Задачник от Демидовича](https://github.com/snowlue/ITMO_works/raw/main/2%20семестр/Матан/Задачи%20по%20мат.анализу%20от%20Демидовича.pdf)
+- [Реферат на тему «Дельта-функция Дирака и её приложения» (РГР-1)](https://github.com/snowlue/ITMO_works/raw/main/2%20семестр/Матан/report/report%20MA.pdf)
+- [Типовик с задачами по рядам (РГР-2)](https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Матан/standart/standart%20MA.pdf)
 
 #### Механикаㅤ`мех` `физика` `physics` `mechanics`
-- [Лекции](https://github.com/PaveTranquil/ITMO_works/tree/main/2%20семестр/Механика/Лекции)
-- [Справочник Трофимовой](https://github.com/PaveTranquil/ITMO_works/raw/main/2%20семестр/Механика/Справочник%20Трофимовой.pdf) (кратко по формулам)
-- [Лабораторные работы](https://github.com/PaveTranquil/ITMO_works/tree/main/2%20семестр/Механика/Лабораторные%20работы)
-  - [Решатели](https://github.com/PaveTranquil/ITMO_works/tree/main/2%20семестр/Механика/Лабораторные%20работы/Решатели)
-  - [Шаблон отчёта](https://github.com/PaveTranquil/ITMO_works/raw/main/2%20семестр/Механика/Лабораторные%20работы/Шаблон%20отчёта.docx)
+- [Лекции](https://github.com/snowlue/ITMO_works/tree/main/2%20семестр/Механика/Лекции)
+- [Справочник Трофимовой](https://github.com/snowlue/ITMO_works/raw/main/2%20семестр/Механика/Справочник%20Трофимовой.pdf) (кратко по формулам)
+- [Лабораторные работы](https://github.com/snowlue/ITMO_works/tree/main/2%20семестр/Механика/Лабораторные%20работы)
+  - [Решатели](https://github.com/snowlue/ITMO_works/tree/main/2%20семестр/Механика/Лабораторные%20работы/Решатели)
+  - [Шаблон отчёта](https://github.com/snowlue/ITMO_works/raw/main/2%20семестр/Механика/Лабораторные%20работы/Шаблон%20отчёта.docx)
 
 Домашние задания:
 <table>
     <tbody>
         <tr>
-            <td><b><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Механика/LaTeX/Модуль%20№1/_задачи.jpg">Модуль №1</a>:</b></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Механика/LaTeX/Модуль%20№1/1.pdf">Задача №1</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Механика/LaTeX/Модуль%20№1/3.pdf">Задача №3</a></td>
+            <td><b><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Механика/LaTeX/Модуль%20№1/_задачи.jpg">Модуль №1</a>:</b></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Механика/LaTeX/Модуль%20№1/1.pdf">Задача №1</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Механика/LaTeX/Модуль%20№1/3.pdf">Задача №3</a></td>
         </tr>
         <tr>
-            <td><b><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Механика/LaTeX/Модуль%20№2/_задачи.png">Модуль №2</a>:</b></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Механика/LaTeX/Модуль%20№2/1.pdf">Задача №1</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Механика/LaTeX/Модуль%20№2/3.pdf">Задача №3</a></td>
+            <td><b><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Механика/LaTeX/Модуль%20№2/_задачи.png">Модуль №2</a>:</b></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Механика/LaTeX/Модуль%20№2/1.pdf">Задача №1</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Механика/LaTeX/Модуль%20№2/3.pdf">Задача №3</a></td>
         </tr>
     </tbody>
 </table>
 
 #### Коммуникации и командообразованиеㅤ`кик` `cat` `тимбилдинг` `общение` `софты` `soft skills`
-- [Рабочая тетрадь](https://github.com/PaveTranquil/ITMO_works/raw/main/2%20семестр/Рабочая%20тетрадь%20КиК%202023.pdf)
+- [Рабочая тетрадь](https://github.com/snowlue/ITMO_works/raw/main/2%20семестр/Рабочая%20тетрадь%20КиК%202023.pdf)
 
 #### Россия в истории современных международных отношенийㅤ`история` `ирс`
-- Спорные моменты ленд-лиза: [доклад](https://github.com/PaveTranquil/ITMO_works/raw/main/2%20семестр/История/Спорные%20моменты%20ленд-лиза.pdf) и [презентация](https://github.com/PaveTranquil/ITMO_works/raw/main/2%20семестр/История/Спорные%20моменты%20ленд-лиза%20(Овчинников%20Павел).pptx)
-- [Эссе по фильму «В плену у Сакуры»](https://github.com/PaveTranquil/ITMO_works/raw/main/2%20семестр/История/В%20плену%20у%20сакуры.docx)
+- Спорные моменты ленд-лиза: [доклад](https://github.com/snowlue/ITMO_works/raw/main/2%20семестр/История/Спорные%20моменты%20ленд-лиза.pdf) и [презентация](https://github.com/snowlue/ITMO_works/raw/main/2%20семестр/История/Спорные%20моменты%20ленд-лиза%20(Овчинников%20Павел).pptx)
+- [Эссе по фильму «В плену у Сакуры»](https://github.com/snowlue/ITMO_works/raw/main/2%20семестр/История/В%20плену%20у%20сакуры.docx)
 
 #### Введение в профессиональную деятельность. Проектная деятельностьㅤ`впд`
-- [Доклад](https://github.com/PaveTranquil/ITMO_works/raw/main/2%20семестр/ВПД/Доклад%20о%20деятельности.pdf) и [презентация](https://github.com/PaveTranquil/ITMO_works/raw/main/2%20семестр/ВПД/Презентация%20деятельности.pdf) деятельности в течение семестра
+- [Доклад](https://github.com/snowlue/ITMO_works/raw/main/2%20семестр/ВПД/Доклад%20о%20деятельности.pdf) и [презентация](https://github.com/snowlue/ITMO_works/raw/main/2%20семестр/ВПД/Презентация%20деятельности.pdf) деятельности в течение семестра
 
 #### Построение научной работыㅤ`пнр`
-- [Обзор «Навигация и управление в робототехнических системах»](https://github.com/PaveTranquil/ITMO_works/raw/main/2%20семестр/ПНР/pnr.pdf)
+- [Обзор «Навигация и управление в робототехнических системах»](https://github.com/snowlue/ITMO_works/raw/main/2%20семестр/ПНР/pnr.pdf)
 - [Презентация обзора](https://disk.yandex.ru/i/EYwevy2EHHOt1A)
 
 #### Факультатив «Анализ текстовых данных на Python»ㅤ`питон` `пайтон` `сентимент`
 Список лекций:
-- [Лекция №1 (Работа с базами данных CSV)](https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Факультатив%20Python/Лекции/Л1_Работа_с_базами_данных.ipynb)
-- [Лекция №2 (Предобработка данных)](https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Факультатив%20Python/Лекции/Л2_Предобработка.ipynb)
-- [Лекция №3 (Векторизация текстовых данных)](https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Факультатив%20Python/Лекции/Л3_Векторизация_текстовых_данных.ipynb)
-- [Лекция №4 (Классификация с обучением)](https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Факультатив%20Python/Лекции/Л4_Классификация.ipynb)
+- [Лекция №1 (Работа с базами данных CSV)](https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Факультатив%20Python/Лекции/Л1_Работа_с_базами_данных.ipynb)
+- [Лекция №2 (Предобработка данных)](https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Факультатив%20Python/Лекции/Л2_Предобработка.ipynb)
+- [Лекция №3 (Векторизация текстовых данных)](https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Факультатив%20Python/Лекции/Л3_Векторизация_текстовых_данных.ipynb)
+- [Лекция №4 (Классификация с обучением)](https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Факультатив%20Python/Лекции/Л4_Классификация.ipynb)
 
 Домашние задания:
 <table>
     <tbody>
         <tr>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Факультатив%20Python/HW%201.ipynb">ДЗ №1</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Факультатив%20Python/HW%202.ipynb">ДЗ №2</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Факультатив%20Python/HW%203.ipynb">ДЗ №3</a></td>
-            <td><a href="https://github.com/PaveTranquil/ITMO_works/blob/main/2%20семестр/Факультатив%20Python/HW%204.ipynb">ДЗ №4</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Факультатив%20Python/HW%201.ipynb">ДЗ №1</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Факультатив%20Python/HW%202.ipynb">ДЗ №2</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Факультатив%20Python/HW%203.ipynb">ДЗ №3</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Факультатив%20Python/HW%204.ipynb">ДЗ №4</a></td>
         </tr>
     </tbody>
 </table>
