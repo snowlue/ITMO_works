@@ -1,0 +1,9 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{Задание №1. Вещественное преобразование}{3}{section*.2}%
+\contentsline {subsection}{Прямоугольная функция}{3}{section*.4}%
+\contentsline {subsection}{Треугольная функция}{4}{section*.6}%
+\contentsline {subsection}{Кардинальный синус}{6}{section*.8}%
+\contentsline {subsection}{Функция Гаусса}{7}{section*.10}%
+\contentsline {subsection}{Двустороннее затухание}{8}{section*.12}%
+\contentsline {section}{Задание №2. Комплексное преобразование}{9}{section*.14}%
+\contentsline {section}{Задание №3. Музыкальное преобразование}{12}{section*.16}%

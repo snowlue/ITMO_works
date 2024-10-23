@@ -1,0 +1,6 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{Задание №1. Жёсткие фильтры}{3}{section*.2}%
+\contentsline {subsection}{Убираем высокие частоты}{3}{section*.5}%
+\contentsline {subsection}{Убираем специфические частоты}{5}{section*.14}%
+\contentsline {subsection}{Убираем низкие частоты?}{7}{section*.23}%
+\contentsline {section}{Задание №2. Фильтрация звука}{9}{section*.28}%

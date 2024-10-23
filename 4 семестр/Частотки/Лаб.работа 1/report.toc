@@ -1,0 +1,20 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{Задание №1. Синусы, косинусы и экспонента могут всё!}{3}{section*.2}%
+\contentsline {subsection}{Квадратная волна --- такую в море не встретишь}{3}{section*.4}%
+\contentsline {subsubsection}{Считаем интегральчики...}{3}{section*.6}%
+\contentsline {subsubsection}{А теперь кодим!}{4}{section*.8}%
+\contentsline {subsubsection}{Созерцаем плоды трудов!}{6}{section*.10}%
+\contentsline {subsection}{Время чётных функций!}{7}{section*.12}%
+\contentsline {subsubsection}{Снова немножко кодим...}{8}{section*.14}%
+\contentsline {subsubsection}{Рисуем графики!}{8}{section*.16}%
+\contentsline {subsection}{Ты чего такой нечётный?}{9}{section*.18}%
+\contentsline {subsubsection}{Опять кодим одну строчку}{10}{section*.20}%
+\contentsline {subsubsection}{И снова любуемся на рисунки!}{10}{section*.22}%
+\contentsline {subsection}{Ты вообще с какого района, чушпан?}{12}{section*.24}%
+\contentsline {subsubsection}{Немножко помучаем машину...}{12}{section*.26}%
+\contentsline {subsubsection}{И что же получилось на графиках?}{12}{section*.28}%
+\contentsline {section}{Задание №2. Комплéксная функция vs. мозг читателя}{14}{section*.30}%
+\contentsline {subsection}{Самое скучное --- вы не разучились считать интегральчики?}{15}{section*.32}%
+\contentsline {subsection}{Самое приятное --- код всё сделает за нас}{15}{section*.34}%
+\contentsline {subsection}{Самое интересное --- красивые графики!}{17}{section*.36}%
+\contentsline {section}{Подводим выводы, подытоживаем итоги}{18}{section*.38}%

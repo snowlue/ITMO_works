@@ -1,0 +1,7 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{Фильтрация изображений с периодичностью}{3}{section*.2}%
+\contentsline {section}{Размытие изоображения}{5}{section*.8}%
+\contentsline {subsection}{Блочное размытие}{5}{section*.11}%
+\contentsline {subsection}{Гауссовское размытие}{6}{section*.16}%
+\contentsline {section}{Увеличение резкости}{8}{section*.22}%
+\contentsline {section}{Выделение краёв}{8}{section*.25}%

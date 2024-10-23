@@ -1,0 +1,6 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{Спектральное дифференцирование}{3}{section*.2}%
+\contentsline {section}{Линейные фильтры}{4}{section*.9}%
+\contentsline {subsection}{Фильтр первого порядка}{5}{section*.11}%
+\contentsline {subsection}{Специальный фильтр}{7}{section*.20}%
+\contentsline {section}{Сглаживание биржевых данных}{10}{section*.28}%
