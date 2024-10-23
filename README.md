@@ -578,6 +578,56 @@
 ### Частотные методыㅤ`частмет` `чм` `фурье` `fourier`
 > Перегудин А.А., Пашенко А.В.
 
+Лабораторные работы:
+<table>
+    <tbody>
+        <tr>
+          <td>1</td>
+          <td><b>Ряды Фурье</b></td>
+          <td><a href="https://github.com/snowlue/ITMO_works/raw/main/4%20семестр/Частотки/Лаб.работа%201/Задание.pdf">Задание</a></td>
+          <td><a href="https://github.com/snowlue/ITMO_works/raw/main/4%20семестр/Частотки/Лаб.работа%201/report.pdf">Отчёт</a></td>
+          <td><a href="https://github.com/snowlue/ITMO_works/blob/main/4%20семестр/Частотки/Лаб.работа%201/code.py">Код</a></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><b>Преобразование Фурье</b></td>
+          <td><a href="https://github.com/snowlue/ITMO_works/raw/main/4%20семестр/Частотки/Лаб.работа%202/Задание.pdf">Задание</a></td>
+          <td><a href="https://github.com/snowlue/ITMO_works/raw/main/4%20семестр/Частотки/Лаб.работа%202/report.pdf">Отчёт</a></td>
+          <td><a href="https://github.com/snowlue/ITMO_works/blob/main/4%20семестр/Частотки/Лаб.работа%202/code.py">Код</a></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><b>Жёсткая фильтрация</b></td>
+          <td><a href="https://github.com/snowlue/ITMO_works/raw/main/4%20семестр/Частотки/Лаб.работа%203/Задание.pdf">Задание</a></td>
+          <td><a href="https://github.com/snowlue/ITMO_works/raw/main/4%20семестр/Частотки/Лаб.работа%203/report.pdf">Отчёт</a></td>
+          <td><a href="https://github.com/snowlue/ITMO_works/blob/main/4%20семестр/Частотки/Лаб.работа%203/code.py">Код</a></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><b>Линейная фильтрация</b></td>
+          <td><a href="https://github.com/snowlue/ITMO_works/raw/main/4%20семестр/Частотки/Лаб.работа%204/Задание.pdf">Задание</a></td>
+          <td><a href="https://github.com/snowlue/ITMO_works/raw/main/4%20семестр/Частотки/Лаб.работа%204/report.pdf">Отчёт</a></td>
+          <td><a href="https://github.com/snowlue/ITMO_works/blob/main/4%20семестр/Частотки/Лаб.работа%204/code.py">Код</a></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><b>Связь непрерывного и дискретного</b></td>
+          <td><a href="https://github.com/snowlue/ITMO_works/raw/main/4%20семестр/Частотки/Лаб.работа%205/Задание.pdf">Задание</a></td>
+          <td><a href="https://github.com/snowlue/ITMO_works/raw/main/4%20семестр/Частотки/Лаб.работа%205/report.pdf">Отчёт</a></td>
+          <td><a href="https://github.com/snowlue/ITMO_works/blob/main/4%20семестр/Частотки/Лаб.работа%205/code.py">Код</a></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><b>Обработка изображений</b></td>
+          <td><a href="https://github.com/snowlue/ITMO_works/raw/main/4%20семестр/Частотки/Лаб.работа%206/Задание.pdf">Задание</a></td>
+          <td><a href="https://github.com/snowlue/ITMO_works/raw/main/4%20семестр/Частотки/Лаб.работа%206/report.pdf">Отчёт</a></td>
+          <td><a href="https://github.com/snowlue/ITMO_works/blob/main/4%20семестр/Частотки/Лаб.работа%206/code.py">Код</a></td>
+        </tr>
+    </tbody>
+</table>
+
+Также в конце семестра была выдана контрольная работа и распределение по вариантам (один из 10 вариантов), в котором мне выпал вариант №6. Решение требовалось в рукописном формате.
+- Контрольная работа: [задания](https://github.com/snowlue/ITMO_works/raw/main/4%20семестр/Частотки/КР/Вариант%206.pdf) и [решение](https://github.com/snowlue/ITMO_works/кфц/main/4%20семестр/Частотки/КР/КР%20ЧМ.pdf)
 
 
 ### Практикаㅤ`practice`
