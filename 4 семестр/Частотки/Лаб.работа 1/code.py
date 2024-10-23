@@ -8,7 +8,7 @@ from numpy._typing import NDArray
 #! Перейдите в класс Config (line:78), чтобы задать все вводные
 warnings.filterwarnings('ignore', category=np.ComplexWarning)
 
-ц
+
 def create_parametric_func(R: float, T: float) -> Callable[[float], complex]:
     """
     `[Изменяемая]`\n
