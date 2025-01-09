@@ -74,6 +74,22 @@
 ### Компьютерная и инженерная графикаㅤ`киг` `инжграф` `инжграфика`
 > Нуждин К.А.
 
+В каждой лабе приложены pdf для просмотра готовых деталей и чертежей.
+<table>
+    <tbody>
+        <tr>
+            <td><a href="https://github.com/snowlue/ITMO_works/tree/main/1%20семестр/КИГ/1">1-я лаба</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/tree/main/1%20семестр/КИГ/2">2-я лаба</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/tree/main/1%20семестр/КИГ/3">3-я лаба</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/snowlue/ITMO_works/tree/main/1%20семестр/КИГ/4">4-я лаба</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/tree/main/1%20семестр/КИГ/5">5-я лаба</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/tree/main/1%20семестр/КИГ/6">6-8 лабы</a></td>
+        </tr>
+    </tbody>
+</table>
+
 ### Линейная алгебраㅤ`линал` `линейка` `линалгебра`
 > Матвеева М.В., Свинцов М.В.
 - [Лекции](https://github.com/snowlue/ITMO_works/raw/main/1%20семестр/Линал%201%20сем.zip)
@@ -91,22 +107,6 @@
             <td><a href="https://github.com/snowlue/ITMOPython-2022_Lab-4">4-я лаба (Tkinter)</a></td>
             <td><a href="https://github.com/snowlue/ITMOPython-2022_Lab-5">5-я лаба (API)</a></td>
             <td><a href="https://github.com/snowlue/ITMOPython-2022_Lab-6">6-я лаба (ООП)</a></td>
-        </tr>
-    </tbody>
-</table>
-
-В каждой лабе приложены pdf для просмотра готовых деталей и чертежей.
-<table>
-    <tbody>
-        <tr>
-            <td><a href="https://github.com/snowlue/ITMO_works/tree/main/1%20семестр/КИГ/1">1-я лаба</a></td>
-            <td><a href="https://github.com/snowlue/ITMO_works/tree/main/1%20семестр/КИГ/2">2-я лаба</a></td>
-            <td><a href="https://github.com/snowlue/ITMO_works/tree/main/1%20семестр/КИГ/3">3-я лаба</a></td>
-        </tr>
-        <tr>
-            <td><a href="https://github.com/snowlue/ITMO_works/tree/main/1%20семестр/КИГ/4">4-я лаба</a></td>
-            <td><a href="https://github.com/snowlue/ITMO_works/tree/main/1%20семестр/КИГ/5">5-я лаба</a></td>
-            <td><a href="https://github.com/snowlue/ITMO_works/tree/main/1%20семестр/КИГ/6">6-8 лабы</a></td>
         </tr>
     </tbody>
 </table>
