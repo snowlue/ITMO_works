@@ -42,6 +42,16 @@
   - [Техническое зрениеㅤ`техзрение` `тз` `techvision`](#техническое-зрениеㅤтехзрение-тз-techvision)
   - [Частотные методыㅤ`частмет` `чм` `фурье` `fourier`](#частотные-методыㅤчастмет-чм-фурье-fourier)
   - [Практикаㅤ`practice`](#практикаㅤpractice)
+- [**5-й семестр (III курс)**](#5-й-семестр-iii-курс)
+  - [Линейные системы автоматического управленияㅤ`лсау` `ту` `ct` `lacs`](#линейные-системы-автоматического-управленияㅤлсау-ту-ct-lacs)
+  - [Математическая статистикаㅤ`матстат` `мс` `stats` `statistics` `ms`](#математическая-статистикаㅤматстат-мс-stats-statistics-ms)
+  - [Машинное обучениеㅤ`машинка` `мо` `ml`](#машинное-обучениеㅤмашинка-мо-ml)
+  - [Моделирование динамических системㅤ`мдс` `mds`](#моделирование-динамических-системㅤмдс-mds)
+  - [Прикладной искусственный интеллектㅤ`пии` `aai`](#прикладной-искусственный-интеллектㅤпии-aai)
+  - [Программирование микроконтроллеровㅤ`пм` `mc` `microcontrollers` `mcu`](#программирование-микроконтроллеровㅤпм-mc-microcontrollers-mcu)
+  - [Программирование оборудования с ЧПУ (базовый уровень)ㅤ`cnc`](#программирование-оборудования-с-чпу-базовый-уровеньㅤcnc)
+  - [Программирование промышленных роботовㅤ`ппр` `pir`](#программирование-промышленных-роботовㅤппр-pir)
+  - [Робототехникаㅤ`robotics`](#робототехникаㅤrobotics)
 
 ## 1-й семестр (I курс)
 ### Программирование на Pythonㅤ`прога` `питон` `пайтон`
@@ -375,7 +385,7 @@
 ### Дифференциальные уравненияㅤ`дифуры` `диффуры` `ду` `de`
 > Шиманская Г.С., Борель Л.В.
 
-Расчётно-графические работы (первая выполнялась индвидуальная, вторая и третья — в командах)
+Расчётно-графические работы (первая выполнялась индивидуальная, вторая и третья — в командах)
 <table>
     <tbody>
         <tr>
@@ -632,7 +642,153 @@
 
 ### Практикаㅤ`practice`
 > Ведяков А.А., Потемина Н.С.
-- [Отчёт по практике](https://github.com/snowlue/ITMO_works/raw/main/4%20семестр/Отчёт%20по%20практике.docx)
+- [Отчёт по практике](https://github.com/snowlue/ITMO_works/raw/main/4%20семестр/Отчёт%20по%20практике.docx) 
+
+## 5-й семестр (III курс)
+### Линейные системы автоматического управленияㅤ`лсау` `ту` `ct` `lacs`
+> Лопарев А.В.
+
+В рамках дисциплины были проведены два письменных рубежных теста во время лекций, которые сохранить не удалось. Лабораторные предлагались к выполнению дома и сдача проходила в виде защиты отчёта.
+<table>
+    <tbody>
+        <tr>
+            <td colspan="3"><b>Методические пособия для выполнения работ</b></td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5%20семестр/ЛСАУ/LAB_TU1_5.pdf">ЛР №1-5</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5%20семестр/ЛСАУ/LAB_TU06.pdf">ЛР №6</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5%20семестр/ЛСАУ/LAB_TU07.pdf">ЛР №7</a></td>
+        </tr>
+    </tbody>
+</table>
+Выполненные лабораторные работы (необходимо выбрать минимум 2 работы из №1-5, №6 и №7 обязательны к выполнению):
+<table>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab1/report.pdf">Отчёт</a></td>
+            <td colspan="4"><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab1/sources/task1.engee">task1.engee</a></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab2/report.pdf">Отчёт</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab2/sources/task1.engee">task1.engee</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab2/sources/task2.engee">task2.engee</a></td>
+            <td colspan="2"><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab2/sources/task3.engee">task3.engee</a></td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab6/report.pdf">Отчёт</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab6/sources/task1.engee">task1.engee</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab6/sources/task2.engee">task2.engee</a></td>
+            <td colspan="2"><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab6/sources/task3.engee">task3.engee</a></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab7/report.pdf">Отчёт</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab7/sources/task1.engee">task1.engee</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab7/sources/task2.engee">task2.engee</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab7/sources/task3.engee">task3.engee</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab7/sources/task4.engee">task4.engee</a></td>
+        </tr>
+    </tbody>
+</table>
+
+### Математическая статистикаㅤ`матстат` `мс` `stats` `statistics` `ms`
+> Шиловская Н.А., Береговенко И.И.
+
+### Машинное обучениеㅤ`машинка` `мо` `ml`
+> Свинцов М.В.
+
+### Моделирование динамических системㅤ`мдс` `mds`
+> Плотников С.А.
+
+К выполнению 6 лабораторных работ, которые необходимо выполнить в группах до 3 человек. Все работы выполняются по [учебному пособию](https://github.com/snowlue/ITMO_works/raw/main/5%20семестр/МДС/Учебное%20пособие.pdf).  
+Отчёты по лабораторным работам ниже:
+<table>
+    <tbody>
+        <tr>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/МДС/ЛР1_МДС.pdf">ЛР №1</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/МДС/lab2/latex/lab_2.pdf">ЛР №2</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/МДС/lab3/report.pdf">ЛР №3</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/МДС/lab4/report.pdf">ЛР №4</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/МДС/lab5/latex/lab_5.pdf">ЛР №5</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/МДС/ЛР6_МДС.pdf">ЛР №6</a></td>
+        </tr>
+    </tbody>
+</table>
+
+### Прикладной искусственный интеллектㅤ`пии` `aai`
+> Евстафьев О.А.
+
+Для успешного получения зачёта, необходимо выступить с докладом ([презентация](https://github.com/snowlue/ITMO_works/blob/main/5%20семестр/ПИИ/доклад/преза.pdf) и [текст докладчика](https://github.com/snowlue/ITMO_works/blob/main/5%20семестр/ПИИ/доклад/текст.md)) по одной из тем, предложенных преподавателем, и выполнить 3 практических работы.  
+Ноутбуки (Jupyter), представленные в качестве выполненных практических работ, следуют заданию практической работы:
+<table>
+    <tbody>
+        <tr>
+            <td colspan="2"><a href="https://github.com/snowlue/ITMO_works/blob/main/5%20семестр/ПИИ/lab1/ОвчинниковПА_1.ipynb">ЛР №1</a></td>
+        </tr>
+        <tr>
+            <td colspan="2"><a href="https://github.com/snowlue/ITMO_works/blob/main/5%20семестр/ПИИ/lab2/ОвчинниковПА_2.ipynb">ЛР №2</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/5%20семестр/ПИИ/lab3/ОвчинниковПА_3.ipynb">ЛР №3</a></td>
+            <td><a href="https://disk.yandex.ru/d/ueJkVU5Lx2za1w">Датасет</a></td>
+        </tr>
+    </tbody>
+</table>
+
+### Программирование микроконтроллеровㅤ`пм` `mc` `microcontrollers` `mcu`
+> Власов С.М.
+
+### Программирование оборудования с ЧПУ (базовый уровень)ㅤ`cnc`
+> Тимофеева О.С.
+
+В ходе дисциплины нам рассказали о трёх видах станков с ЧПУ и продемонстрировали их работу — далее необходимо было предоставить 3 отчёта по практическим занятиям:
+<table>
+    <tbody>
+        <tr>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЧПУ/Токарная_обработка_Румянцев_Чебаненко_Овчинников.pdf">Токарная обработка</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЧПУ/ЧПУ_Фрезерная_обработка_вариант_2_Чебаненко_Овчинников_Румянцев.pdf">Фрезерная обработка</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЧПУ/Электроэрозионная_обработка_Овчинников_Румянцев_Чебаненко.pdf">Электроэрозионная обработка</a></td>
+        </tr>
+    </tbody>
+</table>
+
+### Программирование промышленных роботовㅤ`ппр` `pir`
+> Громов В.С.
+
+Дисциплина реализуется в паре с дисциплиной «Робототехника». Всего необходимо выполнить 4 лабораторные работы, первые две из которых были выполнены в рамках дисциплины «Робототехника»:
+<table>
+    <tbody>
+        <tr>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/Отчет_ЛР3_Румянцев_Чебаненко_Овчинников_Блохин_Тоскано.pdf">Лабораторная работа №3</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/Отчет_ЛР4_Румянцев_Чебаненко_Овчинников_Блохин_Тоскано.pdf">Лабораторная работа №4</a></td>
+        </tr>
+    </tbody>
+</table>
+
+### Робототехникаㅤ`robotics`
+> Громов В.С.
+
+Дисциплина реализуется в паре с дисциплиной «Программирование промышленных роботов». Всего необходимо выполнить 4 лабораторные работы, последние две из которых были выполнены в рамках дисциплины «Программирование промышленных роботов»:
+<table>
+    <tbody>
+        <tr>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/Отчет_ЛР1_Овчинников,Румянцев,Дьячихин,Алёхова,Простак.pdf">Лабораторная работа №1</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/Отчёт_ЛР2_Овчинников,_Румянцев,_Дьячихин,_Алёхова,_Простак.pdf">Лабораторная работа №2</a></td>
+        </tr>
+    </tbody>
+</table>
+
 
 [^ctam]: [Компьютерные технологии и управление](https://itmo.ru/ru/viewfaculty/1/megafakultet_kompyuternyh_tehnologiy_i_upravleniya.htm)
 [^csar]: [Системы управления и робототехника](https://abit.itmo.ru/program/bachelor/robotics_ai)
