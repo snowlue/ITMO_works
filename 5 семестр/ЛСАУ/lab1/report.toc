@@ -1,0 +1,8 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{Исследование модели вход-выход}{3}{section*.2}%
+\contentsline {subsection}{Порядок выполнения работы}{3}{section*.4}%
+\contentsline {subsection}{Выполнение работы}{3}{section*.6}%
+\contentsline {section}{Исследование модели вход-состояние-выход}{6}{section*.14}%
+\contentsline {subsection}{Порядок выполнения работы}{6}{section*.16}%
+\contentsline {subsection}{Выполнение работы}{6}{section*.18}%
+\contentsline {section}{Выводы}{8}{section*.26}%

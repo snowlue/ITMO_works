@@ -1,0 +1,12 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{\numberline {1}Задание 1}{2}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Условие}{2}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Выполнение}{2}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Задание 2}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Условие}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Выполнение}{3}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Задание 3}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Условие}{4}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Выполнение}{5}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Вывод}{6}{section.4}%
+\contentsline {section}{\numberline {5}Приложения}{6}{section.5}%

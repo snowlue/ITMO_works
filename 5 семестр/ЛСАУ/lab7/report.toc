@@ -1,0 +1,27 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{Исследование системы с астатизмом нулевого порядка}{3}{section*.2}%
+\contentsline {subsection}{Условия}{3}{section*.4}%
+\contentsline {subsection}{Исследование стационарного режима работы}{3}{section*.7}%
+\contentsline {subsubsection}{Задание}{3}{section*.9}%
+\contentsline {subsubsection}{Выполнение работы}{3}{section*.11}%
+\contentsline {subsection}{Исследование режима движения с постоянной скоростью}{4}{section*.15}%
+\contentsline {subsubsection}{Задание}{4}{section*.17}%
+\contentsline {subsubsection}{Выполнение работы}{4}{section*.19}%
+\contentsline {section}{Исследование системы с астатизмом первого порядка}{5}{section*.22}%
+\contentsline {subsection}{Условия}{5}{section*.24}%
+\contentsline {subsection}{Исследование стационарного режима работы}{5}{section*.26}%
+\contentsline {subsubsection}{Задание}{5}{section*.28}%
+\contentsline {subsubsection}{Выполнение работы}{5}{section*.30}%
+\contentsline {subsection}{Исследование режима движения с постоянной скоростью}{6}{section*.34}%
+\contentsline {subsubsection}{Задание}{6}{section*.36}%
+\contentsline {subsubsection}{Выполнение работы}{6}{section*.38}%
+\contentsline {subsection}{Исследование режима движения с постоянным ускорением}{6}{section*.41}%
+\contentsline {subsubsection}{Задание}{6}{section*.43}%
+\contentsline {subsubsection}{Выполнение работы}{6}{section*.45}%
+\contentsline {section}{Исследование влияния внешних возмущений}{6}{section*.48}%
+\contentsline {subsection}{Условия и задание}{7}{section*.50}%
+\contentsline {subsection}{Выполнение работы}{7}{section*.53}%
+\contentsline {section}{Исследование установившейся ошибки при произвольном входном воздействии}{8}{section*.58}%
+\contentsline {subsection}{Условия и задание}{8}{section*.60}%
+\contentsline {subsection}{Выполнение работы}{9}{section*.62}%
+\contentsline {section}{Выводы}{10}{section*.67}%

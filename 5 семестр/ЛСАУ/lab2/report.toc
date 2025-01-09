@@ -1,0 +1,11 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{Переход от модели вход-выход к модели вход-состояние-выход}{3}{section*.2}%
+\contentsline {subsection}{Порядок выполнения работы}{3}{section*.4}%
+\contentsline {subsection}{Выполнение работы}{3}{section*.6}%
+\contentsline {section}{Переход от модели вход-состояние-выход к модели вход-выход}{4}{section*.10}%
+\contentsline {subsection}{Порядок выполнения работы}{4}{section*.12}%
+\contentsline {subsection}{Выполнение работы}{4}{section*.14}%
+\contentsline {section}{Замена базиса в пространстве состояний}{6}{section*.18}%
+\contentsline {subsection}{Порядок выполнения работы}{6}{section*.20}%
+\contentsline {subsection}{Выполнение работы}{6}{section*.22}%
+\contentsline {section}{Выводы}{7}{section*.26}%
