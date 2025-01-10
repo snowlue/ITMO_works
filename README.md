@@ -667,35 +667,71 @@
         <tr>
             <td>1</td>
             <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab1/report.pdf">Отчёт</a></td>
-            <td colspan="4"><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab1/sources/task1.engee">task1.engee</a></td>
+            <td colspan="4"><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab1/sources/task1.engee"><code>task1.engee</code></a></td>
         </tr>
         <tr>
             <td>2</td>
             <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab2/report.pdf">Отчёт</a></td>
-            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab2/sources/task1.engee">task1.engee</a></td>
-            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab2/sources/task2.engee">task2.engee</a></td>
-            <td colspan="2"><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab2/sources/task3.engee">task3.engee</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab2/sources/task1.engee"><code>task1.engee</code></a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab2/sources/task2.engee"><code>task2.engee</code></a></td>
+            <td colspan="2"><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab2/sources/task3.engee"><code>task3.engee</code></a></td>
         </tr>
         <tr>
             <td>6</td>
             <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab6/report.pdf">Отчёт</a></td>
-            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab6/sources/task1.engee">task1.engee</a></td>
-            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab6/sources/task2.engee">task2.engee</a></td>
-            <td colspan="2"><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab6/sources/task3.engee">task3.engee</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab6/sources/task1.engee"><code>task1.engee</code></a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab6/sources/task2.engee"><code>task2.engee</code></a></td>
+            <td colspan="2"><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab6/sources/task3.engee"><code>task3.engee</code></a></td>
         </tr>
         <tr>
             <td>7</td>
             <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab7/report.pdf">Отчёт</a></td>
-            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab7/sources/task1.engee">task1.engee</a></td>
-            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab7/sources/task2.engee">task2.engee</a></td>
-            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab7/sources/task3.engee">task3.engee</a></td>
-            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab7/sources/task4.engee">task4.engee</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab7/sources/task1.engee"><code>task1.engee</code></a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab7/sources/task2.engee"><code>task2.engee</code></a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab7/sources/task3.engee"><code>task3.engee</code></a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЛСАУ/lab7/sources/task4.engee"><code>task4.engee</code></a></td>
         </tr>
     </tbody>
 </table>
 
 ### Математическая статистикаㅤ`матстат` `мс` `stats` `statistics` `ms`
 > Шиловская Н.А., Береговенко И.И.
+
+Для получения зачёта необходимо выполнить два рубежных теста минимум на 6 баллов и выполнить 4 лабораторных работы в Excel или Jupyter Notebook (в моём случае выполнены в виде ноутбуков).
+- [Вариант №0 рубежного теста №1](https://github.com/snowlue/ITMO_works/raw/main/5%20семестр/Матстат/тест%201.pdf)
+- [Вариант №0 рубежного теста №2](https://github.com/snowlue/ITMO_works/raw/main/5%20семестр/Матстат/тест%202.pdf)
+
+Задания к лабораторным и отчёты по ним:
+<table>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/Матстат/lab1.pdf">Задание</a></td>
+            <td colspan="3"><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/Матстат/РГР1.ipynb">Отчёт</a></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/Матстат/lab2.pdf">Задание</a></td>
+            <td colspan="3"><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/Матстат/РГР2.ipynb">Отчёт</a></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/Матстат/lab3.pdf">Задание</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/Матстат/РГР3.ipynb">Отчёт</a></td>
+            <td colspan="2"><a href="https://github.com/snowlue/ITMO_works/raw/main/"><code>kc_house_data.csv</code></a></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/Матстат/lab4.pdf">Задание</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/Матстат/РГР4.ipynb">Отчёт</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/"><code>mobile_phones.csv</code></a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/"><code>exams_dataset.csv</code></a></td>
+        </tr>
+    </tbody>
+</table>
+
+В случае если набранных баллов не хватает для зачёта автоматом, можно прийти на зачёт и выполнить тест с 5 вопросами из вторых частей рубежных тестов.
+- [Разделы курса для подготовки к зачёту](https://github.com/snowlue/ITMO_works/raw/main/5%20семестр/Матстат/экз.pdf)
 
 ### Машинное обучениеㅤ`машинка` `мо` `ml`
 > Свинцов М.В.
