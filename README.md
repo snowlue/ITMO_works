@@ -294,10 +294,24 @@
 > Двойникова А.А.
 
 Список лекций:
-- [Лекция №1 (Работа с базами данных CSV)](https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Факультатив%20Python/Лекции/Л1_Работа_с_базами_данных.ipynb)
-- [Лекция №2 (Предобработка данных)](https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Факультатив%20Python/Лекции/Л2_Предобработка.ipynb)
-- [Лекция №3 (Векторизация текстовых данных)](https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Факультатив%20Python/Лекции/Л3_Векторизация_текстовых_данных.ipynb)
-- [Лекция №4 (Классификация с обучением)](https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Факультатив%20Python/Лекции/Л4_Классификация.ipynb)
+<table>
+    <tbody>
+        <tr>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Факультатив%20Python/Лекции/Л1_Работа_с_базами_данных.ipynb">Лекция №1 (Работа с базами данных CSV)</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Факультатив%20Python/Лекции/Л2_Предобработка.ipynb">Лекция №2 (Предобработка данных)</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Факультатив%20Python/Лекции/Л3_Векторизация_текстовых_данных.ipynb">Лекция №3 (Векторизация текстовых данных)</a></td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/2%20семестр/Факультатив%20Python/Лекции/Л4_Классификация.ipynb">Лекция №4 (Классификация с обучением)</a></td>
+        </tr>
+    </tbody>
+</table>
+<table>
+</table>
 
 Домашние задания:
 <table>
@@ -565,7 +579,7 @@
         <tr>
           <td>2</td>
           <td><a href="https://github.com/snowlue/ITMO_works/raw/main/4%20семестр/Техзрение/Лаб.работа%20№2/latex/lab2.pdf">Отчёт</a></td>
-          <td><a href="https://github.com/snowlue/ITMO_works/raw/main/4%20семестр/Техзрение/Лаб.работа%20№2/main.py">Код</a></td>
+          <td><a href="https://github.com/snowlue/ITMO_works/blob/main/4%20семестр/Техзрение/Лаб.работа%20№2/main.py">Код</a></td>
         </tr>
         <tr>
           <td>3</td>
@@ -695,7 +709,7 @@
 </table>
 
 ### Математическая статистикаㅤ`матстат` `мс` `stats` `statistics` `ms`
-> Шиловская Н.А., Береговенко И.И.
+> Береговенко И.И., Шиловская Н.А.
 
 Для получения зачёта необходимо выполнить два рубежных теста минимум на 6 баллов и выполнить 4 лабораторных работы в Excel или Jupyter Notebook (в моём случае выполнены в виде ноутбуков).
 - [Вариант №0 рубежного теста №1](https://github.com/snowlue/ITMO_works/raw/main/5%20семестр/Матстат/тест%201.pdf)
@@ -707,25 +721,25 @@
         <tr>
             <td>1</td>
             <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/Матстат/lab1.pdf">Задание</a></td>
-            <td colspan="3"><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/Матстат/РГР1.ipynb">Отчёт</a></td>
+            <td colspan="3"><a href="https://github.com/snowlue/ITMO_works/blob/main/5 семестр/Матстат/РГР1.ipynb">Отчёт</a></td>
         </tr>
         <tr>
             <td>2</td>
             <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/Матстат/lab2.pdf">Задание</a></td>
-            <td colspan="3"><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/Матстат/РГР2.ipynb">Отчёт</a></td>
+            <td colspan="3"><a href="https://github.com/snowlue/ITMO_works/blob/main/5 семестр/Матстат/РГР2.ipynb">Отчёт</a></td>
         </tr>
         <tr>
             <td>3</td>
             <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/Матстат/lab3.pdf">Задание</a></td>
-            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/Матстат/РГР3.ipynb">Отчёт</a></td>
-            <td colspan="2"><a href="https://github.com/snowlue/ITMO_works/raw/main/"><code>kc_house_data.csv</code></a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/5 семестр/Матстат/РГР3.ipynb">Отчёт</a></td>
+            <td colspan="2"><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/Матстат/kc_house_data.csv"><code>kc_house_data.csv</code></a></td>
         </tr>
         <tr>
             <td>4</td>
             <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/Матстат/lab4.pdf">Задание</a></td>
-            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/Матстат/РГР4.ipynb">Отчёт</a></td>
-            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/"><code>mobile_phones.csv</code></a></td>
-            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/"><code>exams_dataset.csv</code></a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/blob/main/5 семестр/Матстат/РГР4.ipynb">Отчёт</a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/Матстат/mobile_phones.csv"><code>mobile_phones.csv</code></a></td>
+            <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/Матстат/exams_dataset.csv"><code>exams_dataset.csv</code></a></td>
         </tr>
     </tbody>
 </table>
