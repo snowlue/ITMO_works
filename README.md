@@ -791,6 +791,9 @@
 ### Программирование микроконтроллеровㅤ`пм` `mc` `microcontrollers` `mcu`
 > Власов С.М.
 
+<sup>Взял на повторное освоение — результаты в середине 7 семестра</sup>
+
+
 ### Программирование оборудования с ЧПУ (базовый уровень)ㅤ`cnc`
 > Тимофеева О.С.
 
@@ -807,7 +810,6 @@
             <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/ЧПУ/Электроэрозионная_обработка_Овчинников_Румянцев_Чебаненко.pdf">Электроэрозионная обработка</a></td>
         </tr>
     </tbody>
-</table>>
 </table>
 
 ### Робототехникаㅤ`robotics`
@@ -837,7 +839,8 @@
         <tr>
             <td><a href="https://github.com/snowlue/ITMO_works/raw/main/5 семестр/Отчет_ЛР4_Румянцев_Чебаненко_Овчинников_Блохин_Тоскано.pdf">Лабораторная работа №4</a></td>
         </tr>
-    </tbody
+    </tbody>
+</table>
 
 
 [^ctam]: [Компьютерные технологии и управление](https://itmo.ru/ru/viewfaculty/1/megafakultet_kompyuternyh_tehnologiy_i_upravleniya.htm)
