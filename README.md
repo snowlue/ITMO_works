@@ -520,7 +520,8 @@
 ### Алгоритмы и структуры данныхㅤ`аисд` `алгосы`
 > Тропченко А.А.
 
-В рамках дисциплины необходимо просмотреть [лекции курса Техносферы «Алгоритмы и структуры данных»](https://www.youtube.com/playlist?list=PLrCZzMib1e9pDxHYzmEzMmnMMUK-dz0_7), выполнить два курса на Интуите [«Структуры данных и модели вычислений»](https://intuit.ru/studies/courses/100/100/info) и [«Структуры и алгоритмы компьютерной обработки данных»](https://intuit.ru/studies/courses/648/504/info), а также [решить на платформе Timus Online Judge задачи по номерам](https://docs.google.com/document/d/1Rl8ihzneOgEHbvrwhIfbA2z9Fu3TthQ4-xmUqdpRwEk/edit).
+В рамках дисциплины необходимо просмотреть [лекции курса Техносферы «Алгоритмы и структуры данных»](https://www.youtube.com/playlist?list=PLrCZzMib1e9pDxHYzmEzMmnMMUK-dz0_7), выполнить два курса на Интуите [«Структуры данных и модели вычислений»](https://intuit.ru/studies/courses/100/100/info) и [«Структуры и алгоритмы компьютерной обработки данных»](https://intuit.ru/studies/courses/648/504/info), а также [решить на платформе Timus Online Judge задачи по номерам](https://docs.google.com/document/d/1Rl8ihzneOgEHbvrwhIfbA2z9Fu3TthQ4-xmUqdpRwEk/edit).  
+Ответы на курсы на Интуите: [первый](https://vtone.ru/otvety/struktury-dannyh-i-modeli-vycislenij) и [второй](https://vtone.ru/otvety/struktury-i-algoritmy-komputernoj-obrabotki-dannyh), или пользуйтесь поиском на этом сайте.
 
 Ниже отчёты по задач:
 <table>
