@@ -539,10 +539,11 @@
 ### Алгоритмы и структуры данныхㅤ`аисд` `алгосы`
 > Тропченко А.А.
 
-В рамках дисциплины необходимо просмотреть [лекции курса Техносферы «Алгоритмы и структуры данных»](https://www.youtube.com/playlist?list=PLrCZzMib1e9pDxHYzmEzMmnMMUK-dz0_7), выполнить два курса на Интуите [«Структуры данных и модели вычислений»](https://intuit.ru/studies/courses/100/100/info) и [«Структуры и алгоритмы компьютерной обработки данных»](https://intuit.ru/studies/courses/648/504/info), а также [решить на платформе Timus Online Judge задачи по номерам](https://docs.google.com/document/d/1Rl8ihzneOgEHbvrwhIfbA2z9Fu3TthQ4-xmUqdpRwEk/edit).  
-Ответы на курсы на Интуите: [первый](https://vtone.ru/otvety/struktury-dannyh-i-modeli-vycislenij) и [второй](https://vtone.ru/otvety/struktury-i-algoritmy-komputernoj-obrabotki-dannyh), или пользуйтесь поиском на этом сайте.
+В рамках дисциплины необходимо просмотреть [лекции курса Техносферы «Алгоритмы и структуры данных»](https://www.youtube.com/playlist?list=PLrCZzMib1e9pDxHYzmEzMmnMMUK-dz0_7), выполнить два курса на Интуите [«Структуры данных и модели вычислений»](https://intuit.ru/studies/courses/100/100/info) и [«Структуры и алгоритмы компьютерной обработки данных»](https://intuit.ru/studies/courses/648/504/info), а также [решить на платформе Timus Online Judge задачи по номерам](https://docs.google.com/document/d/1Rl8ihzneOgEHbvrwhIfbA2z9Fu3TthQ4-xmUqdpRwEk/edit).
 
-Ниже отчёты по задач:
+Ответы на курсы на Интуите: [первый](https://vtone.ru/otvety/struktury-dannyh-i-modeli-vycislenij) и [второй](https://vtone.ru/otvety/struktury-i-algoritmy-komputernoj-obrabotki-dannyh), или пользуйтесь поиском на этом сайте.  
+
+Ниже отчёты по задачам:
 <table>
     <tbody>
         <tr>
@@ -550,6 +551,11 @@
           <td><a href="https://github.com/snowlue/ITMO_works/raw/main/4%20семестр/Алгосы/1005%2C1155%2C1207.pdf">1005, 1155, 1207</a></td>
           <td><a href="https://github.com/snowlue/ITMO_works/raw/main/4%20семестр/Алгосы/1726%2C1401%2C1521.pdf">1726, 1401, 1521</a></td>
           <td><a href="https://github.com/snowlue/ITMO_works/raw/main/4%20семестр/Алгосы/1494%2C1067%2C1322.pdf">1494, 1067, 1322</a></td>
+        </tr>
+        <tr>
+            <td>Больше задач ➡️</td>
+            <td><a href="https://github.com/japersik/itmo_algorithms_and_data_structures">у japersik</a></td>
+            <td><a href="https://github.com/testpassword/Algorithms-and-data-structures/blob/master/docs/Алгоритмы%20на%20графах.pdf">у testpassword</a></td>
         </tr>
     </tbody>
 </table>
