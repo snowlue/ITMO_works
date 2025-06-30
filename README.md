@@ -696,6 +696,8 @@
 
 ### Практикаㅤ<sup>`practice`</sup>
 > Ведяков А.А., Потемина Н.С.
+
+- [Репозиторий практики](https://github.com/snowlue/ITMO-Practice1)
 - [Отчёт по практике](https://github.com/snowlue/ITMO_works/raw/main/4%20семестр/Отчёт%20по%20практике.docx) 
 
 ## 5-й семестр (III курс)
@@ -1088,6 +1090,7 @@
 ### Практикаㅤ<sup>`practice`</sup>
 > Ведяков А.А., Захаров Д.Н.
 
+- [Репозиторий практики](https://github.com/snowlue/ITMO-Practice2)
 - [Отчёт по практике](https://github.com/snowlue/ITMO-Practice2/raw/main/report/main.pdf)
 
 
