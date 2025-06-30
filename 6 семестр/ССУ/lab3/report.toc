@@ -1,0 +1,2 @@
+\babel@toc {russian}{}\relax 
+\contentsline {section}{Основные технические характеристики исследуемых датчиков}{3}{section*.2}%
